@@ -1,0 +1,10 @@
+object dmDeviceControlCenter: TdmDeviceControlCenter
+  OldCreateOrder = False
+  Height = 97
+  Width = 188
+  object NodeOpenCheckTimer: TTimer
+    Enabled = False
+    Left = 80
+    Top = 48
+  end
+end

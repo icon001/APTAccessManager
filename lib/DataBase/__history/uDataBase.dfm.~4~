@@ -1,0 +1,13 @@
+object dmDataBase: TdmDataBase
+  OldCreateOrder = False
+  Height = 171
+  Width = 270
+  object ADOConnection: TADOConnection
+    Left = 16
+    Top = 8
+  end
+  object ADOEventConnection: TADOConnection
+    Left = 16
+    Top = 72
+  end
+end

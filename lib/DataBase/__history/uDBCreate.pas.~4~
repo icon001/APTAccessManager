@@ -1,0 +1,86 @@
+unit uDBCreate;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TdmDBCreate = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Function CreateTB_CONFIG:Boolean;
+    Function CreateTB_FORMNAME : Boolean;
+
+  end;
+
+var
+  dmDBCreate: TdmDBCreate;
+
+implementation
+
+uses
+  uCommonVariable,
+  uDataBase;
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+{ TdmDBCreate }
+
+function TdmDBCreate.CreateTB_CONFIG: Boolean;
+var
+  stSql : string;
+begin
+  stSql := 'Create Table TB_CONFIG(';
+  stSql := stSql + ' GROUP_CODE varchar(10) DEFAULT ''1234567890'' NOT NULL,';
+  stSql := stSql + ' CO_CONFIGGROUP varchar(20) NOT NULL,';
+  stSql := stSql + ' CO_CONFIGCODE varchar(30) NOT NULL,';
+  stSql := stSql + ' CO_CONFIGVALUE varchar(50),';
+  stSql := stSql + ' CO_CONFIGDETAIL varchar(100),';
+  stSql := stSql + ' PRIMARY KEY (GROUP_CODE,CO_CONFIGGROUP,CO_CONFIGCODE) ';
+  stSql := stSql + ' ) ';
+
+  if G_nDBTYPE = MDB then
+  begin
+    stSql := StringReplace(stSql,'varchar','text',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'char','text',[rfReplaceAll]);
+  end else if G_nDBTYPE = FireBird then
+  begin
+    stSql := StringReplace(stSql,'image','BLOB',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'varbinary(MAX)','BLOB',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'int IDENTITY','integer',[rfReplaceAll]);
+  end;
+  result := dmDataBase.ProcessExecSQL(stSql);
+end;
+
+function TdmDBCreate.CreateTB_FORMNAME: Boolean;
+var
+  stSql : string;
+begin
+  stSql := 'Create Table TB_FORMNAME(';
+  stSql := stSql + ' FM_GUBUN char(1)  NOT NULL,';
+  stSql := stSql + ' FM_CODE varchar(50) NOT NULL,';
+  stSql := stSql + ' FM_NAME1 varchar(100),';
+  stSql := stSql + ' FM_NAME2 varchar(100),';
+  stSql := stSql + ' FM_NAME3 varchar(100),';
+  stSql := stSql + ' PRIMARY KEY (FM_GUBUN,FM_CODE) ';
+  stSql := stSql + ' ) ';
+
+  if G_nDBTYPE = MDB then
+  begin
+    stSql := StringReplace(stSql,'varchar','text',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'char','text',[rfReplaceAll]);
+  end else if G_nDBTYPE = FireBird then
+  begin
+    stSql := StringReplace(stSql,'image','BLOB',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'varbinary(MAX)','BLOB',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'int IDENTITY','integer',[rfReplaceAll]);
+  end;
+  result := dmDataBase.ProcessExecSQL(stSql);
+end;
+
+end.

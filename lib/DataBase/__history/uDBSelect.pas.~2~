@@ -1,0 +1,45 @@
+unit uDBSelect;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TdmDBSelect = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Function SelectTB_DOORSCHEDULE_DoorNo(aNodeNo,aEcuID,aDoorNo:string):string;
+  end;
+
+var
+  dmDBSelect: TdmDBSelect;
+
+implementation
+uses
+  uCommonVariable;
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+{ TdmDBSelect }
+
+function TdmDBSelect.SelectTB_DOORSCHEDULE_DoorNo(aNodeNo, aEcuID,
+  aDoorNo: string): string;
+var
+  stSql : string;
+begin
+  stSql := 'select * from TB_DOORSCHEDULE ';
+  stSql := stSql + ' where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  stSql := stSql + ' AND ND_NODENO = ' + aNodeNo + ' ';
+  stSql := stSql + ' AND DE_ECUID = ''' + aEcuID + ''' ';
+  stSql := stSql + ' AND DE_EXTENDID = 0 ';
+  stSql := stSql + ' AND DO_DOORNO = ' + aDoorNo + ' ';
+  stSql := stSql + ' Order By DS_DAYCODE ';
+
+  result := stSql;
+end;
+
+end.

@@ -1,0 +1,9 @@
+unit uFormUtil;
+
+interface
+
+Function TravelEditItem(GroupBox:TGroupBox;stName:string; no:Integer):TEdit;
+
+implementation
+
+end.

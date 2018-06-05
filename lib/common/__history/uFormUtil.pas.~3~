@@ -1,0 +1,15 @@
+unit uFormUtil;
+
+interface
+uses Vcl.StdCtrls;
+
+Function TravelGroupEditItem(GroupBox:TGroupBox;stName:string; no:Integer):TEdit;
+
+implementation
+
+Function TravelGroupEditItem(GroupBox:TGroupBox;stName:string; no:Integer):TEdit;
+begin
+
+end;
+
+end.

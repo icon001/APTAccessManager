@@ -1,0 +1,49 @@
+unit uDataBaseBackup;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, ExtCtrls, StdCtrls,ADODB,ActiveX;
+
+type
+  TfmDataBaseBackup = class(TForm)
+    Bevel1: TBevel;
+    sbSave: TSpeedButton;
+    btn_CardBackup: TSpeedButton;
+    btn_AccessEventBackup: TSpeedButton;
+    procedure sbSaveClick(Sender: TObject);
+    procedure btn_CardBackupClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fmDataBaseBackup: TfmDataBaseBackup;
+
+implementation
+
+uses
+  uDataBase,
+  uDBFunction,
+  DiMime,
+  uCommonVariable,
+  uFunction;
+
+{$R *.dfm}
+
+procedure TfmDataBaseBackup.btn_CardBackupClick(Sender: TObject);
+begin
+  if FileExists(G_stExeFolder + '/DB/ZMOS.mdb') then
+    CopyFile(pchar(G_stExeFolder + '/DB/ZMOS.mdb'),pchar(aBackupDir + '/ZMOS.mdb'),True);
+
+end;
+
+procedure TfmDataBaseBackup.sbSaveClick(Sender: TObject);
+begin
+  Close;
+end;
+
+end.

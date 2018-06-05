@@ -1,0 +1,134 @@
+unit uExcelSave;
+
+interface
+
+uses
+  SysUtils, Classes,ComObj,AdvGrid,Gauges,Dialogs,Forms;
+
+type
+  TdmExcelSave = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Function ExcelPrintOut(StringGrid:TAdvStringGrid;refFileName,SaveFileName:String;FileOut:Boolean;ExcelRowStart:integer;stTitle:string;bRowHeader,bColHeader:Boolean;Gauge:TGauge=nil):Boolean;
+  end;
+
+var
+  dmExcelSave: TdmExcelSave;
+
+implementation
+
+{$R *.dfm}
+
+{ TdmExcelSave }
+
+function TdmExcelSave.ExcelPrintOut(StringGrid: TAdvStringGrid;
+  refFileName, SaveFileName: String; FileOut: Boolean;
+  ExcelRowStart: integer; stTitle: string; bRowHeader, bColHeader: Boolean;
+  Gauge: TGauge): Boolean;
+var
+  oXL, oWB, oSheet, oRng, VArray : Variant;
+  nCol1,nCol2 : Integer;
+  Loop : Integer;
+  sCurDay,sPreDay : String;
+  curDate : TDateTime;
+  mergeStart :char;
+  i,j,k : Integer;
+  st : String;
+  nColChar : integer;
+  nFixCol,nFixRow : integer;
+  stCellRange : string;
+begin
+  Result := False;
+  Try
+    oXL := CreateOleObject('Excel.Application');
+  Except
+    showmessage('엑셀저장 실패로 CSV포맷으로 저장 됩니다.');
+    SaveFileName := copy(SaveFileName,1,Length(SaveFileName) - 3) + 'csv';
+    StringGrid.SaveToCSV(SaveFileName);
+    exit;
+  End;
+
+  Try
+    if FileExists(refFileName) = False then
+    begin
+      Showmessage(refFileName + ' 파일이 없습니다.');
+      exit;
+    end;
+
+
+    oXL.Workbooks.Open(refFileName);
+    oXL.DisplayAlerts := False;
+  //  oXL.Visible := True;
+    oSheet := oXL.ActiveSheet;
+
+
+    with StringGrid do
+    begin
+
+      //타이틀을 적자
+      nCol1 := ColCount div 26;
+      nCol2 := (ColCount mod 26) + 1;
+      if bRowHeader then
+      begin
+        oSheet.Range['A' + inttostr(ExcelRowStart - 1)].Value := stTitle;
+        if bColHeader then nFixCol := 0
+        else nFixCol := FixedCols ;
+        for i:= 0 to FixedRows - 1 do
+        begin
+          for j:= nFixCol to ColCount - 1 do
+          begin
+            nColChar := j div 26;
+            if j < 26 then
+              oXL.Range[Chr(Ord('A') + j ) + inttostr(i+ ExcelRowStart)].Value := Cells[j,i]
+            else
+              oXL.Range[Chr(Ord('A') + nColChar - 1 ) + Chr(Ord('A') + j - (26 * nColChar) ) + inttostr(i+ ExcelRowStart)].Value := Cells[j,i];
+          end;
+        end;
+        ExcelRowStart := ExcelRowStart + FixedRows ;
+      end
+      else    oSheet.Range['A' + inttostr(ExcelRowStart - FixedRows - 1)].Value := stTitle;
+
+      Gauge.MaxValue := ( RowCount - FixedRows );
+      Gauge.Progress := 0;
+      for i := FixedRows to RowCount - 1 do
+      begin
+
+        if i <  RowCount - 2 then    //한칸씩 삽입
+        begin
+          if ColCount < 26 then stCellRange := 'A' + inttostr(i+ ExcelRowStart - FixedRows + 1) + ':' + Chr(Ord('A') + nCol1 ) + Chr(Ord('A') + nCol2 - 1 ) +  inttostr(i+ ExcelRowStart - FixedRows + 1)
+          else                  stCellRange := 'A' + inttostr(i+ ExcelRowStart - FixedRows + 1) + ':' + Chr(Ord('A') + nCol1 -1 ) + Chr(Ord('A') + nCol2 - 1 ) +  inttostr(i+ ExcelRowStart - FixedRows + 1);
+          oSheet.Range[stCellRange].Insert;
+        end;
+        Gauge.Progress := Gauge.Progress + 1;
+        Application.ProcessMessages;
+      end;
+      StringGrid.CopyToClipBoard;
+      oSheet.Range['A' + inttostr(ExcelRowStart - 1), 'A' + inttostr(ExcelRowStart - 1)].Select;
+      oSheet.Paste;
+    end;//With
+
+    //oXL.Visible := False;
+    if FileOut then  oSheet.SaveAs(SaveFileName)
+    else  oSheet.PrintOut;
+    oXL.ActiveWorkbook.Close(False);
+    oXL.Quit;
+  Except
+    oXL.ActiveWorkbook.Close(False);
+    oXL.Quit;
+    if FileOut then
+    begin
+      showmessage('엑셀저장 실패로 CSV포맷으로 저장 됩니다.');
+      SaveFileName := copy(SaveFileName,1,Length(SaveFileName) - 3) + 'csv';
+      StringGrid.SaveToCSV(SaveFileName);
+    end else
+    begin
+      showmessage('엑셀파일 문제로 출력 실패 하였습니다.');
+    end;
+    exit;
+  End;
+  Result := True;
+end;
+
+end.

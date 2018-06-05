@@ -1,0 +1,25 @@
+unit uDBUpdate;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TdmDBUpdate = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmDBUpdate: TdmDBUpdate;
+
+implementation
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,437 @@
+unit uDevicePacket;
+
+interface
+uses System.SysUtils;
+type
+  TReceiveData = procedure(Sender: TObject; aNodeNo : integer;aMcuID,aECUID,aCmd,aMsgNo,aDeviceVer,aRealData:string) of object;
+  TComEventData = procedure(Sender: TObject; aData1,aData2,aData3,aData4,aData5,aData6,aData7,aData8,aData9,aData10,aData11,aData12,aData13,aData14,aData15,aData16,aData17,aData18,aData19,aData20:string) of object;
+
+procedure ClearBitB(var b:byte; BitToClear: integer);
+
+function CheckDataPacket(aBuffer:string; var aLeavePacketData:string):string;
+Function DataConvert1(aMakeValue:Byte;aData:String):String;
+Function DataConvert2(aMakeValue:Byte;aData:String):String;
+function DecodeCardNo(aCardNo: string;aLength : integer = 8;bHex:Boolean = False): String;
+function DoorControlTimeDecode(aDoorControlTime:string):string;
+function DoorControlTimeEncode(aDoorControlTime:string):string;
+function EncodeCardNo(aCardNo: string;bHex : Boolean = False): String;
+function EncodeData(aKey:Byte; aData: String): String;
+Function MakeCSData(aData: string;nCSType:integer=0):String;
+function MakeSum(st:string;nCSType:integer=0):Char;
+
+//***MSR-7000 용 프로토콜 생성
+function MSR7000CheckDataPacket(aBuffer:string; var aLeavePacketData:string):string;
+function MSR7000PacketCreate(aDeviceID,aCmd,aMsgNo,aData):string;
+
+//***************************************Packet 생성
+function PacketCreate(aProgramType:integer;aLen,aVer,aDeviceID,aCmd,aData,aMsgNo:string):string;
+
+implementation
+uses
+  uFunction,
+  uCommonVariable;
+
+procedure ClearBitB(var b:byte; BitToClear: integer);
+{ clear a bit in a byte }
+begin
+  if (BitToClear < 0) or (BitToClear > 7) then exit;
+  b := b and not (1 shl BitToClear);
+end;
+
+function CheckDataPacket(aBuffer:string; var aLeavePacketData:string):string;
+var
+  nIndex: Integer;
+  stLen: String;
+  nDefinedLength: Integer;
+  stPacketData: String;
+  nEtxIndex: Integer;
+  aKey: Byte;
+begin
+
+  Result:= '';
+  stLen:= Copy(aBuffer,2,3);
+  //데이터 길이 위치 데이터가 숫자가 아니면...
+  if not isDigit(stLen) then
+  begin
+    Delete(aBuffer,1,1);       //1'st STX 삭제
+    nIndex:= Pos(STX,aBuffer); // 다음 STX 찾기
+    if nIndex = 0 then       //STX가 없으면...
+    begin
+      //전체 데이터 버림
+      aLeavePacketData:= '';
+    end else if nIndex > 1 then // STX가 1'st가 아니면
+    begin
+      Delete(aBuffer,1,nIndex-1);//STX 앞 데이터 삭제
+      aLeavePacketData:= aBuffer;
+    end else
+    begin
+      aLeavePacketData:= aBuffer;
+    end;
+    Exit;
+  end;
+
+  //패킷에 정의된 길이
+  nDefinedLength:= StrtoInt(stLen);
+  //패킷에 정의된 길이보다 실제 데이터가 작으면
+  if Length(aBuffer) < nDefinedLength then
+  begin
+    //실제 데이터가 길이가 작으면(아직 다 못받은 상태)
+    nEtxIndex:= POS(ETX,aBuffer);
+    if nEtxIndex > 0 then
+    begin
+     Delete(aBuffer,1,nEtxIndex);
+    end;
+    aLeavePacketData:= aBuffer;
+    Exit;
+  end;
+
+  // 정의된 길이 마지막 데이터가 ETX가 맞는가?
+  if aBuffer[nDefinedLength] = ETX then
+  begin
+    stPacketData:= Copy(aBuffer,1,nDefinedLength);
+    aKey:= Ord(stPacketData[5]);
+    stPacketData:= Copy(stPacketData,1,5) + EncodeData(aKey,Copy(stPacketData,6,Length(stPacketData)-6))+stPacketData[Length(stPacketData)];
+
+    Result:=stPacketData;
+    Delete(aBuffer, 1, nDefinedLength);
+    aLeavePacketData:= aBuffer;
+  end else
+  begin
+    //마지막 데이터가 ETX 아니면 1'st STX지우고 다음 STX를 찾는다.
+    Delete(aBuffer,1,1);
+    nIndex:= Pos(STX,aBuffer); // 다음 STX 찾기
+    if nIndex = 0 then       //STX가 없으면...
+    begin
+      //전체 데이터 버림
+      aLeavePacketData:= '';
+    end else if nIndex > 1 then // STX가 1'st가 아니면
+    begin
+      Delete(aBuffer,1,nIndex-1);//STX 앞 데이터 삭제
+      aLeavePacketData:= aBuffer;
+    end else
+    begin
+      aLeavePacketData:= aBuffer;
+    end;
+  end;
+end;
+
+{난수 번호만(BIT4,BIT3,BIT2,BIT1,BIT0) 을 data와 XOR 한다.}
+Function DataConvert1(aMakeValue:Byte;aData:String):String;
+var
+  I: Integer;
+  bData: String;
+begin
+  bData:= aData;
+  for I:= 1 to Length(bData) do
+  begin
+    bData[I]:= Char(ord(bData[I]) XOR aMakeValue);
+  end;
+  Result:= bData;
+end;
+
+{ 난수 번호만(BIT4,BIT3,BIT2,BIT1,BIT0) 을 data와 XOR 후 Message No의 하위 Nibble과 다시 XOR 한다.}
+Function DataConvert2(aMakeValue:Byte;aData:String):String;
+var
+  I: Integer;
+  bMakeValue: Byte;
+  bData: String;
+  TempByte: Byte;
+begin
+  bData:= aData;
+  {13번쩨 Byte 가 MessageNo}
+  bMakeValue:= Ord(aData[13]) and $F;
+  Result:= '';
+  for I:= 1 to Length(bData) do
+  begin
+    if I <> 13 then
+    begin
+      TempByte:= ord(bData[I]) XOR aMakeValue;
+      bData[I]:= Char(TempByte XOR bMakeValue);
+    end;
+  end;
+  Result:= bData;
+end;
+
+function DecodeCardNo(aCardNo: string;aLength : integer = 8;bHex:Boolean = False): String;
+var
+  I: Integer;
+  st: string;
+  bCardNo: int64;
+begin
+
+  for I := 1 to aLength do
+  begin
+
+    if (I mod 2) <> 0 then
+    begin
+      aCardNo[I] := Char((Ord(aCardNo[I]) shl 4));
+    end else
+    begin
+      aCardNo[I] := Char(Ord(aCardNo[I]) - $30); //상위니블을 0으로 만든다.
+      //st:= st + char(ord(aCardNo[I-1]) +ord(aCardNo[I]));
+      st:= st + char(ord(aCardNo[I-1]) + ord(aCardNo[I]))
+    end;
+    //aCardNo[I] := Char(Ord(aCardNo[I]) - $30);
+    //st := st + aCardNo[I];
+  end;
+
+
+  st:= tohexstrNospace(st);
+
+
+  if Not bHex then  //숫자 변환이면
+  begin
+    bCardNo:= Hex2Dec(st);
+    st:= FillZeroNumber(bCardNo,10);
+  end;
+  //SHowMessage(st);
+  Result:= st;
+
+end;
+
+function DoorControlTimeDecode(aDoorControlTime:string):string;
+var
+  stDoorControlTime : string;
+  nDoorControlTime : integer;
+  nOrd : integer;
+  nMsec : integer;
+begin
+  if aDoorControlTime[1] >= #$30 then
+  begin
+   if aDoorControlTime[1] < #$40 then  stDoorControlTime := aDoorControlTime[1]
+   else
+   begin
+      if (aDoorControlTime[1] >= 'A') and (aDoorControlTime[1] <= 'Z') then  nDoorControlTime := Ord(aDoorControlTime[1]) - Ord('A')
+      else nDoorControlTime := Ord(aDoorControlTime[1]) - Ord('a') + 26;
+      nDoorControlTime := nDoorControlTime * 5;
+      stDoorControlTime := inttostr( 10 + nDoorControlTime );
+   end;
+  end else
+  begin
+    nOrd := Ord(aDoorControlTime[1]);
+    nMsec := (nOrd - $20) * 100;
+    stDoorControlTime := inttostr(nMsec) + 'ms';
+  end;
+end;
+
+function DoorControlTimeEncode(aDoorControlTime:string):string;
+var
+  nOrdUDiff : integer;
+  nDoorTime : integer;
+  nOrd : integer;
+  stMSEC : string;
+  nMSec : integer;
+begin
+  Try
+    if IsDigit(aDoorControlTime) then
+    begin
+      if strtoint(aDoorControlTime) < 10 then
+      begin
+         aDoorControlTime := Trim(aDoorControlTime);
+      end else
+      begin
+        nOrdUDiff := 26;
+        nDoorTime := strtoint(aDoorControlTime) - 10;
+        nDoorTime := nDoorTime div 5;
+        if nDoorTime < nOrdUDiff then  nOrd := Ord('A') + nDoorTime
+        else nOrd := Ord('a') + nDoorTime - nOrdUDiff;
+        if nOrd > Ord('z') then nOrd := Ord('z');
+        aDoorControlTime := Char(nOrd);
+      end;
+    end else
+    begin
+      stMSEC := copy(aDoorControlTime,1,3);
+      if Not isDigit(stMSEC) then
+      begin
+        result := '5';
+        Exit;
+      end;
+      nMSec := strtoint(stMsec) div 100;
+      if nMSec < 1 then
+      begin
+        result := '5';
+        Exit;
+      end;
+      if nMSec > 9 then
+      begin
+        result := '5';
+        Exit;
+      end;
+      nOrd := $20 + nMSec; //21~29 까지 MSEC;
+      aDoorControlTime := Char(nOrd);
+    end;
+    result := aDoorControlTime;
+  Except
+    Exit;
+  End;
+end;
+
+function EncodeCardNo(aCardNo: string;bHex : Boolean = False): String;
+var
+  I: Integer;
+  xCardNo: String;
+  st: String;
+begin
+  result := '';
+  Try
+    if Not bHex then aCardNo:= Dec2Hex(StrtoInt64(aCardNo),8);
+    xCardNo:= Hex2Ascii(aCardNo);
+    for I:= 1 to 4 do
+    begin
+      st := st + Char((Ord(xCardNo[I]) shr 4) + $30) + Char((Ord(xCardNo[I]) and $F) + $30);
+    end;
+    Result:= st;
+  Except
+    Exit;
+  End;
+end;
+
+function EncodeData(aKey:Byte; aData: String): String;
+var
+  Encodetype: Integer;
+  aMakeValue: Byte;
+  I: Integer;
+begin
+  EncodeType:= aKey SHR 6; //7,6 번 Bit가 엔코딩 타입
+  aMakeValue:= aKey;
+  for I:= 5 to 7 do ClearBitB(aMakeValue,I); //1,2,3,4,5 Bit가 난수번호
+
+  case EncodeType of
+    0: Result:= DataConvert1(aMakeValue,aData);
+    1: Result:= DataConvert2(aMakeValue,aData);
+    else Result:= aData;
+  end;
+end;
+
+{CheckSum을 만든다}
+Function MakeCSData(aData: string;nCSType:integer=0):String;
+var
+  aSum: Integer;
+  st: string;
+begin
+  aSum:= Ord(MakeSum(aData,nCSType));
+  aSum:= aSum*(-1);
+  st:= Dec2Hex(aSum,2);
+
+  Result:= copy(st,Length(st)-1,2);
+end;
+
+function MakeSum(st:string;nCSType:integer=0):Char;
+var
+  i: Integer;
+  aBcc: Byte;
+  BCC: string;
+begin
+  aBcc := Ord(st[1]);
+  for i := 2 to Length(st) do
+  begin
+    aBcc := aBcc + Ord(st[i]);
+  end;
+  if nCSType = 1 then
+  begin
+    aBcc := aBcc + Ord(#$A7);
+  end;
+  BCC := Chr(aBcc);
+  Result := BCC[1];
+end;
+
+function MSR7000CheckDataPacket(aBuffer:string; var aLeavePacketData:string):string;
+var
+  nIndex: Integer;
+  stLen: String;
+  nDefinedLength: Integer;
+  stPacketData: String;
+  nEtxIndex: Integer;
+  aKey: Byte;
+begin
+
+  Result:= '';
+  stLen:= Copy(aBuffer,7,2);
+  //데이터 길이 위치 데이터가 숫자가 아니면...
+  if not isDigit(stLen) then
+  begin
+    Delete(aBuffer,1,1);       //1'st STX 삭제
+    nIndex:= Pos(STX,aBuffer); // 다음 STX 찾기
+    if nIndex = 0 then       //STX가 없으면...
+    begin
+      //전체 데이터 버림
+      aLeavePacketData:= '';
+    end else if nIndex > 1 then // STX가 1'st가 아니면
+    begin
+      Delete(aBuffer,1,nIndex-1);//STX 앞 데이터 삭제
+      aLeavePacketData:= aBuffer;
+    end else
+    begin
+      aLeavePacketData:= aBuffer;
+    end;
+    Exit;
+  end;
+
+  //패킷에 정의된 길이
+  nDefinedLength:= StrtoInt(stLen) + 11; //Packet Encrept Size 11임
+  //패킷에 정의된 길이보다 실제 데이터가 작으면
+  if Length(aBuffer) < nDefinedLength then
+  begin
+    //실제 데이터가 길이가 작으면(아직 다 못받은 상태)
+    nEtxIndex:= POS(ETX,aBuffer);
+    if nEtxIndex > 0 then
+    begin
+     Delete(aBuffer,1,nEtxIndex);
+    end;
+    aLeavePacketData:= aBuffer;
+    Exit;
+  end;
+
+  // 정의된 길이 마지막 데이터가 ETX가 맞는가?
+  if aBuffer[nDefinedLength] = ETX then
+  begin
+    stPacketData:= Copy(aBuffer,1,nDefinedLength);
+    Result:=stPacketData;
+    Delete(aBuffer, 1, nDefinedLength);
+    aLeavePacketData:= aBuffer;
+  end else
+  begin
+    //마지막 데이터가 ETX 아니면 1'st STX지우고 다음 STX를 찾는다.
+    Delete(aBuffer,1,1);
+    nIndex:= Pos(STX,aBuffer); // 다음 STX 찾기
+    if nIndex = 0 then       //STX가 없으면...
+    begin
+      //전체 데이터 버림
+      aLeavePacketData:= '';
+    end else if nIndex > 1 then // STX가 1'st가 아니면
+    begin
+      Delete(aBuffer,1,nIndex-1);//STX 앞 데이터 삭제
+      aLeavePacketData:= aBuffer;
+    end else
+    begin
+      aLeavePacketData:= aBuffer;
+    end;
+  end;
+end;
+
+function MSR7000PacketCreate(aDeviceID,aCmd,aMsgNo,aData):string;
+var
+  stPacket : string;
+  stCheckSum : string;
+  nSum : integer;
+begin
+  stPacket := STX + FillZeroStrNum(aDeviceID,2) + '0' + aCmd + FillZeroNumber(Length(aData),2) + aData;
+  nSum := Ord(MakeSum(aData,0));
+  stCheckSum := Dec2Hex(nSum,2);
+  stCheckSum := copy(stCheckSum,Length(stCheckSum)-1,2);
+  stPacket := stPacket + stCheckSum + ETX;
+end;
+
+function PacketCreate(aProgramType:integer;aLen,aVer,aDeviceID,aCmd,aData,aMsgNo:string):string;
+var
+  stPacket : string;
+  nKey : integer;
+begin
+  stPacket := STX + aLen + #$20 + aVer + aDeviceID + aCmd + aMsgNo + aData;
+  stPacket  := stPacket + MakeCSData(stPacket + ETX,aProgramType) + ETX;
+  nKey    := $20;
+  result := Copy(stPacket, 1, 5) + EncodeData(nKey,
+    Copy(stPacket, 6, Length(stPacket) - 6)) + ETX;
+end;
+
+end.

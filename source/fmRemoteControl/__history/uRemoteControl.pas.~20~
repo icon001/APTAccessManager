@@ -1,0 +1,333 @@
+﻿unit uRemoteControl;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, W7Classes, W7Panels, AdvOfficeTabSet,
+  AdvOfficeTabSetStylers, AdvSmoothPanel, Vcl.ExtCtrls, AdvSmoothLabel,
+  Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
+  AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
+  Vcl.Mask, AdvSpin, AdvOfficeButtons, AdvPanel, Vcl.ComCtrls, AdvListV,
+  Vcl.ImgList, Vcl.Menus, AdvMenus, AdvExplorerTreeview, paramtreeview,
+  JvExComCtrls, JvComCtrls,Vcl.Clipbrd, Vcl.OleCtrls, SHDocVw;
+
+const
+  con_DOORLOCKSTATE = 3;
+  con_DOOROPENSTATE = 4;
+  con_DOORNOTSTATE = 5;
+
+type
+  TfmRemoteControl = class(TfmASubForm)
+    AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler;
+    Image1: TImage;
+    BodyPanel: TW7Panel;
+    menuTab: TAdvOfficeTabSet;
+    WebBrowser1: TWebBrowser;
+    procedure menuTabChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure sg_PasswordListCheckBoxClick(Sender: TObject; ACol, ARow: Integer;
+      State: Boolean);
+    procedure sg_doorListCheckBoxClick(Sender: TObject; ACol, ARow: Integer;
+      State: Boolean);
+    procedure sg_doorPasswordListCheckBoxClick(Sender: TObject; ACol,
+      ARow: Integer; State: Boolean);
+    procedure SearchTimerTimer(Sender: TObject);
+    procedure TreeView_DoorListClick(Sender: TObject);
+    procedure StateAsyncTimer1Timer(Sender: TObject);
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure Form_Close;
+    procedure RcvCardAccessEvent(aNodeNo, aECUID, aDoorNo,aReaderNo, aInOut, aTime, aCardMode, aDoorMode, aChangeState, aAccessResult,aDoorState, aATButton, aCardNo:string);
+    procedure ReceiveDeviceInitialize(aNodeNo, aECUID, aResult:string);
+    procedure RcvDoorModeChange(aNodeNo, aECUID, aResult,aMode:string);
+
+  end;
+
+var
+  fmRemoteControl: TfmRemoteControl;
+
+implementation
+uses
+  uCommonVariable,
+  uDataBase,
+  uDBFunction,
+  uFormUtil,
+  uFunction,
+  uMessage,
+  udmCardPermit,
+  uControler;
+
+{$R *.dfm}
+
+
+
+procedure TfmRemoteControl.FormActivate(Sender: TObject);
+begin
+  inherited;
+  WindowState := wsMaximized;
+end;
+
+procedure TfmRemoteControl.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['NAME'] := inttostr(FORMREMOTECONTROL);
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['VALUE'] := 'FALSE';
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Execute;
+
+
+  Action := caFree;
+end;
+
+procedure TfmRemoteControl.FormCreate(Sender: TObject);
+begin
+
+  menuTab.ActiveTabIndex := 1;
+  menuTabChange(self);
+end;
+
+
+procedure TfmRemoteControl.FormShow(Sender: TObject);
+begin
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['NAME'] := inttostr(FORMREMOTECONTROL);
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['VALUE'] := 'TRUE';
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Execute;
+end;
+
+procedure TfmRemoteControl.Form_Close;
+begin
+  Close;
+end;
+
+
+procedure TfmRemoteControl.menuTabChange(Sender: TObject);
+var
+  stBuildingCode : string;
+  stAreaCode : string;
+  nIndex : integer;
+begin
+  if menuTab.ActiveTabIndex = 0 then //Ȩ
+  begin
+    if menuTab.AdvOfficeTabs.Items[0].Caption = '닫기' then Close
+    else
+    begin
+      menuTab.ActiveTabIndex := 1;
+      menuTabChange(self);
+    end;
+  end;
+end;
+
+
+procedure TfmRemoteControl.RcvCardAccessEvent(aNodeNo, aECUID, aDoorNo, aReaderNo,
+  aInOut, aTime, aCardMode, aDoorMode, aChangeState, aAccessResult, aDoorState,
+  aATButton, aCardNo: string);
+var
+  stDisplay : string;
+begin
+{  case aDoorMode[1] of
+    'o' : begin //운영
+      DoorStateChange(aNodeNo,aECUID,aDoorNo,con_DOORLOCKSTATE);
+    end;
+    'c' : begin //개방
+      DoorStateChange(aNodeNo,aECUID,aDoorNo,con_DOOROPENSTATE);
+    end;
+    else begin //모름
+      DoorStateChange(aNodeNo,aECUID,aDoorNo,con_DOORNOTSTATE);
+    end;
+  end; }
+  stDisplay := aNodeNo + ';';
+  stDisplay := stDisplay + aECUID + ';';
+  stDisplay := stDisplay + aDoorNo + ';';
+  stDisplay := stDisplay + aReaderNo + ';';
+  stDisplay := stDisplay + aInOut + ';';
+  stDisplay := stDisplay + aTime + ';';
+  stDisplay := stDisplay + aCardMode + ';';
+  stDisplay := stDisplay + aDoorMode + ';';
+  stDisplay := stDisplay + aChangeState + ';';
+  stDisplay := stDisplay + aAccessResult + ';';
+  stDisplay := stDisplay + aDoorState + ';';
+  stDisplay := stDisplay + aATButton + ';';
+  stDisplay := stDisplay + aCardNo;
+  DisplayList.Add(stDisplay);
+end;
+
+procedure TfmRemoteControl.RcvDoorModeChange(aNodeNo, aECUID, aResult,
+  aMode: string);
+begin
+  if aResult <> '1' then Exit;
+  if aMode = '' then
+  begin
+    DoorStateChange(aNodeNo,aECUID,'1',con_DOORNOTSTATE);
+    Exit;
+  end;
+  case UpperCase(aMode)[1] of
+    'O' : begin //개방
+      DoorStateChange(aNodeNo,aECUID,'1',con_DOOROPENSTATE);
+    end;
+    'C' : begin //운영
+      DoorStateChange(aNodeNo,aECUID,'1',con_DOORLOCKSTATE);
+    end;
+    else begin //모름
+      DoorStateChange(aNodeNo,aECUID,'1',con_DOORNOTSTATE);
+    end;
+  end;
+end;
+
+procedure TfmRemoteControl.ReceiveDeviceInitialize(aNodeNo, aECUID,
+  aResult: string);
+var
+  stDongName,stAreaName,stDoorName : string;
+begin
+  if aResult <> '1' then Exit;
+  if GetLocationName(aNodeNo,aECUID,'1',stDongName,stAreaName,stDoorName) then
+  begin
+    showmessage(stDoorName + ' 기기초기화 성공');
+  end else
+  begin
+    showmessage(aNodeNo + aECUID + ' 기기초기화 성공');
+  end;
+end;
+
+procedure TfmRemoteControl.SearchTimerTimer(Sender: TObject);
+begin
+  inherited;
+  SearchTimer.Enabled := False;
+  if G_bApplicationTerminate then Exit;
+
+  if DisplayList.Count > 0 then
+  begin
+    BatchDisplay(DisplayList.Strings[0]);
+    DisplayList.Delete(0);
+  end;
+  SearchTimer.Enabled := True;
+
+end;
+
+procedure TfmRemoteControl.sg_doorListCheckBoxClick(Sender: TObject; ACol,
+  ARow: Integer; State: Boolean);
+var
+  nIndex : integer;
+  i : integer;
+begin
+  inherited;
+  if ARow = 0 then //전체선택 또는 해제
+  begin
+    SearchDoorCodeList.Clear;
+    if State then
+    begin
+      L_nAddDoorCheckCount := (Sender as TAdvStringGrid).RowCount - 1;
+      for i := 1 to (Sender as TAdvStringGrid).RowCount do
+      begin
+        SearchDoorCodeList.Add((Sender as TAdvStringGrid).Cells[2,i] + (Sender as TAdvStringGrid).Cells[3,i] + (Sender as TAdvStringGrid).Cells[4,i]);
+      end;
+    end else L_nAddDoorCheckCount := 0;
+    AdvStrinGridSetAllCheck(Sender,State);
+  end else
+  begin
+    if State then
+    begin
+      L_nAddDoorCheckCount := L_nAddDoorCheckCount + 1;
+      nIndex := SearchDoorCodeList.IndexOf((Sender as TAdvStringGrid).Cells[2,ARow] + (Sender as TAdvStringGrid).Cells[3,ARow] + (Sender as TAdvStringGrid).Cells[4,ARow]);
+      if nIndex < 0 then SearchDoorCodeList.Add((Sender as TAdvStringGrid).Cells[2,ARow] + (Sender as TAdvStringGrid).Cells[3,ARow] + (Sender as TAdvStringGrid).Cells[4,ARow]);
+    end else
+    begin
+      L_nAddDoorCheckCount := L_nAddDoorCheckCount - 1 ;
+      nIndex := SearchDoorCodeList.IndexOf((Sender as TAdvStringGrid).Cells[2,ARow] + (Sender as TAdvStringGrid).Cells[3,ARow] + (Sender as TAdvStringGrid).Cells[4,ARow]);
+      if nIndex > -1 then SearchDoorCodeList.Delete(nIndex);
+    end;
+  end;
+
+end;
+
+procedure TfmRemoteControl.sg_doorPasswordListCheckBoxClick(Sender: TObject;
+  ACol, ARow: Integer; State: Boolean);
+begin
+  inherited;
+  if ARow = 0 then //전체선택 또는 해제
+  begin
+    if State then
+    begin
+      L_nDeletePasswordCheckCount := (Sender as TAdvStringGrid).RowCount - 1;
+    end else L_nDeletePasswordCheckCount := 0;
+    AdvStrinGridSetAllCheck(Sender,State);
+  end else
+  begin
+    if State then
+    begin
+      L_nDeletePasswordCheckCount := L_nDeletePasswordCheckCount + 1;
+    end else
+    begin
+      L_nDeletePasswordCheckCount := L_nDeletePasswordCheckCount - 1 ;
+    end;
+  end;
+
+end;
+
+procedure TfmRemoteControl.sg_PasswordListCheckBoxClick(Sender: TObject; ACol,
+  ARow: Integer; State: Boolean);
+var
+  nIndex : integer;
+  i : integer;
+begin
+  inherited;
+  if ARow = 0 then //전체선택 또는 해제
+  begin
+    SearchPasswordCodeList.Clear;
+    if State then
+    begin
+      L_nPasswordCheckCount := (Sender as TAdvStringGrid).RowCount - 1;
+      for i := 1 to (Sender as TAdvStringGrid).RowCount do
+      begin
+        SearchPasswordCodeList.Add((Sender as TAdvStringGrid).Cells[1,i]);
+      end;
+    end else L_nPasswordCheckCount := 0;
+    AdvStrinGridSetAllCheck(Sender,State);
+  end else
+  begin
+    if State then
+    begin
+      L_nPasswordCheckCount := L_nPasswordCheckCount + 1;
+    end else
+    begin
+      L_nPasswordCheckCount := L_nPasswordCheckCount - 1 ;
+    end;
+  end;
+
+end;
+
+procedure TfmRemoteControl.StateAsyncTimer1Timer(Sender: TObject);
+var
+  i : integer;
+begin
+  inherited;
+
+  for i := 0 to DeviceList.Count - 1 do
+  begin
+    if G_bApplicationTerminate then Exit;
+    RcvDoorModeChange(inttostr(TDevice(DeviceList.Objects[i]).NodeNo),TDevice(DeviceList.Objects[i]).DeviceID,'1',TDevice(DeviceList.Objects[i]).DoorMode);
+  end;
+
+
+end;
+
+procedure TfmRemoteControl.TreeView_DoorListClick(Sender: TObject);
+var
+  stLocateID : string;
+begin
+  stLocateID := TreeView_LocationCode.Items.Item[TreeView_DoorList.Selected.AbsoluteIndex].Text;
+  if stLocateID[1] <> 'D' then TreeView_DoorList.PopupMenu:= nil
+  else TreeView_DoorList.PopupMenu:= PopupMenu;
+
+end;
+
+initialization
+  RegisterClass(TfmRemoteControl);
+Finalization
+  UnRegisterClass(TfmRemoteControl);
+
+end.

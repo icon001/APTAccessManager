@@ -1,0 +1,25 @@
+unit uDBDelete;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TdmDBDelete = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmDBDelete: TdmDBDelete;
+
+implementation
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,5 @@
+object dmDeviceControlCenter: TdmDeviceControlCenter
+  OldCreateOrder = False
+  Height = 97
+  Width = 188
+end

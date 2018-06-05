@@ -1,0 +1,26 @@
+unit uFormUtil;
+
+interface
+uses Vcl.StdCtrls,System.SysUtils;
+
+Function TravelGroupEditItem(GroupBox:TGroupBox;stName:string; no:Integer):TEdit;
+
+implementation
+
+Function TravelGroupEditItem(GroupBox:TGroupBox;stName:string; no:Integer):TEdit;
+var
+Loop:integer;
+begin
+  Result:= Nil;
+
+  For Loop:=0 to GroupBox.ControlCount-1 do
+  Begin
+    If LowerCase(GroupBox.Controls[Loop].name) = LowerCase(stName) + inttostr(no) then
+    Begin
+      Result:=TEdit(GroupBox.Controls[Loop]);
+      exit;
+    End;
+  End;
+end;
+
+end.

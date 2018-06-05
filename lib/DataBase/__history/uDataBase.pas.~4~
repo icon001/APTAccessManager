@@ -1,0 +1,29 @@
+unit uDataBase;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB;
+
+type
+  TdmDataBase = class(TDataModule)
+    ADOConnection: TADOConnection;
+    ADOEventConnection: TADOConnection;
+    ADOQuery: TADOQuery;
+    ADOEventQuery: TADOQuery;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmDataBase: TdmDataBase;
+
+implementation
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+end.

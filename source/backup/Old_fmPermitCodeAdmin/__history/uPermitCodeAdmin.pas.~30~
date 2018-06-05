@@ -1,0 +1,725 @@
+﻿unit uPermitCodeAdmin;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, W7Classes, W7Panels, AdvOfficeTabSet,
+  AdvOfficeTabSetStylers, AdvSmoothPanel, Vcl.ExtCtrls, AdvSmoothLabel,
+  Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
+  AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray;
+
+type
+  TfmPermitCodeAdmin = class(TfmASubForm)
+    AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler;
+    Image1: TImage;
+    BodyPanel: TW7Panel;
+    menuTab: TAdvOfficeTabSet;
+    pan_PermitCodeList: TAdvSmoothPanel;
+    pan_PermitCodeAdd: TAdvSmoothPanel;
+    AdvSmoothLabel1: TAdvSmoothLabel;
+    ed_Permitname: TAdvEdit;
+    btn_Search: TSpeedButton;
+    sg_PermitCode: TAdvStringGrid;
+    btn_Delete: TSpeedButton;
+    lb_page1: TAdvSmoothLabel;
+    lb_page2: TAdvSmoothLabel;
+    lb_page3: TAdvSmoothLabel;
+    lb_page4: TAdvSmoothLabel;
+    lb_page5: TAdvSmoothLabel;
+    lb_Nextpage: TAdvSmoothLabel;
+    lb_PrePage: TAdvSmoothLabel;
+    AdvSmoothLabel9: TAdvSmoothLabel;
+    ed_InsertName: TAdvEdit;
+    btn_InsertSave: TSpeedButton;
+    btn_add: TSpeedButton;
+    pan_PermitCodeUpdate: TAdvSmoothPanel;
+    btn_UpdateSave: TSpeedButton;
+    ed_InsertPermitCode: TAdvEdit;
+    AdvSmoothLabel3: TAdvSmoothLabel;
+    AdvSmoothLabel4: TAdvSmoothLabel;
+    ed_UpdatePermitCode: TAdvEdit;
+    AdvSmoothLabel5: TAdvSmoothLabel;
+    ed_UpdatePermitName: TAdvEdit;
+    procedure menuTabChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+    procedure btn_SearchClick(Sender: TObject);
+    procedure lb_page1Click(Sender: TObject);
+    procedure lb_NextpageClick(Sender: TObject);
+    procedure lb_PrePageClick(Sender: TObject);
+    procedure ed_PermitnameChange(Sender: TObject);
+    procedure sg_PermitCodeKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure sg_PermitCodeKeyPress(Sender: TObject; var Key: Char);
+    procedure btn_SaveClick(Sender: TObject);
+    procedure btn_InsertSaveClick(Sender: TObject);
+    procedure ed_InsertNameKeyPress(Sender: TObject; var Key: Char);
+    procedure sg_PermitCodeCheckBoxClick(Sender: TObject; ACol, ARow: Integer;
+      State: Boolean);
+    procedure btn_DeleteClick(Sender: TObject);
+    procedure btn_addClick(Sender: TObject);
+    procedure sg_dongCodeColChanging(Sender: TObject; OldCol, NewCol: Integer;
+      var Allow: Boolean);
+    procedure sg_PermitCodeDblClick(Sender: TObject);
+    procedure btn_UpdateSaveClick(Sender: TObject);
+    procedure ed_UpdatedongNameKeyPress(Sender: TObject; var Key: Char);
+    procedure ed_InsertPermitCodeKeyPress(Sender: TObject; var Key: Char);
+  private
+    L_nPageGroupMaxCount : integer ; //한페이지 그룹에 해당하는 페이지수
+    L_nPageListMaxCount : integer; //한페이지에 출력되는 리스트 갯수
+    L_nCurrentPageGroup : integer;   //지금 속한 페이지 그룹
+    L_nCurrentPageList : integer;    //지금 조회 하고 있는 페이지
+    L_CurrentSaveRow : integer;
+
+    L_nCheckCount : integer;        //체크 된 카운트
+    { Private declarations }
+    procedure PageTabCreate(aPageGroup,aCurrentPage:integer);
+    procedure ShowPermitCode(aGotoPage,aPageSize:integer;aCurrentCode:string;aTopRow:integer = 0);
+    procedure UpdateCell;
+    procedure SaveUpdateCell;
+
+    Function DeletePermitCode(aCode:string):Boolean;
+
+    function DupCheckPermitCode(aCode:string;var aDupName:string):Boolean;
+  private
+    procedure AdvStrinGridSetAllCheck(Sender: TObject;bchkState:Boolean);
+  public
+    { Public declarations }
+  end;
+
+var
+  fmPermitCodeAdmin: TfmPermitCodeAdmin;
+
+implementation
+uses
+  uCommonVariable,
+  uDataBase,
+  uFormUtil,
+  uFunction,
+  uMessage;
+
+{$R *.dfm}
+
+
+procedure TfmPermitCodeAdmin.AdvStrinGridSetAllCheck(Sender: TObject;
+  bchkState: Boolean);
+var
+  i : integer;
+begin
+    for i:= 1 to (Sender as TAdvStringGrid).RowCount - 1  do
+    begin
+      (Sender as TAdvStringGrid).SetCheckBoxState(0,i,bchkState);
+    end;
+end;
+
+procedure TfmPermitCodeAdmin.btn_InsertSaveClick(Sender: TObject);
+var
+  stName : string;
+  stCode : string;
+  stDupName : string;
+  stSql : string;
+  bResult : Boolean;
+begin
+  inherited;
+  stName := ed_InsertName.Text;
+  if stName = '' then
+  begin
+    showmessage(stringReplace(MSGNOTNAMEERROR,'$NAME','명칭',[rfReplaceAll]));
+    Exit;
+  end;
+  stCode := ed_InsertPermitCode.Text;
+  if stCode = '' then
+  begin
+    showmessage(stringReplace(MSGNOTNAMEERROR,'$NAME','출입승인코드',[rfReplaceAll]));
+    Exit;
+  end;
+
+  if DupCheckPermitCode(stCode,stDupName) then
+  begin
+    showmessage(stDupName + '에서 이미 사용중인 코드입니다.');
+  end;
+
+
+
+  stSql := ' Insert Into TB_PERMITCODE ( ';
+  stSql := stSql + 'GROUP_CODE,';
+  stSql := stSql + 'PE_PERMITCODE,';
+  stSql := stSql + 'PE_PERMITNAME ) ';
+  stSql := stSql + 'Values( ';
+  stSql := stSql + '''' + G_stGroupCode + ''',';
+  stSql := stSql + '''' + stCode + ''',';
+  stSql := stSql + '''' + stName + ''') ';
+
+  bResult := dmDataBase.ProcessExecSQL(stSql);
+  if bResult then
+  begin
+    menuTab.ActiveTabIndex := 1;
+    menuTabChange(self);
+    PageTabCreate(L_nCurrentPageGroup,L_nCurrentPageList);
+    ShowPermitCode(L_nCurrentPageList,L_nPageListMaxCount,'');
+  end else
+  begin
+    showmessage(MSGDATABASESAVEFAIL);
+  end;
+
+end;
+
+procedure TfmPermitCodeAdmin.btn_SaveClick(Sender: TObject);
+begin
+  inherited;
+  SaveUpdateCell;
+end;
+
+procedure TfmPermitCodeAdmin.btn_SearchClick(Sender: TObject);
+begin
+  L_nCurrentPageList := 1;
+  PageTabCreate(0,L_nCurrentPageList);
+  ShowPermitCode(1,L_nPageListMaxCount,'');
+end;
+
+procedure TfmPermitCodeAdmin.btn_UpdateSaveClick(Sender: TObject);
+var
+  stName : string;
+  stSql : string;
+  bResult : Boolean;
+begin
+  inherited;
+  stName := ed_UpdatePermitName.Text;
+
+  if stName = '' then
+  begin
+    showmessage(stringReplace(MSGNOTNAMEERROR,'$NAME','명칭',[rfReplaceAll]));
+    Exit;
+  end;
+  stSql := ' Update TB_PERMITCODE set PE_PERMITNAME = ''' + stName + ''' ';
+  stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  stSql := stSql + ' AND PE_PERMITCODE = ''' + ed_UpdatePermitCode.Text + '''';
+
+  bResult := dmDataBase.ProcessExecSQL(stSql);
+  if bResult then
+  begin
+    menuTab.ActiveTabIndex := 1;
+    menuTabChange(self);
+    PageTabCreate(L_nCurrentPageGroup,L_nCurrentPageList);
+    ShowPermitCode(L_nCurrentPageList,L_nPageListMaxCount,'');
+  end else
+  begin
+    showmessage(MSGDATABASESAVEFAIL);
+  end;
+
+end;
+
+
+function TfmPermitCodeAdmin.DeletePermitCode(aCode: string): Boolean;
+var
+  stSql : string;
+begin
+    stSql := ' Delete From TB_PERMITCODE ';
+    stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+    stSql := stSql + ' AND PE_PERMITCODE = ''' + aCode + ''' ';
+
+    result := dmDataBase.ProcessExecSQL(stSql);
+
+end;
+
+function TfmPermitCodeAdmin.DupCheckPermitCode(aCode: string;
+  var aDupName: string): Boolean;
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  result := False;
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+
+    stSql := 'Select * from TB_PERMITCODE ';
+    stSql := stSql + ' Where PE_PERMITCODE = ''' + aCode + ''' ';
+
+    with TempAdoQuery do
+    begin
+      Close;
+      Sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordCount < 1 then Exit;
+      result := True;
+      aDupName := FindField('PE_PERMITNAME').AsString;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+procedure TfmPermitCodeAdmin.ed_PermitnameChange(Sender: TObject);
+begin
+  inherited;
+  L_nCurrentPageList := 1;
+  PageTabCreate(0,L_nCurrentPageList);
+  ShowPermitCode(1,L_nPageListMaxCount,'');
+end;
+
+procedure TfmPermitCodeAdmin.ed_InsertNameKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  inherited;
+  if Key = #13 then
+  begin
+    btn_InsertSaveClick(self);
+  end;
+
+end;
+
+procedure TfmPermitCodeAdmin.ed_InsertPermitCodeKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  inherited;
+  if Key = #13 then
+  begin
+    ed_InsertName.SetFocus;
+  end;
+
+end;
+
+procedure TfmPermitCodeAdmin.ed_UpdatedongNameKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  inherited;
+  if Key = #13 then
+  begin
+    btn_UpdateSaveClick(self);
+  end;
+
+end;
+
+procedure TfmPermitCodeAdmin.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  Action := caFree;
+end;
+
+procedure TfmPermitCodeAdmin.FormCreate(Sender: TObject);
+begin
+  Height := G_nChildFormDefaultHeight;
+
+  L_nPageGroupMaxCount :=5 ; //한페이지 그룹에 해당하는 페이지수
+  L_nPageListMaxCount :=16; //한페이지에 출력되는 리스트 갯수
+  //L_nPageListMaxCount :=2; //한페이지에 출력되는 리스트 갯수
+
+  menuTab.ActiveTabIndex := 1;
+  menuTabChange(self);
+end;
+
+
+procedure TfmPermitCodeAdmin.FormResize(Sender: TObject);
+begin
+  BodyPanel.Left := 0;
+  BodyPanel.Top := 0;
+  BodyPanel.Height := Height - menuTab.Height;
+
+end;
+
+procedure TfmPermitCodeAdmin.FormShow(Sender: TObject);
+begin
+  top := 0;
+  Left := 0;
+  Width := BodyPanel.Width;
+
+  L_nCurrentPageGroup := 0;
+  PageTabCreate(L_nCurrentPageGroup,1);
+  ShowPermitCode(1,L_nPageListMaxCount,'');
+end;
+
+
+procedure TfmPermitCodeAdmin.lb_NextpageClick(Sender: TObject);
+begin
+  inherited;
+  L_nCurrentPageList := lb_page5.Tag + 1;
+  L_nCurrentPageGroup := TLabel(Sender).Tag;
+  PageTabCreate(L_nCurrentPageGroup,L_nCurrentPageList);
+  ShowPermitCode(L_nCurrentPageList,L_nPageListMaxCount,'');
+
+end;
+
+procedure TfmPermitCodeAdmin.lb_page1Click(Sender: TObject);
+begin
+  inherited;
+  Try
+    L_nCurrentPageList := TLabel(Sender).tag;
+    PageTabCreate(L_nCurrentPageGroup,L_nCurrentPageList);
+    ShowPermitCode(L_nCurrentPageList,L_nPageListMaxCount,'');
+  Except
+    Exit;
+  End;
+
+end;
+
+procedure TfmPermitCodeAdmin.lb_PrePageClick(Sender: TObject);
+begin
+  inherited;
+  L_nCurrentPageList := lb_page1.Tag - L_nPageGroupMaxCount; //첫페이지 검색하기 위함
+  L_nCurrentPageGroup := TLabel(Sender).Tag;
+  PageTabCreate(L_nCurrentPageGroup,L_nCurrentPageList);
+  ShowPermitCode(L_nCurrentPageList,L_nPageListMaxCount,'');
+
+end;
+
+procedure TfmPermitCodeAdmin.menuTabChange(Sender: TObject);
+begin
+  if menuTab.ActiveTabIndex = 0 then //Ȩ
+  begin
+    if menuTab.AdvOfficeTabs.Items[0].Caption = '닫기' then Close
+    else
+    begin
+      menuTab.ActiveTabIndex := 1;
+      menuTabChange(self);
+    end;
+  end else if menuTab.ActiveTabIndex = 1 then
+  begin
+    menuTab.AdvOfficeTabs.Items[0].Caption := '닫기';
+    pan_PermitCodeList.Visible := True;
+    pan_PermitCodeAdd.Visible := False;
+    pan_PermitCodeList.Align := alClient;
+    pan_PermitCodeUpdate.Visible := False;
+  end else if menuTab.ActiveTabIndex = 2 then
+  begin
+    menuTab.AdvOfficeTabs.Items[0].Caption := '이전';
+    pan_PermitCodeList.Visible := False;
+    pan_PermitCodeAdd.Visible := True;
+    pan_PermitCodeAdd.Align := alClient;
+    ed_InsertPermitCode.Text := '';
+    ed_InsertName.Text := '';
+    ed_InsertPermitCode.SetFocus;
+    pan_PermitCodeUpdate.Visible := False;
+  end;
+end;
+
+procedure TfmPermitCodeAdmin.PageTabCreate(aPageGroup,aCurrentPage: integer);
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+  i : integer;
+  oLabel : TLabel;
+  nCurrentPageStart : integer;
+  nCurrentPageNo : integer;
+begin
+  if aPageGroup = 0 then lb_PrePage.Visible := False
+  else
+  begin
+    lb_PrePage.Tag := aPageGroup - 1;
+    lb_PrePage.Visible := True;
+  end;
+
+  for i := 1 to L_nPageGroupMaxCount do
+  begin
+    oLabel := TravelPanelLabelItem(TPanel(pan_PermitCodeList),'lb_page',i);
+    if oLabel <> nil then oLabel.Visible := False;
+  end;
+  lb_NextPage.Visible := False;
+
+  nCurrentPageStart := (aPageGroup * L_nPageGroupMaxCount) + 1;
+
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+
+    with TempAdoQuery do
+    begin
+      stSql := ' Select count(*) as cnt from TB_PERMITCODE ';
+      stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+      if ed_Permitname.Text <> '' then
+      begin
+        stSql := stSql + ' AND PE_PERMITNAME Like ''%' + ed_Permitname.Text + '%'' ';
+      end;
+
+      Close;
+      Sql.Clear;
+      Sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+
+      if RecordCount < 1 then Exit;
+      if FindField('cnt').AsInteger > ((nCurrentPageStart - 1) * L_nPageListMaxCount)   then  //현재 페이지에 데이터가 있으면
+      begin
+        //for i := nCurrentPageStart + 1 to (nCurrentPageStart + L_nPageGroupMaxCount) do
+        for i := 1 to L_nPageGroupMaxCount do
+        begin
+          oLabel := TravelPanelLabelItem(TPanel(pan_PermitCodeList),'lb_page',i);
+          if oLabel <> nil then
+          begin
+            TAdvSmoothLabel(oLabel).Visible := true;
+            TAdvSmoothLabel(oLabel).Caption.Text := '[' + inttostr((nCurrentPageStart + i -1)) + ']';
+            TAdvSmoothLabel(oLabel).Tag := i + nCurrentPageStart -1;
+            if aCurrentPage = (nCurrentPageStart + i -1) then
+            begin
+              //여기서 색깔 넣자
+              TAdvSmoothLabel(oLabel).Caption.ColorStart := clRed;
+            end else
+            begin
+              TAdvSmoothLabel(oLabel).Caption.ColorStart := clBlue;
+            end;
+          end;
+          if ((nCurrentPageStart + i -1) * L_nPageListMaxCount) >= FindField('cnt').AsInteger then break; //마지막 페이지 이면 빠져 나가자.
+        end;
+        if ((nCurrentPageStart + L_nPageGroupMaxCount) * L_nPageListMaxCount) < FindField('cnt').AsInteger then
+        begin
+          //[다음] 페이지가 존재 하면
+          lb_Nextpage.Visible := True;
+          lb_Nextpage.Tag := aPageGroup + 1;
+        end;
+      end;
+
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+procedure TfmPermitCodeAdmin.SaveUpdateCell;
+var
+  stParentCode : string;
+  stChildCode : string;
+  stName : string;
+  stSql : string;
+  bResult : Boolean;
+begin
+
+  with sg_PermitCode do
+  begin
+    stParentCode := cells[3,L_CurrentSaveRow];
+    stChildCode := cells[4,L_CurrentSaveRow];
+    stName := cells[1,L_CurrentSaveRow];
+
+    if stParentCode = '' then stParentCode := FillZeroNumber(0,G_nBuildingCodeLength);
+    if stChildCode = '' then Exit;
+
+    stSql := ' Update TB_BUILDINGCODE set BC_NAME = ''' + stName + ''' ';
+    stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+    stSql := stSql + ' AND BC_PARENTCODE = ''' + stParentCode + ''' ';
+    stSql := stSql + ' AND BC_CHILDCODE = ''' + stChildCode + ''' ';
+
+    bResult := dmDataBase.ProcessExecSQL(stSql);
+
+  end;
+
+end;
+
+procedure TfmPermitCodeAdmin.sg_PermitCodeCheckBoxClick(Sender: TObject; ACol,
+  ARow: Integer; State: Boolean);
+begin
+  if ARow = 0 then //전체선택 또는 해제
+  begin
+    if State then L_nCheckCount := (Sender as TAdvStringGrid).RowCount - 1
+    else L_nCheckCount := 0;
+    AdvStrinGridSetAllCheck(Sender,State);
+  end else
+  begin
+    if State then L_nCheckCount := L_nCheckCount + 1
+    else L_nCheckCount := L_nCheckCount - 1 ;
+  end;
+
+end;
+
+procedure TfmPermitCodeAdmin.sg_dongCodeColChanging(Sender: TObject; OldCol,
+  NewCol: Integer; var Allow: Boolean);
+begin
+  inherited;
+  with sg_PermitCode do
+  begin
+    if NewCol = 0 then Options := Options + [goEditing]
+    else Options := Options - [goEditing];
+  end;
+
+end;
+
+procedure TfmPermitCodeAdmin.sg_PermitCodeDblClick(Sender: TObject);
+begin
+  inherited;
+  with sg_PermitCode do
+  begin
+    if cells[1,Row] = '' then Exit;
+    ed_UpdatePermitCode.Text := cells[1,Row];
+    ed_UpdatePermitName.Text := cells[2,Row];
+  end;
+  menuTab.AdvOfficeTabs.Items[0].Caption := '이전';
+  pan_PermitCodeUpdate.Visible := True;
+  pan_PermitCodeUpdate.Align := alClient;
+  pan_PermitCodeList.Visible := False;
+  pan_PermitCodeAdd.Visible := False;
+
+  ed_UpdatePermitName.SelectAll;
+  ed_UpdatePermitName.SetFocus;
+
+end;
+
+procedure TfmPermitCodeAdmin.sg_PermitCodeKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  inherited;
+  if Key = #13 then
+  begin
+    L_CurrentSaveRow := sg_PermitCode.Row;
+    //SaveUpdateCell;
+  end;
+
+end;
+
+procedure TfmPermitCodeAdmin.sg_PermitCodeKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  inherited;
+  L_CurrentSaveRow := sg_PermitCode.Row;
+  if (Key <> VK_RETURN) and
+     (Key <> VK_UP) and
+     (Key <> VK_DOWN) then UpdateCell;
+
+end;
+
+procedure TfmPermitCodeAdmin.ShowPermitCode(aGotoPage, aPageSize: integer;
+  aCurrentCode: string; aTopRow: integer);
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+  nRow : integer;
+begin
+  GridInit(sg_PermitCode,3,2,true);
+  L_nCheckCount := 0;
+
+  stSql := 'SELECT TOP ' + inttostr(aPageSize) + ' * FROM TB_PERMITCODE ';
+  stSql := stSql + '  Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  if (aGotoPage > 1) then
+  begin
+    stSql := stSql + ' AND idx not in ';
+    stSql := stSql + ' (SELECT TOP ' + inttostr((aGotoPage - 1) * aPageSize) + ' idx FROM TB_PERMITCODE ';
+    stSql := stSql + '  Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+    if ed_Permitname.Text <> '' then
+    begin
+      stSql := stSql + ' AND PE_PERMITNAME Like ''%' + ed_Permitname.Text + '%'' ';
+    end;
+    stSql := stSql + '  ORDER BY idx ) ';
+  end;
+  if ed_Permitname.Text <> '' then
+  begin
+    stSql := stSql + ' AND PE_PERMITNAME Like ''%' + ed_Permitname.Text + '%'' ';
+  end;
+  stSql := stSql + ' ORDER BY idx  ';
+
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+
+    with TempAdoQuery do
+    begin
+      Close;
+      sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then Exit;
+      with sg_PermitCode do
+      begin
+        nRow := 1;
+        RowCount := RecordCount + 1;
+        while Not Eof do
+        begin
+          AddCheckBox(0,nRow,False,False);
+          cells[1,nRow] := FindField('PE_PERMITCODE').AsString;
+          cells[2,nRow] := FindField('PE_PERMITNAME').AsString;
+          if (FindField('PE_PERMITCODE').AsString )  = aCurrentCode then
+          begin
+            SelectRows(nRow,1);
+          end;
+
+          nRow := nRow + 1;
+          Next;
+        end;
+        if aTopRow = 0 then
+        begin
+          if Row > (L_nPageListMaxCount - 1) then TopRow := Row - L_nPageListMaxCount;
+        end else
+        begin
+          TopRow := aTopRow;
+        end;
+      end;
+
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+
+end;
+
+procedure TfmPermitCodeAdmin.btn_addClick(Sender: TObject);
+begin
+  inherited;
+  menutab.ActiveTabIndex := 2;
+  menutabChange(self);
+end;
+
+procedure TfmPermitCodeAdmin.btn_DeleteClick(Sender: TObject);
+var
+  i : integer;
+  bChkState : Boolean;
+begin
+  inherited;
+  if L_nCheckCount = 0 then
+  begin
+    showmessage(MSGDELETESELECT);
+    Exit;
+  end;
+  if (Application.MessageBox(PChar(inttostr(L_nCheckCount) + MSGDELETECOUNTINFOQUESTION),'정보',MB_OKCANCEL) = IDCANCEL)  then Exit;
+  With sg_PermitCode do
+  begin
+    for i := 1 to RowCount - 1 do
+    begin
+      GetCheckBoxState(0,i, bChkState);
+      if bChkState then
+      begin
+        DeletePermitCode(Cells[1,i]);
+      end;
+    end;
+  end;
+  PageTabCreate(L_nCurrentPageGroup,L_nCurrentPageList);
+  ShowPermitCode(L_nCurrentPageList,L_nPageListMaxCount,'');
+
+end;
+
+procedure TfmPermitCodeAdmin.UpdateCell;
+var
+  Rect: TRect;
+begin
+{  with sg_dongCode do
+  begin
+    Rect := CellRect(2, L_CurrentSaveRow);
+    btn_Save.Left := Rect.Left ;
+    btn_Save.Top :=  Rect.Top ;
+    btn_Save.Width := Rect.Right - Rect.Left;
+    btn_Save.Height := (Rect.Bottom - Rect.Top);
+    btn_Save.BringToFront;   // comboBox1을 최상위로 옮기기 <> SendToBack
+    btn_Save.Visible := True;
+  end;  }
+end;
+
+initialization
+  RegisterClass(TfmPermitCodeAdmin);
+Finalization
+  UnRegisterClass(TfmPermitCodeAdmin);
+
+end.

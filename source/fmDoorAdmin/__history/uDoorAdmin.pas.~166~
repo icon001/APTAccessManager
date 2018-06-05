@@ -1,0 +1,1180 @@
+﻿unit uDoorAdmin;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, W7Classes, W7Panels, AdvOfficeTabSet,
+  AdvOfficeTabSetStylers, AdvSmoothPanel, Vcl.ExtCtrls, AdvSmoothLabel,
+  Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
+  AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
+  Vcl.Mask, AdvSpin, AdvOfficeButtons, Vcl.Menus, AdvToolBar, AdvToolBarStylers;
+
+type
+  TfmDoorAdmin = class(TfmASubForm)
+    AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler;
+    Image1: TImage;
+    BodyPanel: TW7Panel;
+    menuTab: TAdvOfficeTabSet;
+    pan_DoorCodeList: TAdvSmoothPanel;
+    pan_DoorAdd: TAdvSmoothPanel;
+    lb_Door: TAdvSmoothLabel;
+    ed_Doorname: TAdvEdit;
+    btn_Search: TSpeedButton;
+    sg_DoorList: TAdvStringGrid;
+    btn_Delete: TSpeedButton;
+    lb_DoorAdd: TAdvSmoothLabel;
+    ed_InsertName: TAdvEdit;
+    btn_InsertSave: TSpeedButton;
+    btn_add: TSpeedButton;
+    pan_DoorCodeUpdate: TAdvSmoothPanel;
+    lb_DoorUpdate: TAdvSmoothLabel;
+    btn_UpdateSave: TSpeedButton;
+    ed_UpdateName: TAdvEdit;
+    lb_Company: TAdvSmoothLabel;
+    cmb_ListDongCode: TComboBox;
+    lb_Depart: TAdvSmoothLabel;
+    cmb_ListAreaCode: TComboBox;
+    gb_DeviceInfoAdd: TAdvGroupBox;
+    lb_NodeAdd: TAdvSmoothLabel;
+    cmb_InsertNodeNo: TComboBox;
+    lb_DeviceAdd: TAdvSmoothLabel;
+    gb_CompanyInfoAdd: TAdvGroupBox;
+    se_InsertDeviceNo: TAdvSpinEdit;
+    lb_CompanyAdd: TAdvSmoothLabel;
+    cmb_InsertDongCode: TComboBox;
+    lb_DepartAdd: TAdvSmoothLabel;
+    cmb_InsertAreaCode: TComboBox;
+    gb_DeviceInfoUpdate: TAdvGroupBox;
+    lb_NodeUpdate: TAdvSmoothLabel;
+    lb_DeviceUpdate: TAdvSmoothLabel;
+    cmb_UpdateNodeNo: TComboBox;
+    se_UpdateDeviceNo: TAdvSpinEdit;
+    gb_CompanyInfoUpdate: TAdvGroupBox;
+    lb_CompanyUpdate: TAdvSmoothLabel;
+    lb_DepartUpdate: TAdvSmoothLabel;
+    cmb_UpdateDongCode: TComboBox;
+    cmb_UpdateAreaCode: TComboBox;
+    ed_OldNodeNo: TAdvEdit;
+    ed_OldDeviceNo: TAdvEdit;
+    lb_LockTimeAdd: TAdvSmoothLabel;
+    cmb_InsertLockTime: TComboBox;
+    lb_LockTimeUpdate: TAdvSmoothLabel;
+    cmb_UpdateLockTime: TComboBox;
+    chk_InsertSchedule: TAdvOfficeCheckBox;
+    chk_UpdateSchedule: TAdvOfficeCheckBox;
+    PopupMenu1: TPopupMenu;
+    pm_update: TMenuItem;
+    AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler;
+    procedure menuTabChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+    procedure btn_SearchClick(Sender: TObject);
+    procedure lb_page1Click(Sender: TObject);
+    procedure ed_DoornameChange(Sender: TObject);
+    procedure sg_DoorListKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure sg_DoorListKeyPress(Sender: TObject; var Key: Char);
+    procedure btn_SaveClick(Sender: TObject);
+    procedure btn_InsertSaveClick(Sender: TObject);
+    procedure ed_InsertNameKeyPress(Sender: TObject; var Key: Char);
+    procedure sg_DoorListCheckBoxClick(Sender: TObject; ACol, ARow: Integer;
+      State: Boolean);
+    procedure btn_DeleteClick(Sender: TObject);
+    procedure btn_addClick(Sender: TObject);
+    procedure sg_dongCodeColChanging(Sender: TObject; OldCol, NewCol: Integer;
+      var Allow: Boolean);
+    procedure sg_DoorListDblClick(Sender: TObject);
+    procedure btn_UpdateSaveClick(Sender: TObject);
+    procedure ed_UpdateNameKeyPress(Sender: TObject; var Key: Char);
+    procedure cmb_ListDongCodeChange(Sender: TObject);
+    procedure cmb_InsertDongCodeChange(Sender: TObject);
+    procedure cmb_InsertNodeNoChange(Sender: TObject);
+    procedure cmb_ListAreaCodeChange(Sender: TObject);
+    procedure cmb_UpdateDongCodeChange(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure pm_updateClick(Sender: TObject);
+  private
+    ListDongCodeList : TStringList;
+    AddDongCodeList : TStringList;
+    UpdateDongCodeList : TStringList;
+    ListAreaCodeList : TStringList;
+    AddAreaCodeList : TStringList;
+    UpdateAreaCodeList : TStringList;
+    AddNodeCodeList : TStringList;
+    UpdateNodeCodeList : TStringList;
+
+    L_nPageGroupMaxCount : integer ; //한페이지 그룹에 해당하는 페이지수
+    L_nPageListMaxCount : integer; //한페이지에 출력되는 리스트 갯수
+    L_nCurrentPageGroup : integer;   //지금 속한 페이지 그룹
+    L_nCurrentPageList : integer;    //지금 조회 하고 있는 페이지
+    L_CurrentSaveRow : integer;
+
+    L_bDoorChange : Boolean;
+
+    L_nCheckCount : integer;        //체크 된 카운트
+    { Private declarations }
+    procedure PageTabCreate(aPageGroup,aCurrentPage:integer);
+    procedure ShowDOORList(aCurrentCode:string;aTopRow:integer = 0);
+    procedure UpdateCell;
+    procedure SaveUpdateCell;
+    function DeleteDoorTable(aNodeNo,aDeviceNo,aDoorNo:string):Boolean;
+
+    function GetMaxDeviceNo(aNodeNo:string):integer;
+    Function DupCheckDoor(aNodeNo,aDeviceNo:string;var aDupName:string):Boolean;
+  private
+    procedure LoadChildCode(aParentCode:string;aPosition:integer;cmbBox:TComboBox;aList:TStringList;aAll:Boolean);
+    procedure LoadNodeCode(cmbBox:TComboBox;aList:TStringList;aAll:Boolean);
+    procedure LockTimeCreate;
+
+    procedure AdvStrinGridSetAllCheck(Sender: TObject;bchkState:Boolean);
+  public
+    { Public declarations }
+    procedure FormNameSetting;
+    procedure FontSetting;
+    procedure Form_Close;
+    procedure Form_Exec(aAction,aData,aNodeName:string);
+  end;
+
+var
+  fmDoorAdmin: TfmDoorAdmin;
+
+implementation
+uses
+  uCommonVariable,
+  uDataBase,
+  uDBFormName,
+  uFormFontUtil,
+  uFormUtil,
+  uFunction,
+  uMessage;
+
+{$R *.dfm}
+
+
+procedure TfmDoorAdmin.AdvStrinGridSetAllCheck(Sender: TObject;
+  bchkState: Boolean);
+var
+  i : integer;
+begin
+    for i:= 1 to (Sender as TAdvStringGrid).RowCount - 1  do
+    begin
+      (Sender as TAdvStringGrid).SetCheckBoxState(0,i,bchkState);
+    end;
+end;
+
+procedure TfmDoorAdmin.btn_InsertSaveClick(Sender: TObject);
+var
+  stNodeNo : string;
+  stParentCode : string;
+  stChildCode : string;
+  stName : string;
+  stLockTime : string;
+  stSql : string;
+  bResult : Boolean;
+  stDupName : string;
+  stDeviceID : string;
+  stSchedule : string;
+begin
+  inherited;
+  stName := ed_InsertName.Text;
+  if stName = '' then
+  begin
+    showmessage(stringReplace(MSGNOTNAMEERROR,'$NAME',lb_DoorUpdate.Caption.Text,[rfReplaceAll]));
+    Exit;
+  end;
+
+  if cmb_InsertNodeNo.itemindex < 0 then
+  begin
+    showmessage(stringReplace(MSGNOTNAMEERROR,'$NAME',lb_NodeUpdate.Caption.Text,[rfReplaceAll]));
+    Exit;
+  end;
+  stNodeNo := AddNodeCodeList.Strings[cmb_InsertNodeNo.itemindex];
+
+  if DupCheckDoor(stNodeNo,FillZeroNumber(se_InsertDeviceNo.value,2),stDupName) then
+  begin
+    showmessage(stDupName + '에서 이미 사용중인 기기입니다.');
+    Exit;
+  end;
+
+  stParentCode := FillZeroNumber(0,G_nBuildingCodeLength);
+  stChildCode := FillZeroNumber(0,G_nBuildingCodeLength);
+  if cmb_InsertDongCode.itemIndex > -1 then
+  begin
+    stParentCode := AddDongCodeList.Strings[cmb_InsertDongCode.itemIndex];
+  end;
+  if cmb_InsertAreaCode.itemIndex > -1 then
+  begin
+    stChildCode := AddAreaCodeList.Strings[cmb_InsertAreaCode.itemIndex];
+  end;
+
+  stSql := ' Insert Into TB_DEVICE ( ';
+  stSql := stSql + 'GROUP_CODE,';
+  stSql := stSql + 'ND_NODENO,';
+  stSql := stSql + 'DE_DEVICEID,';
+  stSql := stSql + 'DE_DEVICENAME,';
+  stSql := stSql + 'BC_PARENTCODE,';
+  stSql := stSql + 'BC_CHILDCODE ) ';
+  stSql := stSql + 'Values( ';
+  stSql := stSql + '''' + G_stGroupCode + ''',';
+  stSql := stSql + '' + stNodeNo + ',';
+  stSql := stSql + '''' + FillZeroNumber(se_InsertDeviceNo.value,2) + ''',';
+  stSql := stSql + '''' + stName + ''',';
+  stSql := stSql + '''' + stParentCode + ''',';
+  stSql := stSql + '''' + stChildCode + ''') ';
+
+  bResult := dmDataBase.ProcessExecSQL(stSql);
+
+  stLockTime := '05';
+  if cmb_InsertLockTime.ItemIndex > -1 then  stLockTime := cmb_InsertLockTime.Text;
+
+  stSchedule := '0';
+  if chk_InsertSchedule.Checked then stSchedule := '1';
+
+  stSql := ' Insert Into TB_DOOR ( ';
+  stSql := stSql + 'GROUP_CODE,';
+  stSql := stSql + 'ND_NODENO,';
+  stSql := stSql + 'DE_DEVICEID,';
+  stSql := stSql + 'DO_DOORNO,';
+  stSql := stSql + 'DO_NAME,';
+  stSql := stSql + 'DO_LOCKTIME,';
+  stSql := stSql + 'BC_PARENTCODE,';
+  stSql := stSql + 'BC_CHILDCODE, ';
+  stSql := stSql + 'DO_SCHEDULE ) ';
+  stSql := stSql + 'Values( ';
+  stSql := stSql + '''' + G_stGroupCode + ''',';
+  stSql := stSql + '' + stNodeNo + ',';
+  stSql := stSql + '''' + FillZeroNumber(se_InsertDeviceNo.value,2) + ''',';
+  stSql := stSql + '1,';
+  stSql := stSql + '''' + stName + ''',';
+  stSql := stSql + '''' + stLockTime + ''',';
+  stSql := stSql + '''' + stParentCode + ''',';
+  stSql := stSql + '''' + stChildCode + ''', ';
+  stSql := stSql + '''' + stSchedule + ''') ';
+
+  bResult := dmDataBase.ProcessExecSQL(stSql);
+
+
+  if bResult then
+  begin
+    menuTab.ActiveTabIndex := 1;
+    menuTabChange(self);
+    PageTabCreate(L_nCurrentPageGroup,L_nCurrentPageList);
+    ShowDoorList('');
+    L_bDoorChange := True;
+  end else
+  begin
+    showmessage(MSGDATABASESAVEFAIL);
+  end;
+  self.FindSubForm('Main').FindCommand('CHANGE').Params.Values['NAME'] := inttostr(FORMDOORADMIN);
+  self.FindSubForm('Main').FindCommand('CHANGE').Execute;
+
+end;
+
+procedure TfmDoorAdmin.btn_SaveClick(Sender: TObject);
+begin
+  inherited;
+  SaveUpdateCell;
+end;
+
+procedure TfmDoorAdmin.btn_SearchClick(Sender: TObject);
+begin
+  L_nCurrentPageList := 1;
+  PageTabCreate(0,L_nCurrentPageList);
+  ShowDoorList('');
+end;
+
+procedure TfmDoorAdmin.btn_UpdateSaveClick(Sender: TObject);
+var
+  stNodeNo : string;
+  stName : string;
+  stLockTime : string;
+  stSql : string;
+  bResult : Boolean;
+  stDupName : string;
+  stParentCode : string;
+  stChildCode : string;
+  stSchedule : string;
+begin
+  inherited;
+  stName := ed_UpdateName.Text;
+
+  if stName = '' then
+  begin
+    showmessage(stringReplace(MSGNOTNAMEERROR,'$NAME','명칭',[rfReplaceAll]));
+    Exit;
+  end;
+
+  if cmb_UpdateNodeNo.itemIndex < 0 then
+  begin
+    showmessage(stringReplace(MSGNOTNAMEERROR,'$NAME','노드정보',[rfReplaceAll]));
+    Exit;
+  end;
+
+  stNodeNo := UpdateNodeCodeList.Strings[cmb_UpdateNodeNo.itemIndex];
+  stParentCode := '';
+  stChildCode := '';
+
+  if cmb_UpdateDongCode.itemIndex > -1 then
+  begin
+    stParentCode := UpdateDongCodeList.strings[cmb_UpdateDongCode.itemIndex];
+  end;
+  if cmb_UpdateAreaCode.itemIndex > -1 then
+  begin
+    stChildCode := UpdateAreaCodeList.strings[cmb_UpdateAreaCode.itemIndex];
+  end;
+
+  if (stNodeNo <> ed_OldNodeNo.text) or
+     (se_UpdateDeviceNo.value <> strtoint(ed_OldDeviceNo.text)) then
+  begin
+    //기기정보가 변경된 경우 이므로 여기서 중복 체크 하자.
+    if DupCheckDoor(stNodeNo,inttostr(se_UpdateDeviceNo.value),stDupName) then
+    begin
+      showmessage(stDupName + '에서 이미 사용중인 기기입니다.');
+      Exit;
+    end;
+  end;
+
+  stSql := ' Update TB_DEVICE Set ';
+  stSql := stSql + 'ND_NODENO = ' + stNodeNo + ',';
+  stSql := stSql + 'DE_DEVICEID = ''' + FillZeroNumber(se_UpdateDeviceNo.value,G_nDeviceCodeLength) + ''',';
+  stSql := stSql + 'DE_DEVICENAME = ''' + stName + ''',';
+  stSql := stSql + 'BC_PARENTCODE = ''' + stParentCode + ''',';
+  stSql := stSql + 'BC_CHILDCODE = ''' + stChildCode + ''' ';
+  stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  stSql := stSql + ' AND ND_NODENO = ' + ed_OldNodeNo.text + ' ';
+  stSql := stSql + ' AND DE_DEVICEID = ''' + ed_OldDeviceNo.text + '''';
+
+  bResult := dmDataBase.ProcessExecSQL(stSql);
+
+  stLockTime := '05';
+  if cmb_UpdateLockTime.ItemIndex > -1 then  stLockTime := cmb_UpdateLockTime.Text;
+
+  stSchedule := '0';
+  if chk_UpdateSchedule.Checked then stSchedule := '1';
+
+  stSql := ' Update TB_DOOR Set ';
+  stSql := stSql + 'ND_NODENO = ' + stNodeNo + ',';
+  stSql := stSql + 'DE_DEVICEID = ''' + FillZeroNumber(se_UpdateDeviceNo.value,G_nDeviceCodeLength) + ''',';
+  stSql := stSql + 'DO_NAME = ''' + stName + ''',';
+  stSql := stSql + 'DO_LOCKTIME = ''' + stLockTime + ''',';
+  stSql := stSql + 'BC_PARENTCODE = ''' + stParentCode + ''',';
+  stSql := stSql + 'BC_CHILDCODE = ''' + stChildCode + ''', ';
+  stSql := stSql + 'DO_CARDASYNC = ''N'', ';
+  stSql := stSql + 'DO_DEVICEASYNC = ''N'', ';
+  stSql := stSql + 'DO_SCHEDULE = ''' + stSchedule + ''' ';
+  stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  stSql := stSql + ' AND ND_NODENO = ' + ed_OldNodeNo.text + ' ';
+  stSql := stSql + ' AND DE_DEVICEID = ''' + ed_OldDeviceNo.text + '''';
+
+  bResult := dmDataBase.ProcessExecSQL(stSql);
+
+  if bResult then
+  begin
+    menuTab.ActiveTabIndex := 1;
+    menuTabChange(self);
+    PageTabCreate(L_nCurrentPageGroup,L_nCurrentPageList);
+    ShowDoorList('');
+    L_bDoorChange := True;
+  end else
+  begin
+    showmessage(MSGDATABASESAVEFAIL);
+  end;
+  self.FindSubForm('Main').FindCommand('CHANGE').Params.Values['NAME'] := inttostr(FORMDOORADMIN);
+  self.FindSubForm('Main').FindCommand('CHANGE').Execute;
+
+end;
+
+procedure TfmDoorAdmin.cmb_InsertDongCodeChange(Sender: TObject);
+var
+  stParentCode : string;
+begin
+  inherited;
+  if cmb_InsertDongCode.ItemIndex < 0 then Exit;
+
+  stParentCode := AddDongCodeList.Strings[cmb_InsertDongCode.ItemIndex];
+  LoadChildCode(stParentCode,2,cmb_InsertAreaCode,AddAreaCodeList,False);
+
+end;
+
+procedure TfmDoorAdmin.cmb_InsertNodeNoChange(Sender: TObject);
+var
+  stNodeNo : string;
+begin
+  inherited;
+
+  if cmb_InsertNodeNo.itemIndex > -1 then
+  begin
+    stNodeNo := AddNodeCodeList.Strings[cmb_InsertNodeNo.itemindex];
+
+    se_InsertDeviceNo.Value := GetMaxDeviceNo(stNodeNo);
+  end;
+end;
+
+procedure TfmDoorAdmin.cmb_ListAreaCodeChange(Sender: TObject);
+begin
+  inherited;
+  btn_SearchClick(self);
+end;
+
+procedure TfmDoorAdmin.cmb_ListDongCodeChange(Sender: TObject);
+var
+  stParentCode : string;
+begin
+  inherited;
+  stParentCode := ListDongCodeList.Strings[cmb_ListDongCode.ItemIndex];
+  LoadChildCode(stParentCode,2,cmb_ListAreaCode,ListAreaCodeList,True);
+  btn_SearchClick(self);
+end;
+
+procedure TfmDoorAdmin.cmb_UpdateDongCodeChange(Sender: TObject);
+var
+  stNodeNo : string;
+begin
+  inherited;
+  if cmb_UpdateDongCode.itemIndex < 0 then Exit;
+  stNodeNo := UpdateDongCodeList.strings[cmb_UpdateDongCode.itemIndex];
+  LoadChildCode(stNodeNo,2,cmb_UpdateAreaCode,UpdateAreaCodeList,False);
+
+end;
+
+
+function TfmDoorAdmin.DeleteDoorTable(aNodeNo, aDeviceNo,
+  aDoorNo: string): Boolean;
+var
+  stSql : string;
+begin
+  stSql := ' Delete From TB_DEVICE ';
+  stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  stSql := stSql + ' AND ND_NODENO = ' + aNodeNo + ' ';
+  stSql := stSql + ' AND DE_DEVICEID = ''' + aDeviceNo + ''' ';
+
+  result := dmDataBase.ProcessExecSQL(stSql);
+
+  stSql := ' Delete From TB_DOOR ';
+  stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  stSql := stSql + ' AND ND_NODENO = ' + aNodeNo + ' ';
+  stSql := stSql + ' AND DE_DEVICEID = ''' + aDeviceNo + ''' ';
+  stSql := stSql + ' AND DO_DOORNO = ' + aDoorNo + ' ';
+
+  result := dmDataBase.ProcessExecSQL(stSql);
+
+end;
+
+function TfmDoorAdmin.DupCheckDoor(aNodeNo, aDeviceNo: string;
+  var aDupName: string): Boolean;
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  result := False;
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+
+    stSql := 'Select * from TB_DOOR ';
+    stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+    stSql := stSql + ' AND ND_NODENO = ' + aNodeNo ;
+    stSql := stSql + ' AND DE_DEVICEID = ''' + aDeviceNo + ''' ' ;
+
+    with TempAdoQuery do
+    begin
+      Close;
+      Sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordCount < 1 then Exit;
+
+      First;
+      aDupName := FindField('DO_NAME').AsString;
+      result := True;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+procedure TfmDoorAdmin.ed_DoornameChange(Sender: TObject);
+begin
+  inherited;
+  L_nCurrentPageList := 1;
+  PageTabCreate(0,L_nCurrentPageList);
+  ShowDoorList('');
+end;
+
+procedure TfmDoorAdmin.ed_UpdateNameKeyPress(Sender: TObject; var Key: Char);
+begin
+  inherited;
+  if Key = #13 then
+  begin
+    btn_UpdateSaveClick(self);
+  end;
+
+end;
+
+procedure TfmDoorAdmin.ed_InsertNameKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  inherited;
+  if Key = #13 then
+  begin
+    if (Application.MessageBox(PChar('현재 정보로 저장하시겠습니까?'),'정보',MB_OKCANCEL) = IDCANCEL) then Exit;
+    btn_InsertSaveClick(self);
+  end;
+
+end;
+
+procedure TfmDoorAdmin.FontSetting;
+begin
+  dmFormFontUtil.TravelFormFontSetting(self,G_stFontName,inttostr(G_nFontSize));
+  dmFormFontUtil.TravelAdvOfficeTabSetOfficeStylerFontSetting(AdvOfficeTabSetOfficeStyler1, G_stFontName,inttostr(G_nFontSize));
+  dmFormFontUtil.FormAdvOfficeTabSetOfficeStylerSetting(AdvOfficeTabSetOfficeStyler1,G_stFormStyle);
+  dmFormFontUtil.FormAdvToolBarOfficeStylerSetting(AdvToolBarOfficeStyler1,G_stFormStyle);
+  dmFormFontUtil.FormStyleSetting(self,AdvToolBarOfficeStyler1);
+
+end;
+
+procedure TfmDoorAdmin.FormActivate(Sender: TObject);
+begin
+  inherited;
+  FormNameSetting;
+end;
+
+procedure TfmDoorAdmin.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  if L_bDoorChange then
+    self.FindSubForm('Main').FindCommand('DEVICERELOAD').Execute;
+
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['NAME'] := inttostr(FORMDOORADMIN);
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['VALUE'] := 'FALSE';
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Execute;
+
+  ListDongCodeList.Free;
+  AddDongCodeList.Free;
+  UpdateDongCodeList.Free;
+  ListAreaCodeList.Free;
+  AddAreaCodeList.Free;
+  UpdateAreaCodeList.Free;
+  AddNodeCodeList.Free;
+  UpdateNodeCodeList.Free;
+
+  Action := caFree;
+end;
+
+procedure TfmDoorAdmin.FormCreate(Sender: TObject);
+begin
+  Height := G_nChildFormDefaultHeight;
+
+  ListDongCodeList := TStringList.Create;
+  AddDongCodeList := TStringList.Create;
+  UpdateDongCodeList := TStringList.Create;
+  ListAreaCodeList := TStringList.Create;
+  AddAreaCodeList := TStringList.Create;
+  UpdateAreaCodeList := TStringList.Create;
+  AddNodeCodeList := TStringList.Create;
+  UpdateNodeCodeList := TStringList.Create;
+
+  L_nPageGroupMaxCount :=5 ; //한페이지 그룹에 해당하는 페이지수
+  L_nPageListMaxCount :=16; //한페이지에 출력되는 리스트 갯수
+  //L_nPageListMaxCount :=2; //한페이지에 출력되는 리스트 갯수
+
+  menuTab.ActiveTabIndex := 1;
+  menuTabChange(self);
+
+  LoadChildCode(FillZeroNumber(0,G_nBuildingCodeLength),1,cmb_ListDongCode,ListDongCodeList,True);
+  LoadChildCode(FillZeroNumber(0,G_nBuildingCodeLength),1,cmb_InsertDongCode,AddDongCodeList,False);
+  LoadChildCode(FillZeroNumber(0,G_nBuildingCodeLength),1,cmb_UpdateDongCode,UpdateDongCodeList,False);
+  LoadChildCode('',2,cmb_ListAreaCode,ListAreaCodeList,True);
+  LoadChildCode('',2,cmb_InsertAreaCode,AddAreaCodeList,False);
+  LoadChildCode('',2,cmb_UpdateAreaCode,UpdateAreaCodeList,False);
+  FontSetting;
+end;
+
+
+procedure TfmDoorAdmin.FormNameSetting;
+begin
+  Caption := dmFormName.GetFormMessage('1','M00015');
+  menuTab.AdvOfficeTabs[0].Caption := dmFormName.GetFormMessage('1','M00035');
+  menuTab.AdvOfficeTabs[1].Caption := dmFormName.GetFormMessage('1','M00048');
+  menuTab.AdvOfficeTabs[2].Caption := dmFormName.GetFormMessage('1','M00049');
+  pan_DoorCodeList.Caption.Text := dmFormName.GetFormMessage('1','M00048');
+  pan_DoorAdd.Caption.Text := dmFormName.GetFormMessage('1','M00049');
+  pan_DoorCodeUpdate.Caption.Text := dmFormName.GetFormMessage('1','M00050');
+
+  lb_Company.Caption.Text := dmFormName.GetFormMessage('4','M00004');
+  lb_CompanyAdd.Caption.Text := dmFormName.GetFormMessage('4','M00004');
+  lb_CompanyUpdate.Caption.Text := dmFormName.GetFormMessage('4','M00004');
+  lb_Depart.Caption.Text := dmFormName.GetFormMessage('4','M00005');
+  lb_DepartAdd.Caption.Text := dmFormName.GetFormMessage('4','M00005');
+  lb_DepartUpdate.Caption.Text := dmFormName.GetFormMessage('4','M00005');
+  lb_Door.Caption.Text := dmFormName.GetFormMessage('4','M00002');
+  lb_DoorAdd.Caption.Text := dmFormName.GetFormMessage('4','M00039');
+  lb_DoorUpdate.Caption.Text := dmFormName.GetFormMessage('4','M00039');
+  gb_DeviceInfoAdd.Caption := dmFormName.GetFormMessage('4','M00040');
+  gb_DeviceInfoUpdate.Caption := dmFormName.GetFormMessage('4','M00040');
+  gb_CompanyInfoAdd.Caption := dmFormName.GetFormMessage('4','M00041');
+  gb_CompanyInfoUpdate.Caption := dmFormName.GetFormMessage('4','M00041');
+  lb_NodeAdd.Caption.Text := dmFormName.GetFormMessage('4','M00036');
+  lb_NodeUpdate.Caption.Text := dmFormName.GetFormMessage('4','M00036');
+  lb_DeviceAdd.Caption.Text := dmFormName.GetFormMessage('4','M00037');
+  lb_DeviceUpdate.Caption.Text := dmFormName.GetFormMessage('4','M00037');
+  lb_LockTimeAdd.Caption.Text := dmFormName.GetFormMessage('4','M00042');
+  lb_LockTimeUpdate.Caption.Text := dmFormName.GetFormMessage('4','M00042');
+
+  btn_Search.Caption := dmFormName.GetFormMessage('4','M00007');
+  btn_InsertSave.Caption := dmFormName.GetFormMessage('4','M00014');
+  btn_UpdateSave.Caption := dmFormName.GetFormMessage('4','M00014');
+  btn_add.Caption :=  dmFormName.GetFormMessage('4','M00077');
+  btn_Delete.Caption :=  dmFormName.GetFormMessage('4','M00078');
+  pm_update.Caption := dmFormName.GetFormMessage('4','M00098');
+
+  chk_UpdateSchedule.Caption := dmFormName.GetFormMessage('4','M00107');
+
+  with sg_doorList do
+  begin
+    cells[1,0] := dmFormName.GetFormMessage('4','M00004');
+    cells[2,0] := dmFormName.GetFormMessage('4','M00005');
+    cells[3,0] := dmFormName.GetFormMessage('4','M00002');
+    cells[4,0] := dmFormName.GetFormMessage('4','M00068');
+    cells[5,0] := dmFormName.GetFormMessage('4','M00038');
+    hint := dmFormName.GetFormMessage('2','M00012');
+  end;
+
+end;
+
+procedure TfmDoorAdmin.FormResize(Sender: TObject);
+begin
+  BodyPanel.Left := 0;
+  BodyPanel.Top := 0;
+  BodyPanel.Height := Height - menuTab.Height;
+
+end;
+
+procedure TfmDoorAdmin.FormShow(Sender: TObject);
+begin
+  top := 0;
+  Left := 0;
+  Width := BodyPanel.Width;
+
+  L_nCurrentPageGroup := 0;
+  PageTabCreate(L_nCurrentPageGroup,1);
+  ShowDoorList('');
+  LockTimeCreate;
+
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['NAME'] := inttostr(FORMDOORADMIN);
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['VALUE'] := 'TRUE';
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Execute;
+end;
+
+procedure TfmDoorAdmin.Form_Close;
+begin
+  Close;
+end;
+
+procedure TfmDoorAdmin.Form_Exec(aAction, aData,aNodeName: string);
+begin
+  if UpperCase(aAction) = 'ADD' then
+  begin
+    menuTab.ActiveTabIndex := 2;
+    menuTabChange(self);
+    cmb_InsertNodeNo.ItemIndex := AddNodeCodeList.IndexOf(aData);
+    ed_InsertName.Text := aNodeName;
+    cmb_InsertNodeNoChange(self);
+  end;
+end;
+
+function TfmDoorAdmin.GetMaxDeviceNo(aNodeNo: string): integer;
+var
+  nDeviceNo : integer;
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  nDeviceNo := 0;
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+
+    stSql := 'Select Max(DE_DEVICEID) as DE_DEVICEID from TB_DOOR ';
+    stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+    stSql := stSql + ' AND ND_NODENO = ' + aNodeNo ;
+
+    with TempAdoQuery do
+    begin
+      Close;
+      Sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordCount < 1 then Exit;
+
+      if Not isDigit(FindField('DE_DEVICEID').asstring) then Exit;
+
+      nDeviceNo := strtoint(FindField('DE_DEVICEID').asstring) + 1;
+
+    end;
+  Finally
+    result := nDeviceNo;
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+
+
+procedure TfmDoorAdmin.lb_page1Click(Sender: TObject);
+begin
+  inherited;
+  Try
+    L_nCurrentPageList := TLabel(Sender).tag;
+    PageTabCreate(L_nCurrentPageGroup,L_nCurrentPageList);
+    ShowDoorList('');
+  Except
+    Exit;
+  End;
+
+end;
+
+procedure TfmDoorAdmin.LoadChildCode(aParentCode: string; aPosition: integer;
+  cmbBox: TComboBox; aList: TStringList; aAll: Boolean);
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  cmbBox.Items.Clear;
+  aList.Clear;
+  if aAll then
+  begin
+    cmbBox.Items.Add(dmFormName.GetFormMessage('3','M00007'));
+    aList.Add('');
+    cmbBox.ItemIndex := 0;
+  end;
+  if aParentCode = '' then Exit;
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+    stSql := 'SELECT * FROM TB_BUILDINGCODE ';
+    stSql := stSql + '  Where BC_POSITION = ' + inttostr(aPosition);
+    stSql := stSql + '  AND BC_PARENTCODE = ''' + aParentCode + ''' ';
+    stSql := stSql + '  ORDER BY idx  ';
+    with TempAdoQuery do
+    begin
+      Close;
+      sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then Exit;
+      while Not Eof do
+      begin
+        cmbBox.Items.Add(FindField('BC_NAME').AsString);
+        aList.Add(FindField('BC_CHILDCODE').AsString);
+        Next;
+      end;
+      if cmbBox.Items.Count > 0 then cmbBox.ItemIndex := 0;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+procedure TfmDoorAdmin.LoadNodeCode(cmbBox: TComboBox; aList: TStringList;
+  aAll: Boolean);
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  cmbBox.Items.Clear;
+  aList.Clear;
+  if aAll then
+  begin
+    cmbBox.Items.Add(dmFormName.GetFormMessage('3','M00007'));
+    aList.Add('');
+    cmbBox.ItemIndex := 0;
+  end;
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+    stSql := 'SELECT * FROM TB_NODE ';
+    stSql := stSql + '  Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+    stSql := stSql + '  ORDER BY idx  ';
+    with TempAdoQuery do
+    begin
+      Close;
+      sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then Exit;
+      while Not Eof do
+      begin
+        cmbBox.Items.Add(FindField('ND_NAME').AsString);
+        aList.Add(FindField('ND_NODENO').AsString);
+        Next;
+      end;
+      if cmbBox.Items.Count > 0 then cmbBox.ItemIndex := 0;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+procedure TfmDoorAdmin.LockTimeCreate;
+var
+  i : integer;
+begin
+  cmb_InsertLockTime.Clear;
+  cmb_UpdateLockTime.Clear;
+  for i := 1 to 10 do
+  begin
+    cmb_InsertLockTime.Items.Add(FillZeroNumber(i,2));
+    cmb_UpdateLockTime.Items.Add(FillZeroNumber(i,2));
+  end;
+  for i := 1 to 17 do
+  begin
+    cmb_InsertLockTime.Items.Add(FillZeroNumber((i * 5) + 10,2));
+    cmb_UpdateLockTime.Items.Add(FillZeroNumber((i * 5) + 10,2));
+  end;
+  cmb_InsertLockTime.ItemIndex := 2;
+end;
+
+procedure TfmDoorAdmin.menuTabChange(Sender: TObject);
+begin
+  if menuTab.ActiveTabIndex = 0 then //Ȩ
+  begin
+    if menuTab.AdvOfficeTabs.Items[0].Caption = dmFormName.GetFormMessage('1','M00035') then Close
+    else
+    begin
+      menuTab.ActiveTabIndex := 1;
+      menuTabChange(self);
+    end;
+  end else if menuTab.ActiveTabIndex = 1 then
+  begin
+    menuTab.AdvOfficeTabs.Items[0].Caption := dmFormName.GetFormMessage('1','M00035');
+    pan_DoorCodeList.Visible := True;
+    pan_DoorAdd.Visible := False;
+    pan_DoorCodeList.Align := alClient;
+    pan_DoorCodeUpdate.Visible := False;
+  end else if menuTab.ActiveTabIndex = 2 then
+  begin
+    LoadNodeCode(cmb_InsertNodeNo,AddNodeCodeList,False);
+    cmb_InsertNodeNoChange(self);
+    LoadChildCode(FillZeroNumber(0,G_nBuildingCodeLength),1,cmb_InsertDongCode,AddDongCodeList,False);
+    cmb_InsertdongCodeChange(self);
+
+    menuTab.AdvOfficeTabs.Items[0].Caption := dmFormName.GetFormMessage('1','M00040');
+    pan_DoorCodeList.Visible := False;
+    pan_DoorAdd.Visible := True;
+    pan_DoorAdd.Align := alClient;
+    ed_InsertName.Text := '';
+    pan_DoorCodeUpdate.Visible := False;
+    cmb_InsertLockTime.Text := '05';
+  end;
+end;
+
+procedure TfmDoorAdmin.PageTabCreate(aPageGroup,aCurrentPage: integer);
+begin
+
+end;
+
+procedure TfmDoorAdmin.pm_updateClick(Sender: TObject);
+begin
+  inherited;
+  sg_DoorListDblClick(sg_DoorList);
+end;
+
+procedure TfmDoorAdmin.SaveUpdateCell;
+var
+  stParentCode : string;
+  stChildCode : string;
+  stName : string;
+  stSql : string;
+  bResult : Boolean;
+begin
+
+  with sg_DoorList do
+  begin
+    stParentCode := cells[3,L_CurrentSaveRow];
+    stChildCode := cells[4,L_CurrentSaveRow];
+    stName := cells[1,L_CurrentSaveRow];
+
+    if stParentCode = '' then stParentCode := FillZeroNumber(0,G_nBuildingCodeLength);
+    if stChildCode = '' then Exit;
+
+    stSql := ' Update TB_BUILDINGCODE set BC_NAME = ''' + stName + ''' ';
+    stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+    stSql := stSql + ' AND BC_PARENTCODE = ''' + stParentCode + ''' ';
+    stSql := stSql + ' AND BC_CHILDCODE = ''' + stChildCode + ''' ';
+
+    bResult := dmDataBase.ProcessExecSQL(stSql);
+
+  end;
+
+end;
+
+procedure TfmDoorAdmin.sg_DoorListCheckBoxClick(Sender: TObject; ACol,
+  ARow: Integer; State: Boolean);
+begin
+  if ARow = 0 then //전체선택 또는 해제
+  begin
+    if State then L_nCheckCount := (Sender as TAdvStringGrid).RowCount - 1
+    else L_nCheckCount := 0;
+    AdvStrinGridSetAllCheck(Sender,State);
+  end else
+  begin
+    if State then L_nCheckCount := L_nCheckCount + 1
+    else L_nCheckCount := L_nCheckCount - 1 ;
+  end;
+
+end;
+
+procedure TfmDoorAdmin.sg_dongCodeColChanging(Sender: TObject; OldCol,
+  NewCol: Integer; var Allow: Boolean);
+begin
+  inherited;
+  with sg_DoorList do
+  begin
+    if NewCol = 0 then Options := Options + [goEditing]
+    else Options := Options - [goEditing];
+  end;
+
+end;
+
+procedure TfmDoorAdmin.sg_DoorListDblClick(Sender: TObject);
+var
+  nIndex : integer;
+begin
+  inherited;
+
+  LoadNodeCode(cmb_UpdateNodeNo,UpdateNodeCodeList,False);
+
+  with sg_DoorList do
+  begin
+    if  Not isDigit(cells[5,Row]) then Exit;
+    ed_UpdateName.Text := cells[3,Row];
+    nIndex := UpdateNodeCodeList.IndexOf(cells[6,Row]);
+    cmb_UpdateNodeNo.itemIndex := nIndex;
+    if isDigit(cells[5,Row]) then se_UpdateDeviceNo.value := strtoint(cells[5,Row]);
+    LoadChildCode(FillZeroNumber(0,G_nBuildingCodeLength),1,cmb_UpdateDongCode,UpdateDongCodeList,False);
+    nIndex := UpdateDongCodeList.IndexOf(cells[8,Row]);
+    cmb_UpdateDongCode.itemIndex := nIndex;
+    cmb_UpdateDongCodeChange(self);
+    nIndex := UpdateAreaCodeList.IndexOf(cells[9,Row]);
+    cmb_UpdateAreaCode.itemIndex := nIndex;
+    ed_OldNodeNo.text :=cells[6,Row];
+    ed_OlddeviceNo.Text := cells[5,Row];
+    nIndex := cmb_UpdateLockTime.Items.IndexOf(cells[10,Row]);
+    cmb_UpdateLockTime.itemIndex := nIndex;
+    if cells[11,Row] = '1' then chk_UpdateSchedule.Checked := True
+    else chk_UpdateSchedule.Checked := False;
+  end;
+
+  menuTab.AdvOfficeTabs.Items[0].Caption := dmFormName.GetFormMessage('1','M00040');
+  pan_DoorCodeUpdate.Visible := True;
+  pan_DoorCodeUpdate.Align := alClient;
+  pan_DoorCodeList.Visible := False;
+  pan_DoorAdd.Visible := False;
+
+  ed_UpdateName.SelectAll;
+  ed_UpdateName.SetFocus;
+
+end;
+
+procedure TfmDoorAdmin.sg_DoorListKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  inherited;
+  if Key = #13 then
+  begin
+    L_CurrentSaveRow := sg_DoorList.Row;
+    //SaveUpdateCell;
+  end;
+
+end;
+
+procedure TfmDoorAdmin.sg_DoorListKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  inherited;
+  L_CurrentSaveRow := sg_DoorList.Row;
+  if (Key <> VK_RETURN) and
+     (Key <> VK_UP) and
+     (Key <> VK_DOWN) then UpdateCell;
+
+end;
+
+procedure TfmDoorAdmin.ShowDoorList(aCurrentCode: string; aTopRow: integer);
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+  nRow : integer;
+begin
+  GridInit(sg_DoorList,6,2,true);
+  L_nCheckCount := 0;
+
+  stSql := 'SELECT a.*,b.BC_NAME as DONGNAME,c.BC_NAME as AREANAME,d.ND_NAME FROM ';
+  stSql := stSql + ' (  ';
+  stSql := stSql + ' (  ';
+  stSql := stSql + ' (  ';
+  stSql := stSql + ' TB_DOOR a ';
+  stSql := stSql + ' Left Join (select * from TB_BUILDINGCODE where BC_POSITION = 1) b';
+  stSql := stsql + ' ON (a.GROUP_CODE = b.GROUP_CODE )';
+  stSql := stSql + ' AND (a.BC_PARENTCODE = b.BC_CHILDCODE) ';
+  stSql := stSql + ' ) ';
+  stSql := stSql + ' Left Join (select * from TB_BUILDINGCODE where BC_POSITION = 2) c ';
+  stSql := stsql + ' ON (a.GROUP_CODE = c.GROUP_CODE )';
+  stSql := stSql + ' AND (a.BC_PARENTCODE = c.BC_PARENTCODE) ';
+  stSql := stSql + ' AND (a.BC_CHILDCODE = c.BC_CHILDCODE) ';
+  stSql := stSql + ' ) ';
+  stSql := stSql + ' Left Join TB_NODE d ';
+  stSql := stsql + ' ON (a.GROUP_CODE = d.GROUP_CODE )';
+  stSql := stSql + ' AND (a.ND_NODENO = d.ND_NODENO) ';
+  stSql := stSql + ' ) ';
+  stSql := stSql + '  Where a.GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  if cmb_ListDongCode.ItemIndex > 0 then
+  begin
+    stSql := stSql + ' AND a.BC_PARENTCODE = ''' + ListDongCodeList.Strings[cmb_ListDongCode.ItemIndex] + ''' ';
+  end;
+  if cmb_ListAreaCode.ItemIndex > 0 then
+  begin
+    stSql := stSql + ' AND a.BC_CHILDCODE = ''' + ListAreaCodeList.Strings[cmb_ListAreaCode.ItemIndex] + ''' ';
+  end;
+  if ed_Doorname.Text <> '' then
+  begin
+    stSql := stSql + ' AND a.DO_NAME Like ''%' + ed_Doorname.Text + '%'' ';
+  end;
+  stSql := stSql + ' ORDER BY a.idx  ';
+
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+
+    with TempAdoQuery do
+    begin
+      Close;
+      sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then Exit;
+      with sg_DoorList do
+      begin
+        nRow := 1;
+        RowCount := RecordCount + 1;
+        while Not Eof do
+        begin
+          AddCheckBox(0,nRow,False,False);
+          cells[1,nRow] := FindField('DONGNAME').AsString;
+          cells[2,nRow] := FindField('AREANAME').AsString;
+          cells[3,nRow] := FindField('DO_NAME').AsString;
+          cells[4,nRow] := FindField('ND_NAME').AsString;
+          cells[5,nRow] := FindField('DE_DEVICEID').AsString;
+          cells[6,nRow] := FindField('ND_NODENO').AsString;
+          cells[7,nRow] := FindField('DO_DOORNO').AsString;
+          cells[8,nRow] := FindField('BC_PARENTCODE').AsString;
+          cells[9,nRow] := FindField('BC_CHILDCODE').AsString;
+          cells[10,nRow] := FindField('DO_LOCKTIME').AsString;
+          cells[11,nRow] := FindField('DO_SCHEDULE').AsString;
+          if (FindField('ND_NODENO').AsString + FindField('DE_DEVICEID').AsString + FindField('DO_DOORNO').AsString)  = aCurrentCode then
+          begin
+            SelectRows(nRow,1);
+          end;
+
+          nRow := nRow + 1;
+          Next;
+        end;
+        if aTopRow = 0 then
+        begin
+          if Row > (L_nPageListMaxCount - 1) then TopRow := Row - L_nPageListMaxCount;
+        end else
+        begin
+          TopRow := aTopRow;
+        end;
+      end;
+
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+
+end;
+
+procedure TfmDoorAdmin.btn_addClick(Sender: TObject);
+begin
+  inherited;
+  menutab.ActiveTabIndex := 2;
+  menutabChange(self);
+end;
+
+procedure TfmDoorAdmin.btn_DeleteClick(Sender: TObject);
+var
+  i : integer;
+  bChkState : Boolean;
+begin
+  inherited;
+  if L_nCheckCount = 0 then
+  begin
+    showmessage(MSGDELETESELECT);
+    Exit;
+  end;
+  if (Application.MessageBox(PChar(inttostr(L_nCheckCount) + MSGDELETECOUNTINFOQUESTION),'정보',MB_OKCANCEL) = IDCANCEL)  then Exit;
+  With sg_DoorList do
+  begin
+    for i := 1 to RowCount - 1 do
+    begin
+      GetCheckBoxState(0,i, bChkState);
+      if bChkState then
+      begin
+        DeleteDoorTable(cells[6,i],cells[5,i],cells[7,i]);
+      end;
+    end;
+  end;
+  PageTabCreate(L_nCurrentPageGroup,L_nCurrentPageList);
+  ShowDoorList('');
+
+end;
+
+procedure TfmDoorAdmin.UpdateCell;
+var
+  Rect: TRect;
+begin
+{  with sg_dongCode do
+  begin
+    Rect := CellRect(2, L_CurrentSaveRow);
+    btn_Save.Left := Rect.Left ;
+    btn_Save.Top :=  Rect.Top ;
+    btn_Save.Width := Rect.Right - Rect.Left;
+    btn_Save.Height := (Rect.Bottom - Rect.Top);
+    btn_Save.BringToFront;   // comboBox1을 최상위로 옮기기 <> SendToBack
+    btn_Save.Visible := True;
+  end;  }
+end;
+
+initialization
+  RegisterClass(TfmDoorAdmin);
+Finalization
+  UnRegisterClass(TfmDoorAdmin);
+
+end.

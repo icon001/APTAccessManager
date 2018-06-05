@@ -1,0 +1,19 @@
+unit uMessage;
+
+interface
+
+const
+  //에러처리 메시지
+  MSGNOTNAMEERROR = '$NAME가(이) 존재하지 않습니다';
+  MSGNOTSELECTDATAERROR = '작업할 데이터를 선택하지 않았습니다.';
+  MSGDUPCODEERROR = '중복 코드 입니다.';
+  MSGDATABASESAVEFAIL = '데이터 저장에 실패하였습니다.';
+
+  //정보
+  MSGDELETESELECT = '삭제 하실 데이터를 선택 하세요.';
+  MSGDELETECOUNTINFOQUESTION = '건의 데이터가 삭제 됩니다. 정말 삭제 하시겠습니까?';
+  MSGNOTSEARCHDATA = '조회할 데이터가 없습니다.';
+
+implementation
+
+end.

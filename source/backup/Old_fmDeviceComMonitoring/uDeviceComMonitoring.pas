@@ -1,0 +1,463 @@
+﻿unit uDeviceComMonitoring;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, W7Classes, W7Panels, AdvOfficeTabSet,
+  AdvOfficeTabSetStylers, AdvSmoothPanel, Vcl.ExtCtrls, AdvSmoothLabel,
+  Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
+  AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
+  Vcl.Mask, AdvSpin, AdvOfficeButtons, AdvPanel, Vcl.ComCtrls, AdvListV,
+  Vcl.ImgList, Vcl.Menus, AdvMenus, AdvExplorerTreeview, paramtreeview;
+
+
+type
+  TfmDeviceComMonitoring = class(TfmASubForm)
+    AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler;
+    Image1: TImage;
+    BodyPanel: TW7Panel;
+    menuTab: TAdvOfficeTabSet;
+    pan_DoorList: TAdvPanel;
+    pan_CardListHeader: TAdvSmoothPanel;
+    lb_Door: TAdvSmoothLabel;
+    lb_Command: TAdvSmoothLabel;
+    cmb_ListDongCode: TComboBox;
+    ImageList1: TImageList;
+    pop_PermitAdd: TAdvPopupMenu;
+    mn_addpermitListDelete: TMenuItem;
+    toolslist: TImageList;
+    sg_ComMonitoring: TAdvStringGrid;
+    ed_cmd: TAdvEdit;
+    SearchTimer: TTimer;
+    chk_ENQ: TCheckBox;
+    chk_ACK: TCheckBox;
+    btn_Clear: TSpeedButton;
+    procedure menuTabChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure ed_AddNameKeyPress(Sender: TObject; var Key: Char);
+    procedure FormActivate(Sender: TObject);
+    procedure AdvSmoothPanel8Resize(Sender: TObject);
+    procedure SearchTimerTimer(Sender: TObject);
+    procedure btn_ClearClick(Sender: TObject);
+  private
+    L_bStart : Boolean;
+    L_bClear : Boolean;
+
+    ListDoorCodeList : TStringList;
+    DisplayList : TStringList;
+    { Private declarations }
+  private
+    procedure LoadDeviceCode(cmbBox:TComboBox;aList:TStringList;aAll:Boolean);
+
+    procedure AdvStrinGridSetAllCheck(Sender: TObject;bchkState:Boolean);
+  private
+    procedure BatchDisplay(aData:string);
+
+    function GetPasswordCount:integer;
+    function GetDeviceName(aNodeNo,aEcuID:string):string;
+    procedure FormNameSetting;
+
+  public
+    { Public declarations }
+    procedure Form_Close;
+    procedure DeviceSendDataProcess(aNodeNo : integer;aMcuID,aECUID,aCmd,aMsgNo,aDeviceVer,aRealData:string);
+    procedure NodeRecvDataProcess(aNodeNo : integer;aMcuID,aECUID,aCmd,aMsgNo,aDeviceVer,aRealData:string);
+  end;
+
+var
+  fmDeviceComMonitoring: TfmDeviceComMonitoring;
+
+implementation
+uses
+  uCommonVariable,
+  uDataBase,
+  uDBFormName,
+  uFormUtil,
+  uFunction,
+  uMessage,
+  udmCardPermit;
+
+{$R *.dfm}
+
+
+procedure TfmDeviceComMonitoring.AdvSmoothPanel8Resize(Sender: TObject);
+var
+  nWidth : integer;
+begin
+  inherited;
+end;
+
+procedure TfmDeviceComMonitoring.AdvStrinGridSetAllCheck(Sender: TObject;
+  bchkState: Boolean);
+var
+  i : integer;
+begin
+    for i:= 1 to (Sender as TAdvStringGrid).RowCount - 1  do
+    begin
+      (Sender as TAdvStringGrid).SetCheckBoxState(0,i,bchkState);
+    end;
+end;
+
+procedure TfmDeviceComMonitoring.BatchDisplay(aData: string);
+var
+  stTxRx : string;
+  stDeviceName : string;
+  stCmd : string;
+  stMsgNo : string;
+  stDeviceVer : string;
+  stData : string;
+  nPos : integer;
+begin
+
+
+  nPos := PosIndex(';',aData,1);
+  stTxRx := copy(aData,1,nPos - 1);
+  Delete(aData,1,nPos);
+  nPos := PosIndex(';',aData,1);
+  stDeviceName := copy(aData,1,nPos - 1);
+  Delete(aData,1,nPos);
+  nPos := PosIndex(';',aData,1);
+  stCmd := copy(aData,1,nPos - 1);
+  Delete(aData,1,nPos);
+  nPos := PosIndex(';',aData,1);
+  stMsgNo := copy(aData,1,nPos - 1);
+  Delete(aData,1,nPos);
+  nPos := PosIndex(';',aData,1);
+  stDeviceVer := copy(aData,1,nPos - 1);
+  Delete(aData,1,nPos);
+  stData := aData;
+
+  //여기에서 화면에 뿌려주자.
+  with sg_ComMonitoring do
+  begin
+    if RowCount >= 1000 then  rowCount := 999;
+
+    if Not L_bClear then InsertRows(1,1);
+    L_bClear := False;
+
+    Cells[0,1] := FormatDateTime('HH:MM:SS',now);
+    Cells[1,1] :=  stTxRx ;
+    Cells[2,1] :=  stDeviceName ;
+    Cells[3,1] :=  stCmd ;
+    Cells[4,1] :=  stMsgNo ;
+    Cells[5,1] :=  stDeviceVer ;
+    Cells[6,1] :=  stData ;
+    if UpperCase(stTxRx) = '[RX]' then
+    begin
+      RowColor[1] := $00EACAB6;
+    end;
+    if UpperCase(stTxRx) = '[ER]' then RowColor[1] := clYellow;
+
+  end;
+end;
+
+procedure TfmDeviceComMonitoring.btn_ClearClick(Sender: TObject);
+begin
+  inherited;
+  L_bClear := True;
+  GridInitialize(sg_ComMonitoring);
+
+end;
+
+procedure TfmDeviceComMonitoring.DeviceSendDataProcess(aNodeNo: integer; aMcuID,
+  aECUID, aCmd, aMsgNo, aDeviceVer, aRealData: string);
+var
+  stDisplay : string;
+  stDeviceName : string;
+begin
+  if Not L_bStart then Exit;
+  if Not chk_ENQ.Checked then
+  begin
+    if aCmd = 'e' then Exit;
+  end;
+  if Not chk_ACK.Checked then
+  begin
+    if aCmd = 'a' then Exit;
+  end;
+  if cmb_ListDongCode.ItemIndex > 0 then
+  begin
+    if copy(ListDoorCodeList.Strings[cmb_ListDongCode.ItemIndex],1,G_nNodeCodeLength + G_nDeviceCodeLength) <> FillZeroNumber(aNodeNo,G_nNodeCodeLength) + FillZeroNumber(strtoint(aECUID),G_nDeviceCodeLength) then Exit;
+  end;
+  if ed_cmd.Text <> '' then
+  begin
+    if Pos(aCmd,ed_cmd.Text) = 0 then exit;
+  end;
+  stDeviceName := GetDeviceName(inttostr(aNodeNo),aEcuID);
+  stDisplay := '[TX]' + ';';
+  stDisplay := stDisplay + stDeviceName + ';';
+  stDisplay := stDisplay + aCmd + ';';
+  stDisplay := stDisplay + aMsgNo + ';';
+  stDisplay := stDisplay + aDeviceVer + ';';
+  stDisplay := stDisplay + aRealData;
+  DisplayList.Add(stDisplay);
+end;
+
+procedure TfmDeviceComMonitoring.ed_AddNameKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  inherited;
+  if Key = #13 then
+  begin
+    Perform(WM_NEXTDLGCTL,0,0);
+  end;
+end;
+
+procedure TfmDeviceComMonitoring.FormActivate(Sender: TObject);
+begin
+  inherited;
+  FormNameSetting;
+  WindowState := wsMaximized;
+end;
+
+procedure TfmDeviceComMonitoring.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  ListDoorCodeList.Free;
+  DisplayList.Free;
+
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['NAME'] := inttostr(FORMDEVICECOMMONITORING);
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['VALUE'] := 'FALSE';
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Execute;
+
+  Action := caFree;
+end;
+
+procedure TfmDeviceComMonitoring.FormCreate(Sender: TObject);
+begin
+
+  ListDoorCodeList := TStringList.Create;
+  DisplayList := TStringList.Create;
+
+  menuTab.ActiveTabIndex := 1;
+  menuTabChange(self);
+
+  LoadDeviceCode(cmb_ListDongCode,ListDoorCodeList,True);
+  L_bClear := True;
+  L_bStart := True;
+end;
+
+
+procedure TfmDeviceComMonitoring.FormNameSetting;
+begin
+  Caption := dmFormName.GetFormMessage('1','M00022');
+  menuTab.AdvOfficeTabs[0].Caption := dmFormName.GetFormMessage('1','M00035');
+  menuTab.AdvOfficeTabs[1].Caption := dmFormName.GetFormMessage('1','M00022');
+  pan_CardListHeader.Caption.Text := dmFormName.GetFormMessage('1','M00022');
+
+  lb_Door.Caption.Text := dmFormName.GetFormMessage('4','M00002');
+  lb_Command.Caption.Text := dmFormName.GetFormMessage('4','M00027');
+
+  btn_Clear.Caption :=  dmFormName.GetFormMessage('4','M00028');
+
+  with sg_ComMonitoring do
+  begin
+    cells[0,0] := dmFormName.GetFormMessage('4','M00026');
+    cells[2,0] := dmFormName.GetFormMessage('4','M00002');
+  end;
+  mn_addpermitListDelete.Caption := dmFormName.GetFormMessage('4','M00065');
+end;
+
+procedure TfmDeviceComMonitoring.FormShow(Sender: TObject);
+begin
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['NAME'] := inttostr(FORMDEVICECOMMONITORING);
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['VALUE'] := 'TRUE';
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Execute;
+
+end;
+
+procedure TfmDeviceComMonitoring.Form_Close;
+begin
+  Close;
+end;
+
+
+function TfmDeviceComMonitoring.GetDeviceName(aNodeNo, aEcuID: string): string;
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  result := '';
+  stSql := 'Select * from TB_DOOR ';
+  stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  stSql := stSql + ' AND ND_NODENO = ' + aNodeNo + ' ';
+  stSql := stSql + ' AND DE_DEVICEID = ''' + aEcuID + ''' ';
+  stSql := stSql + ' AND DO_DOORNO = 1 ';
+
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+
+    with TempAdoQuery do
+    begin
+      Close;
+      Sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then Exit;
+      result := FindField('DO_NAME').AsString;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+function TfmDeviceComMonitoring.GetPasswordCount: integer;
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  result := 0;
+  stSql := 'Select * from TB_PASSWORD ';
+  stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+
+    with TempAdoQuery do
+    begin
+      Close;
+      Sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then Exit;
+      result := recordcount;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+procedure TfmDeviceComMonitoring.LoadDeviceCode(cmbBox: TComboBox; aList: TStringList; aAll: Boolean);
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  cmbBox.Items.Clear;
+  aList.Clear;
+  if aAll then
+  begin
+    cmbBox.Items.Add('전체');
+    aList.Add('');
+    cmbBox.ItemIndex := 0;
+  end;
+
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+    stSql := 'SELECT * FROM TB_DOOR ';
+    stSql := stSql + '  ORDER BY idx  ';
+    with TempAdoQuery do
+    begin
+      Close;
+      sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then Exit;
+      while Not Eof do
+      begin
+        cmbBox.Items.Add(FindField('DO_NAME').AsString);
+        aList.Add(FillZeroNumber(FindField('ND_NODENO').AsInteger,G_nNodeCodeLength) + FillZeroNumber(strtoint(FindField('DE_DEVICEID').AsString),G_nDeviceCodeLength) + FillZeroNumber(FindField('DO_DOORNO').AsInteger,G_nDoorCodeLength));
+        Next;
+      end;
+      if cmbBox.Items.Count > 0 then cmbBox.ItemIndex := 0;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+
+
+procedure TfmDeviceComMonitoring.menuTabChange(Sender: TObject);
+var
+  stBuildingCode : string;
+  stAreaCode : string;
+  nIndex : integer;
+begin
+  if menuTab.ActiveTabIndex = 0 then //Ȩ
+  begin
+    if menuTab.AdvOfficeTabs.Items[0].Caption = '닫기' then Close
+    else
+    begin
+      menuTab.ActiveTabIndex := 1;
+      menuTabChange(self);
+    end;
+  end;
+end;
+
+
+procedure TfmDeviceComMonitoring.NodeRecvDataProcess(aNodeNo: integer; aMcuID,
+  aECUID, aCmd, aMsgNo, aDeviceVer, aRealData: string);
+var
+  stDisplay : string;
+  stDeviceName : string;
+begin
+  if Not L_bStart then Exit;
+  if Not chk_ENQ.Checked then
+  begin
+    if aCmd = 'e' then Exit;
+  end;
+  if Not chk_ACK.Checked then
+  begin
+    if aCmd = 'a' then Exit;
+  end;
+
+  if cmb_ListDongCode.ItemIndex > 0 then
+  begin
+    if copy(ListDoorCodeList.Strings[cmb_ListDongCode.ItemIndex],1,G_nNodeCodeLength + G_nDeviceCodeLength) <> FillZeroNumber(aNodeNo,G_nNodeCodeLength) + FillZeroNumber(strtoint(aECUID),G_nDeviceCodeLength) then Exit;
+  end;
+
+  if ed_cmd.Text <> '' then
+  begin
+    if Pos(aCmd,ed_cmd.Text) = 0 then exit;
+  end;
+
+  stDeviceName := GetDeviceName(inttostr(aNodeNo),aEcuID);
+  stDisplay := '[RX]' + ';';
+  stDisplay := stDisplay + stDeviceName + ';';
+  stDisplay := stDisplay + aCmd + ';';
+  stDisplay := stDisplay + aMsgNo + ';';
+  stDisplay := stDisplay + aDeviceVer + ';';
+  stDisplay := stDisplay + aRealData;
+  DisplayList.Add(stDisplay);
+
+end;
+
+procedure TfmDeviceComMonitoring.SearchTimerTimer(Sender: TObject);
+begin
+  inherited;
+  SearchTimer.Enabled := False;
+  if DisplayList.Count > 0 then
+  begin
+    BatchDisplay(DisplayList.Strings[0]);
+    DisplayList.Delete(0);
+  end;
+  SearchTimer.Enabled := True;
+
+end;
+
+initialization
+  RegisterClass(TfmDeviceComMonitoring);
+Finalization
+  UnRegisterClass(TfmDeviceComMonitoring);
+
+end.

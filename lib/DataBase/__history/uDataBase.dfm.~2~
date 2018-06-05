@@ -1,0 +1,9 @@
+object dmDataBase: TdmDataBase
+  OldCreateOrder = False
+  Height = 150
+  Width = 215
+  object ADOConnection1: TADOConnection
+    Left = 16
+    Top = 8
+  end
+end

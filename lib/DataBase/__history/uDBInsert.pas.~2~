@@ -1,0 +1,25 @@
+unit uDBInsert;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TdmDBInsert = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmDBInsert: TdmDBInsert;
+
+implementation
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+end.
