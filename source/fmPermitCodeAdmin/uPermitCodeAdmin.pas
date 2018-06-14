@@ -8,7 +8,7 @@ uses
   AdvOfficeTabSetStylers, AdvSmoothPanel, Vcl.ExtCtrls, AdvSmoothLabel,
   Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
   AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvToolBar,
-  AdvToolBarStylers, Vcl.Menus;
+  AdvToolBarStylers, Vcl.Menus, AdvAppStyler;
 
 type
   TfmPermitCodeAdmin = class(TfmASubForm)
@@ -38,6 +38,7 @@ type
     AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler;
     PopupMenu1: TPopupMenu;
     pm_update: TMenuItem;
+    AdvFormStyler1: TAdvFormStyler;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);

@@ -34,6 +34,7 @@ const
   FORMPERMITCODE = 13;     //출입승인코드관리
   FORMPERSONCARDPERMIT = 14; //개인별카드권한관리
   FORMREMOTECONTROL = 15; //원격지원서비스
+  FORMALARMREPORT = 16;    //알람보고서
 
 const
   NODESOCKETDELAYTIME = 60;

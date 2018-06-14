@@ -4,10 +4,10 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
   BorderIcons = []
   BorderStyle = bsNone
   Caption = #52636#51077#47928#48324#52852#46300#44428#54620#44288#47532
-  ClientHeight = 519
-  ClientWidth = 960
+  ClientHeight = 604
+  ClientWidth = 1182
   Font.Charset = HANGEUL_CHARSET
-  Font.Height = -12
+  Font.Height = -15
   Font.Name = 'MS Gothic'
   FormStyle = fsMDIChild
   Visible = True
@@ -15,29 +15,37 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  ExplicitWidth = 976
-  ExplicitHeight = 557
-  PixelsPerInch = 96
-  TextHeight = 12
+  ExplicitWidth = 1200
+  ExplicitHeight = 649
+  PixelsPerInch = 120
+  TextHeight = 15
   object Image1: TImage [0]
     Left = 0
     Top = 0
-    Width = 960
-    Height = 519
+    Width = 1182
+    Height = 604
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Align = alClient
-    ExplicitWidth = 1017
-    ExplicitHeight = 635
+    ExplicitWidth = 1200
+    ExplicitHeight = 649
   end
   object BodyPanel: TW7Panel [1]
     Left = 0
     Top = 0
-    Width = 960
-    Height = 519
-    Version = '1.0.1.2'
+    Width = 1182
+    Height = 604
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Version = '1.0.2.0'
     Caption = 'BodyPanel'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -9
+    Font.Height = -10
     Font.Name = 'MS Gothic'
     Font.Style = []
     SolidColor = clBlack
@@ -53,8 +61,12 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     object menuTab: TAdvOfficeTabSet
       Left = 0
       Top = 0
-      Width = 960
-      Height = 25
+      Width = 1182
+      Height = 31
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       AdvOfficeTabs = <
         item
           Caption = #45803#44592
@@ -446,28 +458,28 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             167015090C4C6003EA2A6656038E53FDE9A8D7FD22E367138C3F762E57FF0049
             29FF0083B49D4FF3097CCB1A4CB35A84695E8D027358CAAA95215E494F2AC95F
             8563448DBEDE01ABC9E1F877E849D2E3F13C4AF5BFFFD9}
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -485,40 +497,40 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end
         item
           Caption = #52636#51077#47928#48324#52852#46300#44428#54620#44288#47532
           Name = 'TOfficeTabCollectionItem2'
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -536,40 +548,40 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end
         item
           Caption = #51068#44292#44428#54620#46321#47197
           Name = 'TOfficeTabCollectionItem3'
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -587,40 +599,40 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end
         item
           Caption = #51068#44292#44428#54620#49325#51228
           Name = 'TOfficeTabCollectionItem4'
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -638,13 +650,13 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end>
       AdvOfficeTabSetStyler = AdvOfficeTabSetOfficeStyler1
@@ -933,42 +945,52 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
       ButtonSettings.ScrollButtonPrevHint = 'Previous'
       ButtonSettings.ScrollButtonFirstHint = 'First'
       ButtonSettings.ScrollButtonLastHint = 'Last'
+      TabSettings.Rounding = 0
       OnChange = menuTabChange
     end
     object pan_DoorList: TAdvPanel
       Left = 0
-      Top = 50
-      Width = 747
-      Height = 411
+      Top = 63
+      Width = 934
+      Height = 513
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
-      Font.Height = -9
+      Font.Height = -10
       Font.Name = 'MS Gothic'
       Font.Style = []
       ParentFont = False
       TabOrder = 1
       UseDockManager = True
-      Version = '2.1.0.4'
+      Version = '2.3.0.0'
       Caption.Color = clHighlight
       Caption.ColorTo = clNone
       Caption.Font.Charset = HANGEUL_CHARSET
       Caption.Font.Color = clWindowText
-      Caption.Font.Height = -9
+      Caption.Font.Height = -10
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Caption.Height = 15
+      Caption.Height = 19
       StatusBar.Font.Charset = DEFAULT_CHARSET
       StatusBar.Font.Color = clWindowText
       StatusBar.Font.Height = -11
       StatusBar.Font.Name = 'MS Gothic'
       StatusBar.Font.Style = []
+      Text = ''
       FullHeight = 200
       object pan_CardListHeader: TAdvSmoothPanel
         Left = 1
         Top = 1
-        Width = 745
-        Height = 107
+        Width = 932
+        Height = 134
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #52636#51077#47928#48324#52852#46300#44428#54620#44288#47532
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -980,24 +1002,31 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         Align = alTop
         TabOrder = 0
         object lb_Door: TAdvSmoothLabel
-          Left = 23
-          Top = 73
-          Width = 150
-          Height = 16
+          Left = 29
+          Top = 91
+          Width = 187
+          Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1021,26 +1050,34 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object btn_Search: TSpeedButton
-          Left = 299
-          Top = 71
-          Width = 110
-          Height = 21
+          Left = 374
+          Top = 89
+          Width = 137
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_SearchClick
         end
         object lb_Company: TAdvSmoothLabel
-          Left = 23
-          Top = 25
-          Width = 150
-          Height = 16
+          Left = 29
+          Top = 31
+          Width = 187
+          Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1064,13 +1101,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_Depart: TAdvSmoothLabel
-          Left = 23
-          Top = 49
-          Width = 150
-          Height = 15
+          Left = 29
+          Top = 61
+          Width = 187
+          Height = 19
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1094,40 +1135,55 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object ed_name: TAdvEdit
-          Left = 176
-          Top = 71
-          Width = 119
-          Height = 21
+          Left = 220
+          Top = 89
+          Width = 149
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'MS Gothic'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
           ParentFont = False
           TabOrder = 0
+          Text = ''
           Visible = True
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object cmb_ListDongCode: TComboBox
-          Left = 176
-          Top = 23
-          Width = 119
-          Height = 21
+          Left = 220
+          Top = 29
+          Width = 149
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1136,14 +1192,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           OnChange = cmb_ListDongCodeChange
         end
         object cmb_ListAreaCode: TComboBox
-          Left = 176
-          Top = 47
-          Width = 119
-          Height = 21
+          Left = 220
+          Top = 59
+          Width = 149
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1154,10 +1214,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
       end
       object AdvSmoothPanel1: TAdvSmoothPanel
         Left = 1
-        Top = 368
-        Width = 745
-        Height = 42
+        Top = 459
+        Width = 932
+        Height = 53
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
         Caption.HTMLFont.Height = -11
@@ -1168,45 +1232,56 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         Caption.Font.Height = -16
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         Align = alBottom
         TabOrder = 1
         DesignSize = (
-          745
-          42)
+          932
+          53)
         object btn_PackagePermitAdd: TSpeedButton
-          Left = 363
-          Top = 6
-          Width = 180
-          Height = 21
+          Left = 454
+          Top = 8
+          Width = 225
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akRight, akBottom]
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_PackagePermitAddClick
         end
         object btn_PackagePermitDelete: TSpeedButton
-          Left = 549
-          Top = 6
-          Width = 180
-          Height = 21
+          Left = 686
+          Top = 8
+          Width = 225
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akRight, akBottom]
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
@@ -1215,10 +1290,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
       end
       object sg_DoorList: TAdvStringGrid
         Left = 1
-        Top = 108
-        Width = 745
-        Height = 260
+        Top = 135
+        Width = 932
+        Height = 324
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Align = alClient
         ColCount = 10
         DefaultColWidth = 110
@@ -1227,7 +1306,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         RowCount = 17
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -1238,6 +1317,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         ShowHint = True
         TabOrder = 2
         OnDblClick = sg_DoorListDblClick
+        GridLineColor = 13027014
+        GridFixedLineColor = 13027014
+        HoverRowCells = [hcNormal, hcSelected]
         OnCheckBoxClick = sg_DoorListCheckBoxClick
         OnResize = sg_DoorListResize
         ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -1245,6 +1327,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         ActiveCellFont.Height = -13
         ActiveCellFont.Name = 'MS Gothic'
         ActiveCellFont.Style = []
+        ActiveCellColor = 16448250
+        ActiveCellColorTo = 16448250
+        BorderColor = 13027014
         ColumnHeaders.Strings = (
           ''
           #54924#49324
@@ -1253,10 +1338,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           #45432#46300#48264#54840
           #44592#44592#48264#54840
           #52636#51077#47928#48264#54840)
-        ControlLook.FixedGradientHoverFrom = clGray
-        ControlLook.FixedGradientHoverTo = clWhite
-        ControlLook.FixedGradientDownFrom = clGray
-        ControlLook.FixedGradientDownTo = clSilver
+        ControlLook.FixedGradientMirrorFrom = 16448250
+        ControlLook.FixedGradientMirrorTo = 16448250
+        ControlLook.FixedGradientHoverFrom = 16576740
+        ControlLook.FixedGradientHoverTo = 16576740
+        ControlLook.FixedGradientHoverMirrorFrom = 16576740
+        ControlLook.FixedGradientHoverMirrorTo = 16576740
+        ControlLook.FixedGradientHoverBorder = 15381630
+        ControlLook.FixedGradientDownFrom = 16573128
+        ControlLook.FixedGradientDownTo = 16573128
+        ControlLook.FixedGradientDownMirrorFrom = 16573128
+        ControlLook.FixedGradientDownMirrorTo = 16573128
+        ControlLook.FixedGradientDownBorder = 15048022
         ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
         ControlLook.DropDownHeader.Font.Color = clWindowText
         ControlLook.DropDownHeader.Font.Height = -11
@@ -1278,6 +1371,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         FilterDropDown.Font.Name = 'MS Gothic'
         FilterDropDown.Font.Style = []
         FilterDropDownClear = '(All)'
+        FilterEdit.TypeNames.Strings = (
+          'Starts with'
+          'Ends with'
+          'Contains'
+          'Not contains'
+          'Equal'
+          'Not equal'
+          'Clear')
         FixedColWidth = 30
         FixedRowHeight = 22
         FixedFont.Charset = DEFAULT_CHARSET
@@ -1286,6 +1387,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         FixedFont.Name = 'MS Gothic'
         FixedFont.Style = []
         FloatFormat = '%.2f'
+        Look = glOffice2007
         PrintSettings.DateFormat = 'dd/mm/yyyy'
         PrintSettings.Font.Charset = DEFAULT_CHARSET
         PrintSettings.Font.Color = clWindowText
@@ -1308,6 +1410,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         PrintSettings.FooterFont.Name = 'MS Gothic'
         PrintSettings.FooterFont.Style = []
         PrintSettings.PageNumSep = '/'
+        ScrollWidth = 21
+        SearchFooter.Color = 16448250
+        SearchFooter.ColorTo = 16448250
         SearchFooter.FindNextCaption = 'Find &next'
         SearchFooter.FindPrevCaption = 'Find &previous'
         SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -1321,9 +1426,15 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         SearchFooter.HintFindPrev = 'Find previous occurrence'
         SearchFooter.HintHighlight = 'Highlight occurrences'
         SearchFooter.MatchCaseCaption = 'Match case'
-        Version = '6.0.4.4'
-        ExplicitWidth = 746
-        ExplicitHeight = 261
+        SelectionColor = 14327846
+        SelectionTextColor = clWhite
+        SortSettings.DefaultFormat = ssAutomatic
+        SortSettings.HeaderColor = 16448250
+        SortSettings.HeaderColorTo = 16448250
+        SortSettings.HeaderMirrorColor = 16448250
+        SortSettings.HeaderMirrorColorTo = 16448250
+        Version = '7.2.8.0'
+        ExplicitHeight = 325
         ColWidths = (
           30
           110
@@ -1338,39 +1449,48 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
       end
     end
     object pan_PackagePermitDelete: TAdvPanel
-      Left = 636
-      Top = -71
-      Width = 746
-      Height = 432
+      Left = 795
+      Top = -89
+      Width = 933
+      Height = 540
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
-      Font.Height = -9
+      Font.Height = -10
       Font.Name = 'MS Gothic'
       Font.Style = []
       ParentFont = False
       TabOrder = 3
       UseDockManager = True
-      Version = '2.1.0.4'
+      Version = '2.3.0.0'
       Caption.Color = clHighlight
       Caption.ColorTo = clNone
       Caption.Font.Charset = HANGEUL_CHARSET
       Caption.Font.Color = clWindowText
-      Caption.Font.Height = -9
+      Caption.Font.Height = -10
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Caption.Height = 15
+      Caption.Height = 19
       StatusBar.Font.Charset = DEFAULT_CHARSET
       StatusBar.Font.Color = clWindowText
       StatusBar.Font.Height = -11
       StatusBar.Font.Name = 'MS Gothic'
       StatusBar.Font.Style = []
+      Text = ''
       FullHeight = 200
       object pan_DelGradeDoor: TAdvSmoothPanel
         Left = 1
         Top = 1
-        Width = 744
-        Height = 107
+        Width = 931
+        Height = 134
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #44428#54620#49325#51228#52636#51077#47928#54788#54889
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -1382,43 +1502,54 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         Align = alTop
         OnResize = pan_DelGradeDoorResize
         Visible = False
         TabOrder = 0
         DesignSize = (
-          744
-          107)
+          931
+          134)
         object btn_CardPermitDeletePerson: TSpeedButton
-          Left = 629
-          Top = 22
-          Width = 88
-          Height = 21
+          Left = 786
+          Top = 28
+          Width = 110
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akRight, akBottom]
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_CardPermitDeletePersonClick
         end
         object lv_packagePermitDeleteDoorList: TAdvListView
-          Left = 8
-          Top = 21
-          Width = 598
-          Height = 74
+          Left = 10
+          Top = 26
+          Width = 748
+          Height = 93
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Columns = <>
           LargeImages = ImageList1
           MultiSelect = True
@@ -1452,14 +1583,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           DetailView.Font.Height = -11
           DetailView.Font.Name = 'MS Gothic'
           DetailView.Font.Style = []
-          Version = '1.6.7.2'
+          Version = '1.6.9.8'
         end
         object pan_deleteSearch: TAdvSmoothPanel
-          Left = 278
+          Left = 348
           Top = -1
-          Width = 336
-          Height = 102
+          Width = 420
+          Height = 127
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = #52636#51077#47928#51312#54924
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -1471,38 +1606,49 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           Caption.Font.Height = -13
           Caption.Font.Name = 'MS Gothic'
           Caption.Font.Style = []
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           Visible = False
           TabOrder = 1
           object btn_deleteCancel: TSpeedButton
-            Left = 135
-            Top = 21
-            Width = 90
-            Height = 21
+            Left = 169
+            Top = 26
+            Width = 112
+            Height = 27
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
-            Font.Height = -13
+            Font.Height = -17
             Font.Name = 'MS Gothic'
             Font.Style = []
             ParentFont = False
             OnClick = btn_deleteCancelClick
           end
           object sg_deleteDoorList: TAdvStringGrid
-            Left = 12
-            Top = 41
-            Width = 306
-            Height = 54
+            Left = 15
+            Top = 51
+            Width = 383
+            Height = 68
             Cursor = crDefault
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ColCount = 10
             DefaultColWidth = 110
             DrawingStyle = gdsClassic
@@ -1510,7 +1656,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             RowCount = 2
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
-            Font.Height = -13
+            Font.Height = -17
             Font.Name = 'MS Gothic'
             Font.Style = []
             Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -1520,11 +1666,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             ShowHint = True
             TabOrder = 0
             OnDblClick = sg_deleteDoorListDblClick
+            GridLineColor = 13027014
+            GridFixedLineColor = 13027014
+            HoverRowCells = [hcNormal, hcSelected]
             ActiveCellFont.Charset = DEFAULT_CHARSET
             ActiveCellFont.Color = clWindowText
             ActiveCellFont.Height = -13
             ActiveCellFont.Name = 'MS Gothic'
             ActiveCellFont.Style = []
+            ActiveCellColor = 16448250
+            ActiveCellColorTo = 16448250
+            BorderColor = 13027014
             ColumnHeaders.Strings = (
               #54924#49324
               #48512#49436
@@ -1532,10 +1684,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               #45432#46300#48264#54840
               #44592#44592#48264#54840
               #52636#51077#47928#48264#54840)
-            ControlLook.FixedGradientHoverFrom = clGray
-            ControlLook.FixedGradientHoverTo = clWhite
-            ControlLook.FixedGradientDownFrom = clGray
-            ControlLook.FixedGradientDownTo = clSilver
+            ControlLook.FixedGradientMirrorFrom = 16448250
+            ControlLook.FixedGradientMirrorTo = 16448250
+            ControlLook.FixedGradientHoverFrom = 16576740
+            ControlLook.FixedGradientHoverTo = 16576740
+            ControlLook.FixedGradientHoverMirrorFrom = 16576740
+            ControlLook.FixedGradientHoverMirrorTo = 16576740
+            ControlLook.FixedGradientHoverBorder = 15381630
+            ControlLook.FixedGradientDownFrom = 16573128
+            ControlLook.FixedGradientDownTo = 16573128
+            ControlLook.FixedGradientDownMirrorFrom = 16573128
+            ControlLook.FixedGradientDownMirrorTo = 16573128
+            ControlLook.FixedGradientDownBorder = 15048022
             ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
             ControlLook.DropDownHeader.Font.Color = clWindowText
             ControlLook.DropDownHeader.Font.Height = -11
@@ -1557,6 +1717,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             FilterDropDown.Font.Name = 'MS Gothic'
             FilterDropDown.Font.Style = []
             FilterDropDownClear = '(All)'
+            FilterEdit.TypeNames.Strings = (
+              'Starts with'
+              'Ends with'
+              'Contains'
+              'Not contains'
+              'Equal'
+              'Not equal'
+              'Clear')
             FixedColWidth = 88
             FixedRowHeight = 22
             FixedFont.Charset = DEFAULT_CHARSET
@@ -1565,6 +1733,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             FixedFont.Name = 'MS Gothic'
             FixedFont.Style = []
             FloatFormat = '%.2f'
+            Look = glOffice2007
             PrintSettings.DateFormat = 'dd/mm/yyyy'
             PrintSettings.Font.Charset = DEFAULT_CHARSET
             PrintSettings.Font.Color = clWindowText
@@ -1587,6 +1756,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             PrintSettings.FooterFont.Name = 'MS Gothic'
             PrintSettings.FooterFont.Style = []
             PrintSettings.PageNumSep = '/'
+            ScrollWidth = 21
+            SearchFooter.Color = 16448250
+            SearchFooter.ColorTo = 16448250
             SearchFooter.FindNextCaption = 'Find &next'
             SearchFooter.FindPrevCaption = 'Find &previous'
             SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -1600,8 +1772,15 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             SearchFooter.HintFindPrev = 'Find previous occurrence'
             SearchFooter.HintHighlight = 'Highlight occurrences'
             SearchFooter.MatchCaseCaption = 'Match case'
+            SelectionColor = 14327846
+            SelectionTextColor = clWhite
             ShowDesignHelper = False
-            Version = '6.0.4.4'
+            SortSettings.DefaultFormat = ssAutomatic
+            SortSettings.HeaderColor = 16448250
+            SortSettings.HeaderColorTo = 16448250
+            SortSettings.HeaderMirrorColor = 16448250
+            SortSettings.HeaderMirrorColorTo = 16448250
+            Version = '7.2.8.0'
             ColWidths = (
               88
               110
@@ -1615,31 +1794,46 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               110)
           end
           object ed_deleteSearchName: TAdvEdit
-            Left = 12
-            Top = 21
-            Width = 118
-            Height = 17
+            Left = 15
+            Top = 26
+            Width = 148
+            Height = 18
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
+            EmptyTextStyle = []
             LabelFont.Charset = DEFAULT_CHARSET
             LabelFont.Color = clWindowText
             LabelFont.Height = -11
             LabelFont.Name = 'MS Gothic'
             LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -13
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWindow
             ImeName = 'Microsoft Office IME 2007'
             TabOrder = 1
+            Text = ''
             Visible = True
             OnChange = ed_deleteSearchNameChange
-            Version = '2.9.3.1'
+            Version = '3.3.2.0'
           end
         end
       end
       object pan_CardInfo: TAdvSmoothPanel
-        Left = 112
-        Top = 124
-        Width = 433
-        Height = 218
+        Left = 140
+        Top = 155
+        Width = 541
+        Height = 273
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #52852#46300#51221#48372
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -1651,24 +1845,31 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         OnResize = pan_CardInfoResize
         TabOrder = 1
         object lb_Company3: TAdvSmoothLabel
-          Left = 23
-          Top = 24
-          Width = 150
-          Height = 16
+          Left = 29
+          Top = 30
+          Width = 187
+          Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1692,13 +1893,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_Depart3: TAdvSmoothLabel
-          Left = 23
-          Top = 46
-          Width = 150
-          Height = 15
+          Left = 29
+          Top = 58
+          Width = 187
+          Height = 18
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1722,31 +1927,39 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object btn_DoorPermitDelete: TSpeedButton
-          Left = 336
-          Top = 43
-          Width = 170
-          Height = 21
+          Left = 420
+          Top = 54
+          Width = 213
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = #36984#25246#27177#38480#12398#21066#38500
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_DoorPermitDeleteClick
         end
         object cmb_deletePermitDongCode: TComboBox
-          Left = 200
-          Top = 22
-          Width = 119
-          Height = 21
+          Left = 250
+          Top = 28
+          Width = 149
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1755,14 +1968,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           OnChange = cmb_deletePermitDongCodeChange
         end
         object cmb_deletePermitAreaCode: TComboBox
-          Left = 200
-          Top = 43
-          Width = 119
-          Height = 21
+          Left = 250
+          Top = 54
+          Width = 149
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1771,11 +1988,15 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           OnChange = cmb_deletePermitAreaCodeChange
         end
         object sg_deletePermitCardList: TAdvStringGrid
-          Left = 3
-          Top = 76
-          Width = 729
-          Height = 246
+          Left = 4
+          Top = 95
+          Width = 911
+          Height = 308
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           ColCount = 7
           DefaultColWidth = 110
           DrawingStyle = gdsClassic
@@ -1783,7 +2004,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           RowCount = 17
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -1792,6 +2013,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           ScrollBars = ssNone
           ShowHint = True
           TabOrder = 2
+          GridLineColor = 13027014
+          GridFixedLineColor = 13027014
+          HoverRowCells = [hcNormal, hcSelected]
           OnCheckBoxClick = sg_deletePermitCardListCheckBoxClick
           OnResize = sg_deletePermitCardListResize
           ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -1799,6 +2023,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           ActiveCellFont.Height = -13
           ActiveCellFont.Name = 'MS Gothic'
           ActiveCellFont.Style = []
+          ActiveCellColor = 16448250
+          ActiveCellColorTo = 16448250
+          BorderColor = 13027014
           ColumnHeaders.Strings = (
             ''
             #54924#49324
@@ -1806,10 +2033,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             #51649#50948
             #51060#47492
             #52852#46300#48264#54840)
-          ControlLook.FixedGradientHoverFrom = clGray
-          ControlLook.FixedGradientHoverTo = clWhite
-          ControlLook.FixedGradientDownFrom = clGray
-          ControlLook.FixedGradientDownTo = clSilver
+          ControlLook.FixedGradientMirrorFrom = 16448250
+          ControlLook.FixedGradientMirrorTo = 16448250
+          ControlLook.FixedGradientHoverFrom = 16576740
+          ControlLook.FixedGradientHoverTo = 16576740
+          ControlLook.FixedGradientHoverMirrorFrom = 16576740
+          ControlLook.FixedGradientHoverMirrorTo = 16576740
+          ControlLook.FixedGradientHoverBorder = 15381630
+          ControlLook.FixedGradientDownFrom = 16573128
+          ControlLook.FixedGradientDownTo = 16573128
+          ControlLook.FixedGradientDownMirrorFrom = 16573128
+          ControlLook.FixedGradientDownMirrorTo = 16573128
+          ControlLook.FixedGradientDownBorder = 15048022
           ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
           ControlLook.DropDownHeader.Font.Color = clWindowText
           ControlLook.DropDownHeader.Font.Height = -11
@@ -1831,6 +2066,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           FilterDropDown.Font.Name = 'MS Gothic'
           FilterDropDown.Font.Style = []
           FilterDropDownClear = '(All)'
+          FilterEdit.TypeNames.Strings = (
+            'Starts with'
+            'Ends with'
+            'Contains'
+            'Not contains'
+            'Equal'
+            'Not equal'
+            'Clear')
           FixedColWidth = 30
           FixedRowHeight = 22
           FixedFont.Charset = DEFAULT_CHARSET
@@ -1839,6 +2082,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           FixedFont.Name = 'MS Gothic'
           FixedFont.Style = []
           FloatFormat = '%.2f'
+          Look = glOffice2007
           PrintSettings.DateFormat = 'dd/mm/yyyy'
           PrintSettings.Font.Charset = DEFAULT_CHARSET
           PrintSettings.Font.Color = clWindowText
@@ -1861,6 +2105,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           PrintSettings.FooterFont.Name = 'MS Gothic'
           PrintSettings.FooterFont.Style = []
           PrintSettings.PageNumSep = '/'
+          ScrollWidth = 21
+          SearchFooter.Color = 16448250
+          SearchFooter.ColorTo = 16448250
           SearchFooter.FindNextCaption = 'Find &next'
           SearchFooter.FindPrevCaption = 'Find &previous'
           SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -1874,7 +2121,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           SearchFooter.HintFindPrev = 'Find previous occurrence'
           SearchFooter.HintHighlight = 'Highlight occurrences'
           SearchFooter.MatchCaseCaption = 'Match case'
-          Version = '6.0.4.4'
+          SelectionColor = 14327846
+          SelectionTextColor = clWhite
+          SortSettings.DefaultFormat = ssAutomatic
+          SortSettings.HeaderColor = 16448250
+          SortSettings.HeaderColorTo = 16448250
+          SortSettings.HeaderMirrorColor = 16448250
+          SortSettings.HeaderMirrorColorTo = 16448250
+          Version = '7.2.8.0'
           ColWidths = (
             30
             236
@@ -1887,39 +2141,48 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
       end
     end
     object pan_DoorPermit: TAdvPanel
-      Left = 276
-      Top = 43
-      Width = 747
-      Height = 431
+      Left = 345
+      Top = 54
+      Width = 934
+      Height = 539
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
-      Font.Height = -9
+      Font.Height = -10
       Font.Name = 'MS Gothic'
       Font.Style = []
       ParentFont = False
       TabOrder = 4
       UseDockManager = True
-      Version = '2.1.0.4'
+      Version = '2.3.0.0'
       Caption.Color = clHighlight
       Caption.ColorTo = clNone
       Caption.Font.Charset = HANGEUL_CHARSET
       Caption.Font.Color = clWindowText
-      Caption.Font.Height = -9
+      Caption.Font.Height = -10
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Caption.Height = 15
+      Caption.Height = 19
       StatusBar.Font.Charset = DEFAULT_CHARSET
       StatusBar.Font.Color = clWindowText
       StatusBar.Font.Height = -11
       StatusBar.Font.Name = 'MS Gothic'
       StatusBar.Font.Style = []
+      Text = ''
       FullHeight = 200
       object pan_DoorInfo: TAdvSmoothPanel
         Left = 1
         Top = 1
-        Width = 745
-        Height = 107
+        Width = 932
+        Height = 134
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #52636#51077#47928#51221#48372
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -1931,38 +2194,49 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         Align = alTop
         OnResize = pan_DelGradeDoorResize
         TabOrder = 0
         object gb_DoorInfo: TAdvGroupBox
-          Left = 11
-          Top = 18
-          Width = 390
-          Height = 77
+          Left = 14
+          Top = 23
+          Width = 487
+          Height = 96
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = #52636#51077#47928#51221#48372
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           TabOrder = 0
           object lb_Company1: TAdvSmoothLabel
-            Left = 21
-            Top = 16
-            Width = 150
-            Height = 20
+            Left = 26
+            Top = 20
+            Width = 188
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -1986,13 +2260,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_Depart1: TAdvSmoothLabel
-            Left = 21
-            Top = 34
-            Width = 150
-            Height = 20
+            Left = 26
+            Top = 43
+            Width = 188
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2016,13 +2294,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_Door1: TAdvSmoothLabel
-            Left = 21
-            Top = 53
-            Width = 150
-            Height = 20
+            Left = 26
+            Top = 66
+            Width = 188
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2046,13 +2328,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_dong: TAdvSmoothLabel
-            Left = 194
-            Top = 16
-            Width = 180
-            Height = 20
+            Left = 243
+            Top = 20
+            Width = 225
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2076,13 +2362,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_area: TAdvSmoothLabel
-            Left = 194
-            Top = 34
-            Width = 180
-            Height = 20
+            Left = 243
+            Top = 43
+            Width = 225
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2106,13 +2396,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_DoorName: TAdvSmoothLabel
-            Left = 194
-            Top = 53
-            Width = 180
-            Height = 20
+            Left = 243
+            Top = 66
+            Width = 225
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2136,27 +2430,35 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
         end
         object gb_DeviceInfo: TAdvGroupBox
-          Left = 407
-          Top = 18
-          Width = 322
-          Height = 77
+          Left = 509
+          Top = 23
+          Width = 402
+          Height = 96
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = #44592#44592#51221#48372
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           TabOrder = 1
           object lb_node1: TAdvSmoothLabel
-            Left = 21
-            Top = 16
-            Width = 120
-            Height = 20
+            Left = 26
+            Top = 20
+            Width = 150
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2180,13 +2482,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_NodeNo: TAdvSmoothLabel
-            Left = 139
-            Top = 15
-            Width = 180
-            Height = 20
+            Left = 174
+            Top = 19
+            Width = 225
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2210,13 +2516,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_device1: TAdvSmoothLabel
-            Left = 21
-            Top = 34
-            Width = 120
-            Height = 20
+            Left = 26
+            Top = 43
+            Width = 150
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2240,13 +2550,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_DeviceID: TAdvSmoothLabel
-            Left = 139
-            Top = 33
-            Width = 180
-            Height = 20
+            Left = 174
+            Top = 41
+            Width = 225
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2270,13 +2584,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_DoorNo1: TAdvSmoothLabel
-            Left = 21
-            Top = 53
-            Width = 120
-            Height = 20
+            Left = 26
+            Top = 66
+            Width = 150
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2300,13 +2618,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_DoorNo: TAdvSmoothLabel
-            Left = 139
-            Top = 52
-            Width = 180
-            Height = 20
+            Left = 174
+            Top = 65
+            Width = 225
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2330,16 +2652,20 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
         end
       end
       object pan_AccessGrade: TAdvSmoothPanel
-        Left = 169
-        Top = 102
-        Width = 521
-        Height = 331
+        Left = 211
+        Top = 128
+        Width = 652
+        Height = 413
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #52636#51077#44428#54620
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -2351,24 +2677,31 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         OnResize = pan_AccessGradeResize
         TabOrder = 1
         object lb_company2: TAdvSmoothLabel
-          Left = 23
-          Top = 27
-          Width = 150
-          Height = 16
+          Left = 29
+          Top = 34
+          Width = 187
+          Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -2392,13 +2725,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_Depart2: TAdvSmoothLabel
-          Left = 23
-          Top = 51
-          Width = 150
-          Height = 15
+          Left = 29
+          Top = 64
+          Width = 187
+          Height = 19
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -2422,17 +2759,21 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object cmb_PersonDongCode: TComboBox
-          Left = 179
-          Top = 25
-          Width = 119
-          Height = 21
+          Left = 224
+          Top = 31
+          Width = 149
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -2441,14 +2782,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           OnChange = cmb_PersonDongCodeChange
         end
         object cmb_PersonAreaCode: TComboBox
-          Left = 179
-          Top = 48
-          Width = 119
-          Height = 21
+          Left = 224
+          Top = 60
+          Width = 149
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -2457,40 +2802,49 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           OnChange = cmb_PersonAreaCodeChange
         end
         object pan_PersonDoor: TAdvPanel
-          Left = 9
-          Top = 74
-          Width = 492
-          Height = 215
+          Left = 11
+          Top = 93
+          Width = 615
+          Height = 268
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -9
+          Font.Height = -10
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           TabOrder = 2
           UseDockManager = True
           OnResize = pan_PersonDoorResize
-          Version = '2.1.0.4'
+          Version = '2.3.0.0'
           Caption.Color = clHighlight
           Caption.ColorTo = clNone
           Caption.Font.Charset = HANGEUL_CHARSET
           Caption.Font.Color = clWindowText
-          Caption.Font.Height = -9
+          Caption.Font.Height = -10
           Caption.Font.Name = 'MS Gothic'
           Caption.Font.Style = []
-          Caption.Height = 15
+          Caption.Height = 19
           StatusBar.Font.Charset = DEFAULT_CHARSET
           StatusBar.Font.Color = clWindowText
           StatusBar.Font.Height = -11
           StatusBar.Font.Name = 'MS Gothic'
           StatusBar.Font.Style = []
+          Text = ''
           FullHeight = 200
           object pan_NotPermitDoor: TAdvSmoothPanel
             Left = 1
             Top = 1
-            Width = 188
-            Height = 213
+            Width = 235
+            Height = 266
             Cursor = crDefault
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption.Text = #48120#46321#47197#52852#46300
             Caption.HTMLFont.Charset = DEFAULT_CHARSET
             Caption.HTMLFont.Color = clWindowText
@@ -2502,27 +2856,33 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             Caption.Font.Height = -13
             Caption.Font.Name = 'MS Gothic'
             Caption.Font.Style = []
-            Fill.Color = 16445929
-            Fill.ColorTo = 15587527
-            Fill.ColorMirror = 15587527
-            Fill.ColorMirrorTo = 16773863
+            Caption.ColorStart = clBlack
+            Caption.ColorEnd = clBlack
+            Caption.LineColor = 13027014
+            Fill.Color = clWhite
+            Fill.ColorTo = clWhite
+            Fill.ColorMirror = clNone
+            Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
             Fill.GradientMirrorType = gtVertical
-            Fill.BorderColor = 14922381
-            Fill.Rounding = 10
-            Fill.ShadowOffset = 10
-            Fill.Glow = gmNone
-            Version = '1.2.1.0'
+            Fill.BorderColor = 13027014
+            Fill.Rounding = 0
+            Fill.ShadowOffset = 0
+            Fill.Glow = gmRadial
+            Version = '1.3.0.3'
             Align = alLeft
             OnResize = pan_NotPermitDoorResize
             TabOrder = 0
-            ExplicitHeight = 130
             object sg_NotPermitCardList: TAdvStringGrid
-              Left = 3
-              Top = 19
-              Width = 176
-              Height = 96
+              Left = 4
+              Top = 24
+              Width = 220
+              Height = 120
               Cursor = crDefault
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               ColCount = 7
               DefaultColWidth = 110
               DrawingStyle = gdsClassic
@@ -2530,7 +2890,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               RowCount = 17
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -13
+              Font.Height = -17
               Font.Name = 'MS Gothic'
               Font.Style = []
               Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -2539,6 +2899,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               ScrollBars = ssNone
               ShowHint = True
               TabOrder = 0
+              GridLineColor = 13027014
+              GridFixedLineColor = 13027014
+              HoverRowCells = [hcNormal, hcSelected]
               OnCheckBoxClick = sg_NotPermitCardListCheckBoxClick
               OnResize = sg_NotPermitCardListResize
               ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -2546,14 +2909,25 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               ActiveCellFont.Height = -13
               ActiveCellFont.Name = 'MS Gothic'
               ActiveCellFont.Style = []
+              ActiveCellColor = 16448250
+              ActiveCellColorTo = 16448250
+              BorderColor = 13027014
               ColumnHeaders.Strings = (
                 ''
                 #51060#47492
                 #52852#46300#48264#54840)
-              ControlLook.FixedGradientHoverFrom = clGray
-              ControlLook.FixedGradientHoverTo = clWhite
-              ControlLook.FixedGradientDownFrom = clGray
-              ControlLook.FixedGradientDownTo = clSilver
+              ControlLook.FixedGradientMirrorFrom = 16448250
+              ControlLook.FixedGradientMirrorTo = 16448250
+              ControlLook.FixedGradientHoverFrom = 16576740
+              ControlLook.FixedGradientHoverTo = 16576740
+              ControlLook.FixedGradientHoverMirrorFrom = 16576740
+              ControlLook.FixedGradientHoverMirrorTo = 16576740
+              ControlLook.FixedGradientHoverBorder = 15381630
+              ControlLook.FixedGradientDownFrom = 16573128
+              ControlLook.FixedGradientDownTo = 16573128
+              ControlLook.FixedGradientDownMirrorFrom = 16573128
+              ControlLook.FixedGradientDownMirrorTo = 16573128
+              ControlLook.FixedGradientDownBorder = 15048022
               ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
               ControlLook.DropDownHeader.Font.Color = clWindowText
               ControlLook.DropDownHeader.Font.Height = -11
@@ -2575,6 +2949,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               FilterDropDown.Font.Name = 'MS Gothic'
               FilterDropDown.Font.Style = []
               FilterDropDownClear = '(All)'
+              FilterEdit.TypeNames.Strings = (
+                'Starts with'
+                'Ends with'
+                'Contains'
+                'Not contains'
+                'Equal'
+                'Not equal'
+                'Clear')
               FixedColWidth = 30
               FixedRowHeight = 22
               FixedFont.Charset = DEFAULT_CHARSET
@@ -2583,6 +2965,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               FixedFont.Name = 'MS Gothic'
               FixedFont.Style = []
               FloatFormat = '%.2f'
+              Look = glOffice2007
               PrintSettings.DateFormat = 'dd/mm/yyyy'
               PrintSettings.Font.Charset = DEFAULT_CHARSET
               PrintSettings.Font.Color = clWindowText
@@ -2605,6 +2988,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               PrintSettings.FooterFont.Name = 'MS Gothic'
               PrintSettings.FooterFont.Style = []
               PrintSettings.PageNumSep = '/'
+              ScrollWidth = 21
+              SearchFooter.Color = 16448250
+              SearchFooter.ColorTo = 16448250
               SearchFooter.FindNextCaption = 'Find &next'
               SearchFooter.FindPrevCaption = 'Find &previous'
               SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -2618,7 +3004,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               SearchFooter.HintFindPrev = 'Find previous occurrence'
               SearchFooter.HintHighlight = 'Highlight occurrences'
               SearchFooter.MatchCaseCaption = 'Match case'
-              Version = '6.0.4.4'
+              SelectionColor = 14327846
+              SelectionTextColor = clWhite
+              SortSettings.DefaultFormat = ssAutomatic
+              SortSettings.HeaderColor = 16448250
+              SortSettings.HeaderColorTo = 16448250
+              SortSettings.HeaderMirrorColor = 16448250
+              SortSettings.HeaderMirrorColorTo = 16448250
+              Version = '7.2.8.0'
               ColWidths = (
                 30
                 236
@@ -2630,11 +3023,15 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             end
           end
           object pan_PermitDoor: TAdvSmoothPanel
-            Left = 303
+            Left = 379
             Top = 1
-            Width = 188
-            Height = 213
+            Width = 235
+            Height = 266
             Cursor = crDefault
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption.Text = #46321#47197#52852#46300
             Caption.HTMLFont.Charset = DEFAULT_CHARSET
             Caption.HTMLFont.Color = clWindowText
@@ -2646,27 +3043,33 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             Caption.Font.Height = -13
             Caption.Font.Name = 'MS Gothic'
             Caption.Font.Style = []
-            Fill.Color = 16445929
-            Fill.ColorTo = 15587527
-            Fill.ColorMirror = 15587527
-            Fill.ColorMirrorTo = 16773863
+            Caption.ColorStart = clBlack
+            Caption.ColorEnd = clBlack
+            Caption.LineColor = 13027014
+            Fill.Color = clWhite
+            Fill.ColorTo = clWhite
+            Fill.ColorMirror = clNone
+            Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
             Fill.GradientMirrorType = gtVertical
-            Fill.BorderColor = 14922381
-            Fill.Rounding = 10
-            Fill.ShadowOffset = 10
-            Fill.Glow = gmNone
-            Version = '1.2.1.0'
+            Fill.BorderColor = 13027014
+            Fill.Rounding = 0
+            Fill.ShadowOffset = 0
+            Fill.Glow = gmRadial
+            Version = '1.3.0.3'
             Align = alRight
             OnResize = pan_PermitDoorResize
             TabOrder = 1
-            ExplicitHeight = 130
             object sg_PermitCardList: TAdvStringGrid
-              Left = 3
-              Top = 19
-              Width = 176
-              Height = 96
+              Left = 4
+              Top = 24
+              Width = 220
+              Height = 120
               Cursor = crDefault
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               ColCount = 7
               DefaultColWidth = 110
               DrawingStyle = gdsClassic
@@ -2674,7 +3077,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               RowCount = 17
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -13
+              Font.Height = -17
               Font.Name = 'MS Gothic'
               Font.Style = []
               Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -2683,6 +3086,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               ScrollBars = ssNone
               ShowHint = True
               TabOrder = 0
+              GridLineColor = 13027014
+              GridFixedLineColor = 13027014
+              HoverRowCells = [hcNormal, hcSelected]
               OnCheckBoxClick = sg_PermitCardListCheckBoxClick
               OnResize = sg_PermitCardListResize
               ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -2690,15 +3096,26 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               ActiveCellFont.Height = -13
               ActiveCellFont.Name = 'MS Gothic'
               ActiveCellFont.Style = []
+              ActiveCellColor = 16448250
+              ActiveCellColorTo = 16448250
+              BorderColor = 13027014
               ColumnHeaders.Strings = (
                 ''
                 #51060#47492
                 #51204#49569#50976#47924
                 #52852#46300#48264#54840)
-              ControlLook.FixedGradientHoverFrom = clGray
-              ControlLook.FixedGradientHoverTo = clWhite
-              ControlLook.FixedGradientDownFrom = clGray
-              ControlLook.FixedGradientDownTo = clSilver
+              ControlLook.FixedGradientMirrorFrom = 16448250
+              ControlLook.FixedGradientMirrorTo = 16448250
+              ControlLook.FixedGradientHoverFrom = 16576740
+              ControlLook.FixedGradientHoverTo = 16576740
+              ControlLook.FixedGradientHoverMirrorFrom = 16576740
+              ControlLook.FixedGradientHoverMirrorTo = 16576740
+              ControlLook.FixedGradientHoverBorder = 15381630
+              ControlLook.FixedGradientDownFrom = 16573128
+              ControlLook.FixedGradientDownTo = 16573128
+              ControlLook.FixedGradientDownMirrorFrom = 16573128
+              ControlLook.FixedGradientDownMirrorTo = 16573128
+              ControlLook.FixedGradientDownBorder = 15048022
               ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
               ControlLook.DropDownHeader.Font.Color = clWindowText
               ControlLook.DropDownHeader.Font.Height = -11
@@ -2720,6 +3137,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               FilterDropDown.Font.Name = 'MS Gothic'
               FilterDropDown.Font.Style = []
               FilterDropDownClear = '(All)'
+              FilterEdit.TypeNames.Strings = (
+                'Starts with'
+                'Ends with'
+                'Contains'
+                'Not contains'
+                'Equal'
+                'Not equal'
+                'Clear')
               FixedColWidth = 30
               FixedRowHeight = 22
               FixedFont.Charset = DEFAULT_CHARSET
@@ -2728,6 +3153,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               FixedFont.Name = 'MS Gothic'
               FixedFont.Style = []
               FloatFormat = '%.2f'
+              Look = glOffice2007
               PrintSettings.DateFormat = 'dd/mm/yyyy'
               PrintSettings.Font.Charset = DEFAULT_CHARSET
               PrintSettings.Font.Color = clWindowText
@@ -2750,6 +3176,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               PrintSettings.FooterFont.Name = 'MS Gothic'
               PrintSettings.FooterFont.Style = []
               PrintSettings.PageNumSep = '/'
+              ScrollWidth = 21
+              SearchFooter.Color = 16448250
+              SearchFooter.ColorTo = 16448250
               SearchFooter.FindNextCaption = 'Find &next'
               SearchFooter.FindPrevCaption = 'Find &previous'
               SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -2763,7 +3192,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               SearchFooter.HintFindPrev = 'Find previous occurrence'
               SearchFooter.HintHighlight = 'Highlight occurrences'
               SearchFooter.MatchCaseCaption = 'Match case'
-              Version = '6.0.4.4'
+              SelectionColor = 14327846
+              SelectionTextColor = clWhite
+              SortSettings.DefaultFormat = ssAutomatic
+              SortSettings.HeaderColor = 16448250
+              SortSettings.HeaderColorTo = 16448250
+              SortSettings.HeaderMirrorColor = 16448250
+              SortSettings.HeaderMirrorColorTo = 16448250
+              Version = '7.2.8.0'
               ColWidths = (
                 30
                 236
@@ -2775,11 +3211,15 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             end
           end
           object AdvSmoothPanel10: TAdvSmoothPanel
-            Left = 189
+            Left = 236
             Top = 1
-            Width = 114
-            Height = 213
+            Width = 143
+            Height = 266
             Cursor = crDefault
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption.HTMLFont.Charset = DEFAULT_CHARSET
             Caption.HTMLFont.Color = clWindowText
             Caption.HTMLFont.Height = -11
@@ -2790,26 +3230,32 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             Caption.Font.Height = -16
             Caption.Font.Name = 'MS Gothic'
             Caption.Font.Style = []
-            Fill.Color = 16445929
-            Fill.ColorTo = 15587527
-            Fill.ColorMirror = 15587527
-            Fill.ColorMirrorTo = 16773863
+            Caption.ColorStart = clBlack
+            Caption.ColorEnd = clBlack
+            Caption.LineColor = 13027014
+            Fill.Color = clWhite
+            Fill.ColorTo = clWhite
+            Fill.ColorMirror = clNone
+            Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
             Fill.GradientMirrorType = gtVertical
-            Fill.BorderColor = 14922381
-            Fill.Rounding = 10
-            Fill.ShadowOffset = 10
-            Fill.Glow = gmNone
-            Version = '1.2.1.0'
+            Fill.BorderColor = 13027014
+            Fill.Rounding = 0
+            Fill.ShadowOffset = 0
+            Fill.Glow = gmRadial
+            Version = '1.3.0.3'
             Align = alClient
             OnResize = AdvSmoothPanel10Resize
             TabOrder = 2
-            ExplicitHeight = 130
             object btn_CardPermitAdd: TSpeedButton
-              Left = 25
-              Top = 17
-              Width = 43
-              Height = 58
+              Left = 31
+              Top = 21
+              Width = 54
+              Height = 73
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               Glyph.Data = {
                 36370000424D363700000000000036000000280000003A000000500000000100
                 1800000000000037000012170000121700000000000000000000F1DFDEF0DEDD
@@ -3258,10 +3704,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               OnClick = btn_CardPermitAddClick
             end
             object btn_CardPermitDelete: TSpeedButton
-              Left = 25
-              Top = 80
-              Width = 43
-              Height = 59
+              Left = 31
+              Top = 100
+              Width = 54
+              Height = 74
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               Glyph.Data = {
                 36370000424D363700000000000036000000280000003A000000500000000100
                 1800000000000037000012170000121700000000000000000000FFFDFFFFFEFF
@@ -3710,10 +4160,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               OnClick = btn_CardPermitDeleteClick
             end
             object Gauge1: TGauge
-              Left = 17
-              Top = 163
-              Width = 72
-              Height = 21
+              Left = 21
+              Top = 204
+              Width = 90
+              Height = 26
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               ForeColor = clBlue
               Progress = 50
               Visible = False
@@ -3723,39 +4177,48 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
       end
     end
     object pan_PackagePermitAdd: TAdvPanel
-      Left = -299
-      Top = 204
-      Width = 746
-      Height = 431
+      Left = -374
+      Top = 255
+      Width = 933
+      Height = 539
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
-      Font.Height = -9
+      Font.Height = -10
       Font.Name = 'MS Gothic'
       Font.Style = []
       ParentFont = False
       TabOrder = 2
       UseDockManager = True
-      Version = '2.1.0.4'
+      Version = '2.3.0.0'
       Caption.Color = clHighlight
       Caption.ColorTo = clNone
       Caption.Font.Charset = HANGEUL_CHARSET
       Caption.Font.Color = clWindowText
-      Caption.Font.Height = -9
+      Caption.Font.Height = -10
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Caption.Height = 15
+      Caption.Height = 19
       StatusBar.Font.Charset = DEFAULT_CHARSET
       StatusBar.Font.Color = clWindowText
       StatusBar.Font.Height = -11
       StatusBar.Font.Name = 'MS Gothic'
       StatusBar.Font.Style = []
+      Text = ''
       FullHeight = 200
       object pan_AddGradeDoor: TAdvSmoothPanel
         Left = 1
         Top = 1
-        Width = 744
-        Height = 107
+        Width = 931
+        Height = 134
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #44428#54620#46321#47197#49440#53469#52636#51077#47928
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -3767,47 +4230,58 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         Align = alTop
         OnResize = pan_AddGradeDoorResize
         Visible = False
         TabOrder = 0
         DesignSize = (
-          744
-          107)
+          931
+          134)
         object btn_CardPermitAddPerson: TSpeedButton
-          Left = 612
-          Top = 22
-          Width = 110
-          Height = 21
+          Left = 765
+          Top = 28
+          Width = 138
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akRight, akBottom]
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_CardPermitAddPersonClick
         end
         object lv_packagePermitDoorCardList: TAdvListView
-          Left = 8
-          Top = 21
-          Width = 598
-          Height = 74
+          Left = 10
+          Top = 26
+          Width = 748
+          Height = 93
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Columns = <>
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           LargeImages = ImageList1
@@ -3843,14 +4317,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           DetailView.Font.Height = -11
           DetailView.Font.Name = 'MS Gothic'
           DetailView.Font.Style = []
-          Version = '1.6.7.2'
+          Version = '1.6.9.8'
         end
         object pan_addSearch: TAdvSmoothPanel
-          Left = 287
-          Top = 3
-          Width = 336
-          Height = 102
+          Left = 359
+          Top = 4
+          Width = 420
+          Height = 127
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = #52636#51077#47928#51312#54924
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -3862,38 +4340,49 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           Caption.Font.Height = -13
           Caption.Font.Name = 'MS Gothic'
           Caption.Font.Style = []
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           Visible = False
           TabOrder = 1
           object btn_addCancel: TSpeedButton
-            Left = 135
-            Top = 21
-            Width = 110
-            Height = 21
+            Left = 169
+            Top = 26
+            Width = 137
+            Height = 27
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
-            Font.Height = -13
+            Font.Height = -17
             Font.Name = 'MS Gothic'
             Font.Style = []
             ParentFont = False
             OnClick = btn_addCancelClick
           end
           object sg_addDoorList: TAdvStringGrid
-            Left = 12
-            Top = 41
-            Width = 306
-            Height = 54
+            Left = 15
+            Top = 51
+            Width = 383
+            Height = 68
             Cursor = crDefault
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ColCount = 10
             DefaultColWidth = 110
             DrawingStyle = gdsClassic
@@ -3901,7 +4390,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             RowCount = 2
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
-            Font.Height = -13
+            Font.Height = -17
             Font.Name = 'MS Gothic'
             Font.Style = []
             Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -3911,11 +4400,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             ShowHint = True
             TabOrder = 0
             OnDblClick = sg_addDoorListDblClick
+            GridLineColor = 13027014
+            GridFixedLineColor = 13027014
+            HoverRowCells = [hcNormal, hcSelected]
             ActiveCellFont.Charset = DEFAULT_CHARSET
             ActiveCellFont.Color = clWindowText
             ActiveCellFont.Height = -13
             ActiveCellFont.Name = 'MS Gothic'
             ActiveCellFont.Style = []
+            ActiveCellColor = 16448250
+            ActiveCellColorTo = 16448250
+            BorderColor = 13027014
             ColumnHeaders.Strings = (
               #54924#49324
               #48512#49436
@@ -3923,10 +4418,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               #45432#46300#48264#54840
               #44592#44592#48264#54840
               #52636#51077#47928#48264#54840)
-            ControlLook.FixedGradientHoverFrom = clGray
-            ControlLook.FixedGradientHoverTo = clWhite
-            ControlLook.FixedGradientDownFrom = clGray
-            ControlLook.FixedGradientDownTo = clSilver
+            ControlLook.FixedGradientMirrorFrom = 16448250
+            ControlLook.FixedGradientMirrorTo = 16448250
+            ControlLook.FixedGradientHoverFrom = 16576740
+            ControlLook.FixedGradientHoverTo = 16576740
+            ControlLook.FixedGradientHoverMirrorFrom = 16576740
+            ControlLook.FixedGradientHoverMirrorTo = 16576740
+            ControlLook.FixedGradientHoverBorder = 15381630
+            ControlLook.FixedGradientDownFrom = 16573128
+            ControlLook.FixedGradientDownTo = 16573128
+            ControlLook.FixedGradientDownMirrorFrom = 16573128
+            ControlLook.FixedGradientDownMirrorTo = 16573128
+            ControlLook.FixedGradientDownBorder = 15048022
             ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
             ControlLook.DropDownHeader.Font.Color = clWindowText
             ControlLook.DropDownHeader.Font.Height = -11
@@ -3948,6 +4451,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             FilterDropDown.Font.Name = 'MS Gothic'
             FilterDropDown.Font.Style = []
             FilterDropDownClear = '(All)'
+            FilterEdit.TypeNames.Strings = (
+              'Starts with'
+              'Ends with'
+              'Contains'
+              'Not contains'
+              'Equal'
+              'Not equal'
+              'Clear')
             FixedColWidth = 88
             FixedRowHeight = 22
             FixedFont.Charset = DEFAULT_CHARSET
@@ -3956,6 +4467,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             FixedFont.Name = 'MS Gothic'
             FixedFont.Style = []
             FloatFormat = '%.2f'
+            Look = glOffice2007
             PrintSettings.DateFormat = 'dd/mm/yyyy'
             PrintSettings.Font.Charset = DEFAULT_CHARSET
             PrintSettings.Font.Color = clWindowText
@@ -3978,6 +4490,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             PrintSettings.FooterFont.Name = 'MS Gothic'
             PrintSettings.FooterFont.Style = []
             PrintSettings.PageNumSep = '/'
+            ScrollWidth = 21
+            SearchFooter.Color = 16448250
+            SearchFooter.ColorTo = 16448250
             SearchFooter.FindNextCaption = 'Find &next'
             SearchFooter.FindPrevCaption = 'Find &previous'
             SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -3991,8 +4506,15 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             SearchFooter.HintFindPrev = 'Find previous occurrence'
             SearchFooter.HintHighlight = 'Highlight occurrences'
             SearchFooter.MatchCaseCaption = 'Match case'
+            SelectionColor = 14327846
+            SelectionTextColor = clWhite
             ShowDesignHelper = False
-            Version = '6.0.4.4'
+            SortSettings.DefaultFormat = ssAutomatic
+            SortSettings.HeaderColor = 16448250
+            SortSettings.HeaderColorTo = 16448250
+            SortSettings.HeaderMirrorColor = 16448250
+            SortSettings.HeaderMirrorColorTo = 16448250
+            Version = '7.2.8.0'
             ColWidths = (
               88
               110
@@ -4006,31 +4528,46 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
               110)
           end
           object ed_addSearchName: TAdvEdit
-            Left = 12
-            Top = 21
-            Width = 118
-            Height = 17
+            Left = 15
+            Top = 26
+            Width = 148
+            Height = 18
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
+            EmptyTextStyle = []
             LabelFont.Charset = DEFAULT_CHARSET
             LabelFont.Color = clWindowText
             LabelFont.Height = -11
             LabelFont.Name = 'MS Gothic'
             LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -13
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWindow
             ImeName = 'Microsoft Office IME 2007'
             TabOrder = 1
+            Text = ''
             Visible = True
             OnChange = ed_addSearchNameChange
-            Version = '2.9.3.1'
+            Version = '3.3.2.0'
           end
         end
       end
       object pan_EmInfo: TAdvSmoothPanel
-        Left = 9
-        Top = 145
-        Width = 640
-        Height = 218
+        Left = 11
+        Top = 181
+        Width = 800
+        Height = 273
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #49324#50896#51221#48372
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -4042,24 +4579,31 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         OnResize = pan_EmInfoResize
         TabOrder = 1
         object lb_Company4: TAdvSmoothLabel
-          Left = 23
-          Top = 30
-          Width = 150
-          Height = 16
+          Left = 29
+          Top = 38
+          Width = 187
+          Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -4083,13 +4627,17 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_Depart4: TAdvSmoothLabel
-          Left = 23
-          Top = 52
-          Width = 150
-          Height = 15
+          Left = 29
+          Top = 65
+          Width = 187
+          Height = 19
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -4113,40 +4661,52 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object btn_DoorToCardPermitAdd: TSpeedButton
-          Left = 307
-          Top = 49
-          Width = 170
-          Height = 21
+          Left = 384
+          Top = 61
+          Width = 212
+          Height = 27
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = #36984#25246#27177#38480#30331#37682
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_DoorToCardPermitAddClick
         end
         object Gauge_Add: TGauge
-          Left = 483
-          Top = 49
-          Width = 148
-          Height = 21
+          Left = 604
+          Top = 61
+          Width = 185
+          Height = 27
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           ForeColor = clBlue
           Progress = 50
           Visible = False
         end
         object cmb_addPermitDongCode: TComboBox
-          Left = 177
-          Top = 28
-          Width = 119
-          Height = 21
+          Left = 221
+          Top = 35
+          Width = 149
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -4155,14 +4715,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           OnChange = cmb_addPermitDongCodeChange
         end
         object cmb_addPermitAreaCode: TComboBox
-          Left = 177
-          Top = 49
-          Width = 119
-          Height = 21
+          Left = 221
+          Top = 61
+          Width = 149
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -4171,11 +4735,15 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           OnChange = cmb_addPermitAreaCodeChange
         end
         object sg_addPermitCardList: TAdvStringGrid
-          Left = 3
-          Top = 76
-          Width = 729
-          Height = 246
+          Left = 4
+          Top = 95
+          Width = 911
+          Height = 308
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           ColCount = 7
           DefaultColWidth = 110
           DrawingStyle = gdsClassic
@@ -4183,7 +4751,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           RowCount = 17
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -4192,6 +4760,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           ScrollBars = ssNone
           ShowHint = True
           TabOrder = 2
+          GridLineColor = 13027014
+          GridFixedLineColor = 13027014
+          HoverRowCells = [hcNormal, hcSelected]
           OnCheckBoxClick = sg_addPermitCardListCheckBoxClick
           OnResize = sg_addPermitCardListResize
           ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -4199,6 +4770,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           ActiveCellFont.Height = -13
           ActiveCellFont.Name = 'MS Gothic'
           ActiveCellFont.Style = []
+          ActiveCellColor = 16448250
+          ActiveCellColorTo = 16448250
+          BorderColor = 13027014
           ColumnHeaders.Strings = (
             ''
             #54924#49324
@@ -4206,10 +4780,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
             #51649#50948
             #51060#47492
             #52852#46300#48264#54840)
-          ControlLook.FixedGradientHoverFrom = clGray
-          ControlLook.FixedGradientHoverTo = clWhite
-          ControlLook.FixedGradientDownFrom = clGray
-          ControlLook.FixedGradientDownTo = clSilver
+          ControlLook.FixedGradientMirrorFrom = 16448250
+          ControlLook.FixedGradientMirrorTo = 16448250
+          ControlLook.FixedGradientHoverFrom = 16576740
+          ControlLook.FixedGradientHoverTo = 16576740
+          ControlLook.FixedGradientHoverMirrorFrom = 16576740
+          ControlLook.FixedGradientHoverMirrorTo = 16576740
+          ControlLook.FixedGradientHoverBorder = 15381630
+          ControlLook.FixedGradientDownFrom = 16573128
+          ControlLook.FixedGradientDownTo = 16573128
+          ControlLook.FixedGradientDownMirrorFrom = 16573128
+          ControlLook.FixedGradientDownMirrorTo = 16573128
+          ControlLook.FixedGradientDownBorder = 15048022
           ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
           ControlLook.DropDownHeader.Font.Color = clWindowText
           ControlLook.DropDownHeader.Font.Height = -11
@@ -4231,6 +4813,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           FilterDropDown.Font.Name = 'MS Gothic'
           FilterDropDown.Font.Style = []
           FilterDropDownClear = '(All)'
+          FilterEdit.TypeNames.Strings = (
+            'Starts with'
+            'Ends with'
+            'Contains'
+            'Not contains'
+            'Equal'
+            'Not equal'
+            'Clear')
           FixedColWidth = 30
           FixedRowHeight = 22
           FixedFont.Charset = DEFAULT_CHARSET
@@ -4239,6 +4829,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           FixedFont.Name = 'MS Gothic'
           FixedFont.Style = []
           FloatFormat = '%.2f'
+          Look = glOffice2007
           PrintSettings.DateFormat = 'dd/mm/yyyy'
           PrintSettings.Font.Charset = DEFAULT_CHARSET
           PrintSettings.Font.Color = clWindowText
@@ -4261,6 +4852,9 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           PrintSettings.FooterFont.Name = 'MS Gothic'
           PrintSettings.FooterFont.Style = []
           PrintSettings.PageNumSep = '/'
+          ScrollWidth = 21
+          SearchFooter.Color = 16448250
+          SearchFooter.ColorTo = 16448250
           SearchFooter.FindNextCaption = 'Find &next'
           SearchFooter.FindPrevCaption = 'Find &previous'
           SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -4274,7 +4868,14 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
           SearchFooter.HintFindPrev = 'Find previous occurrence'
           SearchFooter.HintHighlight = 'Highlight occurrences'
           SearchFooter.MatchCaseCaption = 'Match case'
-          Version = '6.0.4.4'
+          SelectionColor = 14327846
+          SelectionTextColor = clWhite
+          SortSettings.DefaultFormat = ssAutomatic
+          SortSettings.HeaderColor = 16448250
+          SortSettings.HeaderColorTo = 16448250
+          SortSettings.HeaderMirrorColor = 16448250
+          SortSettings.HeaderMirrorColorTo = 16448250
+          Version = '7.2.8.0'
           ColWidths = (
             30
             236
@@ -4293,7 +4894,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     Left = 176
     Top = 312
     Bitmap = {
-      494C0101010004006C0020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000400700020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000002000000001002000000000000040
       000000000000000000000000000000000000FEFEFE00FEFEFE00FEFEFE00FEFE
       FE00FEFEFE00FEFEFE00C7C7C700C7C7C700FEFEFE00FEFEFE00FCFEFE00C7C7
@@ -4829,7 +5430,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
       000000000000}
   end
   object pop_PermitAdd: TAdvPopupMenu
-    Version = '2.5.4.0'
+    Version = '2.5.4.3'
     Left = 296
     Top = 248
     object mn_addpermitListDelete: TMenuItem
@@ -4839,9 +5440,18 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     end
   end
   object AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler
-    Style = bsOffice2010Silver
+    AppColor.AppButtonColor = 13005312
+    AppColor.AppButtonHoverColor = 16755772
+    AppColor.TextColor = clWhite
+    AppColor.HoverColor = 16246477
+    AppColor.HoverTextColor = clBlack
+    AppColor.HoverBorderColor = 15187578
+    AppColor.SelectedColor = 15187578
+    AppColor.SelectedTextColor = clBlack
+    AppColor.SelectedBorderColor = 15187578
+    Style = bsOffice2013LightGray
     BackGroundDisplay = bdStretch
-    BorderColor = 13087391
+    BorderColor = clGray
     BorderColorHot = 15590880
     ButtonAppearance.Color = clWhite
     ButtonAppearance.ColorTo = 15590880
@@ -4857,7 +5467,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     ButtonAppearance.CaptionFont.Charset = DEFAULT_CHARSET
     ButtonAppearance.CaptionFont.Color = clWindowText
     ButtonAppearance.CaptionFont.Height = -11
-    ButtonAppearance.CaptionFont.Name = 'MS Gothic'
+    ButtonAppearance.CaptionFont.Name = 'Segoe UI'
     ButtonAppearance.CaptionFont.Style = []
     CaptionAppearance.CaptionColor = 15921133
     CaptionAppearance.CaptionColorTo = 15921133
@@ -4870,12 +5480,12 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     CaptionFont.Charset = DEFAULT_CHARSET
     CaptionFont.Color = clWindowText
     CaptionFont.Height = -11
-    CaptionFont.Name = 'MS Gothic'
+    CaptionFont.Name = 'Segoe UI'
     CaptionFont.Style = []
     ContainerAppearance.LineColor = clBtnShadow
     ContainerAppearance.Line3D = True
-    Color.Color = clWhite
-    Color.ColorTo = 15590880
+    Color.Color = 16448250
+    Color.ColorTo = 16448250
     Color.Direction = gdVertical
     Color.Mirror.Color = 16777214
     Color.Mirror.ColorTo = 16777214
@@ -4916,37 +5526,38 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     CompactGlowButtonAppearance.GradientDown = ggVertical
     CompactGlowButtonAppearance.GradientMirrorDown = ggVertical
     CompactGlowButtonAppearance.GradientChecked = ggVertical
-    DockColor.Color = 15590880
-    DockColor.ColorTo = clWhite
+    DockColor.Color = 16448250
+    DockColor.ColorTo = 16448250
     DockColor.Direction = gdHorizontal
     DockColor.Steps = 128
     FloatingWindowBorderColor = 13486790
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clBlack
     Font.Height = -27
-    Font.Name = 'MS Gothic'
+    Font.Name = 'Segoe UI'
     Font.Style = []
-    GlowButtonAppearance.BorderColor = 13815240
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.ColorTo = 15590880
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
+    GlowButtonAppearance.BorderColor = 16448250
+    GlowButtonAppearance.BorderColorHot = 15187578
+    GlowButtonAppearance.BorderColorDown = 15187578
+    GlowButtonAppearance.BorderColorChecked = 15187578
+    GlowButtonAppearance.Color = 16448250
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 15187578
+    GlowButtonAppearance.ColorCheckedTo = clNone
     GlowButtonAppearance.ColorDisabled = clNone
     GlowButtonAppearance.ColorDisabledTo = clNone
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15590880
-    GlowButtonAppearance.ColorMirrorTo = 15590880
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
+    GlowButtonAppearance.ColorDown = 15187578
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16246477
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = clNone
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = clNone
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = clNone
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = clNone
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
     GlowButtonAppearance.ColorMirrorDisabled = clNone
     GlowButtonAppearance.ColorMirrorDisabledTo = clNone
     GlowButtonAppearance.GradientHot = ggVertical
@@ -4954,6 +5565,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
+    GroupAppearance.Background = clInfoBk
     GroupAppearance.BorderColor = 1340927
     GroupAppearance.Color = 4636927
     GroupAppearance.ColorTo = 4636927
@@ -4962,7 +5574,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     GroupAppearance.Font.Charset = DEFAULT_CHARSET
     GroupAppearance.Font.Color = clWindowText
     GroupAppearance.Font.Height = -11
-    GroupAppearance.Font.Name = 'MS Gothic'
+    GroupAppearance.Font.Name = 'Segoe UI'
     GroupAppearance.Font.Style = []
     GroupAppearance.Gradient = ggVertical
     GroupAppearance.GradientMirror = ggVertical
@@ -5057,8 +5669,8 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -13
-    PagerCaption.Font.Name = 'MS Gothic'
+    PagerCaption.Font.Height = -17
+    PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 13815240
     QATAppearance.Color = clWhite
@@ -5066,12 +5678,10 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     QATAppearance.FullSizeBorderColor = 13815240
     QATAppearance.FullSizeColor = clWhite
     QATAppearance.FullSizeColorTo = 15590880
-    RightHandleColor = clWhite
-    RightHandleColorTo = 15590880
-    RightHandleColorHot = 14285309
-    RightHandleColorHotTo = 9102333
-    RightHandleColorDown = 8122111
-    RightHandleColorDownTo = 7131391
+    RightHandleColorHot = 7368816
+    RightHandleColorHotTo = 7368816
+    RightHandleColorDown = clGray
+    RightHandleColorDownTo = clGray
     TabAppearance.BorderColor = 13815240
     TabAppearance.BorderColorHot = 12236209
     TabAppearance.BorderColorSelected = 12565174
@@ -5097,7 +5707,7 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -11
-    TabAppearance.Font.Name = 'MS Gothic'
+    TabAppearance.Font.Name = 'Segoe UI'
     TabAppearance.Font.Style = []
     TabAppearance.Gradient = ggVertical
     TabAppearance.GradientMirror = ggVertical
@@ -5125,58 +5735,60 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
   end
   object AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler
     ButtonBorderColor = clNone
-    GlowButtonAppearance.BorderColor = 13087391
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.Color = 16643823
-    GlowButtonAppearance.ColorTo = 15784647
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
-    GlowButtonAppearance.ColorDisabled = 15921906
-    GlowButtonAppearance.ColorDisabledTo = 15921906
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15784647
-    GlowButtonAppearance.ColorMirrorTo = 15784647
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
-    GlowButtonAppearance.ColorMirrorDisabled = 11974326
+    GlowButtonAppearance.BorderColor = 13027014
+    GlowButtonAppearance.BorderColorHot = 15381630
+    GlowButtonAppearance.BorderColorDown = 15048022
+    GlowButtonAppearance.BorderColorChecked = 16750899
+    GlowButtonAppearance.BorderColorDisabled = 11316396
+    GlowButtonAppearance.Color = 16185078
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 16750899
+    GlowButtonAppearance.ColorCheckedTo = clNone
+    GlowButtonAppearance.ColorDisabled = 15658734
+    GlowButtonAppearance.ColorDisabledTo = clNone
+    GlowButtonAppearance.ColorDown = 16573128
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16576740
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = 16185078
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = 16576740
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = 16573128
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = 16750899
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
+    GlowButtonAppearance.ColorMirrorDisabled = 15658734
     GlowButtonAppearance.ColorMirrorDisabledTo = 15921906
     GlowButtonAppearance.GradientHot = ggVertical
     GlowButtonAppearance.GradientMirrorHot = ggVertical
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
-    Style = tsOffice2010Blue
-    TabAppearance.BorderColor = 13087391
-    TabAppearance.BorderColorHot = 12236209
-    TabAppearance.BorderColorSelected = 13087391
-    TabAppearance.BorderColorSelectedHot = 13087391
+    TabRounding = 0
+    Style = tsOffice2013LightGray
+    TabAppearance.BorderColor = 13027014
+    TabAppearance.BorderColorHot = clNone
+    TabAppearance.BorderColorSelected = 13027014
+    TabAppearance.BorderColorSelectedHot = 13027014
     TabAppearance.BorderColorDisabled = clNone
-    TabAppearance.BorderColorDown = clNone
+    TabAppearance.BorderColorDown = 13027014
     TabAppearance.Color = clBtnFace
     TabAppearance.ColorTo = clWhite
-    TabAppearance.ColorSelected = 15784647
-    TabAppearance.ColorSelectedTo = 15784647
-    TabAppearance.ColorDisabled = 15921906
-    TabAppearance.ColorDisabledTo = 15921906
-    TabAppearance.ColorHot = 15920100
-    TabAppearance.ColorHotTo = 15920100
+    TabAppearance.ColorSelected = 16448250
+    TabAppearance.ColorSelectedTo = clNone
+    TabAppearance.ColorDisabled = 15658734
+    TabAppearance.ColorDisabledTo = clNone
+    TabAppearance.ColorHot = 16185078
+    TabAppearance.ColorHotTo = clNone
     TabAppearance.ColorMirror = clWhite
     TabAppearance.ColorMirrorTo = clWhite
-    TabAppearance.ColorMirrorHot = 15920100
-    TabAppearance.ColorMirrorHotTo = 15920100
-    TabAppearance.ColorMirrorSelected = 15784647
-    TabAppearance.ColorMirrorSelectedTo = 15784647
-    TabAppearance.ColorMirrorDisabled = 15921906
-    TabAppearance.ColorMirrorDisabledTo = 15921906
+    TabAppearance.ColorMirrorHot = 16185078
+    TabAppearance.ColorMirrorHotTo = clNone
+    TabAppearance.ColorMirrorSelected = 16448250
+    TabAppearance.ColorMirrorSelectedTo = clNone
+    TabAppearance.ColorMirrorDisabled = 15658734
+    TabAppearance.ColorMirrorDisabledTo = clNone
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -13
@@ -5194,13 +5806,13 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
     TabAppearance.TextColorHot = clBlack
     TabAppearance.TextColorSelected = clBlack
     TabAppearance.TextColorDisabled = clGray
-    TabAppearance.ShadowColor = 13087391
-    TabAppearance.HighLightColorSelected = 13087391
-    TabAppearance.HighLightColorHot = 16643823
-    TabAppearance.HighLightColorSelectedHot = 15784647
-    TabAppearance.HighLightColorDown = 16181209
-    TabAppearance.BackGround.Color = 15784647
-    TabAppearance.BackGround.ColorTo = 16643823
+    TabAppearance.ShadowColor = clNone
+    TabAppearance.HighLightColorSelected = clNone
+    TabAppearance.HighLightColorHot = clNone
+    TabAppearance.HighLightColorSelectedHot = clNone
+    TabAppearance.HighLightColorDown = clNone
+    TabAppearance.BackGround.Color = 16185078
+    TabAppearance.BackGround.ColorTo = clNone
     TabAppearance.BackGround.Direction = gdHorizontal
     Left = 264
   end
@@ -5212,5 +5824,11 @@ inherited fmDoorCardPermit: TfmDoorCardPermit
       Caption = #12489#12450#27177#38480#12398#31649#29702
       OnClick = pm_updateClick
     end
+  end
+  object AdvFormStyler1: TAdvFormStyler
+    MetroColor = clSkyBlue
+    Style = tsOffice2013LightGray
+    Left = 640
+    Top = 64
   end
 end

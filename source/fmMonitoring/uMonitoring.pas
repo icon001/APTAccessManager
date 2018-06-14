@@ -10,7 +10,8 @@ uses
   AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
   Vcl.Mask, AdvSpin, AdvOfficeButtons, AdvPanel, Vcl.ComCtrls, AdvListV,
   Vcl.ImgList, Vcl.Menus, AdvMenus, AdvExplorerTreeview, paramtreeview,
-  Vcl.Clipbrd, AdvToolBar, AdvToolBarStylers;
+  Vcl.Clipbrd, AdvToolBar, AdvToolBarStylers, AdvAppStyler, AdvSplitter,
+  System.IniFiles;
 
 const
   con_DOORLOCKCLOSE = 3;
@@ -50,6 +51,10 @@ type
     mn_NodeIP: TMenuItem;
     AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler;
     AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler;
+    AdvFormStyler1: TAdvFormStyler;
+    pan_AlarmListHeader: TAdvSmoothPanel;
+    sg_alarmEvent: TAdvStringGrid;
+    AdvSplitter3: TAdvSplitter;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -76,8 +81,10 @@ type
     procedure mn_AllCardDeleteClick(Sender: TObject);
     procedure mn_PasswordAllDeleteClick(Sender: TObject);
     procedure mn_DeviceInitializeClick(Sender: TObject);
+    procedure pan_AlarmListHeaderResize(Sender: TObject);
   private
     L_bClear : Boolean;
+    L_bAlarmClear : Boolean;
     ListDoorCodeList : TStringList;
     ListDongCodeList : TStringList;
     ListAreaCodeList : TStringList;
@@ -100,6 +107,7 @@ type
     procedure DoorStateChange(aNodeNo,aECUID,aDoorNo:string;aDoorState:integer);
   private
     function GetAccessResultName(aAccessResultCode:string):string;
+    function GetAlarmCodeInfo(aAlarmCode:string; var aAlarmName,aAlarmEvent,aAlarmSound,aAlarmMessage,aColor:string):Boolean;
     function GetstChangeStateName(aChangeStateCode:string):string;
     function GetLocationName(aNodeNo,aECUID,aDoorNo:string;var aDongName,aAreaName,aDoorName:string):Boolean;
     function GetEmployeeInfo(aCardNo:string; var aCompanyName,aDepartName,aEmCode,aUserName:string):Boolean;
@@ -113,6 +121,7 @@ type
     procedure Form_Close;
     procedure DeviceReload;
 
+    procedure RcvAlarmEvent(aNodeNo, aECUID, aDoorNo,aReaderNo, aInOut, aTime, aCardMode, aDoorMode, aAlarmCode:string);
     procedure RcvCardAccessEvent(aNodeNo, aECUID, aDoorNo,aReaderNo, aInOut, aTime, aCardMode, aDoorMode, aChangeState, aAccessResult,aDoorState, aATButton, aCardNo:string);
     procedure ReceiveDeviceInitialize(aNodeNo, aECUID, aResult:string);
     procedure RcvDoorModeChange(aNodeNo, aECUID, aResult,aMode,aDoorState:string);
@@ -137,6 +146,13 @@ uses
 
 {$R *.dfm}
 
+
+procedure TfmMonitoring.pan_AlarmListHeaderResize(Sender: TObject);
+begin
+  inherited;
+  sg_alarmEvent.Height := pan_AlarmListHeader.Height - 20;
+  sg_alarmEvent.ColWidths[3] := sg_alarmEvent.Width - (sg_alarmEvent.ColWidths[0] + sg_alarmEvent.ColWidths[1] + sg_alarmEvent.ColWidths[2]);
+end;
 
 procedure TfmMonitoring.pan_DoorStateResize(Sender: TObject);
 begin
@@ -335,6 +351,8 @@ end;
 
 procedure TfmMonitoring.FormClose(Sender: TObject;
   var Action: TCloseAction);
+var
+  ini_fun : TiniFile;
 begin
   StateAsyncTimer1.Enabled := False;
   SearchTimer.Enabled := False;
@@ -349,6 +367,15 @@ begin
   SearchPasswordCodeList.Free;
   SearchDoorCodeList.Free;
   DisplayList.Free;
+  Try
+    ini_fun := TiniFile.Create(G_stExeFolder + '\Monitoring.INI');
+    with ini_fun do
+    begin
+      WriteInteger('AlarmEvent','Height',pan_AlarmListHeader.Height);
+    end;
+  Finally
+    ini_fun.Free;
+  End;
 
   Action := caFree;
 end;
@@ -357,6 +384,7 @@ procedure TfmMonitoring.FormCreate(Sender: TObject);
 begin
 
   L_bClear := True;
+  L_bAlarmClear := True;
 
   ListDongCodeList := TStringList.Create;
   ListAreaCodeList := TStringList.Create;
@@ -384,6 +412,7 @@ begin
 
   pan_DoorState.Caption.Text := dmFormName.GetFormMessage('4','M00060');
   pan_CardListHeader.Caption.Text := dmFormName.GetFormMessage('4','M00062');
+  pan_AlarmListHeader.Caption.Text := dmFormName.GetFormMessage('4','M00142');
   lb_Door.Caption.Text := dmFormName.GetFormMessage('4','M00002');
   with sg_AccessEvent do
   begin
@@ -397,6 +426,13 @@ begin
     cells[7,0] := WideString(dmFormName.GetFormMessage('4','M00003'));
     cells[8,0] := WideString(dmFormName.GetFormMessage('4','M00013'));
   end;
+  with sg_AlarmEvent do
+  begin
+    cells[0,0] := WideString(dmFormName.GetFormMessage('4','M00143'));
+    cells[1,0] := WideString(dmFormName.GetFormMessage('4','M00002'));
+    cells[2,0] := WideString(dmFormName.GetFormMessage('4','M00144'));
+    cells[3,0] := WideString(dmFormName.GetFormMessage('4','M00145'));
+  end;
   mn_DoorClose.Caption := dmFormName.GetFormMessage('4','M00091');
   mn_DoorOpenMode.Caption := dmFormName.GetFormMessage('4','M00092');
   mn_DeviceChange.Caption := dmFormName.GetFormMessage('4','M00093');
@@ -406,6 +442,8 @@ begin
 end;
 
 procedure TfmMonitoring.FormShow(Sender: TObject);
+var
+  ini_fun : TiniFile;
 begin
   self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['NAME'] := inttostr(FORMMONITORING);
   self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['VALUE'] := 'TRUE';
@@ -413,6 +451,18 @@ begin
 
   FormNameSetting;
   LoadListView;
+  Try
+    ini_fun := TiniFile.Create(G_stExeFolder + '\Monitoring.INI');
+    with ini_fun do
+    begin
+      pan_AlarmListHeader.Height := ReadInteger('AlarmEvent','Height',100);
+      if ReadInteger('AlarmEvent','Show',0) = 1 then  pan_AlarmListHeader.Visible := True
+      else pan_AlarmListHeader.Visible := False;
+    end;
+
+  Finally
+    ini_fun.Free;
+  End;
 end;
 
 procedure TfmMonitoring.Form_Close;
@@ -448,6 +498,51 @@ begin
       if recordcount < 1 then Exit;
       result := FindField('PE_PERMITNAME').AsString;
 
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+function TfmMonitoring.GetAlarmCodeInfo(aAlarmCode: string; var aAlarmName,
+  aAlarmEvent, aAlarmSound, aAlarmMessage, aColor: string): Boolean;
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  aAlarmName := '';
+  aAlarmEvent := '';
+  aAlarmSound := '';
+  aAlarmMessage := '';
+  aColor:= '';
+
+  result := False;
+  stSql := ' Select * from TB_ALARMCODE ';
+  stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  stSql := stSql + ' AND AE_ALARMCODE = ''' + aAlarmCode + ''' ';
+
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+
+    with TempAdoQuery do
+    begin
+      Close;
+      Sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then Exit;
+      result := True;
+      aAlarmName := FindField('AE_ALARMNAME').AsString;
+      aAlarmEvent := FindField('AE_Event').AsString;
+      aAlarmSound := FindField('AE_Sound').AsString;
+      aAlarmMessage := FindField('AE_Alarm').AsString;
+      aColor := FindField('AE_Color').AsString;
     end;
   Finally
     TempAdoQuery.Free;
@@ -1107,6 +1202,51 @@ begin
     showmessage(stSelectName + ':' + dmFormName.GetFormMessage('2','M00043'));
   end;
   PopupMenu.CloseMenu;
+end;
+
+procedure TfmMonitoring.RcvAlarmEvent(aNodeNo, aECUID, aDoorNo, aReaderNo,
+  aInOut, aTime, aCardMode, aDoorMode, aAlarmCode: string);
+var
+  stDisplay : string;
+  stNodeNo : string;
+  stEcuID : string;
+  stDoorNo : string;
+  stTemp1,stTemp2 : string;
+  stDoorName : string;
+  stAlarmName : string;
+  stAlarmEvent,stAlarmSound,stAlarmMessage,stColor : string;
+begin
+  if cmb_ListDoorCode.ItemIndex > 0 then
+  begin
+    stTemp1 := ListDoorCodeList.Strings[cmb_ListDoorCode.ItemIndex];
+    stTemp2 := FillZeroStrNum(aNodeNo,G_nNodeCodeLength) + FillZeroStrNum(aECUID,G_nDeviceCodeLength) + FillZeroStrNum(aDoorNo,G_nDoorCodeLength);
+    if stTemp1 <> stTemp2 then Exit;    //선택된 출입문이 아니면
+  end;
+
+
+  //여기에서 화면에 뿌려주자.
+  with sg_AlarmEvent do
+  begin
+    if RowCount >= 1000 then  rowCount := 999;
+
+
+    GetLocationName(stNodeNo,stECUID,stDoorNo,stTemp1,stTemp2,stDoorName);
+    GetAlarmCodeInfo(aAlarmCode,stAlarmName,stAlarmEvent,stAlarmSound,stAlarmMessage,stColor);
+
+    if stAlarmEvent <> '1' then Exit; //이벤트 발생건이 아니면 빠져 나가자.
+    if Not L_bAlarmClear then InsertRows(1,1);
+    L_bAlarmClear := False;
+
+    Cells[0,1] := MakeDatetimeStr(aTime);
+    Cells[1,1] := stDoorName;
+    Cells[2,1] := aAlarmCode;
+    Cells[3,1] := stAlarmName;
+
+    if isDigit(stColor) then
+    begin
+      RowColor[1] := strtoint(stColor);
+    end;
+  end;
 end;
 
 procedure TfmMonitoring.RcvCardAccessEvent(aNodeNo, aECUID, aDoorNo, aReaderNo,

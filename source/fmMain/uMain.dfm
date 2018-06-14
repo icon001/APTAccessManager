@@ -3,11 +3,11 @@ inherited fmMain: TfmMain
   Top = 0
   BorderIcons = []
   Caption = #52636#51077#44288#47532#49884#49828#53596
-  ClientHeight = 750
-  ClientWidth = 1008
+  ClientHeight = 938
+  ClientWidth = 1260
   Font.Charset = HANGEUL_CHARSET
   Font.Color = clBlack
-  Font.Height = -12
+  Font.Height = -15
   Font.Name = #44404#47548
   FormStyle = fsMDIForm
   WindowState = wsMaximized
@@ -15,15 +15,20 @@ inherited fmMain: TfmMain
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  ExplicitWidth = 1024
-  ExplicitHeight = 788
-  PixelsPerInch = 96
-  TextHeight = 12
+  ExplicitLeft = -16
+  ExplicitWidth = 1278
+  ExplicitHeight = 983
+  PixelsPerInch = 120
+  TextHeight = 15
   object Image1: TImage [0]
     Left = 0
-    Top = 161
-    Width = 1008
-    Height = 570
+    Top = 177
+    Width = 1260
+    Height = 742
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Align = alClient
     Center = True
     Picture.Data = {
@@ -3758,13 +3763,18 @@ inherited fmMain: TfmMain
       C55D8ABB15762AEC55D8ABB15762AEC55D8ABB15762AEC55D8ABB15762AEC55D
       8ABB15762AEC55D8ABB15762AEC55D8ABB15762AEC55D8ABB15762AEC55D8ABB
       157FFFD9}
-    ExplicitHeight = 574
+    ExplicitTop = 201
+    ExplicitHeight = 713
   end
   object AdvToolBarPager1: TAdvToolBarPager [1]
     Left = 0
     Top = 0
-    Width = 1008
-    Height = 161
+    Width = 1260
+    Height = 177
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     ActivePage = ApManagerAdmin
     Caption.Caption = ' '#52636#51077#44288#47532#49884#49828#53596
     CaptionButtons = [cbClose, cbMinimize, cbMaximize]
@@ -3948,17 +3958,25 @@ inherited fmMain: TfmMain
     TabOrder = 0
     OnHelpClick = AdvToolBarPager1HelpClick
     object ApBasicAdmin: TAdvPage
-      Left = 4
+      Left = -1
       Top = 53
-      Width = 1000
-      Height = 103
+      Width = 1262
+      Height = 124
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption = #44592#48376#49444#51221
       ShortCutHint = 'N'
       object AdvToolBar7: TAdvToolBar
-        Left = 202
+        Left = 251
         Top = 3
-        Width = 301
-        Height = 97
+        Width = 376
+        Height = 118
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -3992,15 +4010,19 @@ inherited fmMain: TfmMain
         object AdvGlowButton42: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 94
-          Height = 81
+          Width = 118
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           BorderStyle = bsNone
           Caption = #45432#46300#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -4076,35 +4098,37 @@ inherited fmMain: TfmMain
             D233FCBF0006282CEEEBBA83EAD97E39D05E8B51A47AD37D816AC733EF0CBCAF
             E6D4755D07A8035A6A1EA7BA8D15E0143049F5C8F5DEAB75FB9F016A10926AE3
             7ADA05A066FB7CC501FE0B50B62A2EE7C23FE10000000049454E44AE426082}
+          Rounded = False
           ShortCutHint = 'F'
           Transparent = True
           TabOrder = 0
           OnClick = AdvGlowButton42Click
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -4113,16 +4137,20 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object AdvGlowButton67: TAdvGlowButton
-          Left = 94
+          Left = 118
           Top = 0
-          Width = 107
-          Height = 81
+          Width = 133
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           Caption = #52636#51077#47928#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -4262,35 +4290,37 @@ inherited fmMain: TfmMain
             FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
             FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
             FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+          Rounded = False
           Spacing = 1
           Transparent = True
           TabOrder = 1
           OnClick = AdvGlowButton67Click
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -4299,16 +4329,20 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object AdvGlowButton3: TAdvGlowButton
-          Left = 201
+          Left = 251
           Top = 0
-          Width = 96
-          Height = 81
+          Width = 120
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           Caption = #49828#52992#51460#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -4416,35 +4450,37 @@ inherited fmMain: TfmMain
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+          Rounded = False
           Spacing = 1
           Transparent = True
           TabOrder = 2
           OnClick = AdvGlowButton3Click
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -4456,8 +4492,12 @@ inherited fmMain: TfmMain
       object AdvToolBar8: TAdvToolBar
         Left = 3
         Top = 3
-        Width = 196
-        Height = 97
+        Width = 245
+        Height = 118
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -4491,15 +4531,19 @@ inherited fmMain: TfmMain
         object AdvGlowButton6: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 98
-          Height = 81
+          Width = 121
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           BorderStyle = bsNone
           Caption = #46041#53076#46300#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -4608,36 +4652,38 @@ inherited fmMain: TfmMain
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Position = bpLeft
+          Rounded = False
           ShortCutHint = 'D'
           Transparent = True
           TabOrder = 0
           TabStop = True
           OnClick = AdvGlowButton6Click
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -4646,17 +4692,21 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object AdvGlowButton7: TAdvGlowButton
-          Left = 98
+          Left = 121
           Top = 0
-          Width = 94
-          Height = 81
+          Width = 117
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           BorderStyle = bsNone
           Caption = #52636#44396#53076#46300#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -5066,36 +5116,38 @@ inherited fmMain: TfmMain
             E8F1653731653032E992696346D20F34F4E286DA009202A23914EECC29C42AE6
             3CA464493CCB911888800720FF00FFD9}
           Position = bpLeft
+          Rounded = False
           ShortCutHint = 'D'
           Transparent = True
           TabOrder = 1
           TabStop = True
           OnClick = AdvGlowButton7Click
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -5105,10 +5157,14 @@ inherited fmMain: TfmMain
         end
       end
       object AdvToolBar2: TAdvToolBar
-        Left = 506
+        Left = 630
         Top = 3
-        Width = 150
-        Height = 97
+        Width = 187
+        Height = 118
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -5142,14 +5198,18 @@ inherited fmMain: TfmMain
         object AdvGlowButton53: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 150
-          Height = 81
+          Width = 187
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alClient
           Caption = #52636#51077#49345#53468#53076#46300#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -5257,35 +5317,37 @@ inherited fmMain: TfmMain
             F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0ECE9E9
             ECE9E9CAC8C8B7B7B7A8A8A99C9897898888898888D8D8D7ECE9E9F0F0F0F0F0
             F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0}
+          Rounded = False
           Spacing = 1
           Transparent = True
           TabOrder = 0
           OnClick = AdvGlowButton53Click
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -5295,10 +5357,14 @@ inherited fmMain: TfmMain
         end
       end
       object AdvToolBar9: TAdvToolBar
-        Left = 659
+        Left = 820
         Top = 3
-        Width = 110
-        Height = 97
+        Width = 137
+        Height = 118
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -5332,14 +5398,18 @@ inherited fmMain: TfmMain
         object AdvGlowButton9: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 110
-          Height = 81
+          Width = 137
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alClient
           Caption = #53945#51221#51068#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -5447,35 +5517,37 @@ inherited fmMain: TfmMain
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+          Rounded = False
           Spacing = 1
           Transparent = True
           TabOrder = 0
           OnClick = AdvGlowButton9Click
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -5486,17 +5558,25 @@ inherited fmMain: TfmMain
       end
     end
     object ApManagerAdmin: TAdvPage
-      Left = 4
+      Left = -1
       Top = 53
-      Width = 1000
-      Height = 103
+      Width = 1262
+      Height = 124
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption = #50868#50689#44288#47532
       ShortCutHint = 'I'
       object AdvToolBar1: TAdvToolBar
         Left = 3
         Top = 3
-        Width = 394
-        Height = 97
+        Width = 492
+        Height = 118
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -5528,17 +5608,21 @@ inherited fmMain: TfmMain
         ParentOptionPicture = True
         ToolBarIndex = 0
         object AdvGlowButton2: TAdvGlowButton
-          Left = 274
+          Left = 343
           Top = 0
-          Width = 114
-          Height = 81
+          Width = 142
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           BorderStyle = bsNone
           Caption = #48708#48128#48264#54840#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -5953,35 +6037,37 @@ inherited fmMain: TfmMain
             6F749D59FCD1E63BC179E629E39228E082A9676714CC1DE2810FC4C4944E7349
             FBC7E3FB0BF066EF43A0C5A68F0C07F5A5FC537173EA6794FABA3FFFD9}
           Position = bpLeft
+          Rounded = False
           ShortCutHint = 'D'
           Transparent = True
           TabOrder = 0
           TabStop = True
           OnClick = AdvGlowButton2Click
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -5992,15 +6078,19 @@ inherited fmMain: TfmMain
         object AdvGlowButton1: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 80
-          Height = 81
+          Width = 100
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           BorderStyle = bsNone
           Caption = #49324#50896#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -6391,36 +6481,38 @@ inherited fmMain: TfmMain
             A3A7965C7C31E7C414FF00253CB7ABE85A25EC3A9426192498140430A85E5BD1
             829EF8F69EA619B2714797085ECDD3CB163E1973E27A366BDCF7FFD9}
           Position = bpLeft
+          Rounded = False
           ShortCutHint = 'D'
           Transparent = True
           TabOrder = 1
           TabStop = True
           OnClick = AdvGlowButton1Click
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -6431,17 +6523,21 @@ inherited fmMain: TfmMain
           DropDownMenu = pm_Person
         end
         object AdvGlowButton8: TAdvGlowButton
-          Left = 80
+          Left = 100
           Top = 0
-          Width = 80
-          Height = 81
+          Width = 100
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           BorderStyle = bsNone
           Caption = #44060#48324#44428#54620#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -6839,35 +6935,37 @@ inherited fmMain: TfmMain
             8AF70BBC8761AA5968CF1EA11980BCF249040C41648DCD429A6D95E59894890D
             908D0A7FFFD9}
           Position = bpLeft
+          Rounded = False
           ShortCutHint = 'D'
           Transparent = True
           TabOrder = 2
           TabStop = True
           OnClick = AdvGlowButton8Click
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -6876,17 +6974,21 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object AdvGlowButton5: TAdvGlowButton
-          Left = 160
+          Left = 200
           Top = 0
-          Width = 114
-          Height = 81
+          Width = 143
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           BorderStyle = bsNone
           Caption = #52636#51077#47928#48324#44428#54620#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -7292,35 +7394,37 @@ inherited fmMain: TfmMain
             F876F87E2CD01D4CEC904C788F13B018E34365B7A3414B2B98F4BB1F46E6E42A
             130D9CB1B3FC60D0B7A63F1C84F2CE4289B64200720FFFD9}
           Position = bpLeft
+          Rounded = False
           ShortCutHint = 'D'
           Transparent = True
           TabOrder = 3
           TabStop = True
           OnClick = AdvGlowButton5Click
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -7330,10 +7434,14 @@ inherited fmMain: TfmMain
         end
       end
       object AdvToolBar4: TAdvToolBar
-        Left = 400
+        Left = 498
         Top = 3
-        Width = 236
-        Height = 97
+        Width = 295
+        Height = 118
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -7367,16 +7475,20 @@ inherited fmMain: TfmMain
         object mn_btnMonitoring: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 103
-          Height = 81
+          Width = 129
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           AntiAlias = aaNone
           BorderStyle = bsNone
           Caption = #52636#51077#54788#54889#47784#45768#53552#47553
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -7791,34 +7903,36 @@ inherited fmMain: TfmMain
             B493D676723E04780CF6D331A7FBAE5E5FE466465D664C82A54E0E8FB2FC0C9C
             40F10A677E50F2BDF5B5FBEBBAA0105ECB01B6B7B04218430B3AC8DEAB8A8799
             9913970FDDC7F617D4FEF1B14BB7029FFFD9}
+          Rounded = False
           ShortCutHint = 'E'
           Transparent = True
           TabOrder = 0
           OnClick = mn_btnMonitoringClick
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -7827,18 +7941,22 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object AdvGlowButton4: TAdvGlowButton
-          Left = 103
+          Left = 129
           Top = 0
-          Width = 128
-          Height = 81
+          Width = 160
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           AntiAlias = aaNone
           BorderStyle = bsNone
           Caption = #44592#44592#53685#49888#54788#54889#47784#45768#53552#47553
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -8262,34 +8380,36 @@ inherited fmMain: TfmMain
             F2B219C4B7CFEB3FAC4D7D4E8ABEA6FF006F8F3CD366ED0CB90D92CE3A5C625C
             55EA46DBF913CB36FE654F32416823D56385E05954D0159082C580FB4DF0D072
             FB3F1633ED0CD2C5E11370BE26EE0176FF00FFD9}
+          Rounded = False
           ShortCutHint = 'N'
           Transparent = True
           TabOrder = 1
           OnClick = AdvGlowButton4Click
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -8299,13 +8419,16 @@ inherited fmMain: TfmMain
         end
       end
       object AdvToolBar3: TAdvToolBar
-        Left = 639
+        Left = 796
         Top = 3
-        Width = 133
-        Height = 97
+        Width = 229
+        Height = 118
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         AllowFloating = True
         AutoPositionControls = False
-        AutoSize = False
         Caption = #48372#44256#49436
         CaptionFont.Charset = DEFAULT_CHARSET
         CaptionFont.Color = clWindowText
@@ -8333,19 +8456,23 @@ inherited fmMain: TfmMain
           00FFFF00FFFF00FFFF00FFFF00FFFF00FF00}
         ParentOptionPicture = True
         ToolBarIndex = 2
-        object AdvGlowButton21: TAdvGlowButton
-          Left = 0
+        object btn_AlarmReport: TAdvGlowButton
+          Left = 113
           Top = 0
-          Width = 133
-          Height = 81
-          Align = alClient
+          Width = 101
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          Align = alLeft
           AntiAlias = aaNone
           BorderStyle = bsNone
-          Caption = #44592#44036#48324#52636#51077#51060#47141#48372#44256#49436
+          Caption = #44592#44036#48324#50508#46988#48372#44256#49436
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -8746,34 +8873,491 @@ inherited fmMain: TfmMain
             A1C8F7BBFE55C6B1E3A87FC8BB5FFAAB8FF2B792FF00A1C8F7A71E51F216A563
             E62B2D4666BA09685D8FD63D1443CE268E8163772CDF1F7FB398DAAD79CB1E1A
             73BB3FB223A79F18E74FFFD9}
+          Rounded = False
           ShortCutHint = 'E'
           Transparent = True
           TabOrder = 0
-          OnClick = AdvGlowButton21Click
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          OnClick = btn_AlarmReportClick
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
+          Appearance.GradientHot = ggVertical
+          Appearance.GradientMirrorHot = ggVertical
+          Appearance.GradientDown = ggVertical
+          Appearance.GradientMirrorDown = ggVertical
+          Appearance.GradientChecked = ggVertical
+          Layout = blGlyphTop
+          ExplicitLeft = 144
+        end
+        object AdvGlowButton10: TAdvGlowButton
+          Left = 0
+          Top = 0
+          Width = 113
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          Align = alLeft
+          AntiAlias = aaNone
+          BorderStyle = bsNone
+          Caption = #44592#44036#48324#52636#51077#51060#47141#48372#44256#49436
+          Font.Charset = HANGEUL_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          FocusType = ftHot
+          NotesFont.Charset = DEFAULT_CHARSET
+          NotesFont.Color = clWindowText
+          NotesFont.Height = -11
+          NotesFont.Name = 'Tahoma'
+          NotesFont.Style = []
+          ParentFont = False
+          Picture.Data = {
+            FFD8FFE000104A46494600010201004800480000FFE104C24578696600004D4D
+            002A000000080007011200030000000100010000011A00050000000100000062
+            011B0005000000010000006A012800030000000100020000013100020000001C
+            0000007201320002000000140000008E8769000400000001000000A4000000D0
+            000AFC8000002710000AFC800000271041646F62652050686F746F73686F7020
+            4353342057696E646F777300323031323A31303A32342031373A31323A303600
+            00000003A00100030000000100010000A00200040000000100000020A0030004
+            00000001000000200000000000000006010300030000000100060000011A0005
+            000000010000011E011B00050000000100000126012800030000000100020000
+            02010004000000010000012E02020004000000010000038C0000000000000048
+            000000010000004800000001FFD8FFE000104A46494600010200004800480000
+            FFED000C41646F62655F434D0001FFEE000E41646F626500648000000001FFDB
+            0084000C08080809080C09090C110B0A0B11150F0C0C0F151813131513131811
+            0C0C0C0C0C0C110C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C
+            0C0C0C010D0B0B0D0E0D100E0E10140E0E0E14140E0E0E0E14110C0C0C0C0C11
+            110C0C0C0C0C0C110C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C
+            0C0C0C0CFFC00011080020002003012200021101031101FFDD00040002FFC401
+            3F0000010501010101010100000000000000030001020405060708090A0B0100
+            010501010101010100000000000000010002030405060708090A0B1000010401
+            030204020507060805030C330100021103042112310541516113227181320614
+            91A1B14223241552C16233347282D14307259253F0E1F163733516A2B2832644
+            93546445C2A3743617D255E265F2B384C3D375E3F3462794A485B495C4D4E4F4
+            A5B5C5D5E5F55666768696A6B6C6D6E6F637475767778797A7B7C7D7E7F71100
+            0202010204040304050607070605350100021103213112044151617122130532
+            819114A1B14223C152D1F0332462E1728292435315637334F1250616A2B28307
+            2635C2D2449354A317644555367465E2F2B384C3D375E3F34694A485B495C4D4
+            E4F4A5B5C5D5E5F55666768696A6B6C6D6E6F62737475767778797A7B7C7FFDA
+            000C03010002110311003F00F537BDB5B1CF7986B417389EC06A570193FE303A
+            A7DA2CFB35557A1B8FA5EA4876DEDBF6B5DEE5D5FD69CAFB3744C8830FB80A5B
+            FDBFA7FF00817A8BCFAAA36B3CCEA79FFD26E56F96C319C4CA42F5A0D1E73999
+            639461035A711FD8E97FE381D77FD163FDEEFF00C8AECBEAEF557755E9556558
+            00BA4B2E0DE03C7EEFF27696AF3E151FF59FFD22BA8FA89616332F109E1CDB1A
+            3E32C7FF00D4D69DCC6084719944510431F2BCD4E7944252B1207ED1EA7FFFD0
+            EB7EB95BEA598F880C06836BE78D7D95FF00D4DAB9F150F16FF9CF5D3F5EE8B9
+            19B9C32586C8F4DB58F4F69FA25EEF736C733F7D66FF00CDBCCFFBB1FE6D5FFA
+            555FC19B1471C624D1D6DC8E6F95E672679CE20189AE1D7A00E5FA63C5BFE73D
+            6A7D5871A7AC340822F63986248E3D5FCEFF00894FFF0036F33C723FCDABFF00
+            4AAB7D23A064E3F51A725E6D0DA4B89F53601AB5D5FD1ADEFDCEF7A765E630CB
+            1CA20D923459CBF27CCC336394A204632B3AF4EAFF00FFD9FFED098C50686F74
+            6F73686F7020332E30003842494D042500000000001000000000000000000000
+            0000000000003842494D03ED0000000000100048000000010002004800000001
+            00023842494D042600000000000E000000000000000000003F8000003842494D
+            040D0000000000040000001E3842494D04190000000000040000001E3842494D
+            03F3000000000009000000000000000001003842494D271000000000000A0001
+            00000000000000023842494D03F5000000000048002F66660001006C66660006
+            000000000001002F6666000100A1999A0006000000000001003200000001005A
+            00000006000000000001003500000001002D000000060000000000013842494D
+            03F80000000000700000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            03E800000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF03E80000
+            0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF03E800000000FFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF03E800003842494D04000000
+            0000000200003842494D040200000000000200003842494D0430000000000001
+            01003842494D042D0000000000060001000000033842494D0408000000000010
+            000000010000024000000240000000003842494D041E00000000000400000000
+            3842494D041A0000000003470000000600000000000000000000002000000020
+            0000000900690063006F006E0073003700360035003500000001000000000000
+            0000000000000000000000000001000000000000000000000020000000200000
+            0000000000000000000000000000010000000000000000000000000000000000
+            000010000000010000000000006E756C6C0000000200000006626F756E64734F
+            626A6300000001000000000000526374310000000400000000546F70206C6F6E
+            6700000000000000004C6566746C6F6E67000000000000000042746F6D6C6F6E
+            670000002000000000526768746C6F6E670000002000000006736C6963657356
+            6C4C73000000014F626A6300000001000000000005736C696365000000120000
+            0007736C69636549446C6F6E67000000000000000767726F757049446C6F6E67
+            00000000000000066F726967696E656E756D0000000C45536C6963654F726967
+            696E0000000D6175746F47656E6572617465640000000054797065656E756D00
+            00000A45536C6963655479706500000000496D672000000006626F756E64734F
+            626A6300000001000000000000526374310000000400000000546F70206C6F6E
+            6700000000000000004C6566746C6F6E67000000000000000042746F6D6C6F6E
+            670000002000000000526768746C6F6E67000000200000000375726C54455854
+            000000010000000000006E756C6C54455854000000010000000000004D736765
+            5445585400000001000000000006616C74546167544558540000000100000000
+            000E63656C6C54657874497348544D4C626F6F6C010000000863656C6C546578
+            745445585400000001000000000009686F727A416C69676E656E756D0000000F
+            45536C696365486F727A416C69676E0000000764656661756C74000000097665
+            7274416C69676E656E756D0000000F45536C69636556657274416C69676E0000
+            000764656661756C740000000B6267436F6C6F7254797065656E756D00000011
+            45536C6963654247436F6C6F7254797065000000004E6F6E6500000009746F70
+            4F75747365746C6F6E67000000000000000A6C6566744F75747365746C6F6E67
+            000000000000000C626F74746F6D4F75747365746C6F6E67000000000000000B
+            72696768744F75747365746C6F6E6700000000003842494D042800000000000C
+            000000023FF00000000000003842494D0414000000000004000000033842494D
+            040C0000000003A80000000100000020000000200000006000000C000000038C
+            00180001FFD8FFE000104A46494600010200004800480000FFED000C41646F62
+            655F434D0001FFEE000E41646F626500648000000001FFDB0084000C08080809
+            080C09090C110B0A0B11150F0C0C0F1518131315131318110C0C0C0C0C0C110C
+            0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C010D0B0B0D
+            0E0D100E0E10140E0E0E14140E0E0E0E14110C0C0C0C0C11110C0C0C0C0C0C11
+            0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0CFFC00011
+            080020002003012200021101031101FFDD00040002FFC4013F00000105010101
+            01010100000000000000030001020405060708090A0B01000105010101010101
+            00000000000000010002030405060708090A0B10000104010302040205070608
+            05030C33010002110304211231054151611322718132061491A1B14223241552
+            C16233347282D14307259253F0E1F163733516A2B283264493546445C2A37436
+            17D255E265F2B384C3D375E3F3462794A485B495C4D4E4F4A5B5C5D5E5F55666
+            768696A6B6C6D6E6F637475767778797A7B7C7D7E7F711000202010204040304
+            050607070605350100021103213112044151617122130532819114A1B14223C1
+            52D1F0332462E1728292435315637334F1250616A2B283072635C2D2449354A3
+            17644555367465E2F2B384C3D375E3F34694A485B495C4D4E4F4A5B5C5D5E5F5
+            5666768696A6B6C6D6E6F62737475767778797A7B7C7FFDA000C030100021103
+            11003F00F537BDB5B1CF7986B417389EC06A570193FE303AA7DA2CFB35557A1B
+            8FA5EA4876DEDBF6B5DEE5D5FD69CAFB3744C8830FB80A5BFDBFA7FF00817A8B
+            CFAAA36B3CCEA79FFD26E56F96C319C4CA42F5A0D1E73999639461035A711FD8
+            E97FE381D77FD163FDEEFF00C8AECBEAEF557755E955655800BA4B2E0DE03C7E
+            EFF27696AF3E151FF59FFD22BA8FA89616332F109E1CDB1A3E32C7FF00D4D69D
+            CC6084719944510431F2BCD4E7944252B1207ED1EA7FFFD0EB7EB95BEA598F88
+            0C06836BE78D7D95FF00D4DAB9F150F16FF9CF5D3F5EE8B919B9C32586C8F4DB
+            58F4F69FA25EEF736C733F7D66FF00CDBCCFFBB1FE6D5FFA555FC19B1471C624
+            D1D6DC8E6F95E672679CE20189AE1D7A00E5FA63C5BFE73D6A7D5871A7AC3408
+            22F63986248E3D5FCEFF00894FFF0036F33C723FCDABFF004AAB7D23A064E3F5
+            1A725E6D0DA4B89F53601AB5D5FD1ADEFDCEF7A765E630CB1CA20D923459CBF2
+            7CCC336394A204632B3AF4EAFF00FFD93842494D042100000000005500000001
+            010000000F00410064006F00620065002000500068006F0074006F0073006800
+            6F00700000001300410064006F00620065002000500068006F0074006F007300
+            68006F0070002000430053003400000001003842494D04060000000000070004
+            000000010100FFE1117E687474703A2F2F6E732E61646F62652E636F6D2F7861
+            702F312E302F003C3F787061636B657420626567696E3D22EFBBBF222069643D
+            2257354D304D7043656869487A7265537A4E54637A6B633964223F3E203C783A
+            786D706D65746120786D6C6E733A783D2261646F62653A6E733A6D6574612F22
+            20783A786D70746B3D2241646F626520584D5020436F726520342E322E322D63
+            3036332035332E3335323632342C20323030382F30372F33302D31383A31323A
+            31382020202020202020223E203C7264663A52444620786D6C6E733A7264663D
+            22687474703A2F2F7777772E77332E6F72672F313939392F30322F32322D7264
+            662D73796E7461782D6E7323223E203C7264663A4465736372697074696F6E20
+            7264663A61626F75743D222220786D6C6E733A786D703D22687474703A2F2F6E
+            732E61646F62652E636F6D2F7861702F312E302F2220786D6C6E733A64633D22
+            687474703A2F2F7075726C2E6F72672F64632F656C656D656E74732F312E312F
+            2220786D6C6E733A70686F746F73686F703D22687474703A2F2F6E732E61646F
+            62652E636F6D2F70686F746F73686F702F312E302F2220786D6C6E733A786D70
+            4D4D3D22687474703A2F2F6E732E61646F62652E636F6D2F7861702F312E302F
+            6D6D2F2220786D6C6E733A73744576743D22687474703A2F2F6E732E61646F62
+            652E636F6D2F7861702F312E302F73547970652F5265736F757263654576656E
+            74232220786D6C6E733A746966663D22687474703A2F2F6E732E61646F62652E
+            636F6D2F746966662F312E302F2220786D6C6E733A657869663D22687474703A
+            2F2F6E732E61646F62652E636F6D2F657869662F312E302F2220786D703A4372
+            6561746F72546F6F6C3D2241646F62652050686F746F73686F70204353342057
+            696E646F77732220786D703A437265617465446174653D22323031322D31302D
+            32345431363A34393A30332B30393A30302220786D703A4D6F64696679446174
+            653D22323031322D31302D32345431373A31323A30362B30393A30302220786D
+            703A4D65746164617461446174653D22323031322D31302D32345431373A3132
+            3A30362B30393A3030222064633A666F726D61743D22696D6167652F6A706567
+            222070686F746F73686F703A436F6C6F724D6F64653D2233222070686F746F73
+            686F703A49434350726F66696C653D22735247422049454336313936362D322E
+            312220786D704D4D3A496E7374616E636549443D22786D702E6969643A454536
+            3337323630423131444532313138383445454133383646353033394431222078
+            6D704D4D3A446F63756D656E7449443D22786D702E6469643A45443633373236
+            304231314445323131383834454541333836463530333944312220786D704D4D
+            3A4F726967696E616C446F63756D656E7449443D22786D702E6469643A454436
+            3337323630423131444532313138383445454133383646353033394431222074
+            6966663A4F7269656E746174696F6E3D22312220746966663A585265736F6C75
+            74696F6E3D223732303030302F31303030302220746966663A595265736F6C75
+            74696F6E3D223732303030302F31303030302220746966663A5265736F6C7574
+            696F6E556E69743D22322220746966663A4E61746976654469676573743D2232
+            35362C3235372C3235382C3235392C3236322C3237342C3237372C3238342C35
+            33302C3533312C3238322C3238332C3239362C3330312C3331382C3331392C35
+            32392C3533322C3330362C3237302C3237312C3237322C3330352C3331352C33
+            333433323B304645453843413931364443433433323045394143323432423441
+            33373941342220657869663A506978656C5844696D656E73696F6E3D22333222
+            20657869663A506978656C5944696D656E73696F6E3D2233322220657869663A
+            436F6C6F7253706163653D22312220657869663A4E6174697665446967657374
+            3D2233363836342C34303936302C34303936312C33373132312C33373132322C
+            34303936322C34303936332C33373531302C34303936342C33363836372C3336
+            3836382C33333433342C33333433372C33343835302C33343835322C33343835
+            352C33343835362C33373337372C33373337382C33373337392C33373338302C
+            33373338312C33373338322C33373338332C33373338342C33373338352C3337
+            3338362C33373339362C34313438332C34313438342C34313438362C34313438
+            372C34313438382C34313439322C34313439332C34313439352C34313732382C
+            34313732392C34313733302C34313938352C34313938362C34313938372C3431
+            3938382C34313938392C34313939302C34313939312C34313939322C34313939
+            332C34313939342C34313939352C34313939362C34323031362C302C322C342C
+            352C362C372C382C392C31302C31312C31322C31332C31342C31352C31362C31
+            372C31382C32302C32322C32332C32342C32352C32362C32372C32382C33303B
+            4436364235443431354133413931354436423036433034333139353345353441
+            223E203C786D704D4D3A486973746F72793E203C7264663A5365713E203C7264
+            663A6C692073744576743A616374696F6E3D2263726561746564222073744576
+            743A696E7374616E636549443D22786D702E6969643A45443633373236304231
+            31444532313138383445454133383646353033394431222073744576743A7768
+            656E3D22323031322D31302D32345431373A31323A30362B30393A3030222073
+            744576743A736F6674776172654167656E743D2241646F62652050686F746F73
+            686F70204353342057696E646F7773222F3E203C7264663A6C69207374457674
+            3A616374696F6E3D22636F6E766572746564222073744576743A706172616D65
+            746572733D2266726F6D20696D6167652F706E6720746F20696D6167652F6A70
+            6567222F3E203C7264663A6C692073744576743A616374696F6E3D2273617665
+            64222073744576743A696E7374616E636549443D22786D702E6969643A454536
+            3337323630423131444532313138383445454133383646353033394431222073
+            744576743A7768656E3D22323031322D31302D32345431373A31323A30362B30
+            393A3030222073744576743A736F6674776172654167656E743D2241646F6265
+            2050686F746F73686F70204353342057696E646F7773222073744576743A6368
+            616E6765643D222F222F3E203C2F7264663A5365713E203C2F786D704D4D3A48
+            6973746F72793E203C2F7264663A4465736372697074696F6E3E203C2F726466
+            3A5244463E203C2F783A786D706D6574613E2020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            2020202020202020202020202020202020202020202020202020202020202020
+            202020202020202020202020202020202020203C3F787061636B657420656E64
+            3D2277223F3EFFE20C584943435F50524F46494C4500010100000C484C696E6F
+            021000006D6E74725247422058595A2007CE0002000900060031000061637370
+            4D5346540000000049454320735247420000000000000000000000010000F6D6
+            000100000000D32D485020200000000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000001163707274
+            000001500000003364657363000001840000006C77747074000001F000000014
+            626B707400000204000000147258595A00000218000000146758595A0000022C
+            000000146258595A0000024000000014646D6E640000025400000070646D6464
+            000002C400000088767565640000034C0000008676696577000003D400000024
+            6C756D69000003F8000000146D6561730000040C000000247465636800000430
+            0000000C725452430000043C0000080C675452430000043C0000080C62545243
+            0000043C0000080C7465787400000000436F7079726967687420286329203139
+            3938204865776C6574742D5061636B61726420436F6D70616E79000064657363
+            0000000000000012735247422049454336313936362D322E3100000000000000
+            0000000012735247422049454336313936362D322E3100000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            000000000000000058595A20000000000000F35100010000000116CC58595A20
+            0000000000000000000000000000000058595A200000000000006FA2000038F5
+            0000039058595A2000000000000062990000B785000018DA58595A2000000000
+            000024A000000F840000B6CF6465736300000000000000164945432068747470
+            3A2F2F7777772E6965632E636800000000000000000000001649454320687474
+            703A2F2F7777772E6965632E6368000000000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000064657363
+            000000000000002E4945432036313936362D322E312044656661756C74205247
+            4220636F6C6F7572207370616365202D20735247420000000000000000000000
+            2E4945432036313936362D322E312044656661756C742052474220636F6C6F75
+            72207370616365202D2073524742000000000000000000000000000000000000
+            0000000064657363000000000000002C5265666572656E63652056696577696E
+            6720436F6E646974696F6E20696E2049454336313936362D322E310000000000
+            0000000000002C5265666572656E63652056696577696E6720436F6E64697469
+            6F6E20696E2049454336313936362D322E310000000000000000000000000000
+            00000000000000000000000076696577000000000013A4FE00145F2E0010CF14
+            0003EDCC0004130B00035C9E0000000158595A2000000000004C095600500000
+            00571FE76D656173000000000000000100000000000000000000000000000000
+            0000028F00000002736967200000000043525420637572760000000000000400
+            00000005000A000F00140019001E00230028002D00320037003B00400045004A
+            004F00540059005E00630068006D00720077007C00810086008B00900095009A
+            009F00A400A900AE00B200B700BC00C100C600CB00D000D500DB00E000E500EB
+            00F000F600FB01010107010D01130119011F0125012B01320138013E0145014C
+            0152015901600167016E0175017C0183018B0192019A01A101A901B101B901C1
+            01C901D101D901E101E901F201FA0203020C0214021D0226022F02380241024B
+            0254025D02670271027A0284028E029802A202AC02B602C102CB02D502E002EB
+            02F50300030B03160321032D03380343034F035A03660372037E038A039603A2
+            03AE03BA03C703D303E003EC03F9040604130420042D043B0448045504630471
+            047E048C049A04A804B604C404D304E104F004FE050D051C052B053A05490558
+            056705770586059605A605B505C505D505E505F6060606160627063706480659
+            066A067B068C069D06AF06C006D106E306F507070719072B073D074F07610774
+            0786079907AC07BF07D207E507F8080B081F08320846085A086E0882089608AA
+            08BE08D208E708FB09100925093A094F09640979098F09A409BA09CF09E509FB
+            0A110A270A3D0A540A6A0A810A980AAE0AC50ADC0AF30B0B0B220B390B510B69
+            0B800B980BB00BC80BE10BF90C120C2A0C430C5C0C750C8E0CA70CC00CD90CF3
+            0D0D0D260D400D5A0D740D8E0DA90DC30DDE0DF80E130E2E0E490E640E7F0E9B
+            0EB60ED20EEE0F090F250F410F5E0F7A0F960FB30FCF0FEC1009102610431061
+            107E109B10B910D710F511131131114F116D118C11AA11C911E8120712261245
+            1264128412A312C312E31303132313431363138313A413C513E5140614271449
+            146A148B14AD14CE14F01512153415561578159B15BD15E0160316261649166C
+            168F16B216D616FA171D17411765178917AE17D217F7181B18401865188A18AF
+            18D518FA19201945196B199119B719DD1A041A2A1A511A771A9E1AC51AEC1B14
+            1B3B1B631B8A1BB21BDA1C021C2A1C521C7B1CA31CCC1CF51D1E1D471D701D99
+            1DC31DEC1E161E401E6A1E941EBE1EE91F131F3E1F691F941FBF1FEA20152041
+            206C209820C420F0211C2148217521A121CE21FB22272255228222AF22DD230A
+            23382366239423C223F0241F244D247C24AB24DA250925382568259725C725F7
+            26272657268726B726E827182749277A27AB27DC280D283F287128A228D42906
+            2938296B299D29D02A022A352A682A9B2ACF2B022B362B692B9D2BD12C052C39
+            2C6E2CA22CD72D0C2D412D762DAB2DE12E162E4C2E822EB72EEE2F242F5A2F91
+            2FC72FFE3035306C30A430DB3112314A318231BA31F2322A3263329B32D4330D
+            3346337F33B833F1342B3465349E34D83513354D358735C235FD3637367236AE
+            36E937243760379C37D738143850388C38C839053942397F39BC39F93A363A74
+            3AB23AEF3B2D3B6B3BAA3BE83C273C653CA43CE33D223D613DA13DE03E203E60
+            3EA03EE03F213F613FA23FE24023406440A640E74129416A41AC41EE42304272
+            42B542F7433A437D43C044034447448A44CE45124555459A45DE4622466746AB
+            46F04735477B47C04805484B489148D7491D496349A949F04A374A7D4AC44B0C
+            4B534B9A4BE24C2A4C724CBA4D024D4A4D934DDC4E254E6E4EB74F004F494F93
+            4FDD5027507150BB51065150519B51E65231527C52C75313535F53AA53F65442
+            548F54DB5528557555C2560F565C56A956F75744579257E0582F587D58CB591A
+            596959B85A075A565AA65AF55B455B955BE55C355C865CD65D275D785DC95E1A
+            5E6C5EBD5F0F5F615FB36005605760AA60FC614F61A261F56249629C62F06343
+            639763EB6440649464E9653D659265E7663D669266E8673D679367E9683F6896
+            68EC6943699A69F16A486A9F6AF76B4F6BA76BFF6C576CAF6D086D606DB96E12
+            6E6B6EC46F1E6F786FD1702B708670E0713A719571F0724B72A67301735D73B8
+            7414747074CC7528758575E1763E769B76F8775677B37811786E78CC792A7989
+            79E77A467AA57B047B637BC27C217C817CE17D417DA17E017E627EC27F237F84
+            7FE5804780A8810A816B81CD8230829282F4835783BA841D848084E3854785AB
+            860E867286D7873B879F8804886988CE8933899989FE8A648ACA8B308B968BFC
+            8C638CCA8D318D988DFF8E668ECE8F368F9E9006906E90D6913F91A89211927A
+            92E3934D93B69420948A94F4955F95C99634969F970A977597E0984C98B89924
+            999099FC9A689AD59B429BAF9C1C9C899CF79D649DD29E409EAE9F1D9F8B9FFA
+            A069A0D8A147A1B6A226A296A306A376A3E6A456A4C7A538A5A9A61AA68BA6FD
+            A76EA7E0A852A8C4A937A9A9AA1CAA8FAB02AB75ABE9AC5CACD0AD44ADB8AE2D
+            AEA1AF16AF8BB000B075B0EAB160B1D6B24BB2C2B338B3AEB425B49CB513B58A
+            B601B679B6F0B768B7E0B859B8D1B94AB9C2BA3BBAB5BB2EBBA7BC21BC9BBD15
+            BD8FBE0ABE84BEFFBF7ABFF5C070C0ECC167C1E3C25FC2DBC358C3D4C451C4CE
+            C54BC5C8C646C6C3C741C7BFC83DC8BCC93AC9B9CA38CAB7CB36CBB6CC35CCB5
+            CD35CDB5CE36CEB6CF37CFB8D039D0BAD13CD1BED23FD2C1D344D3C6D449D4CB
+            D54ED5D1D655D6D8D75CD7E0D864D8E8D96CD9F1DA76DAFBDB80DC05DC8ADD10
+            DD96DE1CDEA2DF29DFAFE036E0BDE144E1CCE253E2DBE363E3EBE473E4FCE584
+            E60DE696E71FE7A9E832E8BCE946E9D0EA5BEAE5EB70EBFBEC86ED11ED9CEE28
+            EEB4EF40EFCCF058F0E5F172F1FFF28CF319F3A7F434F4C2F550F5DEF66DF6FB
+            F78AF819F8A8F938F9C7FA57FAE7FB77FC07FC98FD29FDBAFE4BFEDCFF6DFFFF
+            FFEE000E41646F626500640000000001FFDB0084000604040405040605050609
+            060506090B080606080B0C0A0A0B0A0A0C100C0C0C0C0C0C100C0C0C0C0C0C0C
+            0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C010707070D0C0D18101018
+            140E0E0E14140E0E0E0E14110C0C0C0C0C11110C0C0C0C0C0C110C0C0C0C0C0C
+            0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0CFFC00011080020002003
+            011100021101031101FFDD00040004FFC401A200000007010101010100000000
+            00000000040503020601000708090A0B01000202030101010101000000000000
+            00010002030405060708090A0B10000201030302040206070304020602730102
+            03110400052112314151061361227181143291A10715B14223C152D1E1331662
+            F0247282F12543345392A2B26373C235442793A3B33617546474C3D2E2082683
+            090A181984944546A4B456D355281AF2E3F3C4D4E4F465758595A5B5C5D5E5F5
+            66768696A6B6C6D6E6F637475767778797A7B7C7D7E7F738485868788898A8B8
+            C8D8E8F82939495969798999A9B9C9D9E9F92A3A4A5A6A7A8A9AAABACADAEAFA
+            110002020102030505040506040803036D010002110304211231410551136122
+            0671819132A1B1F014C1D1E1234215526272F1332434438216925325A263B2C2
+            0773D235E2448317549308090A18192636451A2764745537F2A3B3C32829D3E3
+            F38494A4B4C4D4E4F465758595A5B5C5D5E5F5465666768696A6B6C6D6E6F647
+            5767778797A7B7C7D7E7F738485868788898A8B8C8D8E8F839495969798999A9
+            B9C9D9E9F92A3A4A5A6A7A8A9AAABACADAEAFAFFDA000C03010002110311003F
+            00F534D3470C2F34AC1228D4BBB1E8154549FBB10104D3C0B51FF9C80F34FE90
+            B8FD1F696A2C3D43F55F5CB097D2AEDCC2AB0E54F7CDB0ECB35B97472EDA17B0
+            431FCFFF003D7FCB2D8FDF27FCD387F92CF7A3F968773D93F2EBCD32F99BCAB6
+            DA95C055BCAB4578A82882543BF1AFEC952A735FA8C271CF84BB5D26A0668090
+            7FFFD0EFBF9A5AA1D3FC937FC0D25BC02D23F7F5767FF92424CCAD163E3CB11F
+            1FF4AE0F68E6F0F048F970FF00A6F4BE7DB5B1F4E21D8B6E7ED8FF00994DFAF3
+            A390BFC7ED78E8CE87E3FE25102D9BDFEF7FFAA382BF1F8932F13F1F88BD3FF2
+            22E4C50EAFA631FB2F1DC46BBEFC81473BD3F963CD4F6AC3D519778FC7FBA77F
+            D8396E328FF365C5FE9BFE917FFFD1EB3F9C976679F4ED2C1A2A2B5CCA0D78D5
+            C948CEDE1C65FF0082CDC764E3DE52FF0035E67DA3CF4210FE71E3FF004BFF00
+            4930016C06C1A3A0FF002E7FEB9B8E1FC7A5E67C5F31F39AE16C3F9A3FF839FF
+            00AE3C3F8F4A3C5F31FECD947E58C86D3CDF1A8A15BC86484F12C4542FAB5AB6
+            FF00EE9CD7F6A42F103FCD93BAEC0CFF00E1063FCF8FFB97FFD2ED1E7CF255FE
+            AFAE26A10B5C14FABA4005BFA4C0707762196474FE7F8597966769359E0822B9
+            BAAED1ECC1A9209FE1639FF2ADF57F1BFF00F9176BFF00557333F95BC9D6FF00
+            A1C8F7BBFE55C6B1E3A87FC8BB5FFAAB8FF2B792FF00A1C8F7A71E51F216A563
+            E62B2D4666BA09685D8FD63D1443CE268E8163772CDF1F7FB398DAAD79CB1E1A
+            73BB3FB223A79F18E74FFFD9}
+          Rounded = False
+          ShortCutHint = 'E'
+          Transparent = True
+          TabOrder = 1
+          OnClick = AdvGlowButton10Click
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -8784,16 +9368,24 @@ inherited fmMain: TfmMain
       end
     end
     object ApEtc: TAdvPage
-      Left = 4
+      Left = -1
       Top = 53
-      Width = 1000
-      Height = 103
+      Width = 1262
+      Height = 124
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption = #44592#53440
       object AdvToolBar5: TAdvToolBar
         Left = 3
         Top = 3
-        Width = 354
-        Height = 97
+        Width = 442
+        Height = 118
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -8816,15 +9408,19 @@ inherited fmMain: TfmMain
         object btn_fmConfigSetting: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 114
-          Height = 81
+          Width = 143
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           BorderStyle = bsNone
           Caption = #54872#44221#49444#51221
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -9241,36 +9837,38 @@ inherited fmMain: TfmMain
             56504566B0CB0AFA8DEA7192559A45FDE3349DDCFD9665FF008866C630111439
             38329191B2FF00FFD9}
           Position = bpLeft
+          Rounded = False
           ShortCutHint = 'D'
           Transparent = True
           TabOrder = 0
           TabStop = True
           OnClick = btn_fmConfigSettingClick
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -9279,17 +9877,21 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object btn_Upgrade: TAdvGlowButton
-          Left = 228
+          Left = 285
           Top = 0
-          Width = 114
-          Height = 81
+          Width = 143
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           BorderStyle = bsNone
           Caption = #50629#44536#47112#51060#46300
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -9350,36 +9952,38 @@ inherited fmMain: TfmMain
             7E04BC088C13BE9C7E49E772FA17E01FE7CF9FDF153848E06B97FF0185705E29
             DD52A2FC0000000049454E44AE426082}
           Position = bpLeft
+          Rounded = False
           ShortCutHint = 'D'
           Transparent = True
           TabOrder = 1
           TabStop = True
           OnClick = btn_UpgradeClick
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -9388,17 +9992,21 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object btn_DBBackup: TAdvGlowButton
-          Left = 114
+          Left = 143
           Top = 0
-          Width = 114
-          Height = 81
+          Width = 142
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alLeft
           BorderStyle = bsNone
           Caption = 'DB'#48177#50629
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -9463,36 +10071,38 @@ inherited fmMain: TfmMain
             A831588AF45D7A9D63AFFF94C071E4AABDF3DC88AA2DFA3FE7FF0488D13A9C21
             60C6C80000000049454E44AE426082}
           Position = bpLeft
+          Rounded = False
           ShortCutHint = 'D'
           Transparent = True
           TabOrder = 2
           TabStop = True
           OnClick = btn_DBBackupClick
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -9502,10 +10112,14 @@ inherited fmMain: TfmMain
         end
       end
       object AdvToolBar6: TAdvToolBar
-        Left = 360
+        Left = 448
         Top = 3
-        Width = 120
-        Height = 97
+        Width = 150
+        Height = 118
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -9528,15 +10142,19 @@ inherited fmMain: TfmMain
         object btn_DeviceLanSetting: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 120
-          Height = 81
+          Width = 150
+          Height = 102
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Align = alClient
           BorderStyle = bsNone
           Caption = #44592#44592'LAN'#49444#51221
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -12
-          Font.Name = #47569#51008' '#44256#46357
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
           NotesFont.Charset = DEFAULT_CHARSET
@@ -9602,36 +10220,38 @@ inherited fmMain: TfmMain
             9509008F2AD8BFC559F5FF0B1E03587506FE06E9B71F0A98381E150000000049
             454E44AE426082}
           Position = bpLeft
+          Rounded = False
           ShortCutHint = 'D'
           Transparent = True
           TabOrder = 0
           TabStop = True
           OnClick = btn_DeviceLanSettingClick
           OnMouseEnter = AdvGlowButton6MouseEnter
-          Appearance.BorderColor = 14727579
-          Appearance.BorderColorHot = 10079963
-          Appearance.BorderColorDown = 4548219
-          Appearance.BorderColorChecked = 4548219
-          Appearance.Color = 15653832
-          Appearance.ColorTo = 16178633
-          Appearance.ColorChecked = 11918331
-          Appearance.ColorCheckedTo = 7915518
-          Appearance.ColorDisabled = clNone
-          Appearance.ColorDisabledTo = clNone
-          Appearance.ColorDown = 7778289
-          Appearance.ColorDownTo = 4296947
-          Appearance.ColorHot = 15465983
-          Appearance.ColorHotTo = 11332863
-          Appearance.ColorMirror = 15586496
-          Appearance.ColorMirrorTo = 16245200
-          Appearance.ColorMirrorHot = 5888767
-          Appearance.ColorMirrorHotTo = 10807807
-          Appearance.ColorMirrorDown = 946929
-          Appearance.ColorMirrorDownTo = 5021693
-          Appearance.ColorMirrorChecked = 10480637
-          Appearance.ColorMirrorCheckedTo = 5682430
-          Appearance.ColorMirrorDisabled = clNone
-          Appearance.ColorMirrorDisabledTo = clNone
+          Appearance.BorderColor = 16448250
+          Appearance.BorderColorHot = 16246477
+          Appearance.BorderColorDown = 15187578
+          Appearance.BorderColorChecked = 15187578
+          Appearance.BorderColorDisabled = clNone
+          Appearance.Color = 16448250
+          Appearance.ColorTo = clNone
+          Appearance.ColorChecked = 15187578
+          Appearance.ColorCheckedTo = clNone
+          Appearance.ColorDisabled = 16448250
+          Appearance.ColorDisabledTo = 16448250
+          Appearance.ColorDown = 15187578
+          Appearance.ColorDownTo = clNone
+          Appearance.ColorHot = 16246477
+          Appearance.ColorHotTo = clNone
+          Appearance.ColorMirror = 16448250
+          Appearance.ColorMirrorTo = clNone
+          Appearance.ColorMirrorHot = 16246477
+          Appearance.ColorMirrorHotTo = clNone
+          Appearance.ColorMirrorDown = 15187578
+          Appearance.ColorMirrorDownTo = clNone
+          Appearance.ColorMirrorChecked = clNone
+          Appearance.ColorMirrorCheckedTo = clNone
+          Appearance.ColorMirrorDisabled = 16448250
+          Appearance.ColorMirrorDisabledTo = 16448250
           Appearance.GradientHot = ggVertical
           Appearance.GradientMirrorHot = ggVertical
           Appearance.GradientDown = ggVertical
@@ -9642,14 +10262,18 @@ inherited fmMain: TfmMain
       end
     end
     object AdvShapeButton1: TAdvShapeButton
-      Left = 4
-      Top = 5
-      Width = 36
-      Height = 36
+      Left = 0
+      Top = 30
+      Width = 55
+      Height = 24
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Appearance.Shape = bsOrb
       Appearance.BorderColor = clWhite
       Appearance.BorderColorHot = clWhite
-      Appearance.BorderColorDown = clWhite
+      Appearance.BorderColorDown = 13005312
       Appearance.BorderColorDisabled = clWhite
       Appearance.InnerBorderColor = clGray
       Appearance.InnerBorderColorHot = clGray
@@ -9658,15 +10282,17 @@ inherited fmMain: TfmMain
       Appearance.ColorTo = 15722980
       Appearance.ColorHot = 14408667
       Appearance.ColorHotTo = 14408667
-      Appearance.ColorDown = 10724259
-      Appearance.ColorDownTo = 10724259
+      Appearance.ColorDown = 13005312
+      Appearance.ColorDownTo = 13005312
+      Appearance.ColorDownMirror = 13005312
+      Appearance.ColorDownMirrorTo = 13005312
       Appearance.ColorDisabled = clGray
       Appearance.ColorDisabledTo = clGray
       Appearance.ShowPicture = False
       AdvPreviewMenu = StartMenu
       Font.Charset = HANGEUL_CHARSET
-      Font.Color = clBlack
-      Font.Height = -12
+      Font.Color = clWhite
+      Font.Height = -15
       Font.Name = #47569#51008' '#44256#46357
       Font.Style = [fsBold]
       ParentFont = False
@@ -9679,9 +10305,13 @@ inherited fmMain: TfmMain
   end
   object sb_Status: TAdvOfficeStatusBar [2]
     Left = 0
-    Top = 731
-    Width = 1008
+    Top = 919
+    Width = 1260
     Height = 19
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     AnchorHint = False
     Panels = <
       item
@@ -9786,7 +10416,7 @@ inherited fmMain: TfmMain
         Progress.ShowBorder = False
         Progress.Stacked = False
         Style = psTime
-        Text = '11:25:02'
+        Text = '12:34:50'
         TimeFormat = 'hh:mm:ss'
         Width = 562
       end>
@@ -10027,7 +10657,7 @@ inherited fmMain: TfmMain
     Left = 92
     Top = 273
     Bitmap = {
-      494C0101020004000C0110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000400240110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000099877D00827165007B63
       54006D544300684F3E0063493700624736006248350063493500634935006349
@@ -10174,7 +10804,7 @@ inherited fmMain: TfmMain
     Left = 24
     Top = 268
     Bitmap = {
-      494C01010E00A3000C0120002000FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
+      494C01010E00A300240120002000FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000008000000001002000000000000000
       010000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
@@ -12299,11 +12929,11 @@ inherited fmMain: TfmMain
     AppColor.TextColor = clWhite
     AppColor.HoverColor = 16246477
     AppColor.HoverTextColor = clBlack
-    AppColor.HoverBorderColor = 15187578
+    AppColor.HoverBorderColor = 16246477
     AppColor.SelectedColor = 15187578
     AppColor.SelectedTextColor = clBlack
     AppColor.SelectedBorderColor = 15187578
-    Style = bsOffice2007Luna
+    Style = bsOffice2013LightGray
     BorderColor = 14141623
     BorderColorHot = 14731181
     ButtonAppearance.Color = 13627626
@@ -12336,8 +12966,8 @@ inherited fmMain: TfmMain
     CaptionFont.Style = []
     ContainerAppearance.LineColor = clBtnShadow
     ContainerAppearance.Line3D = True
-    Color.Color = 15587527
-    Color.ColorTo = 16181721
+    Color.Color = 16448250
+    Color.ColorTo = 16448250
     Color.Direction = gdVertical
     Color.Mirror.Color = 15984090
     Color.Mirror.ColorTo = 15785680
@@ -12379,8 +13009,8 @@ inherited fmMain: TfmMain
     CompactGlowButtonAppearance.GradientDown = ggVertical
     CompactGlowButtonAppearance.GradientMirrorDown = ggVertical
     CompactGlowButtonAppearance.GradientChecked = ggVertical
-    DockColor.Color = 15587527
-    DockColor.ColorTo = 16445929
+    DockColor.Color = 16448250
+    DockColor.ColorTo = 16448250
     DockColor.Direction = gdHorizontal
     DockColor.Steps = 128
     DragGripStyle = dsNone
@@ -12389,30 +13019,30 @@ inherited fmMain: TfmMain
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindow
     Font.Height = -12
-    Font.Name = #47569#51008' '#44256#46357
+    Font.Name = 'Segoe UI'
     Font.Style = []
-    GlowButtonAppearance.BorderColor = 14727579
-    GlowButtonAppearance.BorderColorHot = 10079963
-    GlowButtonAppearance.BorderColorDown = 4548219
-    GlowButtonAppearance.BorderColorChecked = 4548219
-    GlowButtonAppearance.Color = 15653832
-    GlowButtonAppearance.ColorTo = 16178633
-    GlowButtonAppearance.ColorChecked = 11918331
-    GlowButtonAppearance.ColorCheckedTo = 7915518
+    GlowButtonAppearance.BorderColor = 16448250
+    GlowButtonAppearance.BorderColorHot = 16246477
+    GlowButtonAppearance.BorderColorDown = 15187578
+    GlowButtonAppearance.BorderColorChecked = 15187578
+    GlowButtonAppearance.Color = 16448250
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 15187578
+    GlowButtonAppearance.ColorCheckedTo = clNone
     GlowButtonAppearance.ColorDisabled = clNone
     GlowButtonAppearance.ColorDisabledTo = clNone
-    GlowButtonAppearance.ColorDown = 7778289
-    GlowButtonAppearance.ColorDownTo = 4296947
-    GlowButtonAppearance.ColorHot = 15465983
-    GlowButtonAppearance.ColorHotTo = 11332863
-    GlowButtonAppearance.ColorMirror = 15586496
-    GlowButtonAppearance.ColorMirrorTo = 16245200
-    GlowButtonAppearance.ColorMirrorHot = 5888767
-    GlowButtonAppearance.ColorMirrorHotTo = 10807807
-    GlowButtonAppearance.ColorMirrorDown = 946929
-    GlowButtonAppearance.ColorMirrorDownTo = 5021693
-    GlowButtonAppearance.ColorMirrorChecked = 10480637
-    GlowButtonAppearance.ColorMirrorCheckedTo = 5682430
+    GlowButtonAppearance.ColorDown = 15187578
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16246477
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = clNone
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = clNone
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = clNone
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = clNone
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
     GlowButtonAppearance.ColorMirrorDisabled = clNone
     GlowButtonAppearance.ColorMirrorDisabledTo = clNone
     GlowButtonAppearance.GradientHot = ggVertical
@@ -12518,12 +13148,12 @@ inherited fmMain: TfmMain
     PagerCaption.ColorMirrorTo = 15723487
     PagerCaption.Gradient = ggVertical
     PagerCaption.GradientMirror = ggVertical
-    PagerCaption.TextColor = 11168318
-    PagerCaption.TextColorExtended = 7958633
+    PagerCaption.TextColor = clGray
+    PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -13
-    PagerCaption.Font.Name = #47569#51008' '#44256#46357
+    PagerCaption.Font.Height = -17
+    PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 14005146
     QATAppearance.Color = 16050142
@@ -12531,12 +13161,12 @@ inherited fmMain: TfmMain
     QATAppearance.FullSizeBorderColor = 13476222
     QATAppearance.FullSizeColor = 15584690
     QATAppearance.FullSizeColorTo = 15386026
-    RightHandleColor = 14668485
-    RightHandleColorTo = 14731181
-    RightHandleColorHot = 13891839
-    RightHandleColorHotTo = 7782911
-    RightHandleColorDown = 557032
-    RightHandleColorDownTo = 8182519
+    RightHandleColor = clSilver
+    RightHandleColorTo = clSilver
+    RightHandleColorHot = clSilver
+    RightHandleColorHotTo = clSilver
+    RightHandleColorDown = 10526880
+    RightHandleColorDownTo = 10526880
     TabAppearance.BorderColor = clNone
     TabAppearance.BorderColorHot = 15383705
     TabAppearance.BorderColorSelected = 14922381
@@ -12589,39 +13219,39 @@ inherited fmMain: TfmMain
     Top = 76
   end
   object AdvPreviewMenuOfficeStyler1: TAdvPreviewMenuOfficeStyler
-    FrameAppearance.BorderColor = 3693887
+    FrameAppearance.BorderColor = 13217692
     FrameAppearance.CaptionBackground = 15656925
-    FrameAppearance.Color = 15184783
-    FrameAppearance.ColorTo = 15184783
-    FrameAppearance.ColorMirror = 15184783
-    FrameAppearance.ColorMirrorTo = 16185078
+    FrameAppearance.Color = 16114129
+    FrameAppearance.ColorTo = 15191480
+    FrameAppearance.ColorMirror = 16114129
+    FrameAppearance.ColorMirrorTo = 15191480
     FrameAppearance.Gradient = ggVertical
     FrameAppearance.GradientMirror = ggVertical
     LeftFrameColor = clWhite
-    RightFrameColor = 16640475
+    RightFrameColor = 15657705
     MenuItemAppearance.BorderColor = clNone
-    MenuItemAppearance.BorderColorHot = 3693887
-    MenuItemAppearance.BorderColorDown = 3693887
-    MenuItemAppearance.BorderColorChecked = 3693887
+    MenuItemAppearance.BorderColorHot = 10079963
+    MenuItemAppearance.BorderColorDown = 4548219
+    MenuItemAppearance.BorderColorChecked = 4548219
     MenuItemAppearance.BorderColorDisabled = clNone
     MenuItemAppearance.Color = clNone
     MenuItemAppearance.ColorTo = clNone
-    MenuItemAppearance.ColorChecked = 7323903
-    MenuItemAppearance.ColorCheckedTo = 7323903
+    MenuItemAppearance.ColorChecked = 11918331
+    MenuItemAppearance.ColorCheckedTo = 7915518
     MenuItemAppearance.ColorDisabled = clNone
     MenuItemAppearance.ColorDisabledTo = clNone
-    MenuItemAppearance.ColorDown = 4096254
-    MenuItemAppearance.ColorDownTo = 4096254
-    MenuItemAppearance.ColorHot = 12775167
-    MenuItemAppearance.ColorHotTo = 12775167
+    MenuItemAppearance.ColorDown = 7778289
+    MenuItemAppearance.ColorDownTo = 4296947
+    MenuItemAppearance.ColorHot = 15465983
+    MenuItemAppearance.ColorHotTo = 11332863
     MenuItemAppearance.ColorMirror = clNone
     MenuItemAppearance.ColorMirrorTo = clNone
-    MenuItemAppearance.ColorMirrorHot = 12775167
-    MenuItemAppearance.ColorMirrorHotTo = 12775167
-    MenuItemAppearance.ColorMirrorDown = 4096254
-    MenuItemAppearance.ColorMirrorDownTo = 4096254
-    MenuItemAppearance.ColorMirrorChecked = 7323903
-    MenuItemAppearance.ColorMirrorCheckedTo = 7323903
+    MenuItemAppearance.ColorMirrorHot = 5888767
+    MenuItemAppearance.ColorMirrorHotTo = 10807807
+    MenuItemAppearance.ColorMirrorDown = 946929
+    MenuItemAppearance.ColorMirrorDownTo = 5021693
+    MenuItemAppearance.ColorMirrorChecked = 10480637
+    MenuItemAppearance.ColorMirrorCheckedTo = 5682430
     MenuItemAppearance.ColorMirrorDisabled = clNone
     MenuItemAppearance.ColorMirrorDisabledTo = clNone
     MenuItemAppearance.GradientHot = ggVertical
@@ -12632,8 +13262,8 @@ inherited fmMain: TfmMain
     MenuItemAppearance.GradientDisabled = ggVertical
     MenuItemAppearance.GradientMirrorDisabled = ggVertical
     MenuItemAppearance.TextColorChecked = clBlack
-    MenuItemAppearance.TextColorDown = clBlack
-    MenuItemAppearance.TextColorHot = clBlack
+    MenuItemAppearance.TextColorDown = 7214336
+    MenuItemAppearance.TextColorHot = 7214336
     MenuItemAppearance.Font.Charset = DEFAULT_CHARSET
     MenuItemAppearance.Font.Color = clWindowText
     MenuItemAppearance.Font.Height = -11
@@ -12654,18 +13284,19 @@ inherited fmMain: TfmMain
     MenuItemAppearance.SubItemFont.Height = -11
     MenuItemAppearance.SubItemFont.Name = 'Tahoma'
     MenuItemAppearance.SubItemFont.Style = []
-    MenuItemAppearance.TextColor = clBlack
+    MenuItemAppearance.TextColor = 7214336
     MenuItemAppearance.TextColorDisabled = clGray
-    MenuItemAppearance.Rounded = True
+    MenuItemAppearance.Rounded = False
     ButtonAppearance.BorderColor = 14727579
     ButtonAppearance.BorderColorHot = 10079963
     ButtonAppearance.BorderColorDown = 4548219
+    ButtonAppearance.BorderColorChecked = 4548219
     ButtonAppearance.Color = 15653832
     ButtonAppearance.ColorTo = 16178633
     ButtonAppearance.ColorChecked = 11918331
     ButtonAppearance.ColorCheckedTo = 7915518
-    ButtonAppearance.ColorDisabled = 15921906
-    ButtonAppearance.ColorDisabledTo = 15921906
+    ButtonAppearance.ColorDisabled = clNone
+    ButtonAppearance.ColorDisabledTo = clNone
     ButtonAppearance.ColorDown = 7778289
     ButtonAppearance.ColorDownTo = 4296947
     ButtonAppearance.ColorHot = 15465983
@@ -12678,57 +13309,57 @@ inherited fmMain: TfmMain
     ButtonAppearance.ColorMirrorDownTo = 5021693
     ButtonAppearance.ColorMirrorChecked = 10480637
     ButtonAppearance.ColorMirrorCheckedTo = 5682430
-    ButtonAppearance.ColorMirrorDisabled = 11974326
-    ButtonAppearance.ColorMirrorDisabledTo = 15921906
+    ButtonAppearance.ColorMirrorDisabled = clNone
+    ButtonAppearance.ColorMirrorDisabledTo = clNone
     ButtonAppearance.GradientHot = ggVertical
     ButtonAppearance.GradientMirrorHot = ggVertical
     ButtonAppearance.GradientDown = ggVertical
     ButtonAppearance.GradientMirrorDown = ggVertical
     ButtonAppearance.GradientChecked = ggVertical
-    Style = psOffice2003Blue
+    Style = psOffice2007Luna
     Left = 20
     Top = 196
   end
   object AdvOfficeStatusBarOfficeStyler1: TAdvOfficeStatusBarOfficeStyler
-    Style = psOffice2007Luna
-    BorderColor = 11566422
+    Style = psOffice2013LightGray
+    BorderColor = 13027014
     PanelAppearanceLight.BorderColor = clNone
-    PanelAppearanceLight.BorderColorHot = 10079963
-    PanelAppearanceLight.BorderColorDown = 4548219
-    PanelAppearanceLight.Color = 16377559
-    PanelAppearanceLight.ColorTo = 16309447
-    PanelAppearanceLight.ColorHot = 16515071
-    PanelAppearanceLight.ColorHotTo = 12644607
-    PanelAppearanceLight.ColorDown = 7845111
-    PanelAppearanceLight.ColorDownTo = 4561657
-    PanelAppearanceLight.ColorMirror = 16109747
-    PanelAppearanceLight.ColorMirrorTo = 16244941
-    PanelAppearanceLight.ColorMirrorHot = 7067903
-    PanelAppearanceLight.ColorMirrorHotTo = 10544892
-    PanelAppearanceLight.ColorMirrorDown = 1671928
-    PanelAppearanceLight.ColorMirrorDownTo = 241407
-    PanelAppearanceLight.TextColor = 6365193
+    PanelAppearanceLight.BorderColorHot = 15381630
+    PanelAppearanceLight.BorderColorDown = 15048022
+    PanelAppearanceLight.Color = 16448250
+    PanelAppearanceLight.ColorTo = 16448250
+    PanelAppearanceLight.ColorHot = 16576740
+    PanelAppearanceLight.ColorHotTo = 16576740
+    PanelAppearanceLight.ColorDown = 16573128
+    PanelAppearanceLight.ColorDownTo = 16573128
+    PanelAppearanceLight.ColorMirror = clNone
+    PanelAppearanceLight.ColorMirrorTo = clNone
+    PanelAppearanceLight.ColorMirrorHot = 16576740
+    PanelAppearanceLight.ColorMirrorHotTo = 16576740
+    PanelAppearanceLight.ColorMirrorDown = 16573128
+    PanelAppearanceLight.ColorMirrorDownTo = 16573128
+    PanelAppearanceLight.TextColor = clBlack
     PanelAppearanceLight.TextColorHot = clBlack
     PanelAppearanceLight.TextColorDown = clBlack
     PanelAppearanceLight.TextStyle = []
-    PanelAppearanceDark.BorderColor = clNone
-    PanelAppearanceDark.BorderColorHot = 10079963
-    PanelAppearanceDark.BorderColorDown = 4548219
-    PanelAppearanceDark.Color = 16309445
-    PanelAppearanceDark.ColorTo = 16103047
-    PanelAppearanceDark.ColorHot = 16515071
-    PanelAppearanceDark.ColorHotTo = 12644607
-    PanelAppearanceDark.ColorDown = 7845111
-    PanelAppearanceDark.ColorDownTo = 4561657
-    PanelAppearanceDark.ColorMirror = 15382160
-    PanelAppearanceDark.ColorMirrorTo = 12752244
-    PanelAppearanceDark.ColorMirrorHot = 7067903
-    PanelAppearanceDark.ColorMirrorHotTo = 10544892
-    PanelAppearanceDark.ColorMirrorDown = 1671928
-    PanelAppearanceDark.ColorMirrorDownTo = 241407
-    PanelAppearanceDark.TextColor = 6365193
-    PanelAppearanceDark.TextColorHot = 6365193
-    PanelAppearanceDark.TextColorDown = 6365193
+    PanelAppearanceDark.BorderColor = 13027014
+    PanelAppearanceDark.BorderColorHot = 15381630
+    PanelAppearanceDark.BorderColorDown = 15048022
+    PanelAppearanceDark.Color = 16185078
+    PanelAppearanceDark.ColorTo = 16185078
+    PanelAppearanceDark.ColorHot = 16576740
+    PanelAppearanceDark.ColorHotTo = 16576740
+    PanelAppearanceDark.ColorDown = 16573128
+    PanelAppearanceDark.ColorDownTo = 16573128
+    PanelAppearanceDark.ColorMirror = clNone
+    PanelAppearanceDark.ColorMirrorTo = clNone
+    PanelAppearanceDark.ColorMirrorHot = 16576740
+    PanelAppearanceDark.ColorMirrorHotTo = 16576740
+    PanelAppearanceDark.ColorMirrorDown = 16573128
+    PanelAppearanceDark.ColorMirrorDownTo = 16573128
+    PanelAppearanceDark.TextColor = clBlack
+    PanelAppearanceDark.TextColorHot = clBlack
+    PanelAppearanceDark.TextColorDown = clBlack
     PanelAppearanceDark.TextStyle = []
     Left = 8
     Top = 688
@@ -12798,6 +13429,12 @@ inherited fmMain: TfmMain
     Interval = 10000
     OnTimer = PCScheduleTimerTimer
     Left = 944
+    Top = 208
+  end
+  object AdvFormStyler1: TAdvFormStyler
+    MetroColor = clSkyBlue
+    Style = tsOffice2013LightGray
+    Left = 568
     Top = 208
   end
 end

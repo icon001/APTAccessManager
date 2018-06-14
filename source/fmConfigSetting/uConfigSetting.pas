@@ -8,7 +8,8 @@ uses
   AdvOfficeTabSetStylers, AdvSmoothPanel, Vcl.ExtCtrls, AdvSmoothLabel,
   Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
   AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray,Winapi.WinSpool,System.iniFiles,
-  AdvToolBar, AdvToolBarStylers, AdvCombo, AdvGroupBox;
+  AdvToolBar, AdvToolBarStylers, AdvCombo, AdvGroupBox, AdvAppStyler,
+  AdvOfficeButtons;
 
 type
   TfmConfigSetting = class(TfmASubForm)
@@ -34,6 +35,8 @@ type
     AdvSmoothLabel1: TAdvSmoothLabel;
     ed_CardCnt: TAdvEdit;
     lb_Count: TAdvSmoothLabel;
+    AdvFormStyler1: TAdvFormStyler;
+    chk_AlarmEventView: TAdvOfficeCheckBox;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -43,6 +46,7 @@ type
     procedure btn_CardRegistportSaveClick(Sender: TObject);
     procedure btn_NameChangeClick(Sender: TObject);
     procedure btn_CardCreateClick(Sender: TObject);
+    procedure chk_AlarmEventViewClick(Sender: TObject);
   private
     { Private declarations }
     procedure ComportRefresh;
@@ -174,6 +178,24 @@ begin
   showmessage(dmFormName.GetFormMessage('2','M00062'));
 end;
 
+procedure TfmConfigSetting.chk_AlarmEventViewClick(Sender: TObject);
+var
+  ini_fun : TiniFile;
+begin
+  inherited;
+  Try
+    ini_fun := TiniFile.Create(G_stExeFolder + '\Monitoring.INI');
+    with ini_fun do
+    begin
+      if chk_AlarmEventView.Checked then WriteInteger('AlarmEvent','Show',1)
+      else WriteInteger('AlarmEvent','Show',0);
+    end;
+
+  Finally
+    ini_fun.Free;
+  End;
+end;
+
 procedure TfmConfigSetting.ComportRefresh;
 var
   nCount : integer;
@@ -246,7 +268,21 @@ begin
 end;
 
 procedure TfmConfigSetting.FormCreate(Sender: TObject);
+var
+  ini_fun : TiniFile;
 begin
+  inherited;
+  Try
+    ini_fun := TiniFile.Create(G_stExeFolder + '\Monitoring.INI');
+    with ini_fun do
+    begin
+      if ReadInteger('AlarmEvent','Show',0) = 1 then chk_AlarmEventView.Checked := True
+      else chk_AlarmEventView.Checked := False;
+    end;
+
+  Finally
+    ini_fun.Free;
+  End;
   Height := G_nChildFormDefaultHeight;
   EmpTypeCodeList := TStringList.Create;
   ComPortList := TStringList.Create;

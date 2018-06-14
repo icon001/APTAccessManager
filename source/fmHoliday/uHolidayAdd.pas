@@ -9,7 +9,7 @@ uses
   Vcl.StdCtrls, AdvEdit, Vcl.Buttons, AdvSmoothLabel, AdvSmoothPanel, W7Classes,
   W7Panels, AdvGlassButton,ADODB,ActiveX, frmshape, Vcl.Mask, AdvSpin,
   Vcl.ComCtrls, AdvDateTimePicker, AdvOfficeButtons, AdvToolBar,
-  AdvToolBarStylers;
+  AdvToolBarStylers, AdvAppStyler;
 
 type
   TfmHolidayAdd = class(TfmASubForm)
@@ -33,6 +33,7 @@ type
     chk_ACAdd: TAdvOfficeCheckBox;
     chk_ATAdd: TAdvOfficeCheckBox;
     AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler;
+    AdvFormStyler1: TAdvFormStyler;
     procedure menuTabChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);

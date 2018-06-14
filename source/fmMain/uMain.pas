@@ -9,7 +9,7 @@ uses
   AdvMenus, AdvPreviewMenuStylers, Vcl.ExtCtrls, Vcl.Imaging.jpeg,
   AdvOfficeStatusBar, AdvOfficeStatusBarStylers, uSubForm, CommandArray, CPort,
   Vcl.StdCtrls,Data.Win.ADODB,Winapi.ActiveX,System.IniFiles,
-  uDevicePacket;
+  uDevicePacket, AdvAppStyler;
 
 type
 
@@ -33,7 +33,7 @@ type
     AdvPreviewMenuOfficeStyler1: TAdvPreviewMenuOfficeStyler;
     AdvToolBar2: TAdvToolBar;
     AdvToolBar3: TAdvToolBar;
-    AdvGlowButton21: TAdvGlowButton;
+    btn_AlarmReport: TAdvGlowButton;
     AdvGlowButton67: TAdvGlowButton;
     AdvGlowButton6: TAdvGlowButton;
     AdvGlowButton7: TAdvGlowButton;
@@ -64,6 +64,8 @@ type
     AdvToolBar9: TAdvToolBar;
     AdvGlowButton9: TAdvGlowButton;
     PCScheduleTimer: TTimer;
+    AdvFormStyler1: TAdvFormStyler;
+    AdvGlowButton10: TAdvGlowButton;
     procedure AdvPreviewMenu1MenuItems3Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure StartMenuMenuItems1Click(Sender: TObject);
@@ -89,7 +91,7 @@ type
     procedure AdvGlowButton2Click(Sender: TObject);
     procedure mn_btnMonitoringClick(Sender: TObject);
     procedure AdvGlowButton4Click(Sender: TObject);
-    procedure AdvGlowButton21Click(Sender: TObject);
+    procedure btn_AlarmReportClick(Sender: TObject);
     procedure CommandArrayCommandsTSTATUSMSGExecute(Command: TCommand;
       Params: TStringList);
     procedure CardAutoDownTimerTimer(Sender: TObject);
@@ -112,6 +114,7 @@ type
     procedure CommandArrayCommandsTCHANGEExecute(Command: TCommand;
       Params: TStringList);
     procedure FormActivate(Sender: TObject);
+    procedure AdvGlowButton10Click(Sender: TObject);
   private
     FLogined: Boolean;
 
@@ -132,6 +135,7 @@ type
     DoorScheduleList : TStringList;
     HoliDayList : TStringList;
 
+    procedure AlarmConfigSetting;
     procedure CardRegistPortOpen;
     procedure RcvCardDataByReader(aData:string);
     procedure CardRegisterReadingProcess(aData:string);
@@ -157,6 +161,7 @@ type
     procedure DeviceConnected(Sender: TObject; aNodeNo,aECUID,aConnected,aData4,aData5,aData6,aData7,aData8,aData9,aData10,aData11,aData12,aData13,aData14,aData15,aData16,aData17,aData18,aData19,aData20:string);
     procedure DeviceSendDataProcess(Sender: TObject; aNodeNo : integer;aMcuID,aECUID,aCmd,aMsgNo,aDeviceVer,aRealData:string);
     procedure NodeRecvDataProcess(Sender: TObject; aNodeNo : integer;aMcuID,aECUID,aCmd,aMsgNo,aDeviceVer,aRealData:string);
+    procedure RcvAlarmEvent(Sender: TObject; aNodeNo,aECUID,aDoorNo,aReaderNo,aInOut,aTime,aCardMode,aDoorMode,aAlarmCode,aData10,aData11,aData12,aData13,aData14,aData15,aData16,aData17,aData18,aData19,aData20:string);
     procedure RcvCardAccessEvent(Sender: TObject; aNodeNo,aECUID,aDoorNo,aReaderNo,aInOut,aTime,aCardMode,aDoorMode,aChangeState,aAccessResult,aDoorState,aATButton,aCardNo,aData14,aData15,aData16,aData17,aData18,aData19,aData20:string);
     procedure RcvCardRegData(Sender: TObject; aNodeNo,aECUID,aResult,aCardNo,aCardType,aCmd,aData7,aData8,aData9,aData10,aData11,aData12,aData13,aData14,aData15,aData16,aData17,aData18,aData19,aData20:string);
     procedure ReceiveDeviceInitialize(Sender: TObject; aNodeNo,aECUID,aResult,aData4,aData5,aData6,aData7,aData8,aData9,aData10,aData11,aData12,aData13,aData14,aData15,aData16,aData17,aData18,aData19,aData20:string);
@@ -203,10 +208,16 @@ uses
   uMonitoring,
 //  uRemoteControl,
   uDataBaseBackup,
-  //uNetConfig,
+  uNetConfig,
   uFormFontUtil;
 
 {$R *.dfm}
+
+procedure TfmMain.AdvGlowButton10Click(Sender: TObject);
+begin
+  inherited;
+  MDIChildShow('TfmAccessReport');
+end;
 
 procedure TfmMain.AdvGlowButton1Click(Sender: TObject);
 begin
@@ -215,10 +226,10 @@ begin
 
 end;
 
-procedure TfmMain.AdvGlowButton21Click(Sender: TObject);
+procedure TfmMain.btn_AlarmReportClick(Sender: TObject);
 begin
   inherited;
-  MDIChildShow('TfmAccessReport');
+  MDIChildShow('TfmAlarmReport');
 end;
 
 procedure TfmMain.AdvGlowButton2Click(Sender: TObject);
@@ -323,6 +334,23 @@ begin
   else ShowMessage(dmFormName.GetFormMessage('2','M00056'));
 end;
 
+procedure TfmMain.AlarmConfigSetting;
+var
+  ini_fun : TiniFile;
+begin
+  Try
+    ini_fun := TiniFile.Create(G_stExeFolder + '\Monitoring.INI');
+    with ini_fun do
+    begin
+      if ReadInteger('AlarmEvent','Show',0) = 1 then  btn_AlarmReport.Visible := True
+      else btn_AlarmReport.Visible := False;
+    end;
+  Finally
+    ini_fun.Free;
+  End;
+
+end;
+
 procedure TfmMain.AppException(Sender: TObject; E: Exception);
 var
   sObj : string;
@@ -366,12 +394,12 @@ end;
 procedure TfmMain.btn_DeviceLanSettingClick(Sender: TObject);
 begin
   inherited;
-(*  if (Application.MessageBox(PChar(dmFormName.GetFormMessage('2','M00058')),pchar(dmFormName.GetFormMessage('3','M00001')),MB_OKCANCEL) = IDCANCEL)  then Exit;
+  if (Application.MessageBox(PChar(dmFormName.GetFormMessage('2','M00058')),pchar(dmFormName.GetFormMessage('3','M00001')),MB_OKCANCEL) = IDCANCEL)  then Exit;
 
   fmNetConfig:= TfmNetConfig.Create(Self);
   fmNetConfig.SHowModal;
   fmNetConfig.Free;
-*)
+
 end;
 
 procedure TfmMain.btn_fmConfigSettingClick(Sender: TObject);
@@ -1081,9 +1109,18 @@ begin
 end;
 
 procedure TfmMain.FormClose(Sender: TObject; var Action: TCloseAction);
+var
+  fmTemp : TForm;
 begin
   G_bApplicationTerminate := True;
   Delay(1000); //폼 종료에 따른 딜레이 가져가자....
+  //출입 모니터링에 전송
+  if G_bFormEnabled[FORMMONITORING] then
+  begin
+      fmTemp := MDIForm('TfmMonitoring');
+      if fmTemp <> nil then TfmMonitoring(fmTemp).Form_Close;
+  end;
+
   CardAutoDownTimer.Enabled := False; //카드다운로드 종료
   DeviceInfoSendTimer.Enabled := False;
   NodeOpenCheckTimer.Enabled := False;
@@ -1098,12 +1135,28 @@ procedure TfmMain.FormCreate(Sender: TObject);
 var
   i : integer;
   stMsg : string;
+  aResult : PDWORD_PTR;
+  lParam, wParam : Integer;
+  Buf : Array[0..10] of Char;
 begin
 //showmessage('1');
-//  AddFontResource(PChar(ExtractFileDir(Application.ExeName) + '/NanumGothic.ttf'));
-//  AddFontResource(PChar(ExtractFileDir(Application.ExeName) + '/NanumGothicBold.ttf'));
-//  SendMessage(HWND_BROADCAST, WM_FONTCHANGE, 0, 0);
+  AddFontResource(PChar(ExtractFileDir(Application.ExeName) + '/NanumGothic.ttf'));
+  AddFontResource(PChar(ExtractFileDir(Application.ExeName) + '/NanumGothicBold.ttf'));
+  //SendMessage(HWND_BROADCAST, WM_FONTCHANGE, 0, 0);
+  PostMessage(HWND_BROADCAST,WM_FONTCHANGE,0,0);
+  (*wParam := 0;
+  Buf := 'Environment';
+  lParam := Integer(@Buf[0]);
+  aResult  := nil;
+  SendMessageTimeout(HWND_BROADCAST,
+                           WM_FONTCHANGE,
+                           0,
+                           LPARAM(PChar('Environment')),
+                           SMTO_NORMAL,
+                           3000,
+                           aResult );
 
+  *)
   self.ModuleID := 'Main';
   DoorScheduleList := TStringList.Create;
   HoliDayList := TStringList.Create;
@@ -1130,6 +1183,7 @@ begin
   dmDeviceControlCenter.OnDeviceConnected := DeviceConnected;
   dmDeviceControlCenter.OnRcvData := NodeRecvDataProcess;
   dmDeviceControlCenter.OnSendData := DeviceSendDataProcess;
+  dmDeviceControlCenter.OnRcvAlarmEvent := RcvAlarmEvent;
   dmDeviceControlCenter.OnRcvCardAccessEvent := RcvCardAccessEvent;
   dmDeviceControlCenter.OnRcvCardRegData := RcvCardRegData;
   dmDeviceControlCenter.OnRcvDeviceInitialize := ReceiveDeviceInitialize;
@@ -1181,7 +1235,8 @@ begin
   AdvGlowButton2.Caption := dmFormName.GetFormMessage('1','M00020');
   mn_btnMonitoring.Caption := dmFormName.GetFormMessage('1','M00021');
   AdvGlowButton4.Caption := dmFormName.GetFormMessage('1','M00022');
-  AdvGlowButton21.Caption := dmFormName.GetFormMessage('1','M00023');
+  AdvGlowButton10.Caption := dmFormName.GetFormMessage('1','M00023');
+  btn_AlarmReport.Caption := dmFormName.GetFormMessage('1','M00063');
   AdvGlowButton3.Caption := dmFormName.GetFormMessage('1','M00060');
   btn_DeviceLanSetting.Caption := dmFormName.GetFormMessage('1','M00062');
   btn_fmConfigSetting.Caption := dmFormName.GetFormMessage('1','M00025');
@@ -1217,6 +1272,7 @@ begin
   CardAutoDownTimer.Enabled := True;
   dmDeviceControlCenter.Start := True;
   NodeOpenCheckTimer.Enabled := True;
+  AlarmConfigSetting;
 end;
 
 
@@ -1518,6 +1574,8 @@ procedure TfmMain.NodeOpenCheckTimerTimer(Sender: TObject);
 begin
   inherited;
   Try
+    if G_bApplicationTerminate then Exit;
+
     NodeOpenCheckTimer.Enabled := False;
     sb_Status.Panels.Items[2].Text := 'NodeOpenCheckTimer';
     dmDeviceControlCenter.NodeOpenCheck;
@@ -1806,6 +1864,31 @@ begin
       showmessage('카드등록 완료');
     end else showmessage('카드등록 실패');
   end;
+
+end;
+
+procedure TfmMain.RcvAlarmEvent(Sender: TObject; aNodeNo, aECUID, aDoorNo,
+  aReaderNo, aInOut, aTime, aCardMode, aDoorMode, aAlarmCode, aData10, aData11,
+  aData12, aData13, aData14, aData15, aData16, aData17, aData18, aData19,
+  aData20: string);
+var
+  fmTemp : TForm;
+  nDeviceIndex : integer;
+  stDeivceCaption : string;
+  nResult : integer;
+begin
+//  if ord(aDoorMode[1]) < 20 then aDoorMode := '0';
+
+  //출입 모니터링에 전송
+  if G_bFormEnabled[FORMMONITORING] then
+  begin
+      fmTemp := MDIForm('TfmMonitoring');
+      if fmTemp <> nil then TfmMonitoring(fmTemp).RcvAlarmEvent(aNodeNo, aECUID, aDoorNo,
+        aReaderNo, aInOut, aTime, aCardMode, aDoorMode, aAlarmCode);
+  end;
+  //여기에서 출입데이터 저장하자.
+  dmDBFunction.InsertTB_ALARMEVENT(copy(aTime,1,8), copy(aTime,9,6), aNodeNo, aEcuID,
+  aDoorNo, aAlarmCode);
 
 end;
 

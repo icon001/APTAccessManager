@@ -4,10 +4,10 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
   BorderIcons = []
   BorderStyle = bsNone
   Caption = #44060#51064#48324#52852#46300#44428#54620#44288#47532
-  ClientHeight = 505
-  ClientWidth = 1060
+  ClientHeight = 586
+  ClientWidth = 1307
   Font.Charset = HANGEUL_CHARSET
-  Font.Height = -12
+  Font.Height = -15
   Font.Name = 'MS Gothic'
   FormStyle = fsMDIChild
   Visible = True
@@ -15,29 +15,37 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  ExplicitWidth = 1076
-  ExplicitHeight = 543
-  PixelsPerInch = 96
-  TextHeight = 12
+  ExplicitWidth = 1325
+  ExplicitHeight = 631
+  PixelsPerInch = 120
+  TextHeight = 15
   object Image1: TImage [0]
     Left = 0
     Top = 0
-    Width = 1060
-    Height = 505
+    Width = 1307
+    Height = 586
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Align = alClient
-    ExplicitWidth = 1087
-    ExplicitHeight = 532
+    ExplicitWidth = 1325
+    ExplicitHeight = 631
   end
   object BodyPanel: TW7Panel [1]
     Left = 0
     Top = 0
-    Width = 1060
-    Height = 505
-    Version = '1.0.1.2'
+    Width = 1307
+    Height = 586
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Version = '1.0.2.0'
     Caption = 'BodyPanel'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Gothic'
     Font.Style = []
     SolidColor = clBlack
@@ -53,8 +61,12 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     object menuTab: TAdvOfficeTabSet
       Left = 0
       Top = 0
-      Width = 1060
-      Height = 23
+      Width = 1307
+      Height = 29
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       AdvOfficeTabs = <
         item
           Caption = #45803#44592
@@ -446,28 +458,28 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             167015090C4C6003EA2A6656038E53FDE9A8D7FD22E367138C3F762E57FF0049
             29FF0083B49D4FF3097CCB1A4CB35A84695E8D027358CAAA95215E494F2AC95F
             8563448DBEDE01ABC9E1F877E849D2E3F13C4AF5BFFFD9}
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -485,40 +497,40 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end
         item
           Caption = #44060#51064#48324#52852#46300#44428#54620#44288#47532
           Name = 'TOfficeTabCollectionItem2'
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -536,40 +548,40 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end
         item
           Caption = #51068#44292#44428#54620#46321#47197
           Name = 'TOfficeTabCollectionItem3'
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -587,40 +599,40 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end
         item
           Caption = #51068#44292#44428#54620#49325#51228
           Name = 'TOfficeTabCollectionItem4'
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -638,13 +650,13 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end>
       AdvOfficeTabSetStyler = AdvOfficeTabSetOfficeStyler1
@@ -933,42 +945,52 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
       ButtonSettings.ScrollButtonPrevHint = 'Previous'
       ButtonSettings.ScrollButtonFirstHint = 'First'
       ButtonSettings.ScrollButtonLastHint = 'Last'
+      TabSettings.Rounding = 0
       OnChange = menuTabChange
     end
     object pan_CardList: TAdvPanel
       Left = 0
-      Top = 23
-      Width = 871
-      Height = 480
+      Top = 29
+      Width = 1089
+      Height = 600
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Gothic'
       Font.Style = []
       ParentFont = False
       TabOrder = 1
       UseDockManager = True
-      Version = '2.1.0.4'
+      Version = '2.3.0.0'
       Caption.Color = clHighlight
       Caption.ColorTo = clNone
       Caption.Font.Charset = HANGEUL_CHARSET
       Caption.Font.Color = clWindowText
-      Caption.Font.Height = -11
+      Caption.Font.Height = -15
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Caption.Height = 17
+      Caption.Height = 21
       StatusBar.Font.Charset = DEFAULT_CHARSET
       StatusBar.Font.Color = clWindowText
       StatusBar.Font.Height = -11
       StatusBar.Font.Name = 'MS Gothic'
       StatusBar.Font.Style = []
+      Text = ''
       FullHeight = 200
       object pan_CardListHeader: TAdvSmoothPanel
         Left = 1
         Top = 1
-        Width = 869
-        Height = 152
+        Width = 1087
+        Height = 190
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #44060#51064#48324#52852#46300#44428#54620#44288#47532
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -980,37 +1002,48 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         Caption.Font.Height = -15
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = [fsBold]
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         Align = alTop
         TabOrder = 0
         object btn_Search: TSpeedButton
-          Left = 353
-          Top = 28
-          Width = 125
-          Height = 21
+          Left = 441
+          Top = 35
+          Width = 157
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_SearchClick
         end
         object lb_company: TAdvSmoothLabel
-          Left = 27
-          Top = 28
-          Width = 150
-          Height = 18
+          Left = 34
+          Top = 35
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1034,13 +1067,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_Depart: TAdvSmoothLabel
-          Left = 27
-          Top = 53
-          Width = 150
-          Height = 18
+          Left = 34
+          Top = 66
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1064,40 +1101,55 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object ed_name: TAdvEdit
-          Left = 195
-          Top = 78
-          Width = 138
-          Height = 21
+          Left = 244
+          Top = 98
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'MS Gothic'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
           ParentFont = False
           TabOrder = 0
+          Text = ''
           Visible = True
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object cmb_ListDongCode: TComboBox
-          Left = 195
-          Top = 28
-          Width = 138
-          Height = 21
+          Left = 244
+          Top = 35
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1106,14 +1158,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           OnChange = cmb_ListDongCodeChange
         end
         object cmb_ListAreaCode: TComboBox
-          Left = 195
-          Top = 53
-          Width = 138
-          Height = 21
+          Left = 244
+          Top = 66
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1122,14 +1178,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           OnChange = cmb_ListAreaCodeChange
         end
         object cmb_EtcSearch1: TComboBox
-          Left = 27
-          Top = 78
-          Width = 138
-          Height = 21
+          Left = 34
+          Top = 98
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1138,14 +1198,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           OnChange = cmb_ListAreaCodeChange
         end
         object cmb_EtcSearch2: TComboBox
-          Left = 27
-          Top = 103
-          Width = 138
-          Height = 21
+          Left = 34
+          Top = 129
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1154,37 +1218,54 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           OnChange = cmb_ListAreaCodeChange
         end
         object ed_EtcSearch: TAdvEdit
-          Left = 195
-          Top = 103
-          Width = 138
-          Height = 21
+          Left = 244
+          Top = 129
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'MS Gothic'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
           ParentFont = False
           TabOrder = 5
+          Text = ''
           Visible = True
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object cmb_Condition1: TAdvComboBox
-          Left = 353
-          Top = 79
-          Width = 125
-          Height = 19
+          Left = 441
+          Top = 99
+          Width = 157
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Color = clWindow
-          Version = '1.4.0.0'
+          Version = '1.5.1.0'
           Visible = True
+          ButtonWidth = 23
           Style = csDropDownList
+          EmptyTextStyle = []
           DropWidth = 0
           Enabled = True
           ImeName = 'Microsoft Office IME 2007'
@@ -1197,14 +1278,20 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           TabOrder = 6
         end
         object cmb_Condition2: TAdvComboBox
-          Left = 353
-          Top = 104
-          Width = 125
-          Height = 19
+          Left = 441
+          Top = 130
+          Width = 157
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Color = clWindow
-          Version = '1.4.0.0'
+          Version = '1.5.1.0'
           Visible = True
+          ButtonWidth = 23
           Style = csDropDownList
+          EmptyTextStyle = []
           DropWidth = 0
           Enabled = True
           ImeName = 'Microsoft Office IME 2007'
@@ -1219,10 +1306,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
       end
       object AdvSmoothPanel1: TAdvSmoothPanel
         Left = 1
-        Top = 430
-        Width = 869
-        Height = 49
+        Top = 538
+        Width = 1087
+        Height = 61
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
         Caption.HTMLFont.Height = -11
@@ -1233,47 +1324,58 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         Caption.Font.Height = -16
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         Align = alBottom
         TabOrder = 1
         DesignSize = (
-          869
-          49)
+          1087
+          61)
         object btn_PackagePermitAdd: TSpeedButton
-          Left = 486
-          Top = 6
-          Width = 170
-          Height = 21
+          Left = 608
+          Top = 8
+          Width = 212
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akRight, akBottom]
           Caption = #19968#25324#27177#38480#12398#30331#37682
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_PackagePermitAddClick
         end
         object btn_PackagePermitDelete: TSpeedButton
-          Left = 665
-          Top = 6
-          Width = 170
-          Height = 21
+          Left = 831
+          Top = 8
+          Width = 213
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akRight, akBottom]
           Caption = #19968#25324#27177#38480#12398#21066#38500
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
@@ -1282,10 +1384,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
       end
       object sg_CardList: TAdvStringGrid
         Left = 1
-        Top = 153
-        Width = 869
-        Height = 277
+        Top = 191
+        Width = 1087
+        Height = 347
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Align = alClient
         ColCount = 12
         DefaultColWidth = 110
@@ -1294,7 +1400,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         RowCount = 17
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSizing, goColSizing, goColMoving, goEditing, goRowSelect]
@@ -1305,6 +1411,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         ShowHint = True
         TabOrder = 2
         OnDblClick = sg_CardListDblClick
+        GridLineColor = 13027014
+        GridFixedLineColor = 13027014
+        HoverRowCells = [hcNormal, hcSelected]
         OnCheckBoxClick = sg_CardListCheckBoxClick
         OnResize = sg_CardListResize
         ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -1312,6 +1421,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         ActiveCellFont.Height = -13
         ActiveCellFont.Name = 'MS Gothic'
         ActiveCellFont.Style = []
+        ActiveCellColor = 16448250
+        ActiveCellColorTo = 16448250
+        BorderColor = 13027014
         ColumnHeaders.Strings = (
           ''
           #54924#49324
@@ -1321,10 +1433,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           #52852#46300#48264#54840
           #51204#54868#48264#54840
           #50948#52824#44428#54620)
-        ControlLook.FixedGradientHoverFrom = clGray
-        ControlLook.FixedGradientHoverTo = clWhite
-        ControlLook.FixedGradientDownFrom = clGray
-        ControlLook.FixedGradientDownTo = clSilver
+        ControlLook.FixedGradientMirrorFrom = 16448250
+        ControlLook.FixedGradientMirrorTo = 16448250
+        ControlLook.FixedGradientHoverFrom = 16576740
+        ControlLook.FixedGradientHoverTo = 16576740
+        ControlLook.FixedGradientHoverMirrorFrom = 16576740
+        ControlLook.FixedGradientHoverMirrorTo = 16576740
+        ControlLook.FixedGradientHoverBorder = 15381630
+        ControlLook.FixedGradientDownFrom = 16573128
+        ControlLook.FixedGradientDownTo = 16573128
+        ControlLook.FixedGradientDownMirrorFrom = 16573128
+        ControlLook.FixedGradientDownMirrorTo = 16573128
+        ControlLook.FixedGradientDownBorder = 15048022
         ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
         ControlLook.DropDownHeader.Font.Color = clWindowText
         ControlLook.DropDownHeader.Font.Height = -11
@@ -1346,6 +1466,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         FilterDropDown.Font.Name = 'MS Gothic'
         FilterDropDown.Font.Style = []
         FilterDropDownClear = '(All)'
+        FilterEdit.TypeNames.Strings = (
+          'Starts with'
+          'Ends with'
+          'Contains'
+          'Not contains'
+          'Equal'
+          'Not equal'
+          'Clear')
         FixedColWidth = 30
         FixedRowHeight = 22
         FixedFont.Charset = DEFAULT_CHARSET
@@ -1354,6 +1482,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         FixedFont.Name = 'MS Gothic'
         FixedFont.Style = []
         FloatFormat = '%.2f'
+        Look = glOffice2007
         PrintSettings.DateFormat = 'dd/mm/yyyy'
         PrintSettings.Font.Charset = DEFAULT_CHARSET
         PrintSettings.Font.Color = clWindowText
@@ -1376,6 +1505,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         PrintSettings.FooterFont.Name = 'MS Gothic'
         PrintSettings.FooterFont.Style = []
         PrintSettings.PageNumSep = '/'
+        ScrollWidth = 21
+        SearchFooter.Color = 16448250
+        SearchFooter.ColorTo = 16448250
         SearchFooter.FindNextCaption = 'Find &next'
         SearchFooter.FindPrevCaption = 'Find &previous'
         SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -1389,9 +1521,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         SearchFooter.HintFindPrev = 'Find previous occurrence'
         SearchFooter.HintHighlight = 'Highlight occurrences'
         SearchFooter.MatchCaseCaption = 'Match case'
-        Version = '6.0.4.4'
-        ExplicitTop = 126
-        ExplicitHeight = 304
+        SelectionColor = 14327846
+        SelectionTextColor = clWhite
+        SortSettings.DefaultFormat = ssAutomatic
+        SortSettings.HeaderColor = 16448250
+        SortSettings.HeaderColorTo = 16448250
+        SortSettings.HeaderMirrorColor = 16448250
+        SortSettings.HeaderMirrorColorTo = 16448250
+        Version = '7.2.8.0'
         ColWidths = (
           30
           110
@@ -1408,39 +1545,48 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
       end
     end
     object pan_PackagePermitDelete: TAdvPanel
-      Left = 356
-      Top = 199
-      Width = 871
-      Height = 503
+      Left = 445
+      Top = 249
+      Width = 1089
+      Height = 629
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -17
       Font.Name = 'MS Gothic'
       Font.Style = []
       ParentFont = False
       TabOrder = 3
       UseDockManager = True
-      Version = '2.1.0.4'
+      Version = '2.3.0.0'
       Caption.Color = clHighlight
       Caption.ColorTo = clNone
       Caption.Font.Charset = HANGEUL_CHARSET
       Caption.Font.Color = clWindowText
-      Caption.Font.Height = -11
+      Caption.Font.Height = -15
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Caption.Height = 17
+      Caption.Height = 21
       StatusBar.Font.Charset = DEFAULT_CHARSET
       StatusBar.Font.Color = clWindowText
       StatusBar.Font.Height = -11
       StatusBar.Font.Name = 'MS Gothic'
       StatusBar.Font.Style = []
+      Text = ''
       FullHeight = 200
       object pan_DelEmpState: TAdvSmoothPanel
         Left = 1
         Top = 1
-        Width = 869
-        Height = 125
+        Width = 1087
+        Height = 157
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #44428#54620#49325#51228#51077#51452#51088#54788#54889
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -1452,43 +1598,54 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         Align = alTop
         OnResize = pan_DelEmpStateResize
         Visible = False
         TabOrder = 0
         DesignSize = (
-          869
-          125)
+          1087
+          157)
         object btn_CardPermitDeletePerson: TSpeedButton
-          Left = 713
-          Top = 26
-          Width = 140
-          Height = 21
+          Left = 891
+          Top = 33
+          Width = 175
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akRight, akBottom]
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_CardPermitDeletePersonClick
         end
         object lv_packagePermitDeleteCardList: TAdvListView
-          Left = 9
-          Top = 24
-          Width = 698
-          Height = 87
+          Left = 11
+          Top = 30
+          Width = 873
+          Height = 109
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Columns = <>
           LargeImages = ImageList1
           MultiSelect = True
@@ -1522,14 +1679,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           DetailView.Font.Height = -11
           DetailView.Font.Name = 'MS Gothic'
           DetailView.Font.Style = []
-          Version = '1.6.7.2'
+          Version = '1.6.9.8'
         end
         object pan_deleteSearch: TAdvSmoothPanel
-          Left = 362
-          Top = -5
-          Width = 392
-          Height = 120
+          Left = 453
+          Top = -6
+          Width = 490
+          Height = 150
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = #51077#51452#51088#51312#54924
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -1541,38 +1702,49 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           Caption.Font.Height = -13
           Caption.Font.Name = 'MS Gothic'
           Caption.Font.Style = []
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           Visible = False
           TabOrder = 1
           object btn_deleteCancel: TSpeedButton
-            Left = 157
-            Top = 24
-            Width = 55
-            Height = 21
+            Left = 196
+            Top = 30
+            Width = 69
+            Height = 26
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
-            Font.Height = -13
+            Font.Height = -17
             Font.Name = 'MS Gothic'
             Font.Style = []
             ParentFont = False
             OnClick = btn_deleteCancelClick
           end
           object sg_deleteCardList: TAdvStringGrid
-            Left = 14
-            Top = 48
-            Width = 357
-            Height = 63
+            Left = 18
+            Top = 60
+            Width = 446
+            Height = 79
             Cursor = crDefault
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ColCount = 10
             DefaultColWidth = 110
             DrawingStyle = gdsClassic
@@ -1580,7 +1752,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             RowCount = 2
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
-            Font.Height = -13
+            Font.Height = -17
             Font.Name = 'MS Gothic'
             Font.Style = []
             Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -1590,11 +1762,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             ShowHint = True
             TabOrder = 0
             OnDblClick = sg_deleteCardListDblClick
+            GridLineColor = 13027014
+            GridFixedLineColor = 13027014
+            HoverRowCells = [hcNormal, hcSelected]
             ActiveCellFont.Charset = DEFAULT_CHARSET
             ActiveCellFont.Color = clWindowText
             ActiveCellFont.Height = -13
             ActiveCellFont.Name = 'MS Gothic'
             ActiveCellFont.Style = []
+            ActiveCellColor = 16448250
+            ActiveCellColorTo = 16448250
+            BorderColor = 13027014
             ColumnHeaders.Strings = (
               #46041
               #52636#44396
@@ -1603,10 +1781,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               #52852#46300#48264#54840
               #51204#54868#48264#54840
               #50948#52824#44428#54620)
-            ControlLook.FixedGradientHoverFrom = clGray
-            ControlLook.FixedGradientHoverTo = clWhite
-            ControlLook.FixedGradientDownFrom = clGray
-            ControlLook.FixedGradientDownTo = clSilver
+            ControlLook.FixedGradientMirrorFrom = 16448250
+            ControlLook.FixedGradientMirrorTo = 16448250
+            ControlLook.FixedGradientHoverFrom = 16576740
+            ControlLook.FixedGradientHoverTo = 16576740
+            ControlLook.FixedGradientHoverMirrorFrom = 16576740
+            ControlLook.FixedGradientHoverMirrorTo = 16576740
+            ControlLook.FixedGradientHoverBorder = 15381630
+            ControlLook.FixedGradientDownFrom = 16573128
+            ControlLook.FixedGradientDownTo = 16573128
+            ControlLook.FixedGradientDownMirrorFrom = 16573128
+            ControlLook.FixedGradientDownMirrorTo = 16573128
+            ControlLook.FixedGradientDownBorder = 15048022
             ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
             ControlLook.DropDownHeader.Font.Color = clWindowText
             ControlLook.DropDownHeader.Font.Height = -11
@@ -1628,6 +1814,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             FilterDropDown.Font.Name = 'MS Gothic'
             FilterDropDown.Font.Style = []
             FilterDropDownClear = '(All)'
+            FilterEdit.TypeNames.Strings = (
+              'Starts with'
+              'Ends with'
+              'Contains'
+              'Not contains'
+              'Equal'
+              'Not equal'
+              'Clear')
             FixedColWidth = 88
             FixedRowHeight = 22
             FixedFont.Charset = DEFAULT_CHARSET
@@ -1636,6 +1830,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             FixedFont.Name = 'MS Gothic'
             FixedFont.Style = []
             FloatFormat = '%.2f'
+            Look = glOffice2007
             PrintSettings.DateFormat = 'dd/mm/yyyy'
             PrintSettings.Font.Charset = DEFAULT_CHARSET
             PrintSettings.Font.Color = clWindowText
@@ -1658,6 +1853,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             PrintSettings.FooterFont.Name = 'MS Gothic'
             PrintSettings.FooterFont.Style = []
             PrintSettings.PageNumSep = '/'
+            ScrollWidth = 21
+            SearchFooter.Color = 16448250
+            SearchFooter.ColorTo = 16448250
             SearchFooter.FindNextCaption = 'Find &next'
             SearchFooter.FindPrevCaption = 'Find &previous'
             SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -1671,8 +1869,15 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             SearchFooter.HintFindPrev = 'Find previous occurrence'
             SearchFooter.HintHighlight = 'Highlight occurrences'
             SearchFooter.MatchCaseCaption = 'Match case'
+            SelectionColor = 14327846
+            SelectionTextColor = clWhite
             ShowDesignHelper = False
-            Version = '6.0.4.4'
+            SortSettings.DefaultFormat = ssAutomatic
+            SortSettings.HeaderColor = 16448250
+            SortSettings.HeaderColorTo = 16448250
+            SortSettings.HeaderMirrorColor = 16448250
+            SortSettings.HeaderMirrorColorTo = 16448250
+            Version = '7.2.8.0'
             ColWidths = (
               88
               110
@@ -1686,37 +1891,52 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               110)
           end
           object ed_deleteSearchName: TAdvEdit
-            Left = 14
-            Top = 24
-            Width = 138
-            Height = 21
+            Left = 18
+            Top = 30
+            Width = 172
+            Height = 25
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
+            EmptyTextStyle = []
             LabelFont.Charset = DEFAULT_CHARSET
             LabelFont.Color = clWindowText
             LabelFont.Height = -11
             LabelFont.Name = 'MS Gothic'
             LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -13
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWindow
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
-            Font.Height = -13
+            Font.Height = -17
             Font.Name = 'MS Gothic'
             Font.Style = []
             ImeName = 'Microsoft Office IME 2007'
             ParentFont = False
             TabOrder = 1
+            Text = ''
             Visible = True
             OnChange = ed_deleteSearchNameChange
-            Version = '2.9.3.1'
+            Version = '3.3.2.0'
           end
         end
       end
       object pan_DoorInfo: TAdvSmoothPanel
-        Left = 10
-        Top = 131
-        Width = 679
-        Height = 255
+        Left = 13
+        Top = 164
+        Width = 848
+        Height = 319
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #52636#51077#47928#51221#48372
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -1728,24 +1948,31 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         OnResize = pan_DoorInfoResize
         TabOrder = 1
         object lb_Company3: TAdvSmoothLabel
-          Left = 27
-          Top = 28
-          Width = 150
-          Height = 18
+          Left = 34
+          Top = 35
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1769,13 +1996,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_Depart3: TAdvSmoothLabel
-          Left = 27
-          Top = 54
-          Width = 150
-          Height = 18
+          Left = 34
+          Top = 68
+          Width = 187
+          Height = 22
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1799,30 +2030,38 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object btn_DoorPermitDelete: TSpeedButton
-          Left = 349
-          Top = 53
-          Width = 170
-          Height = 21
+          Left = 436
+          Top = 66
+          Width = 213
+          Height = 27
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_DoorPermitDeleteClick
         end
         object cmb_deletePermitDongCode: TComboBox
-          Left = 191
-          Top = 27
-          Width = 138
-          Height = 21
+          Left = 239
+          Top = 34
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1831,14 +2070,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           OnChange = cmb_deletePermitDongCodeChange
         end
         object cmb_deletePermitAreaCode: TComboBox
-          Left = 191
-          Top = 53
-          Width = 138
-          Height = 21
+          Left = 239
+          Top = 66
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1847,11 +2090,15 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           OnChange = cmb_deletePermitAreaCodeChange
         end
         object sg_deletePermitDoorList: TAdvStringGrid
-          Left = 3
-          Top = 89
-          Width = 851
-          Height = 287
+          Left = 4
+          Top = 111
+          Width = 1064
+          Height = 359
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           ColCount = 7
           DefaultColWidth = 110
           DrawingStyle = gdsClassic
@@ -1859,7 +2106,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           RowCount = 17
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -1868,6 +2115,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           ScrollBars = ssNone
           ShowHint = True
           TabOrder = 2
+          GridLineColor = 13027014
+          GridFixedLineColor = 13027014
+          HoverRowCells = [hcNormal, hcSelected]
           OnCheckBoxClick = sg_deletePermitDoorListCheckBoxClick
           OnResize = sg_CardListResize
           ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -1875,6 +2125,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           ActiveCellFont.Height = -13
           ActiveCellFont.Name = 'MS Gothic'
           ActiveCellFont.Style = []
+          ActiveCellColor = 16448250
+          ActiveCellColorTo = 16448250
+          BorderColor = 13027014
           ColumnHeaders.Strings = (
             ''
             #54924#49324
@@ -1883,10 +2136,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             #45432#46300#48264#54840
             #44592#44592#48264#54840
             #52636#51077#47928#48264#54840)
-          ControlLook.FixedGradientHoverFrom = clGray
-          ControlLook.FixedGradientHoverTo = clWhite
-          ControlLook.FixedGradientDownFrom = clGray
-          ControlLook.FixedGradientDownTo = clSilver
+          ControlLook.FixedGradientMirrorFrom = 16448250
+          ControlLook.FixedGradientMirrorTo = 16448250
+          ControlLook.FixedGradientHoverFrom = 16576740
+          ControlLook.FixedGradientHoverTo = 16576740
+          ControlLook.FixedGradientHoverMirrorFrom = 16576740
+          ControlLook.FixedGradientHoverMirrorTo = 16576740
+          ControlLook.FixedGradientHoverBorder = 15381630
+          ControlLook.FixedGradientDownFrom = 16573128
+          ControlLook.FixedGradientDownTo = 16573128
+          ControlLook.FixedGradientDownMirrorFrom = 16573128
+          ControlLook.FixedGradientDownMirrorTo = 16573128
+          ControlLook.FixedGradientDownBorder = 15048022
           ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
           ControlLook.DropDownHeader.Font.Color = clWindowText
           ControlLook.DropDownHeader.Font.Height = -11
@@ -1908,6 +2169,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           FilterDropDown.Font.Name = 'MS Gothic'
           FilterDropDown.Font.Style = []
           FilterDropDownClear = '(All)'
+          FilterEdit.TypeNames.Strings = (
+            'Starts with'
+            'Ends with'
+            'Contains'
+            'Not contains'
+            'Equal'
+            'Not equal'
+            'Clear')
           FixedColWidth = 30
           FixedRowHeight = 22
           FixedFont.Charset = DEFAULT_CHARSET
@@ -1916,6 +2185,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           FixedFont.Name = 'MS Gothic'
           FixedFont.Style = []
           FloatFormat = '%.2f'
+          Look = glOffice2007
           PrintSettings.DateFormat = 'dd/mm/yyyy'
           PrintSettings.Font.Charset = DEFAULT_CHARSET
           PrintSettings.Font.Color = clWindowText
@@ -1938,6 +2208,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           PrintSettings.FooterFont.Name = 'MS Gothic'
           PrintSettings.FooterFont.Style = []
           PrintSettings.PageNumSep = '/'
+          ScrollWidth = 21
+          SearchFooter.Color = 16448250
+          SearchFooter.ColorTo = 16448250
           SearchFooter.FindNextCaption = 'Find &next'
           SearchFooter.FindPrevCaption = 'Find &previous'
           SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -1951,7 +2224,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           SearchFooter.HintFindPrev = 'Find previous occurrence'
           SearchFooter.HintHighlight = 'Highlight occurrences'
           SearchFooter.MatchCaseCaption = 'Match case'
-          Version = '6.0.4.4'
+          SelectionColor = 14327846
+          SelectionTextColor = clWhite
+          SortSettings.DefaultFormat = ssAutomatic
+          SortSettings.HeaderColor = 16448250
+          SortSettings.HeaderColorTo = 16448250
+          SortSettings.HeaderMirrorColor = 16448250
+          SortSettings.HeaderMirrorColorTo = 16448250
+          Version = '7.2.8.0'
           ColWidths = (
             30
             236
@@ -1964,39 +2244,48 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
       end
     end
     object pan_PackagePermitAdd: TAdvPanel
-      Left = -97
-      Top = 300
-      Width = 871
-      Height = 503
+      Left = -121
+      Top = 375
+      Width = 1089
+      Height = 629
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Gothic'
       Font.Style = []
       ParentFont = False
       TabOrder = 2
       UseDockManager = True
-      Version = '2.1.0.4'
+      Version = '2.3.0.0'
       Caption.Color = clHighlight
       Caption.ColorTo = clNone
       Caption.Font.Charset = HANGEUL_CHARSET
       Caption.Font.Color = clWindowText
-      Caption.Font.Height = -11
+      Caption.Font.Height = -15
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Caption.Height = 17
+      Caption.Height = 21
       StatusBar.Font.Charset = DEFAULT_CHARSET
       StatusBar.Font.Color = clWindowText
       StatusBar.Font.Height = -11
       StatusBar.Font.Name = 'MS Gothic'
       StatusBar.Font.Style = []
+      Text = ''
       FullHeight = 200
       object pan_AddEmployee: TAdvSmoothPanel
         Left = 1
         Top = 1
-        Width = 869
-        Height = 125
+        Width = 1087
+        Height = 157
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #44428#54620#46321#47197#51077#51452#51088' '#54788#54889
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -2008,43 +2297,54 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         Align = alTop
         OnResize = pan_AddEmployeeResize
         Visible = False
         TabOrder = 0
         DesignSize = (
-          869
-          125)
+          1087
+          157)
         object btn_CardPermitAddPerson: TSpeedButton
-          Left = 734
-          Top = 26
-          Width = 103
-          Height = 21
+          Left = 918
+          Top = 33
+          Width = 128
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akRight, akBottom]
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_CardPermitAddPersonClick
         end
         object lv_packagePermitAddCardList: TAdvListView
-          Left = 9
-          Top = 24
-          Width = 698
-          Height = 87
+          Left = 11
+          Top = 30
+          Width = 873
+          Height = 109
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Columns = <>
           LargeImages = ImageList1
           MultiSelect = True
@@ -2078,14 +2378,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           DetailView.Font.Height = -11
           DetailView.Font.Name = 'MS Gothic'
           DetailView.Font.Style = []
-          Version = '1.6.7.2'
+          Version = '1.6.9.8'
         end
         object pan_addSearch: TAdvSmoothPanel
-          Left = 322
-          Top = 3
-          Width = 392
-          Height = 120
+          Left = 403
+          Top = 4
+          Width = 490
+          Height = 150
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = #51077#51452#51088#51312#54924
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -2097,38 +2401,49 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           Caption.Font.Height = -13
           Caption.Font.Name = 'MS Gothic'
           Caption.Font.Style = []
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           Visible = False
           TabOrder = 1
           object btn_addCancel: TSpeedButton
-            Left = 157
-            Top = 24
-            Width = 55
-            Height = 21
+            Left = 196
+            Top = 30
+            Width = 69
+            Height = 26
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
-            Font.Height = -13
+            Font.Height = -17
             Font.Name = 'MS Gothic'
             Font.Style = []
             ParentFont = False
             OnClick = btn_addCancelClick
           end
           object sg_addCardList: TAdvStringGrid
-            Left = 14
-            Top = 48
-            Width = 357
-            Height = 63
+            Left = 18
+            Top = 60
+            Width = 446
+            Height = 79
             Cursor = crDefault
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ColCount = 10
             DefaultColWidth = 110
             DrawingStyle = gdsClassic
@@ -2136,7 +2451,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             RowCount = 2
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
-            Font.Height = -13
+            Font.Height = -17
             Font.Name = 'MS Gothic'
             Font.Style = []
             Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -2146,11 +2461,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             ShowHint = True
             TabOrder = 0
             OnDblClick = sg_addCardListDblClick
+            GridLineColor = 13027014
+            GridFixedLineColor = 13027014
+            HoverRowCells = [hcNormal, hcSelected]
             ActiveCellFont.Charset = DEFAULT_CHARSET
             ActiveCellFont.Color = clWindowText
             ActiveCellFont.Height = -11
             ActiveCellFont.Name = 'MS Gothic'
             ActiveCellFont.Style = []
+            ActiveCellColor = 16448250
+            ActiveCellColorTo = 16448250
+            BorderColor = 13027014
             ColumnHeaders.Strings = (
               #54924#49324
               #48512#49436
@@ -2159,10 +2480,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               #52852#46300#48264#54840
               #51204#54868#48264#54840
               #50948#52824#44428#54620)
-            ControlLook.FixedGradientHoverFrom = clGray
-            ControlLook.FixedGradientHoverTo = clWhite
-            ControlLook.FixedGradientDownFrom = clGray
-            ControlLook.FixedGradientDownTo = clSilver
+            ControlLook.FixedGradientMirrorFrom = 16448250
+            ControlLook.FixedGradientMirrorTo = 16448250
+            ControlLook.FixedGradientHoverFrom = 16576740
+            ControlLook.FixedGradientHoverTo = 16576740
+            ControlLook.FixedGradientHoverMirrorFrom = 16576740
+            ControlLook.FixedGradientHoverMirrorTo = 16576740
+            ControlLook.FixedGradientHoverBorder = 15381630
+            ControlLook.FixedGradientDownFrom = 16573128
+            ControlLook.FixedGradientDownTo = 16573128
+            ControlLook.FixedGradientDownMirrorFrom = 16573128
+            ControlLook.FixedGradientDownMirrorTo = 16573128
+            ControlLook.FixedGradientDownBorder = 15048022
             ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
             ControlLook.DropDownHeader.Font.Color = clWindowText
             ControlLook.DropDownHeader.Font.Height = -11
@@ -2184,6 +2513,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             FilterDropDown.Font.Name = 'MS Gothic'
             FilterDropDown.Font.Style = []
             FilterDropDownClear = '(All)'
+            FilterEdit.TypeNames.Strings = (
+              'Starts with'
+              'Ends with'
+              'Contains'
+              'Not contains'
+              'Equal'
+              'Not equal'
+              'Clear')
             FixedColWidth = 88
             FixedRowHeight = 22
             FixedFont.Charset = DEFAULT_CHARSET
@@ -2192,6 +2529,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             FixedFont.Name = 'MS Gothic'
             FixedFont.Style = []
             FloatFormat = '%.2f'
+            Look = glOffice2007
             PrintSettings.DateFormat = 'dd/mm/yyyy'
             PrintSettings.Font.Charset = DEFAULT_CHARSET
             PrintSettings.Font.Color = clWindowText
@@ -2214,6 +2552,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             PrintSettings.FooterFont.Name = 'MS Gothic'
             PrintSettings.FooterFont.Style = []
             PrintSettings.PageNumSep = '/'
+            ScrollWidth = 21
+            SearchFooter.Color = 16448250
+            SearchFooter.ColorTo = 16448250
             SearchFooter.FindNextCaption = 'Find &next'
             SearchFooter.FindPrevCaption = 'Find &previous'
             SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -2227,8 +2568,15 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             SearchFooter.HintFindPrev = 'Find previous occurrence'
             SearchFooter.HintHighlight = 'Highlight occurrences'
             SearchFooter.MatchCaseCaption = 'Match case'
+            SelectionColor = 14327846
+            SelectionTextColor = clWhite
             ShowDesignHelper = False
-            Version = '6.0.4.4'
+            SortSettings.DefaultFormat = ssAutomatic
+            SortSettings.HeaderColor = 16448250
+            SortSettings.HeaderColorTo = 16448250
+            SortSettings.HeaderMirrorColor = 16448250
+            SortSettings.HeaderMirrorColorTo = 16448250
+            Version = '7.2.8.0'
             ColWidths = (
               88
               110
@@ -2242,31 +2590,46 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               110)
           end
           object ed_addSearchName: TAdvEdit
-            Left = 14
-            Top = 24
-            Width = 138
-            Height = 19
+            Left = 18
+            Top = 30
+            Width = 172
+            Height = 23
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
+            EmptyTextStyle = []
             LabelFont.Charset = DEFAULT_CHARSET
             LabelFont.Color = clWindowText
             LabelFont.Height = -11
             LabelFont.Name = 'MS Gothic'
             LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -13
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWindow
             ImeName = 'Microsoft Office IME 2007'
             TabOrder = 1
+            Text = ''
             Visible = True
             OnChange = ed_addSearchNameChange
-            Version = '2.9.3.1'
+            Version = '3.3.2.0'
           end
         end
       end
       object pan_DoorInfoAdd: TAdvSmoothPanel
-        Left = 7
-        Top = 152
-        Width = 834
-        Height = 254
+        Left = 9
+        Top = 190
+        Width = 1042
+        Height = 318
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #52636#51077#47928#51221#48372
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -2278,24 +2641,31 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         OnResize = pan_DoorInfoAddResize
         TabOrder = 1
         object lb_Company4: TAdvSmoothLabel
-          Left = 27
-          Top = 28
-          Width = 150
-          Height = 18
+          Left = 34
+          Top = 35
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -2319,13 +2689,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_Depart4: TAdvSmoothLabel
-          Left = 27
-          Top = 52
-          Width = 150
-          Height = 18
+          Left = 34
+          Top = 65
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -2349,39 +2723,51 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object btn_DoorPermitAdd: TSpeedButton
-          Left = 327
-          Top = 51
-          Width = 170
-          Height = 21
+          Left = 409
+          Top = 64
+          Width = 212
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_DoorPermitAddClick
         end
         object ga_PermitDoorAdd: TGauge
-          Left = 503
-          Top = 53
-          Width = 144
-          Height = 20
+          Left = 629
+          Top = 66
+          Width = 180
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           ForeColor = clBlue
           Progress = 0
           Visible = False
         end
         object cmb_addPermitDongCode: TComboBox
-          Left = 183
-          Top = 27
-          Width = 138
-          Height = 21
+          Left = 229
+          Top = 34
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -2390,14 +2776,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           OnChange = cmb_addPermitDongCodeChange
         end
         object cmb_addPermitAreaCode: TComboBox
-          Left = 183
-          Top = 51
-          Width = 138
-          Height = 21
+          Left = 229
+          Top = 64
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -2406,11 +2796,15 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           OnChange = cmb_addPermitAreaCodeChange
         end
         object sg_addPermitDoorList: TAdvStringGrid
-          Left = 3
-          Top = 89
-          Width = 851
-          Height = 287
+          Left = 4
+          Top = 111
+          Width = 1064
+          Height = 359
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           ColCount = 7
           DefaultColWidth = 110
           DrawingStyle = gdsClassic
@@ -2418,7 +2812,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           RowCount = 17
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -2427,6 +2821,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           ScrollBars = ssBoth
           ShowHint = True
           TabOrder = 2
+          GridLineColor = 13027014
+          GridFixedLineColor = 13027014
+          HoverRowCells = [hcNormal, hcSelected]
           OnCheckBoxClick = sg_addPermitDoorListCheckBoxClick
           OnResize = sg_CardListResize
           ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -2434,6 +2831,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           ActiveCellFont.Height = -11
           ActiveCellFont.Name = 'MS Gothic'
           ActiveCellFont.Style = []
+          ActiveCellColor = 16448250
+          ActiveCellColorTo = 16448250
+          BorderColor = 13027014
           ColumnHeaders.Strings = (
             ''
             #54924#49324
@@ -2442,10 +2842,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             #45432#46300#48264#54840
             #44592#44592#48264#54840
             #52636#51077#47928#48264#54840)
-          ControlLook.FixedGradientHoverFrom = clGray
-          ControlLook.FixedGradientHoverTo = clWhite
-          ControlLook.FixedGradientDownFrom = clGray
-          ControlLook.FixedGradientDownTo = clSilver
+          ControlLook.FixedGradientMirrorFrom = 16448250
+          ControlLook.FixedGradientMirrorTo = 16448250
+          ControlLook.FixedGradientHoverFrom = 16576740
+          ControlLook.FixedGradientHoverTo = 16576740
+          ControlLook.FixedGradientHoverMirrorFrom = 16576740
+          ControlLook.FixedGradientHoverMirrorTo = 16576740
+          ControlLook.FixedGradientHoverBorder = 15381630
+          ControlLook.FixedGradientDownFrom = 16573128
+          ControlLook.FixedGradientDownTo = 16573128
+          ControlLook.FixedGradientDownMirrorFrom = 16573128
+          ControlLook.FixedGradientDownMirrorTo = 16573128
+          ControlLook.FixedGradientDownBorder = 15048022
           ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
           ControlLook.DropDownHeader.Font.Color = clWindowText
           ControlLook.DropDownHeader.Font.Height = -11
@@ -2467,6 +2875,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           FilterDropDown.Font.Name = 'MS Gothic'
           FilterDropDown.Font.Style = []
           FilterDropDownClear = '(All)'
+          FilterEdit.TypeNames.Strings = (
+            'Starts with'
+            'Ends with'
+            'Contains'
+            'Not contains'
+            'Equal'
+            'Not equal'
+            'Clear')
           FixedColWidth = 30
           FixedRowHeight = 22
           FixedFont.Charset = DEFAULT_CHARSET
@@ -2475,6 +2891,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           FixedFont.Name = 'MS Gothic'
           FixedFont.Style = []
           FloatFormat = '%.2f'
+          Look = glOffice2007
           PrintSettings.DateFormat = 'dd/mm/yyyy'
           PrintSettings.Font.Charset = DEFAULT_CHARSET
           PrintSettings.Font.Color = clWindowText
@@ -2497,6 +2914,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           PrintSettings.FooterFont.Name = 'MS Gothic'
           PrintSettings.FooterFont.Style = []
           PrintSettings.PageNumSep = '/'
+          ScrollWidth = 21
+          SearchFooter.Color = 16448250
+          SearchFooter.ColorTo = 16448250
           SearchFooter.FindNextCaption = 'Find &next'
           SearchFooter.FindPrevCaption = 'Find &previous'
           SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -2510,7 +2930,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           SearchFooter.HintFindPrev = 'Find previous occurrence'
           SearchFooter.HintHighlight = 'Highlight occurrences'
           SearchFooter.MatchCaseCaption = 'Match case'
-          Version = '6.0.4.4'
+          SelectionColor = 14327846
+          SelectionTextColor = clWhite
+          SortSettings.DefaultFormat = ssAutomatic
+          SortSettings.HeaderColor = 16448250
+          SortSettings.HeaderColorTo = 16448250
+          SortSettings.HeaderMirrorColor = 16448250
+          SortSettings.HeaderMirrorColorTo = 16448250
+          Version = '7.2.8.0'
           ColWidths = (
             30
             236
@@ -2523,39 +2950,48 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
       end
     end
     object pan_PersonPermit: TAdvPanel
-      Left = 393
-      Top = 182
-      Width = 686
-      Height = 503
+      Left = 491
+      Top = 228
+      Width = 858
+      Height = 628
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Gothic'
       Font.Style = []
       ParentFont = False
       TabOrder = 4
       UseDockManager = True
-      Version = '2.1.0.4'
+      Version = '2.3.0.0'
       Caption.Color = clHighlight
       Caption.ColorTo = clNone
       Caption.Font.Charset = HANGEUL_CHARSET
       Caption.Font.Color = clWindowText
-      Caption.Font.Height = -11
+      Caption.Font.Height = -15
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Caption.Height = 17
+      Caption.Height = 21
       StatusBar.Font.Charset = DEFAULT_CHARSET
       StatusBar.Font.Color = clWindowText
       StatusBar.Font.Height = -11
       StatusBar.Font.Name = 'MS Gothic'
       StatusBar.Font.Style = []
+      Text = ''
       FullHeight = 200
       object pan_Eminfo: TAdvSmoothPanel
         Left = 1
         Top = 1
-        Width = 684
-        Height = 125
+        Width = 856
+        Height = 157
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #49324#50896#51221#48372
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -2567,38 +3003,49 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         Align = alTop
         OnResize = pan_DelEmpStateResize
         TabOrder = 0
         object gb_Company1: TAdvGroupBox
-          Left = 12
-          Top = 21
-          Width = 316
-          Height = 90
+          Left = 15
+          Top = 26
+          Width = 395
+          Height = 113
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = #49548#49549#51221#48372
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           TabOrder = 0
           object lb_Company1: TAdvSmoothLabel
-            Left = 24
-            Top = 19
-            Width = 74
-            Height = 23
+            Left = 30
+            Top = 24
+            Width = 93
+            Height = 29
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2622,13 +3069,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_Depart1: TAdvSmoothLabel
-            Left = 24
-            Top = 40
-            Width = 74
-            Height = 23
+            Left = 30
+            Top = 50
+            Width = 93
+            Height = 29
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2652,13 +3103,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_posi1: TAdvSmoothLabel
-            Left = 24
-            Top = 62
-            Width = 74
-            Height = 23
+            Left = 30
+            Top = 78
+            Width = 93
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2682,13 +3137,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_dong: TAdvSmoothLabel
-            Left = 100
-            Top = 19
-            Width = 210
-            Height = 23
+            Left = 125
+            Top = 24
+            Width = 263
+            Height = 29
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2712,13 +3171,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_area: TAdvSmoothLabel
-            Left = 100
-            Top = 40
-            Width = 210
-            Height = 23
+            Left = 125
+            Top = 50
+            Width = 263
+            Height = 29
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2742,13 +3205,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_Position: TAdvSmoothLabel
-            Left = 100
-            Top = 62
-            Width = 210
-            Height = 23
+            Left = 125
+            Top = 78
+            Width = 263
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2772,27 +3239,35 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
         end
         object gb_Employee1: TAdvGroupBox
-          Left = 334
-          Top = 21
-          Width = 317
-          Height = 90
+          Left = 418
+          Top = 26
+          Width = 396
+          Height = 113
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = #49324#50896#51221#48372
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           TabOrder = 1
           object lb_Name1: TAdvSmoothLabel
-            Left = 24
-            Top = 19
-            Width = 74
-            Height = 23
+            Left = 30
+            Top = 24
+            Width = 93
+            Height = 29
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2816,13 +3291,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_Name: TAdvSmoothLabel
-            Left = 100
-            Top = 19
-            Width = 210
-            Height = 23
+            Left = 125
+            Top = 24
+            Width = 263
+            Height = 29
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2846,13 +3325,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_Phone1: TAdvSmoothLabel
-            Left = 24
-            Top = 40
-            Width = 74
-            Height = 23
+            Left = 30
+            Top = 50
+            Width = 93
+            Height = 29
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2876,13 +3359,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_TelNum: TAdvSmoothLabel
-            Left = 100
-            Top = 40
-            Width = 210
-            Height = 23
+            Left = 125
+            Top = 50
+            Width = 263
+            Height = 29
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2906,13 +3393,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_CardNo1: TAdvSmoothLabel
-            Left = 24
-            Top = 62
-            Width = 74
-            Height = 23
+            Left = 30
+            Top = 78
+            Width = 93
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2936,13 +3427,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
           object lb_CardNo: TAdvSmoothLabel
-            Left = 100
-            Top = 62
-            Width = 210
-            Height = 23
+            Left = 125
+            Top = 78
+            Width = 263
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Fill.ColorMirror = clNone
             Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
@@ -2966,16 +3461,20 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             CaptionShadow.Font.Height = -27
             CaptionShadow.Font.Name = 'MS Gothic'
             CaptionShadow.Font.Style = []
-            Version = '1.5.0.1'
+            Version = '1.6.0.2'
           end
         end
       end
       object pan_AccessGrade1: TAdvSmoothPanel
-        Left = 10
-        Top = 131
-        Width = 608
-        Height = 334
+        Left = 13
+        Top = 164
+        Width = 760
+        Height = 417
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #52636#51077#44428#54620
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -2987,24 +3486,31 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = []
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         OnResize = pan_AccessGrade1Resize
         TabOrder = 1
         object lb_Company2: TAdvSmoothLabel
-          Left = 27
-          Top = 27
-          Width = 63
-          Height = 18
+          Left = 34
+          Top = 34
+          Width = 79
+          Height = 22
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -3028,13 +3534,17 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_Depart2: TAdvSmoothLabel
-          Left = 27
-          Top = 51
-          Width = 63
-          Height = 18
+          Left = 34
+          Top = 64
+          Width = 79
+          Height = 22
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -3058,17 +3568,21 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object cmb_PersonDongCode: TComboBox
-          Left = 103
-          Top = 27
-          Width = 138
-          Height = 21
+          Left = 129
+          Top = 34
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -3077,14 +3591,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           OnChange = cmb_PersonDongCodeChange
         end
         object cmb_PersonAreaCode: TComboBox
-          Left = 103
-          Top = 51
-          Width = 138
-          Height = 21
+          Left = 129
+          Top = 64
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -3093,40 +3611,49 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
           OnChange = cmb_PersonAreaCodeChange
         end
         object pan_PersonDoor: TAdvPanel
-          Left = 11
-          Top = 86
-          Width = 573
-          Height = 245
+          Left = 14
+          Top = 108
+          Width = 716
+          Height = 306
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           TabOrder = 2
           UseDockManager = True
           OnResize = pan_PersonDoorResize
-          Version = '2.1.0.4'
+          Version = '2.3.0.0'
           Caption.Color = clHighlight
           Caption.ColorTo = clNone
           Caption.Font.Charset = HANGEUL_CHARSET
           Caption.Font.Color = clWindowText
-          Caption.Font.Height = -11
+          Caption.Font.Height = -15
           Caption.Font.Name = 'MS Gothic'
           Caption.Font.Style = []
-          Caption.Height = 17
+          Caption.Height = 21
           StatusBar.Font.Charset = DEFAULT_CHARSET
           StatusBar.Font.Color = clWindowText
           StatusBar.Font.Height = -11
           StatusBar.Font.Name = 'MS Gothic'
           StatusBar.Font.Style = []
+          Text = ''
           FullHeight = 200
           object pan_NotPermitDoor: TAdvSmoothPanel
             Left = 1
             Top = 1
-            Width = 219
-            Height = 243
+            Width = 274
+            Height = 304
             Cursor = crDefault
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption.Text = #48120#46321#47197#52636#51077#47928
             Caption.HTMLFont.Charset = DEFAULT_CHARSET
             Caption.HTMLFont.Color = clWindowText
@@ -3138,26 +3665,33 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             Caption.Font.Height = -13
             Caption.Font.Name = 'MS Gothic'
             Caption.Font.Style = []
-            Fill.Color = 16445929
-            Fill.ColorTo = 15587527
-            Fill.ColorMirror = 15587527
-            Fill.ColorMirrorTo = 16773863
+            Caption.ColorStart = clBlack
+            Caption.ColorEnd = clBlack
+            Caption.LineColor = 13027014
+            Fill.Color = clWhite
+            Fill.ColorTo = clWhite
+            Fill.ColorMirror = clNone
+            Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
             Fill.GradientMirrorType = gtVertical
-            Fill.BorderColor = 14922381
-            Fill.Rounding = 10
-            Fill.ShadowOffset = 10
-            Fill.Glow = gmNone
-            Version = '1.2.1.0'
+            Fill.BorderColor = 13027014
+            Fill.Rounding = 0
+            Fill.ShadowOffset = 0
+            Fill.Glow = gmRadial
+            Version = '1.3.0.3'
             Align = alLeft
             OnResize = pan_NotPermitDoorResize
             TabOrder = 0
             object sg_NotPermitDoorList: TAdvStringGrid
-              Left = 3
-              Top = 22
-              Width = 206
-              Height = 112
+              Left = 4
+              Top = 28
+              Width = 257
+              Height = 140
               Cursor = crDefault
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               ColCount = 7
               DefaultColWidth = 110
               DrawingStyle = gdsClassic
@@ -3165,7 +3699,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               RowCount = 17
               Font.Charset = HANGEUL_CHARSET
               Font.Color = clWindowText
-              Font.Height = -13
+              Font.Height = -17
               Font.Name = 'MS Gothic'
               Font.Style = []
               Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -3174,6 +3708,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               ScrollBars = ssNone
               ShowHint = True
               TabOrder = 0
+              GridLineColor = 13027014
+              GridFixedLineColor = 13027014
+              HoverRowCells = [hcNormal, hcSelected]
               OnCheckBoxClick = sg_NotPermitDoorListCheckBoxClick
               OnResize = sg_NotPermitDoorListResize
               ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -3181,16 +3718,27 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               ActiveCellFont.Height = -13
               ActiveCellFont.Name = 'MS Gothic'
               ActiveCellFont.Style = []
+              ActiveCellColor = 16448250
+              ActiveCellColorTo = 16448250
+              BorderColor = 13027014
               ColumnHeaders.Strings = (
                 ''
                 #52636#51077#47928
                 #45432#46300#48264#54840
                 #44592#44592#48264#54840
                 #52636#51077#47928#48264#54840)
-              ControlLook.FixedGradientHoverFrom = clGray
-              ControlLook.FixedGradientHoverTo = clWhite
-              ControlLook.FixedGradientDownFrom = clGray
-              ControlLook.FixedGradientDownTo = clSilver
+              ControlLook.FixedGradientMirrorFrom = 16448250
+              ControlLook.FixedGradientMirrorTo = 16448250
+              ControlLook.FixedGradientHoverFrom = 16576740
+              ControlLook.FixedGradientHoverTo = 16576740
+              ControlLook.FixedGradientHoverMirrorFrom = 16576740
+              ControlLook.FixedGradientHoverMirrorTo = 16576740
+              ControlLook.FixedGradientHoverBorder = 15381630
+              ControlLook.FixedGradientDownFrom = 16573128
+              ControlLook.FixedGradientDownTo = 16573128
+              ControlLook.FixedGradientDownMirrorFrom = 16573128
+              ControlLook.FixedGradientDownMirrorTo = 16573128
+              ControlLook.FixedGradientDownBorder = 15048022
               ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
               ControlLook.DropDownHeader.Font.Color = clWindowText
               ControlLook.DropDownHeader.Font.Height = -11
@@ -3212,6 +3760,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               FilterDropDown.Font.Name = 'MS Gothic'
               FilterDropDown.Font.Style = []
               FilterDropDownClear = '(All)'
+              FilterEdit.TypeNames.Strings = (
+                'Starts with'
+                'Ends with'
+                'Contains'
+                'Not contains'
+                'Equal'
+                'Not equal'
+                'Clear')
               FixedColWidth = 30
               FixedRowHeight = 22
               FixedFont.Charset = DEFAULT_CHARSET
@@ -3220,6 +3776,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               FixedFont.Name = 'MS Gothic'
               FixedFont.Style = []
               FloatFormat = '%.2f'
+              Look = glOffice2007
               PrintSettings.DateFormat = 'dd/mm/yyyy'
               PrintSettings.Font.Charset = DEFAULT_CHARSET
               PrintSettings.Font.Color = clWindowText
@@ -3242,6 +3799,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               PrintSettings.FooterFont.Name = 'MS Gothic'
               PrintSettings.FooterFont.Style = []
               PrintSettings.PageNumSep = '/'
+              ScrollWidth = 21
+              SearchFooter.Color = 16448250
+              SearchFooter.ColorTo = 16448250
               SearchFooter.FindNextCaption = 'Find &next'
               SearchFooter.FindPrevCaption = 'Find &previous'
               SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -3255,7 +3815,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               SearchFooter.HintFindPrev = 'Find previous occurrence'
               SearchFooter.HintHighlight = 'Highlight occurrences'
               SearchFooter.MatchCaseCaption = 'Match case'
-              Version = '6.0.4.4'
+              SelectionColor = 14327846
+              SelectionTextColor = clWhite
+              SortSettings.DefaultFormat = ssAutomatic
+              SortSettings.HeaderColor = 16448250
+              SortSettings.HeaderColorTo = 16448250
+              SortSettings.HeaderMirrorColor = 16448250
+              SortSettings.HeaderMirrorColorTo = 16448250
+              Version = '7.2.8.0'
               ColWidths = (
                 30
                 236
@@ -3267,11 +3834,15 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             end
           end
           object pan_PermitDoor: TAdvSmoothPanel
-            Left = 352
+            Left = 440
             Top = 1
-            Width = 220
-            Height = 243
+            Width = 275
+            Height = 304
             Cursor = crDefault
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption.Text = #46321#47197#52636#51077#47928
             Caption.HTMLFont.Charset = DEFAULT_CHARSET
             Caption.HTMLFont.Color = clWindowText
@@ -3283,26 +3854,33 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             Caption.Font.Height = -13
             Caption.Font.Name = 'MS Gothic'
             Caption.Font.Style = []
-            Fill.Color = 16445929
-            Fill.ColorTo = 15587527
-            Fill.ColorMirror = 15587527
-            Fill.ColorMirrorTo = 16773863
+            Caption.ColorStart = clBlack
+            Caption.ColorEnd = clBlack
+            Caption.LineColor = 13027014
+            Fill.Color = clWhite
+            Fill.ColorTo = clWhite
+            Fill.ColorMirror = clNone
+            Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
             Fill.GradientMirrorType = gtVertical
-            Fill.BorderColor = 14922381
-            Fill.Rounding = 10
-            Fill.ShadowOffset = 10
-            Fill.Glow = gmNone
-            Version = '1.2.1.0'
+            Fill.BorderColor = 13027014
+            Fill.Rounding = 0
+            Fill.ShadowOffset = 0
+            Fill.Glow = gmRadial
+            Version = '1.3.0.3'
             Align = alRight
             OnResize = pan_PermitDoorResize
             TabOrder = 1
             object sg_PermitDoorList: TAdvStringGrid
-              Left = 3
-              Top = 22
-              Width = 206
-              Height = 112
+              Left = 4
+              Top = 28
+              Width = 257
+              Height = 140
               Cursor = crDefault
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               ColCount = 7
               DefaultColWidth = 110
               DrawingStyle = gdsClassic
@@ -3310,7 +3888,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               RowCount = 17
               Font.Charset = HANGEUL_CHARSET
               Font.Color = clWindowText
-              Font.Height = -13
+              Font.Height = -17
               Font.Name = 'MS Gothic'
               Font.Style = []
               Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -3319,6 +3897,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               ScrollBars = ssNone
               ShowHint = True
               TabOrder = 0
+              GridLineColor = 13027014
+              GridFixedLineColor = 13027014
+              HoverRowCells = [hcNormal, hcSelected]
               OnCheckBoxClick = sg_PermitDoorListCheckBoxClick
               OnResize = sg_PermitDoorListResize
               ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -3326,6 +3907,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               ActiveCellFont.Height = -13
               ActiveCellFont.Name = 'MS Gothic'
               ActiveCellFont.Style = []
+              ActiveCellColor = 16448250
+              ActiveCellColorTo = 16448250
+              BorderColor = 13027014
               ColumnHeaders.Strings = (
                 ''
                 #52636#51077#47928
@@ -3333,10 +3917,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
                 #45432#46300#48264#54840
                 #44592#44592#48264#54840
                 #52636#51077#47928#48264#54840)
-              ControlLook.FixedGradientHoverFrom = clGray
-              ControlLook.FixedGradientHoverTo = clWhite
-              ControlLook.FixedGradientDownFrom = clGray
-              ControlLook.FixedGradientDownTo = clSilver
+              ControlLook.FixedGradientMirrorFrom = 16448250
+              ControlLook.FixedGradientMirrorTo = 16448250
+              ControlLook.FixedGradientHoverFrom = 16576740
+              ControlLook.FixedGradientHoverTo = 16576740
+              ControlLook.FixedGradientHoverMirrorFrom = 16576740
+              ControlLook.FixedGradientHoverMirrorTo = 16576740
+              ControlLook.FixedGradientHoverBorder = 15381630
+              ControlLook.FixedGradientDownFrom = 16573128
+              ControlLook.FixedGradientDownTo = 16573128
+              ControlLook.FixedGradientDownMirrorFrom = 16573128
+              ControlLook.FixedGradientDownMirrorTo = 16573128
+              ControlLook.FixedGradientDownBorder = 15048022
               ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
               ControlLook.DropDownHeader.Font.Color = clWindowText
               ControlLook.DropDownHeader.Font.Height = -11
@@ -3358,6 +3950,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               FilterDropDown.Font.Name = 'MS Gothic'
               FilterDropDown.Font.Style = []
               FilterDropDownClear = '(All)'
+              FilterEdit.TypeNames.Strings = (
+                'Starts with'
+                'Ends with'
+                'Contains'
+                'Not contains'
+                'Equal'
+                'Not equal'
+                'Clear')
               FixedColWidth = 30
               FixedRowHeight = 22
               FixedFont.Charset = DEFAULT_CHARSET
@@ -3366,6 +3966,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               FixedFont.Name = 'MS Gothic'
               FixedFont.Style = []
               FloatFormat = '%.2f'
+              Look = glOffice2007
               PrintSettings.DateFormat = 'dd/mm/yyyy'
               PrintSettings.Font.Charset = DEFAULT_CHARSET
               PrintSettings.Font.Color = clWindowText
@@ -3388,6 +3989,9 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               PrintSettings.FooterFont.Name = 'MS Gothic'
               PrintSettings.FooterFont.Style = []
               PrintSettings.PageNumSep = '/'
+              ScrollWidth = 21
+              SearchFooter.Color = 16448250
+              SearchFooter.ColorTo = 16448250
               SearchFooter.FindNextCaption = 'Find &next'
               SearchFooter.FindPrevCaption = 'Find &previous'
               SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -3401,7 +4005,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               SearchFooter.HintFindPrev = 'Find previous occurrence'
               SearchFooter.HintHighlight = 'Highlight occurrences'
               SearchFooter.MatchCaseCaption = 'Match case'
-              Version = '6.0.4.4'
+              SelectionColor = 14327846
+              SelectionTextColor = clWhite
+              SortSettings.DefaultFormat = ssAutomatic
+              SortSettings.HeaderColor = 16448250
+              SortSettings.HeaderColorTo = 16448250
+              SortSettings.HeaderMirrorColor = 16448250
+              SortSettings.HeaderMirrorColorTo = 16448250
+              Version = '7.2.8.0'
               ColWidths = (
                 30
                 236
@@ -3413,11 +4024,15 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             end
           end
           object AdvSmoothPanel10: TAdvSmoothPanel
-            Left = 220
+            Left = 275
             Top = 1
-            Width = 132
-            Height = 243
+            Width = 165
+            Height = 304
             Cursor = crDefault
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption.HTMLFont.Charset = DEFAULT_CHARSET
             Caption.HTMLFont.Color = clWindowText
             Caption.HTMLFont.Height = -11
@@ -3428,25 +4043,32 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
             Caption.Font.Height = -16
             Caption.Font.Name = 'MS Gothic'
             Caption.Font.Style = []
-            Fill.Color = 16445929
-            Fill.ColorTo = 15587527
-            Fill.ColorMirror = 15587527
-            Fill.ColorMirrorTo = 16773863
+            Caption.ColorStart = clBlack
+            Caption.ColorEnd = clBlack
+            Caption.LineColor = 13027014
+            Fill.Color = clWhite
+            Fill.ColorTo = clWhite
+            Fill.ColorMirror = clNone
+            Fill.ColorMirrorTo = clNone
             Fill.GradientType = gtVertical
             Fill.GradientMirrorType = gtVertical
-            Fill.BorderColor = 14922381
-            Fill.Rounding = 10
-            Fill.ShadowOffset = 10
-            Fill.Glow = gmNone
-            Version = '1.2.1.0'
+            Fill.BorderColor = 13027014
+            Fill.Rounding = 0
+            Fill.ShadowOffset = 0
+            Fill.Glow = gmRadial
+            Version = '1.3.0.3'
             Align = alClient
             OnResize = AdvSmoothPanel10Resize
             TabOrder = 2
             object btn_CardPermitAdd: TSpeedButton
-              Left = 29
-              Top = 20
-              Width = 50
-              Height = 68
+              Left = 36
+              Top = 25
+              Width = 63
+              Height = 85
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               Glyph.Data = {
                 36370000424D363700000000000036000000280000003A000000500000000100
                 1800000000000037000012170000121700000000000000000000F1DFDEF0DEDD
@@ -3895,10 +4517,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               OnClick = btn_CardPermitAddClick
             end
             object btn_CardPermitDelete: TSpeedButton
-              Left = 29
-              Top = 93
-              Width = 50
-              Height = 69
+              Left = 36
+              Top = 116
+              Width = 63
+              Height = 87
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               Glyph.Data = {
                 36370000424D363700000000000036000000280000003A000000500000000100
                 1800000000000037000012170000121700000000000000000000FFFDFFFFFEFF
@@ -4347,10 +4973,14 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
               OnClick = btn_CardPermitDeleteClick
             end
             object Gauge1: TGauge
-              Left = 17
-              Top = 179
-              Width = 72
-              Height = 21
+              Left = 21
+              Top = 224
+              Width = 90
+              Height = 26
+              Margins.Left = 4
+              Margins.Top = 4
+              Margins.Right = 4
+              Margins.Bottom = 4
               ForeColor = clBlue
               Progress = 50
               Visible = False
@@ -4366,7 +4996,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     Left = 192
     Top = 272
     Bitmap = {
-      494C010101000400700020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000400740020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000002000000001002000000000000040
       000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FAFBFF00FFFEFD00FFFFF700F8FF
@@ -4902,7 +5532,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
       000000000000}
   end
   object pop_PermitAdd: TAdvPopupMenu
-    Version = '2.5.4.0'
+    Version = '2.5.4.3'
     Left = 520
     Top = 272
     object mn_addpermitListDelete: TMenuItem
@@ -4912,9 +5542,18 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     end
   end
   object AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler
-    Style = bsOffice2010Silver
+    AppColor.AppButtonColor = 13005312
+    AppColor.AppButtonHoverColor = 16755772
+    AppColor.TextColor = clWhite
+    AppColor.HoverColor = 16246477
+    AppColor.HoverTextColor = clBlack
+    AppColor.HoverBorderColor = 15187578
+    AppColor.SelectedColor = 15187578
+    AppColor.SelectedTextColor = clBlack
+    AppColor.SelectedBorderColor = 15187578
+    Style = bsOffice2013LightGray
     BackGroundDisplay = bdStretch
-    BorderColor = 13087391
+    BorderColor = clGray
     BorderColorHot = 15590880
     ButtonAppearance.Color = clWhite
     ButtonAppearance.ColorTo = 15590880
@@ -4930,7 +5569,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     ButtonAppearance.CaptionFont.Charset = DEFAULT_CHARSET
     ButtonAppearance.CaptionFont.Color = clWindowText
     ButtonAppearance.CaptionFont.Height = -11
-    ButtonAppearance.CaptionFont.Name = 'MS Gothic'
+    ButtonAppearance.CaptionFont.Name = 'Segoe UI'
     ButtonAppearance.CaptionFont.Style = []
     CaptionAppearance.CaptionColor = 15921133
     CaptionAppearance.CaptionColorTo = 15921133
@@ -4943,12 +5582,12 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     CaptionFont.Charset = DEFAULT_CHARSET
     CaptionFont.Color = clWindowText
     CaptionFont.Height = -11
-    CaptionFont.Name = 'MS Gothic'
+    CaptionFont.Name = 'Segoe UI'
     CaptionFont.Style = []
     ContainerAppearance.LineColor = clBtnShadow
     ContainerAppearance.Line3D = True
-    Color.Color = clWhite
-    Color.ColorTo = 15590880
+    Color.Color = 16448250
+    Color.ColorTo = 16448250
     Color.Direction = gdVertical
     Color.Mirror.Color = 16777214
     Color.Mirror.ColorTo = 16777214
@@ -4989,37 +5628,38 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     CompactGlowButtonAppearance.GradientDown = ggVertical
     CompactGlowButtonAppearance.GradientMirrorDown = ggVertical
     CompactGlowButtonAppearance.GradientChecked = ggVertical
-    DockColor.Color = 15590880
-    DockColor.ColorTo = clWhite
+    DockColor.Color = 16448250
+    DockColor.ColorTo = 16448250
     DockColor.Direction = gdHorizontal
     DockColor.Steps = 128
     FloatingWindowBorderColor = 13486790
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clBlack
     Font.Height = -27
-    Font.Name = 'MS Gothic'
+    Font.Name = 'Segoe UI'
     Font.Style = []
-    GlowButtonAppearance.BorderColor = 13815240
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.ColorTo = 15590880
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
+    GlowButtonAppearance.BorderColor = 16448250
+    GlowButtonAppearance.BorderColorHot = 15187578
+    GlowButtonAppearance.BorderColorDown = 15187578
+    GlowButtonAppearance.BorderColorChecked = 15187578
+    GlowButtonAppearance.Color = 16448250
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 15187578
+    GlowButtonAppearance.ColorCheckedTo = clNone
     GlowButtonAppearance.ColorDisabled = clNone
     GlowButtonAppearance.ColorDisabledTo = clNone
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15590880
-    GlowButtonAppearance.ColorMirrorTo = 15590880
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
+    GlowButtonAppearance.ColorDown = 15187578
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16246477
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = clNone
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = clNone
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = clNone
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = clNone
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
     GlowButtonAppearance.ColorMirrorDisabled = clNone
     GlowButtonAppearance.ColorMirrorDisabledTo = clNone
     GlowButtonAppearance.GradientHot = ggVertical
@@ -5027,6 +5667,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
+    GroupAppearance.Background = clInfoBk
     GroupAppearance.BorderColor = 1340927
     GroupAppearance.Color = 4636927
     GroupAppearance.ColorTo = 4636927
@@ -5035,7 +5676,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     GroupAppearance.Font.Charset = DEFAULT_CHARSET
     GroupAppearance.Font.Color = clWindowText
     GroupAppearance.Font.Height = -11
-    GroupAppearance.Font.Name = 'MS Gothic'
+    GroupAppearance.Font.Name = 'Segoe UI'
     GroupAppearance.Font.Style = []
     GroupAppearance.Gradient = ggVertical
     GroupAppearance.GradientMirror = ggVertical
@@ -5130,8 +5771,8 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -13
-    PagerCaption.Font.Name = 'MS Gothic'
+    PagerCaption.Font.Height = -17
+    PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 13815240
     QATAppearance.Color = clWhite
@@ -5139,12 +5780,10 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     QATAppearance.FullSizeBorderColor = 13815240
     QATAppearance.FullSizeColor = clWhite
     QATAppearance.FullSizeColorTo = 15590880
-    RightHandleColor = clWhite
-    RightHandleColorTo = 15590880
-    RightHandleColorHot = 14285309
-    RightHandleColorHotTo = 9102333
-    RightHandleColorDown = 8122111
-    RightHandleColorDownTo = 7131391
+    RightHandleColorHot = 7368816
+    RightHandleColorHotTo = 7368816
+    RightHandleColorDown = clGray
+    RightHandleColorDownTo = clGray
     TabAppearance.BorderColor = 13815240
     TabAppearance.BorderColorHot = 12236209
     TabAppearance.BorderColorSelected = 12565174
@@ -5170,7 +5809,7 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -11
-    TabAppearance.Font.Name = 'MS Gothic'
+    TabAppearance.Font.Name = 'Segoe UI'
     TabAppearance.Font.Style = []
     TabAppearance.Gradient = ggVertical
     TabAppearance.GradientMirror = ggVertical
@@ -5198,58 +5837,60 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
   end
   object AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler
     ButtonBorderColor = clNone
-    GlowButtonAppearance.BorderColor = 13087391
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.Color = 16643823
-    GlowButtonAppearance.ColorTo = 15784647
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
-    GlowButtonAppearance.ColorDisabled = 15921906
-    GlowButtonAppearance.ColorDisabledTo = 15921906
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15784647
-    GlowButtonAppearance.ColorMirrorTo = 15784647
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
-    GlowButtonAppearance.ColorMirrorDisabled = 11974326
+    GlowButtonAppearance.BorderColor = 13027014
+    GlowButtonAppearance.BorderColorHot = 15381630
+    GlowButtonAppearance.BorderColorDown = 15048022
+    GlowButtonAppearance.BorderColorChecked = 16750899
+    GlowButtonAppearance.BorderColorDisabled = 11316396
+    GlowButtonAppearance.Color = 16185078
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 16750899
+    GlowButtonAppearance.ColorCheckedTo = clNone
+    GlowButtonAppearance.ColorDisabled = 15658734
+    GlowButtonAppearance.ColorDisabledTo = clNone
+    GlowButtonAppearance.ColorDown = 16573128
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16576740
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = 16185078
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = 16576740
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = 16573128
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = 16750899
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
+    GlowButtonAppearance.ColorMirrorDisabled = 15658734
     GlowButtonAppearance.ColorMirrorDisabledTo = 15921906
     GlowButtonAppearance.GradientHot = ggVertical
     GlowButtonAppearance.GradientMirrorHot = ggVertical
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
-    Style = tsOffice2010Blue
-    TabAppearance.BorderColor = 13087391
-    TabAppearance.BorderColorHot = 12236209
-    TabAppearance.BorderColorSelected = 13087391
-    TabAppearance.BorderColorSelectedHot = 13087391
+    TabRounding = 0
+    Style = tsOffice2013LightGray
+    TabAppearance.BorderColor = 13027014
+    TabAppearance.BorderColorHot = clNone
+    TabAppearance.BorderColorSelected = 13027014
+    TabAppearance.BorderColorSelectedHot = 13027014
     TabAppearance.BorderColorDisabled = clNone
-    TabAppearance.BorderColorDown = clNone
+    TabAppearance.BorderColorDown = 13027014
     TabAppearance.Color = clBtnFace
     TabAppearance.ColorTo = clWhite
-    TabAppearance.ColorSelected = 15784647
-    TabAppearance.ColorSelectedTo = 15784647
-    TabAppearance.ColorDisabled = 15921906
-    TabAppearance.ColorDisabledTo = 15921906
-    TabAppearance.ColorHot = 15920100
-    TabAppearance.ColorHotTo = 15920100
+    TabAppearance.ColorSelected = 16448250
+    TabAppearance.ColorSelectedTo = clNone
+    TabAppearance.ColorDisabled = 15658734
+    TabAppearance.ColorDisabledTo = clNone
+    TabAppearance.ColorHot = 16185078
+    TabAppearance.ColorHotTo = clNone
     TabAppearance.ColorMirror = clWhite
     TabAppearance.ColorMirrorTo = clWhite
-    TabAppearance.ColorMirrorHot = 15920100
-    TabAppearance.ColorMirrorHotTo = 15920100
-    TabAppearance.ColorMirrorSelected = 15784647
-    TabAppearance.ColorMirrorSelectedTo = 15784647
-    TabAppearance.ColorMirrorDisabled = 15921906
-    TabAppearance.ColorMirrorDisabledTo = 15921906
+    TabAppearance.ColorMirrorHot = 16185078
+    TabAppearance.ColorMirrorHotTo = clNone
+    TabAppearance.ColorMirrorSelected = 16448250
+    TabAppearance.ColorMirrorSelectedTo = clNone
+    TabAppearance.ColorMirrorDisabled = 15658734
+    TabAppearance.ColorMirrorDisabledTo = clNone
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -13
@@ -5267,13 +5908,13 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
     TabAppearance.TextColorHot = clBlack
     TabAppearance.TextColorSelected = clBlack
     TabAppearance.TextColorDisabled = clGray
-    TabAppearance.ShadowColor = 13087391
-    TabAppearance.HighLightColorSelected = 13087391
-    TabAppearance.HighLightColorHot = 16643823
-    TabAppearance.HighLightColorSelectedHot = 15784647
-    TabAppearance.HighLightColorDown = 16181209
-    TabAppearance.BackGround.Color = 15784647
-    TabAppearance.BackGround.ColorTo = 16643823
+    TabAppearance.ShadowColor = clNone
+    TabAppearance.HighLightColorSelected = clNone
+    TabAppearance.HighLightColorHot = clNone
+    TabAppearance.HighLightColorSelectedHot = clNone
+    TabAppearance.HighLightColorDown = clNone
+    TabAppearance.BackGround.Color = 16185078
+    TabAppearance.BackGround.ColorTo = clNone
     TabAppearance.BackGround.Direction = gdHorizontal
     Left = 264
   end
@@ -5285,5 +5926,11 @@ inherited fmPersonCardPermit: TfmPersonCardPermit
       Caption = #12459#12540#12489#27177#38480#12398#31649#29702
       OnClick = pm_updateClick
     end
+  end
+  object AdvFormStyler1: TAdvFormStyler
+    MetroColor = clSkyBlue
+    Style = tsOffice2013LightGray
+    Left = 640
+    Top = 64
   end
 end

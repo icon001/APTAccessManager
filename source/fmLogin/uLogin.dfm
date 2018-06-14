@@ -3,12 +3,12 @@ object fmLogin: TfmLogin
   Top = 291
   BorderIcons = [biSystemMenu]
   Caption = #48708#48128#48264#54840#52404#53356
-  ClientHeight = 93
-  ClientWidth = 263
+  ClientHeight = 114
+  ClientWidth = 324
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
-  Font.Height = -13
+  Font.Height = -16
   Font.Name = 'MS Gothic'
   Font.Style = []
   Icon.Data = {
@@ -163,37 +163,49 @@ object fmLogin: TfmLogin
   OldCreateOrder = False
   Position = poMainFormCenter
   OnShow = FormShow
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object lb_Passwd: TLabel
-    Left = 8
-    Top = 10
-    Width = 89
-    Height = 20
+    Left = 10
+    Top = 12
+    Width = 109
+    Height = 25
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     AutoSize = False
     Caption = #12497#12473#12527#12540#12489
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -17
     Font.Name = #47569#51008' '#44256#46357
     Font.Style = []
     ParentFont = False
   end
   object Bevel1: TBevel
-    Left = 8
-    Top = 40
-    Width = 249
-    Height = 2
+    Left = 10
+    Top = 49
+    Width = 306
+    Height = 3
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
   end
   object sbLogin: TSpeedButton
-    Left = 16
-    Top = 56
-    Width = 100
-    Height = 25
+    Left = 20
+    Top = 69
+    Width = 123
+    Height = 31
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = #30906#35469
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -17
     Font.Name = #47569#51008' '#44256#46357
     Font.Style = []
     Glyph.Data = {
@@ -214,14 +226,18 @@ object fmLogin: TfmLogin
     OnClick = sbLoginClick
   end
   object sbCancel: TSpeedButton
-    Left = 144
-    Top = 56
-    Width = 100
-    Height = 25
+    Left = 177
+    Top = 69
+    Width = 123
+    Height = 31
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = #12461#12515#12531#12475#12523
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -17
     Font.Name = #47569#51008' '#44256#46357
     Font.Style = []
     Glyph.Data = {
@@ -242,13 +258,17 @@ object fmLogin: TfmLogin
     OnClick = sbCancelClick
   end
   object edPassword: TEdit
-    Left = 103
-    Top = 10
-    Width = 137
-    Height = 21
+    Left = 127
+    Top = 12
+    Width = 168
+    Height = 25
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -17
     Font.Name = 'MS Gothic'
     Font.Style = []
     ImeName = 'Microsoft IME 2003'
@@ -261,5 +281,11 @@ object fmLogin: TfmLogin
     Parameters = <>
     Left = 32
     Top = 96
+  end
+  object AdvFormStyler1: TAdvFormStyler
+    MetroColor = clSkyBlue
+    Style = tsOffice2013LightGray
+    Left = 296
+    Top = 64
   end
 end

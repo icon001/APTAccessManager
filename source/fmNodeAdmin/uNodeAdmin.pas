@@ -8,7 +8,7 @@ uses
   AdvOfficeTabSetStylers, AdvSmoothPanel, Vcl.ExtCtrls, AdvSmoothLabel,
   Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
   AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
-  AdvToolBar, AdvToolBarStylers;
+  AdvToolBar, AdvToolBarStylers, AdvAppStyler;
 
 type
   TfmNodeAdmin = class(TfmASubForm)
@@ -53,6 +53,7 @@ type
     ed_UpdateNodeIP: TAdvEdit;
     ed_UpdateNodePort: TAdvEdit;
     AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler;
+    AdvFormStyler1: TAdvFormStyler;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);

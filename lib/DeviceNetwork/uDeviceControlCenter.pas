@@ -14,6 +14,7 @@ type
   private
     NodeOpenCheckTimer: TTimer;
     SendPacketTimer: TTimer;
+    L_bDataModuleDestroy : Boolean;
     L_NodeOpenCheckTimerStart : Boolean;
     L_bDataSendStarting : Boolean;
     L_nSendNodeSeq : integer;
@@ -32,6 +33,7 @@ type
     FOnDeviceConnected: TComEventData;
     FOnCardDeleteData: TComEventData;
     FOnMessage: TComEventData;
+    FOnRcvAlarmEvent: TComEventData;
     procedure SetStart(const Value: Boolean);
     { Private declarations }
     procedure DeviceLoad;
@@ -48,6 +50,7 @@ type
     procedure DeviceConnected(Sender: TObject; aNodeNo,aECUID,aConnected,aData4,aData5,aData6,aData7,aData8,aData9,aData10,aData11,aData12,aData13,aData14,aData15,aData16,aData17,aData18,aData19,aData20:string);
     procedure DeviceSendDataProcess(Sender: TObject; aNodeNo : integer;aMcuID,aECUID,aCmd,aMsgNo,aDeviceVer,aRealData:string);
     procedure NodeRecvDataProcess(Sender: TObject; aNodeNo : integer;aMcuID,aECUID,aCmd,aMsgNo,aDeviceVer,aRealData:string);
+    procedure RcvAlarmEvent(Sender: TObject; aNodeNo,aECUID,aDoorNo,aReaderNo,aInOut,aTime,aCardMode,aDoorMode,aAlarmCode,aData10,aData11,aData12,aData13,aData14,aData15,aData16,aData17,aData18,aData19,aData20:string);
     procedure RcvCardAccessEvent(Sender: TObject; aNodeNo,aECUID,aDoorNo,aReaderNo,aInOut,aTime,aCardMode,aDoorMode,aChangeState,aAccessResult,aDoorState,aATButton,aCardNo,aData14,aData15,aData16,aData17,aData18,aData19,aData20:string);
     procedure RcvCardRegData(Sender: TObject; aNodeNo,aECUID,aResult,aCardNo,aCardType,aCmd,aData7,aData8,aData9,aData10,aData11,aData12,aData13,aData14,aData15,aData16,aData17,aData18,aData19,aData20:string);
     procedure ReceiveDeviceInitialize(Sender: TObject; aNodeNo,aECUID,aResult,aData4,aData5,aData6,aData7,aData8,aData9,aData10,aData11,aData12,aData13,aData14,aData15,aData16,aData17,aData18,aData19,aData20:string);
@@ -64,6 +67,7 @@ type
     ProPerty OnRcvData : TReceiveData read FOnRcvData write FOnRcvData;
 
     proPerty OnDeviceConnected : TComEventData read FOnDeviceConnected write FOnDeviceConnected;
+    property OnRcvAlarmEvent : TComEventData read FOnRcvAlarmEvent write FOnRcvAlarmEvent;
     property OnRcvCardAccessEvent : TComEventData read FOnRcvCardAccessEvent write FOnRcvCardAccessEvent;
     property OnRcvCardRegData : TComEventData read FOnRcvCardRegData write FOnRcvCardRegData;
     property OnCardDeleteData : TComEventData read FOnCardDeleteData write FOnCardDeleteData;
@@ -90,6 +94,18 @@ uses
 {$R *.dfm}
 
 { TdmDeviceControlCenter }
+
+procedure TdmDeviceControlCenter.RcvAlarmEvent(Sender: TObject; aNodeNo, aECUID,
+  aDoorNo, aReaderNo, aInOut, aTime, aCardMode, aDoorMode, aAlarmCode, aData10,
+  aData11, aData12, aData13, aData14, aData15, aData16, aData17, aData18,
+  aData19, aData20: string);
+begin
+  if Assigned(FOnRcvAlarmEvent) then
+  begin
+    OnRcvAlarmEvent(Sender,aNodeNo,aECUID,aDoorNo,aReaderNo,aInOut,aTime,aCardMode,aDoorMode,aAlarmCode,aData10,aData11,aData12,aData13,aData14,aData15,aData16,aData17,aData18,aData19,aData20);
+  end;
+
+end;
 
 procedure TdmDeviceControlCenter.RcvCardAccessEvent(Sender: TObject; aNodeNo,
   aECUID, aDoorNo, aReaderNo, aInOut, aTime, aCardMode, aDoorMode, aChangeState,
@@ -183,6 +199,7 @@ end;
 
 procedure TdmDeviceControlCenter.DataModuleDestroy(Sender: TObject);
 begin
+  L_bDataModuleDestroy := True;
   NodeOpenCheckTimer.Enabled := False;
   NodeOpenCheckTimer.Free;
 end;
@@ -258,6 +275,7 @@ begin
         oDevice.NodeNo := nNodeNo;
         oDevice.DeviceID := FillZeroStrNum(FindField('DE_DEVICEID').asString,G_nDeviceCodeLength);
         oDevice.DeviceName := FindField('DE_DEVICENAME').AsString;
+        oDevice.OnAlarmEvent := RcvAlarmEvent;
         oDevice.OnCardAccessEvent := RcvCardAccessEvent;
         oDevice.OnCardRegData := RcvCardRegData;
         oDevice.OnDeviceConnected := DeviceConnected;
@@ -397,7 +415,7 @@ var
 begin
   for i := 0 to NodeList.Count - 1 do
   begin
-    if G_bApplicationTerminate then Exit;
+    if G_bApplicationTerminate or L_bDataModuleDestroy then Exit;
     if TNode(NodeList.Objects[i]).Open then
     begin
       Try
@@ -429,7 +447,7 @@ begin
 
   for i := L_nReConnectSeq to NodeList.Count - 1 do
   begin
-    if G_bApplicationTerminate then Exit;
+    if G_bApplicationTerminate or L_bDataModuleDestroy then Exit;
     if Not TNode(NodeList.Objects[i]).Open then
     begin
       TNode(NodeList.Objects[i]).Open := True;

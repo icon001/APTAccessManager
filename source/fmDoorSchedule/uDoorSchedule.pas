@@ -10,7 +10,7 @@ uses
   W7Panels, AdvGlassButton,ADODB,ActiveX, frmshape, AdvCombo, Vcl.Mask, AdvSpin,
   AdvGroupBox, AdvOfficeButtons, AdvSmoothTileList, AdvSmoothButton,
   AdvSmoothListBox, AdvEdBtn, Vcl.ComCtrls, Vcl.ImgList, AdvToolBar,
-  AdvToolBarStylers;
+  AdvToolBarStylers, AdvAppStyler;
 
 const
   con_LocalCompanyImageIndex = 0;
@@ -297,6 +297,7 @@ type
     ed_SearchName: TAdvEdit;
     tv_buildingName: TTreeView;
     AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler;
+    AdvFormStyler1: TAdvFormStyler;
     procedure menuTabChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);

@@ -1,0 +1,453 @@
+unit uFunction;
+
+interface
+uses
+  System.SysUtils,Winapi.Windows,Vcl.Forms,Vcl.ComCtrls,System.Classes,Winapi.WinSock;
+
+const
+  HexString : String = '0123456789ABCDEF';
+  Alpha = ['A'..'Z', 'a'..'z'];
+  AlphaNumeric = Alpha + ['0'..'9'];
+
+procedure Delay(MSecs: Longint);
+procedure LogSave(aFileName,ast:string);
+
+function Ascii2Bytes(aData:string;Var aBytes:TBytes):Boolean;
+function Ascii2Hex(aData:Ansistring;bReverse:Boolean = False;bConvert:Boolean=False;aConvertDec:integer=30):string;
+function Dec2Hex(N: int64; A: Byte): string;
+function FillZeroNumber(aNo:Int64; aLength:Integer): string;
+function FillZeroStrNum(aNo:String; aLength:Integer;bFront:Boolean = True): string;
+Function FindCharCopy(SourceStr : String; Index : integer; aChar:Char) : String;
+function GetLocalIPAddr : string;
+function GetNodeByText(ATree : TTreeView; AValue:String; AVisible: Boolean): TTreeNode;
+function Hex2Ascii(St: String;bConvert:Boolean=False;aConvertDec:integer=30): AnsiString;
+function Hex2Dec(const S: string): int64;
+function Hex2DecStr(const S: string): string;
+function IncTime(ATime: TDateTime; Hours, Minutes, Seconds,
+  MSecs: Integer): TDateTime;
+function Isdigit(st: string):Boolean;
+function IsAlphaNumeric(st:string):Boolean;
+Function MakeDatetimeStr(aTime: String;aTimeForamt:Boolean=True):String;
+function MyF_UsingWinNT: Boolean;
+procedure My_RunDosCommand(Command : string;  nShow : Boolean = False; bWait:Boolean = True);
+function PosIndex(SubStr,S:string;nIndex:integer):integer;
+function ToHexStrNoSpace(st:Ansistring):String;
+
+implementation
+
+
+procedure Delay(MSecs: Longint);
+var
+  FirstTickCount, Now: Longint;
+begin
+  FirstTickCount := GetTickCount;
+  repeat
+    Application.ProcessMessages;
+    { allowing access to other controls, etc. }
+    Now := GetTickCount;
+  until (Now - FirstTickCount >= MSecs) or (Now < FirstTickCount);
+end;
+
+procedure LogSave(aFileName,ast:string);
+Var
+  f: TextFile;
+  st: string;
+  stDir : string;
+begin
+  {$I-}
+  stDir := ExtractFilePath(aFileName);
+  if not DirectoryExists(stDir) then CreateDir(stDir);
+
+  AssignFile(f, aFileName);
+  Append(f);
+  if IOResult <> 0 then Rewrite(f);
+  st := FormatDateTIme('yyyy-mm-dd hh:nn:ss:zzz">"',Now) + ' ' + ast;
+  WriteLn(f,st);
+  System.Close(f);
+  {$I+}
+end;
+
+//XE2에서는 데이터 전송시 Bytes 형으로 전송 해야만 0x80 이후 데이터가 손실이 없다.
+function Ascii2Bytes(aData:string;Var aBytes:TBytes):Boolean;
+var
+  i : integer;
+begin
+    SetLength(aBytes, Length(aData));
+    for i := 1 to Length(aData) do
+    begin
+      aBytes[i-1] := ord(aData[i]);
+      //aBytes[i-1] := aData[i];
+    end;
+    {
+    aData := Ascii2Hex(aData);
+    for i := 1 to (Length(aData) div 2) do
+    begin
+      aBytes[i-1] := Hex2Dec(copy(aData,(i*2)-1,2));
+    end;   }
+    result := True;
+end;
+
+function Ascii2Hex(aData:Ansistring;bReverse:Boolean = False;bConvert:Boolean=False;aConvertDec:integer=30):string;
+var
+  i : integer;
+  stHex : string;
+  nOrd : integer;
+begin
+  stHex := '';
+  for i:= 1 to Length(aData) do
+  begin
+    nOrd := Ord(aData[i]);
+    if bConvert then
+    begin
+      if nOrd = aConvertDec then nOrd := 0;
+    end;
+    if Not bReverse then stHex := stHex + Dec2Hex(nOrd,2)
+    else stHex := Dec2Hex(nOrd,2) + stHex;
+  end;
+  result := stHex;
+end;
+
+function Dec2Hex(N: int64; A: Byte): string;
+begin
+  Result := IntToHex(N, A);
+end;
+
+function FillZeroNumber(aNo:Int64; aLength:Integer): string;
+var
+  I       : Integer;
+  st      : string;
+  strNo   : String;
+  StrCount: Integer;
+begin
+  Strno:= InttoStr(aNo);
+  StrCount:= Length(Strno);
+  St:= '';
+  StrCount:=  aLength - StrCount;
+  if StrCount > 0 then
+  begin
+    st:='';
+    for I:=1 to StrCount do St:=st+'0';
+    St:= St + StrNo;
+    FillZeroNumber:= st;
+  end else FillZeroNumber:= copy(Strno,1,aLength);
+end;
+
+function FillZeroStrNum(aNo:String; aLength:Integer;bFront:Boolean = True): string;
+var
+  I       : Integer;
+  st      : string;
+  strNo   : String;
+  StrCount: Integer;
+begin
+  Strno:= aNo;
+  StrCount:= Length(Strno);
+  St:= '';
+  StrCount:=  aLength - StrCount;
+  if StrCount > 0 then
+  begin
+    st:='';
+    for I:=1 to StrCount do St:=st+'0';
+    if bFront then St:= St + StrNo
+    else St:= StrNo + St;
+    FillZeroStrNum:= st;
+  end else FillZeroStrNum:= copy(Strno,1,aLength);
+end;
+
+Function FindCharCopy(SourceStr : String; Index : integer; aChar:Char) : String;
+Var
+  a, b : Integer;
+  st   : String;
+begin
+  a := 0;
+//  b := 1;
+  st := '';
+  if (Length(SourceStr) < 1) then begin result:= ''; exit;  end;
+  for b:=1 to Length(SourceStr) do
+  begin
+    if a = index then break;
+    if SourceStr[b] = aChar then Inc(a);
+  end;
+  if (a = Index) then
+  begin
+    while (b <= Length(SourceStr)) and (SourceStr[b] <> aChar) do
+    begin
+      st := st + SourceStr[b];
+      Inc(b);
+    end;
+  end;
+  Result := st;
+end;
+
+function GetLocalIPAddr : string;
+var
+  wData: WSADATA;
+  HostName: String;
+  pHostInfo: pHostEnt;
+begin
+  WSAStartup(MAKEWORD(2, 2), wData);
+  GetHostName(PAnsiChar(HostName), 512);
+  pHostInfo := GetHostByName(PAnsiChar(HostName));
+  if Assigned(pHostInfo) then
+    Result := IntToStr(ord(pHostInfo.h_addr_list^[0]))
+            + '.' + IntToStr(ord(pHostInfo.h_addr_list^[1])) + '.'
+            + IntToStr(ord(pHostInfo.h_addr_list^[2])) + '.'
+            + IntToStr(ord(pHostInfo.h_addr_list^[3]))
+  else    Result := '';   WSACleanup;
+end;
+
+
+function GetNodeByText(ATree : TTreeView; AValue:String; AVisible: Boolean): TTreeNode;
+var
+    Node: TTreeNode;
+begin
+
+  Result := nil;
+  if ATree.Items.Count = 0 then Exit;
+  Node := ATree.Items[0];
+  while Node <> nil do
+  begin
+    if UpperCase(Node.Text) = UpperCase(AValue) then
+    begin
+      Result := Node;
+      if AVisible then
+        Result.MakeVisible;
+      Break;
+    end;
+    Node := Node.GetNext;
+  end;
+end;
+
+function Hex2Ascii(St: String;bConvert:Boolean=False;aConvertDec:integer=30): AnsiString;
+var
+  st2: Ansistring;
+  I: Integer;
+  aLength: Integer;
+  aa: Integer;
+begin
+  st2:= '';
+  for I:= 1 to Length(st) do
+  begin
+    if st[i] <> #$20 then st2:= st2 + st[I];
+  end;
+  if Length(st2) MOD 2 <> 0 then
+  begin
+    aLength:= Length(st2);
+    st:= copy(st2,1,aLength-1) + '0'+ st2[aLength];
+  end else
+  begin
+   st:= st2;
+  end;
+
+  st2:= '';
+  while st <> '' do
+  begin
+    aa:= Hex2Dec(copy(st,1,2));
+    if bConvert then
+    begin
+      if aa = 0 then aa := aConvertDec;
+    end;
+    st2:= st2 + Char(aa);
+    delete(st,1,2);
+  end;
+  Hex2Ascii:= st2;
+end;
+
+function Hex2Dec(const S: string): int64;
+var
+  HexStr: string;
+begin
+  result := -1;
+  Try
+    if Pos('$', S) = 0 then HexStr := '$' + S
+    else HexStr := S;
+    Result := StrToInt64Def(HexStr, 0);
+  Except
+    Exit;
+  End;
+end;
+
+function Hex2DecStr(const S: string): string;
+var
+  i: longint;
+  L: int64;
+begin
+  L:=0;
+  for i := 1 to length(S) do L:=L*16 + pos(S[i],HexString)-1;
+  Result:=intToStr(L);
+end;
+
+function IncTime(ATime: TDateTime; Hours, Minutes, Seconds,
+  MSecs: Integer): TDateTime;
+begin
+  Result := ATime + (Hours div 24) + (((Hours mod 24) * 3600000 +
+    Minutes * 60000 + Seconds * 1000 + MSecs) / MSecsPerDay);
+  if Result < 0 then Result := Result + 1;
+end;
+
+function IsAlphaNumeric(st:string):Boolean;
+var
+  i : integer;
+begin
+  result := True;
+  for i := 1 to length(st) do
+  begin
+    if not(st[i] in AlphaNumeric) then
+    begin
+      result := False;
+      break;
+    end;
+  end;
+end;
+
+function Isdigit(st: string):Boolean;
+var
+  I: Integer;
+begin
+  result:=True;
+  if Length(st) < 1 then
+  begin
+    result:=False;
+    Exit;
+  end;
+  for I:=1 to Length(st) do
+    if (st[I]< '0') or (st[I] > '9')  then result:=False
+end;
+
+Function MakeDatetimeStr(aTime: String;aTimeForamt:Boolean=True):String;
+var
+  stResult : string;
+begin
+  if Length(aTime) < 8 then stResult := aTime
+  else
+  begin
+    stResult:= Copy(aTime,1,4)+'-'+Copy(aTime,5,2)+'-'+Copy(aTime,7,2) ;
+    if aTimeForamt then
+    begin
+      if Length(aTime) = 14 then
+         stResult:= stResult + ' ' + Copy(aTime,9,2)+':'+Copy(aTime,11,2)+':'+Copy(aTime,13,2);
+    end;
+  end;
+  Result := stResult;
+end;
+
+// 도스 명령 실행 함수/프로시져
+
+function MyF_UsingWinNT: Boolean;
+var
+  OS: TOSVersionInfo;
+begin
+  OS.dwOSVersionInfoSize := Sizeof(OS);
+  GetVersionEx(OS);
+  if OS.dwPlatformId = VER_PLATFORM_WIN32_NT then Result:= True
+  else Result:= False;
+end;
+
+
+procedure My_RunDosCommand(Command : string;  nShow : Boolean = False; bWait:Boolean = True);
+var
+  hReadPipe : THandle;
+  hWritePipe : THandle;
+  SI : TStartUpInfo;
+  PI : TProcessInformation;
+  SA : TSecurityAttributes;
+  SD : TSecurityDescriptor;
+  BytesRead : DWORD;
+  Dest : array[0..1023] of char;
+  CmdLine : array[0..512] of char;
+  TmpList : TStringList;
+  S, Param : string;
+  Avail, ExitCode, wrResult : DWORD;
+begin
+  if MyF_UsingWinNT then begin
+    InitializeSecurityDescriptor(@SD, SECURITY_DESCRIPTOR_REVISION);
+    SetSecurityDescriptorDacl(@SD, True, nil, False);
+    SA.nLength := SizeOf(SA);
+    SA.lpSecurityDescriptor := @SD;
+    SA.bInheritHandle := True;
+    Createpipe(hReadPipe, hWritePipe, @SA, 1024);
+  end else begin
+    Createpipe(hReadPipe, hWritePipe, nil, 1024);
+  end;
+  try
+     //Screen.Cursor := crHourglass;
+     FillChar(SI, SizeOf(SI), 0);
+     SI.cb := SizeOf(TStartUpInfo);
+     if nShow then begin
+       SI.wShowWindow := SW_SHOWNORMAL
+     end else begin
+       SI.wShowWindow := SW_HIDE;
+     end;
+     SI.dwFlags := STARTF_USESHOWWINDOW;
+     SI.dwFlags := SI.dwFlags or STARTF_USESTDHANDLES;
+     SI.hStdOutput := hWritePipe;
+     SI.hStdError := hWritePipe;
+     StrPCopy(CmdLine, Command);
+     //if CreateProcess(nil,CmdLine , nil, nil, True, NORMAL_PRIORITY_CLASS, nil, nil, SI, PI) then begin
+     if CreateProcess(nil,pchar(Command) , nil, nil, True,  DETACHED_PROCESS, nil, nil, SI, PI) then begin
+       if bWait then
+       begin
+         ExitCode := 0;
+         while ExitCode = 0 do begin
+           wrResult := WaitForSingleObject(PI.hProcess, 50);
+           if PeekNamedPipe(hReadPipe, nil, 0, nil, @Avail, nil) then begin
+             if Avail > 0 then begin
+               TmpList := TStringList.Create;
+               try
+                 FillChar(Dest, SizeOf(Dest), 0);
+                 ReadFile(hReadPipe, Dest, Avail, BytesRead, nil);
+               finally
+                 TmpList.Free;
+               end;
+             end;
+           end;
+           if wrResult <> WAIT_TIMEOUT then begin
+             ExitCode := 1;
+           end;
+           Application.ProcessMessages;
+         end;
+         GetExitCodeProcess(PI.hProcess, ExitCode);
+         CloseHandle(PI.hProcess);
+         CloseHandle(PI.hThread);
+       end;
+     end;
+  finally
+     CloseHandle(hReadPipe);
+     CloseHandle(hWritePipe);
+  end;
+end;
+
+function PosIndex(SubStr,S:string;nIndex:integer):integer;
+var
+  nPosition : integer;
+  stTemp : string;
+  i : integer;
+  nTemp : integer;
+begin
+  nPosition := 0;
+  stTemp := S;
+  nTemp := pos(substr,stTemp);
+  for i := 1 to nIndex do
+  begin
+    nPosition := nPosition + nTemp;
+    stTemp := copy(stTemp,nTemp + 1 ,Length(stTemp) - nTemp);
+    nTemp := pos(substr,stTemp);
+  end;
+  result := nPosition;
+end;
+
+function ToHexStrNoSpace(st:Ansistring):String;
+var
+  I : Integer;
+  st2: string;
+  st3: string[3];
+begin
+  for I:= 1 to length(st) do
+  begin
+    st3:= Dec2Hex(ord(st[I]),1);
+    if Length(st3) < 2 then st3:= '0'+ st3;
+    st2:=st2 +st3;
+  end;
+  ToHexStrnospace:= st2;
+end;
+
+end.

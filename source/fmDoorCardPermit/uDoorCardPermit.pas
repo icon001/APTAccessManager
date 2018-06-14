@@ -10,7 +10,7 @@ uses
   AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
   Vcl.Mask, AdvSpin, AdvOfficeButtons, AdvPanel, Vcl.ComCtrls, AdvListV,
   Vcl.ImgList, Vcl.Menus, AdvMenus, Vcl.Samples.Gauges, AdvToolBar,
-  AdvToolBarStylers;
+  AdvToolBarStylers, AdvAppStyler;
 
 type
   TfmDoorCardPermit = class(TfmASubForm)
@@ -98,6 +98,7 @@ type
     PopupMenu1: TPopupMenu;
     pm_update: TMenuItem;
     Gauge1: TGauge;
+    AdvFormStyler1: TAdvFormStyler;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);

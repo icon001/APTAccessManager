@@ -2,12 +2,12 @@ object fmPwChange: TfmPwChange
   Left = 582
   Top = 260
   Caption = #48708#48128#48264#54840#48320#44221
-  ClientHeight = 180
-  ClientWidth = 277
+  ClientHeight = 225
+  ClientWidth = 346
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -12
+  Font.Height = -15
   Font.Name = #44404#47548#52404
   Font.Style = []
   Icon.Data = {
@@ -162,37 +162,49 @@ object fmPwChange: TfmPwChange
   OldCreateOrder = False
   Position = poMainFormCenter
   OnCreate = FormCreate
-  PixelsPerInch = 96
-  TextHeight = 12
+  PixelsPerInch = 120
+  TextHeight = 15
   object lb_OldPassword: TLabel
-    Left = 8
-    Top = 14
-    Width = 113
-    Height = 21
+    Left = 10
+    Top = 18
+    Width = 141
+    Height = 26
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     AutoSize = False
     Caption = #44592#51316' '#49324#50857' '#48708#48128#48264#54840
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -15
     Font.Name = #47569#51008' '#44256#46357
     Font.Style = []
     ParentFont = False
   end
   object Bevel1: TBevel
-    Left = 8
-    Top = 112
-    Width = 265
-    Height = 2
+    Left = 10
+    Top = 140
+    Width = 331
+    Height = 3
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
   end
   object sbSave: TSpeedButton
-    Left = 48
-    Top = 128
-    Width = 73
-    Height = 25
+    Left = 60
+    Top = 160
+    Width = 91
+    Height = 31
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = #51201#50857
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -15
     Font.Name = #47569#51008' '#44256#46357
     Font.Style = []
     Glyph.Data = {
@@ -213,14 +225,18 @@ object fmPwChange: TfmPwChange
     OnClick = sbSaveClick
   end
   object sbCancel: TSpeedButton
-    Left = 152
-    Top = 128
-    Width = 73
-    Height = 25
+    Left = 190
+    Top = 160
+    Width = 91
+    Height = 31
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = #52712#49548
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -15
     Font.Name = #47569#51008' '#44256#46357
     Font.Style = []
     Glyph.Data = {
@@ -241,41 +257,53 @@ object fmPwChange: TfmPwChange
     OnClick = sbCancelClick
   end
   object lb_NewPassword: TLabel
-    Left = 8
-    Top = 46
-    Width = 113
-    Height = 21
+    Left = 10
+    Top = 58
+    Width = 141
+    Height = 26
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     AutoSize = False
     Caption = #49888#44508' '#48708#48128#48264#54840
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -15
     Font.Name = #47569#51008' '#44256#46357
     Font.Style = []
     ParentFont = False
   end
   object lb_ReNewPassword: TLabel
-    Left = 8
-    Top = 78
-    Width = 129
-    Height = 21
+    Left = 10
+    Top = 98
+    Width = 161
+    Height = 26
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     AutoSize = False
     Caption = #49888#44508' '#48708#48128#48264#54840'('#51116#51077#47141')'
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -15
     Font.Name = #47569#51008' '#44256#46357
     Font.Style = []
     ParentFont = False
   end
   object edOrgpw: TEdit
-    Left = 144
-    Top = 11
-    Width = 125
-    Height = 21
+    Left = 180
+    Top = 14
+    Width = 156
+    Height = 25
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -17
     Font.Name = #44404#47548#52404
     Font.Style = [fsBold]
     ImeName = 'Microsoft IME 2003'
@@ -285,13 +313,17 @@ object fmPwChange: TfmPwChange
     OnKeyPress = edOrgpwKeyPress
   end
   object edNewPw1: TEdit
-    Left = 144
-    Top = 43
-    Width = 125
-    Height = 21
+    Left = 180
+    Top = 54
+    Width = 156
+    Height = 25
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -17
     Font.Name = #44404#47548#52404
     Font.Style = [fsBold]
     ImeName = 'Microsoft IME 2003'
@@ -301,13 +333,17 @@ object fmPwChange: TfmPwChange
     OnKeyPress = edNewPw1KeyPress
   end
   object edNewPw2: TEdit
-    Left = 144
-    Top = 75
-    Width = 125
-    Height = 21
+    Left = 180
+    Top = 94
+    Width = 156
+    Height = 25
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -17
     Font.Name = #44404#47548#52404
     Font.Style = [fsBold]
     ImeName = 'Microsoft IME 2003'
@@ -315,5 +351,11 @@ object fmPwChange: TfmPwChange
     PasswordChar = '*'
     TabOrder = 2
     OnKeyPress = edNewPw2KeyPress
+  end
+  object AdvFormStyler1: TAdvFormStyler
+    MetroColor = clSkyBlue
+    Style = tsOffice2013LightGray
+    Left = 318
+    Top = 64
   end
 end

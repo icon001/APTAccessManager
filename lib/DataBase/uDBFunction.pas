@@ -20,6 +20,7 @@ type
     Function DeleteTB_DEVICEPASSWD_PasswordPermit(aNodeNo,aEcuID,aPassword,aPermit:string):Boolean; //카드삭제 응답시 카드권한 필드 삭제
 
     Function InsertTB_ACCESSEVENT(aDate,aTime,aNodeNo,aEcuID,aDoorNo,aCardNo,aReaderNo,aButton,aPosi,aInputType,aDoorMode,aPermitMode,aPermitCode:string):Boolean;
+    Function InsertTB_ALARMEVENT(aDate,aTime, aNodeNo, aEcuID, aDoorNo, aAlarmCode:string):Boolean;
     Function InsertTB_DEVICECARDNO_AccessPermit(aCardNo, aNodeNo, aDeviceID,aDoorNo,aPermit:string):Boolean;
     Function InsertTB_DEVICEPASSWD_AccessPermit(aPassword, aNodeNo, aDeviceID,aDoorNo,aPermit:string):Boolean;
 
@@ -235,6 +236,33 @@ begin
   stSql := stSql + '''' + formatDateTime('yyyymmddhhnnss',now) + ''')';
 
   result := dmDataBase.ProcessEventExecSQL(stSql);
+end;
+
+function TdmDBFunction.InsertTB_ALARMEVENT(aDate, aTime, aNodeNo, aEcuID,
+  aDoorNo, aAlarmCode: string): Boolean;
+var
+  stSql : string;
+begin
+  stSql := ' Insert Into TB_ALARMEVENT ( ';
+  stSql := stSql + 'GROUP_CODE,';
+  stSql := stSql + 'AE_DATE,';
+  stSql := stSql + 'AE_TIME,';
+  stSql := stSql + 'ND_NODENO,';
+  stSql := stSql + 'DE_ECUID,';
+  stSql := stSql + 'DO_DOORNO,';
+  stSql := stSql + 'AE_ALARMCODE,';
+  stSql := stSql + 'AE_INSERTTIME) ';
+  stSql := stSql + ' Values( ';
+  stSql := stSql + '''' + G_stGroupCode + ''',';
+  stSql := stSql + '''' + aDate + ''',';
+  stSql := stSql + '''' + aTime + ''',';
+  stSql := stSql + '' + aNodeNo + ',';
+  stSql := stSql + '''' + aEcuID + ''',';
+  stSql := stSql + '' + aDoorNo + ',';
+  stSql := stSql + '''' + aAlarmCode + ''',';
+  stSql := stSql + '''' + formatDateTime('yyyymmddhhnnsszzz',now) + ''')';
+
+  result := dmDataBase.ProcessExecSQL(stSql);
 end;
 
 function TdmDBFunction.InsertTB_DEVICECARDNO_AccessPermit(aCardNo, aNodeNo,

@@ -1,0 +1,38 @@
+object dmControler: TdmControler
+  OldCreateOrder = False
+  Height = 150
+  Width = 215
+  object ComPort1: TComPort
+    BaudRate = br9600
+    Port = 'COM1'
+    Parity.Bits = prNone
+    StopBits = sbOneStopBit
+    DataBits = dbEight
+    Events = [evRxChar, evTxEmpty, evRxFlag, evRing, evBreak, evCTS, evDSR, evError, evRLSD, evRx80Full]
+    FlowControl.OutCTSFlow = False
+    FlowControl.OutDSRFlow = False
+    FlowControl.ControlDTR = dtrDisable
+    FlowControl.ControlRTS = rtsDisable
+    FlowControl.XonXoffOut = False
+    FlowControl.XonXoffIn = False
+    StoredProps = [spBasic]
+    TriggersOnRxChar = True
+    Left = 144
+    Top = 80
+  end
+  object TcpClient1: TTcpClient
+    Left = 144
+    Top = 24
+  end
+  object ApdWinsockPort: TApdWinsockPort
+    WsLocalAddresses.Strings = (
+      '192.168.0.20')
+    WsLocalAddressIndex = 0
+    WsPort = 'telnet'
+    WsSocksServerInfo.Port = 0
+    TraceName = 'APRO.TRC'
+    LogName = 'APRO.LOG'
+    Left = 40
+    Top = 24
+  end
+end

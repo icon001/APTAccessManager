@@ -2,12 +2,12 @@ object fmDataBaseBackup: TfmDataBaseBackup
   Left = 582
   Top = 260
   Caption = #45936#51060#53552#48288#51060#49828#48177#50629
-  ClientHeight = 180
-  ClientWidth = 339
+  ClientHeight = 240
+  ClientWidth = 452
   Color = clBtnFace
   Font.Charset = HANGEUL_CHARSET
   Font.Color = clWindowText
-  Font.Height = -12
+  Font.Height = -15
   Font.Name = #47569#51008' '#44256#46357
   Font.Style = []
   Icon.Data = {
@@ -162,23 +162,31 @@ object fmDataBaseBackup: TfmDataBaseBackup
   OldCreateOrder = False
   Position = poMainFormCenter
   OnCreate = FormCreate
-  PixelsPerInch = 96
-  TextHeight = 15
+  PixelsPerInch = 120
+  TextHeight = 20
   object Bevel1: TBevel
-    Left = 8
-    Top = 112
-    Width = 321
-    Height = 10
+    Left = 11
+    Top = 149
+    Width = 428
+    Height = 14
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
   end
   object sbSave: TSpeedButton
-    Left = 24
-    Top = 128
-    Width = 281
-    Height = 33
+    Left = 32
+    Top = 171
+    Width = 375
+    Height = 44
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = #45803#44592
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -15
     Font.Name = #47569#51008' '#44256#46357
     Font.Style = []
     Glyph.Data = {
@@ -199,28 +207,36 @@ object fmDataBaseBackup: TfmDataBaseBackup
     OnClick = sbSaveClick
   end
   object btn_CardBackup: TSpeedButton
-    Left = 24
-    Top = 24
-    Width = 129
-    Height = 57
+    Left = 32
+    Top = 32
+    Width = 172
+    Height = 76
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = #52852#46300#48143#49444#51221#48177#50629
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -15
     Font.Name = #47569#51008' '#44256#46357
     Font.Style = []
     ParentFont = False
     OnClick = btn_CardBackupClick
   end
   object btn_AccessEventBackup: TSpeedButton
-    Left = 176
-    Top = 24
-    Width = 129
-    Height = 57
+    Left = 235
+    Top = 32
+    Width = 172
+    Height = 76
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = #52636#51077#51060#47141#48177#50629
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -15
     Font.Name = #47569#51008' '#44256#46357
     Font.Style = []
     ParentFont = False
@@ -229,5 +245,11 @@ object fmDataBaseBackup: TfmDataBaseBackup
   object SaveDialog1: TSaveDialog
     Left = 28
     Top = 4
+  end
+  object AdvFormStyler1: TAdvFormStyler
+    MetroColor = clSkyBlue
+    Style = tsOffice2013LightGray
+    Left = 424
+    Top = 64
   end
 end

@@ -13,6 +13,8 @@ type
     { Public declarations }
     Function AlterTB_CARD_CARDCodeADD : Boolean;
     Function AlterTB_DOOR_SCHEDULEAdd : Boolean;
+    Function CreateTB_ALARMCODE : Boolean;
+    Function CreateTB_ALARMEVENT : Boolean;
     Function CreateTB_CONFIG:Boolean;
     Function CreateTB_DOORSCHEDULE : Boolean;
     Function CreateTB_FORMNAME : Boolean;
@@ -62,6 +64,71 @@ begin
     stSql := StringReplace(stSql,'CHAR','text',[rfReplaceAll]);
   end else if G_nDBTYPE = FireBird then
   begin
+    stSql := StringReplace(stSql,'int IDENTITY','integer',[rfReplaceAll]);
+  end;
+  result := dmDataBase.ProcessExecSQL(stSql);
+end;
+
+function TdmDBCreate.CreateTB_ALARMCODE: Boolean;
+var
+  stSql : string;
+begin
+  stSql := 'Create Table TB_ALARMCODE(';
+  stSql := stSql + ' GROUP_CODE varchar(10) DEFAULT ''1234567890'' NOT NULL,';
+  stSql := stSql + ' AE_ALARMCODE varchar(2) NOT NULL,';
+  stSql := stSql + ' AE_ALARMNAME varchar(100) ,';
+  stSql := stSql + ' AE_Event Integer,';
+  stSql := stSql + ' AE_Sound integer ,';
+  stSql := stSql + ' AE_Alarm integer ,';
+  stSql := stSql + ' AE_Color integer ,';
+  stSql := stSql + ' PRIMARY KEY (GROUP_CODE,AE_ALARMCODE) ';
+  stSql := stSql + ' ) ';
+
+  if G_nDBTYPE = MDB then
+  begin
+    stSql := StringReplace(stSql,'int IDENTITY','COUNTER',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'varchar','text',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'char','text',[rfReplaceAll]);
+  end else if G_nDBTYPE = POSTGRESQL then
+  begin
+    stSql := StringReplace(stSql,'int IDENTITY','serial',[rfReplaceAll]);
+  end else if G_nDBTYPE = FireBird then
+  begin
+    stSql := StringReplace(stSql,'image','BLOB',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'varbinary(MAX)','BLOB',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'int IDENTITY','integer',[rfReplaceAll]);
+  end;
+  result := dmDataBase.ProcessExecSQL(stSql);
+end;
+
+function TdmDBCreate.CreateTB_ALARMEVENT: Boolean;
+var
+  stSql : string;
+begin
+  stSql := 'Create Table TB_ALARMEVENT(';
+  stSql := stSql + ' GROUP_CODE varchar(10) DEFAULT ''1234567890'' NOT NULL,';
+  stSql := stSql + ' AE_DATE varchar(8) NOT NULL,';
+  stSql := stSql + ' AE_TIME varchar(9) NOT NULL,';
+  stSql := stSql + ' ND_NODENO integer NOT NULL,';
+  stSql := stSql + ' DE_ECUID varchar(2) NOT NULL,';
+  stSql := stSql + ' DO_DOORNO integer NOT NULL,';
+  stSql := stSql + ' AE_ALARMCODE varchar(2) NOT NULL,';
+  stSql := stSql + ' AE_INSERTTIME varchar(17) ,';
+  stSql := stSql + ' PRIMARY KEY (GROUP_CODE,AE_DATE,AE_TIME,ND_NODENO,DE_ECUID,DO_DOORNO,AE_ALARMCODE) ';
+  stSql := stSql + ' ) ';
+
+  if G_nDBTYPE = MDB then
+  begin
+    stSql := StringReplace(stSql,'int IDENTITY','COUNTER',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'varchar','text',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'char','text',[rfReplaceAll]);
+  end else if G_nDBTYPE = POSTGRESQL then
+  begin
+    stSql := StringReplace(stSql,'int IDENTITY','serial',[rfReplaceAll]);
+  end else if G_nDBTYPE = FireBird then
+  begin
+    stSql := StringReplace(stSql,'image','BLOB',[rfReplaceAll]);
+    stSql := StringReplace(stSql,'varbinary(MAX)','BLOB',[rfReplaceAll]);
     stSql := StringReplace(stSql,'int IDENTITY','integer',[rfReplaceAll]);
   end;
   result := dmDataBase.ProcessExecSQL(stSql);

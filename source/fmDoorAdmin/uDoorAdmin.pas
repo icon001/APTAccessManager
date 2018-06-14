@@ -8,7 +8,8 @@ uses
   AdvOfficeTabSetStylers, AdvSmoothPanel, Vcl.ExtCtrls, AdvSmoothLabel,
   Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
   AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
-  Vcl.Mask, AdvSpin, AdvOfficeButtons, Vcl.Menus, AdvToolBar, AdvToolBarStylers;
+  Vcl.Mask, AdvSpin, AdvOfficeButtons, Vcl.Menus, AdvToolBar, AdvToolBarStylers,
+  AdvAppStyler;
 
 type
   TfmDoorAdmin = class(TfmASubForm)
@@ -66,6 +67,7 @@ type
     PopupMenu1: TPopupMenu;
     pm_update: TMenuItem;
     AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler;
+    AdvFormStyler1: TAdvFormStyler;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);

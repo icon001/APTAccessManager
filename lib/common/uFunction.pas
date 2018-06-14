@@ -12,15 +12,15 @@ const
 procedure Delay(MSecs: Longint);
 procedure LogSave(aFileName,ast:string);
 
-function Ascii2Bytes(aData:string;Var aBytes:TBytes):Boolean;
-function Ascii2Hex(aData:string;bReverse:Boolean = False;bConvert:Boolean=False;aConvertDec:integer=30):string;
+function Ascii2Bytes(aData:Ansistring;Var aBytes:TBytes):Boolean;
+function Ascii2Hex(aData:Ansistring;bReverse:Boolean = False;bConvert:Boolean=False;aConvertDec:integer=30):string;
 function Dec2Hex(N: int64; A: Byte): string;
 function FillZeroNumber(aNo:Int64; aLength:Integer): string;
 function FillZeroStrNum(aNo:String; aLength:Integer;bFront:Boolean = True): string;
 Function FindCharCopy(SourceStr : String; Index : integer; aChar:Char) : String;
 function GetLocalIPAddr : string;
 function GetNodeByText(ATree : TTreeView; AValue:String; AVisible: Boolean): TTreeNode;
-function Hex2Ascii(St: String;bConvert:Boolean=False;aConvertDec:integer=30): String;
+function Hex2Ascii(St: AnsiString;bConvert:Boolean=False;aConvertDec:integer=30): AnsiString;
 function Hex2Dec(const S: string): int64;
 function Hex2DecStr(const S: string): string;
 function IncTime(ATime: TDateTime; Hours, Minutes, Seconds,
@@ -31,7 +31,7 @@ Function MakeDatetimeStr(aTime: String;aTimeForamt:Boolean=True):String;
 function MyF_UsingWinNT: Boolean;
 procedure My_RunDosCommand(Command : string;  nShow : Boolean = False; bWait:Boolean = True);
 function PosIndex(SubStr,S:string;nIndex:integer):integer;
-function ToHexStrNoSpace(st:string):String;
+function ToHexStrNoSpace(st:Ansistring):String;
 
 implementation
 
@@ -68,7 +68,7 @@ begin
 end;
 
 //XE2에서는 데이터 전송시 Bytes 형으로 전송 해야만 0x80 이후 데이터가 손실이 없다.
-function Ascii2Bytes(aData:string;Var aBytes:TBytes):Boolean;
+function Ascii2Bytes(aData:Ansistring;Var aBytes:TBytes):Boolean;
 var
   i : integer;
 begin
@@ -87,7 +87,7 @@ begin
     result := True;
 end;
 
-function Ascii2Hex(aData:string;bReverse:Boolean = False;bConvert:Boolean=False;aConvertDec:integer=30):string;
+function Ascii2Hex(aData:Ansistring;bReverse:Boolean = False;bConvert:Boolean=False;aConvertDec:integer=30):string;
 var
   i : integer;
   stHex : string;
@@ -217,9 +217,9 @@ begin
   end;
 end;
 
-function Hex2Ascii(St: String;bConvert:Boolean=False;aConvertDec:integer=30): String;
+function Hex2Ascii(St: AnsiString;bConvert:Boolean=False;aConvertDec:integer=30): AnsiString;
 var
-  st2: string;
+  st2: Ansistring;
   I: Integer;
   aLength: Integer;
   aa: Integer;
@@ -246,7 +246,7 @@ begin
     begin
       if aa = 0 then aa := aConvertDec;
     end;
-    st2:= st2 + Char(aa);
+    st2:= st2 + AnsiChar(aa);
     delete(st,1,2);
   end;
   Hex2Ascii:= st2;
@@ -435,7 +435,7 @@ begin
   result := nPosition;
 end;
 
-function ToHexStrNoSpace(st:string):String;
+function ToHexStrNoSpace(st:Ansistring):String;
 var
   I : Integer;
   st2: string;

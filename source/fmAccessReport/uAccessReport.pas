@@ -11,7 +11,7 @@ uses
   Vcl.Mask, AdvSpin, AdvOfficeButtons, AdvPanel, Vcl.ComCtrls, AdvListV,
   Vcl.ImgList, Vcl.Menus, AdvMenus, AdvExplorerTreeview, paramtreeview,
   System.iniFiles, Vcl.Samples.Gauges, AdvToolBar,
-  AdvToolBarStylers;
+  AdvToolBarStylers, AdvAppStyler;
 
 
 type
@@ -50,6 +50,7 @@ type
     cmb_EtcSearch2: TComboBox;
     cmb_Condition1: TAdvComboBox;
     cmb_Condition2: TAdvComboBox;
+    AdvFormStyler1: TAdvFormStyler;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);

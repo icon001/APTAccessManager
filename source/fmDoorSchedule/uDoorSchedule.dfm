@@ -2,9 +2,9 @@ inherited fmDoorSchedule: TfmDoorSchedule
   Left = 0
   Top = 0
   Caption = #52636#51077#47928#49828#52992#51460
-  ClientHeight = 734
-  ClientWidth = 1016
-  Font.Height = -11
+  ClientHeight = 960
+  ClientWidth = 1329
+  Font.Height = -14
   Font.Name = 'Tahoma'
   FormStyle = fsMDIChild
   Visible = True
@@ -12,20 +12,24 @@ inherited fmDoorSchedule: TfmDoorSchedule
   OnCreate = FormCreate
   OnResize = FormResize
   OnShow = FormShow
-  ExplicitWidth = 1032
-  ExplicitHeight = 772
-  PixelsPerInch = 96
-  TextHeight = 13
+  ExplicitWidth = 1347
+  ExplicitHeight = 1005
+  PixelsPerInch = 120
+  TextHeight = 17
   object W7Panel1: TW7Panel [0]
     Left = 0
     Top = 0
-    Width = 1016
-    Height = 734
-    Version = '1.0.1.2'
+    Width = 1329
+    Height = 960
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Version = '1.0.2.0'
     Caption = 'W7Panel1'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -15
     Font.Name = 'Segoe UI'
     Font.Style = []
     SolidColor = clBlack
@@ -39,15 +43,19 @@ inherited fmDoorSchedule: TfmDoorSchedule
     ParentFont = False
     TabOrder = 1
     object BodyPanel: TW7Panel
-      Left = 8
+      Left = 10
       Top = 0
-      Width = 1005
-      Height = 734
-      Version = '1.0.1.2'
+      Width = 1315
+      Height = 960
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
+      Version = '1.0.2.0'
       Caption = 'BodyPanel'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -15
       Font.Name = 'Segoe UI'
       Font.Style = []
       SolidColor = clBlack
@@ -62,8 +70,12 @@ inherited fmDoorSchedule: TfmDoorSchedule
       object menuTab: TAdvOfficeTabSet
         Left = 0
         Top = 0
-        Width = 1005
-        Height = 27
+        Width = 1315
+        Height = 35
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         AdvOfficeTabs = <
           item
             Caption = #45803#44592
@@ -455,28 +467,28 @@ inherited fmDoorSchedule: TfmDoorSchedule
               167015090C4C6003EA2A6656038E53FDE9A8D7FD22E367138C3F762E57FF0049
               29FF0083B49D4FF3097CCB1A4CB35A84695E8D027358CAAA95215E494F2AC95F
               8563448DBEDE01ABC9E1F877E849D2E3F13C4AF5BFFFD9}
-            TabAppearance.BorderColor = 13087391
-            TabAppearance.BorderColorHot = 12236209
-            TabAppearance.BorderColorSelected = 13087391
-            TabAppearance.BorderColorSelectedHot = 13087391
+            TabAppearance.BorderColor = 13027014
+            TabAppearance.BorderColorHot = clNone
+            TabAppearance.BorderColorSelected = 13027014
+            TabAppearance.BorderColorSelectedHot = 13027014
             TabAppearance.BorderColorDisabled = clNone
-            TabAppearance.BorderColorDown = clNone
+            TabAppearance.BorderColorDown = 13027014
             TabAppearance.Color = clBtnFace
             TabAppearance.ColorTo = clWhite
-            TabAppearance.ColorSelected = 15784647
-            TabAppearance.ColorSelectedTo = 15784647
-            TabAppearance.ColorDisabled = 15921906
-            TabAppearance.ColorDisabledTo = 15921906
-            TabAppearance.ColorHot = 15920100
-            TabAppearance.ColorHotTo = 15920100
+            TabAppearance.ColorSelected = 16448250
+            TabAppearance.ColorSelectedTo = clNone
+            TabAppearance.ColorDisabled = 15658734
+            TabAppearance.ColorDisabledTo = clNone
+            TabAppearance.ColorHot = 16185078
+            TabAppearance.ColorHotTo = clNone
             TabAppearance.ColorMirror = clWhite
             TabAppearance.ColorMirrorTo = clWhite
-            TabAppearance.ColorMirrorHot = 15920100
-            TabAppearance.ColorMirrorHotTo = 15920100
-            TabAppearance.ColorMirrorSelected = 15784647
-            TabAppearance.ColorMirrorSelectedTo = 15784647
-            TabAppearance.ColorMirrorDisabled = 15921906
-            TabAppearance.ColorMirrorDisabledTo = 15921906
+            TabAppearance.ColorMirrorHot = 16185078
+            TabAppearance.ColorMirrorHotTo = clNone
+            TabAppearance.ColorMirrorSelected = 16448250
+            TabAppearance.ColorMirrorSelectedTo = clNone
+            TabAppearance.ColorMirrorDisabled = 15658734
+            TabAppearance.ColorMirrorDisabledTo = clNone
             TabAppearance.Font.Charset = DEFAULT_CHARSET
             TabAppearance.Font.Color = clWindowText
             TabAppearance.Font.Height = -11
@@ -494,40 +506,40 @@ inherited fmDoorSchedule: TfmDoorSchedule
             TabAppearance.TextColorHot = clBlack
             TabAppearance.TextColorSelected = clBlack
             TabAppearance.TextColorDisabled = clGray
-            TabAppearance.ShadowColor = 13087391
-            TabAppearance.HighLightColorSelected = 13087391
-            TabAppearance.HighLightColorHot = 16643823
-            TabAppearance.HighLightColorSelectedHot = 15784647
-            TabAppearance.HighLightColorDown = 16181209
-            TabAppearance.BackGround.Color = 15784647
-            TabAppearance.BackGround.ColorTo = 16643823
+            TabAppearance.ShadowColor = clNone
+            TabAppearance.HighLightColorSelected = clNone
+            TabAppearance.HighLightColorHot = clNone
+            TabAppearance.HighLightColorSelectedHot = clNone
+            TabAppearance.HighLightColorDown = clNone
+            TabAppearance.BackGround.Color = 16185078
+            TabAppearance.BackGround.ColorTo = clNone
             TabAppearance.BackGround.Direction = gdHorizontal
           end
           item
             Caption = #44288#47532
             Name = 'TOfficeTabCollectionItem2'
-            TabAppearance.BorderColor = 13087391
-            TabAppearance.BorderColorHot = 12236209
-            TabAppearance.BorderColorSelected = 13087391
-            TabAppearance.BorderColorSelectedHot = 13087391
+            TabAppearance.BorderColor = 13027014
+            TabAppearance.BorderColorHot = clNone
+            TabAppearance.BorderColorSelected = 13027014
+            TabAppearance.BorderColorSelectedHot = 13027014
             TabAppearance.BorderColorDisabled = clNone
-            TabAppearance.BorderColorDown = clNone
+            TabAppearance.BorderColorDown = 13027014
             TabAppearance.Color = clBtnFace
             TabAppearance.ColorTo = clWhite
-            TabAppearance.ColorSelected = 15784647
-            TabAppearance.ColorSelectedTo = 15784647
-            TabAppearance.ColorDisabled = 15921906
-            TabAppearance.ColorDisabledTo = 15921906
-            TabAppearance.ColorHot = 15920100
-            TabAppearance.ColorHotTo = 15920100
+            TabAppearance.ColorSelected = 16448250
+            TabAppearance.ColorSelectedTo = clNone
+            TabAppearance.ColorDisabled = 15658734
+            TabAppearance.ColorDisabledTo = clNone
+            TabAppearance.ColorHot = 16185078
+            TabAppearance.ColorHotTo = clNone
             TabAppearance.ColorMirror = clWhite
             TabAppearance.ColorMirrorTo = clWhite
-            TabAppearance.ColorMirrorHot = 15920100
-            TabAppearance.ColorMirrorHotTo = 15920100
-            TabAppearance.ColorMirrorSelected = 15784647
-            TabAppearance.ColorMirrorSelectedTo = 15784647
-            TabAppearance.ColorMirrorDisabled = 15921906
-            TabAppearance.ColorMirrorDisabledTo = 15921906
+            TabAppearance.ColorMirrorHot = 16185078
+            TabAppearance.ColorMirrorHotTo = clNone
+            TabAppearance.ColorMirrorSelected = 16448250
+            TabAppearance.ColorMirrorSelectedTo = clNone
+            TabAppearance.ColorMirrorDisabled = 15658734
+            TabAppearance.ColorMirrorDisabledTo = clNone
             TabAppearance.Font.Charset = DEFAULT_CHARSET
             TabAppearance.Font.Color = clWindowText
             TabAppearance.Font.Height = -11
@@ -545,40 +557,40 @@ inherited fmDoorSchedule: TfmDoorSchedule
             TabAppearance.TextColorHot = clBlack
             TabAppearance.TextColorSelected = clBlack
             TabAppearance.TextColorDisabled = clGray
-            TabAppearance.ShadowColor = 13087391
-            TabAppearance.HighLightColorSelected = 13087391
-            TabAppearance.HighLightColorHot = 16643823
-            TabAppearance.HighLightColorSelectedHot = 15784647
-            TabAppearance.HighLightColorDown = 16181209
-            TabAppearance.BackGround.Color = 15784647
-            TabAppearance.BackGround.ColorTo = 16643823
+            TabAppearance.ShadowColor = clNone
+            TabAppearance.HighLightColorSelected = clNone
+            TabAppearance.HighLightColorHot = clNone
+            TabAppearance.HighLightColorSelectedHot = clNone
+            TabAppearance.HighLightColorDown = clNone
+            TabAppearance.BackGround.Color = 16185078
+            TabAppearance.BackGround.ColorTo = clNone
             TabAppearance.BackGround.Direction = gdHorizontal
           end
           item
             Caption = #49828#52992#51460#52628#44032
             Name = 'TOfficeTabCollectionItem3'
-            TabAppearance.BorderColor = 13087391
-            TabAppearance.BorderColorHot = 12236209
-            TabAppearance.BorderColorSelected = 13087391
-            TabAppearance.BorderColorSelectedHot = 13087391
+            TabAppearance.BorderColor = 13027014
+            TabAppearance.BorderColorHot = clNone
+            TabAppearance.BorderColorSelected = 13027014
+            TabAppearance.BorderColorSelectedHot = 13027014
             TabAppearance.BorderColorDisabled = clNone
-            TabAppearance.BorderColorDown = clNone
+            TabAppearance.BorderColorDown = 13027014
             TabAppearance.Color = clBtnFace
             TabAppearance.ColorTo = clWhite
-            TabAppearance.ColorSelected = 15784647
-            TabAppearance.ColorSelectedTo = 15784647
-            TabAppearance.ColorDisabled = 15921906
-            TabAppearance.ColorDisabledTo = 15921906
-            TabAppearance.ColorHot = 15920100
-            TabAppearance.ColorHotTo = 15920100
+            TabAppearance.ColorSelected = 16448250
+            TabAppearance.ColorSelectedTo = clNone
+            TabAppearance.ColorDisabled = 15658734
+            TabAppearance.ColorDisabledTo = clNone
+            TabAppearance.ColorHot = 16185078
+            TabAppearance.ColorHotTo = clNone
             TabAppearance.ColorMirror = clWhite
             TabAppearance.ColorMirrorTo = clWhite
-            TabAppearance.ColorMirrorHot = 15920100
-            TabAppearance.ColorMirrorHotTo = 15920100
-            TabAppearance.ColorMirrorSelected = 15784647
-            TabAppearance.ColorMirrorSelectedTo = 15784647
-            TabAppearance.ColorMirrorDisabled = 15921906
-            TabAppearance.ColorMirrorDisabledTo = 15921906
+            TabAppearance.ColorMirrorHot = 16185078
+            TabAppearance.ColorMirrorHotTo = clNone
+            TabAppearance.ColorMirrorSelected = 16448250
+            TabAppearance.ColorMirrorSelectedTo = clNone
+            TabAppearance.ColorMirrorDisabled = 15658734
+            TabAppearance.ColorMirrorDisabledTo = clNone
             TabAppearance.Font.Charset = DEFAULT_CHARSET
             TabAppearance.Font.Color = clWindowText
             TabAppearance.Font.Height = -11
@@ -596,13 +608,13 @@ inherited fmDoorSchedule: TfmDoorSchedule
             TabAppearance.TextColorHot = clBlack
             TabAppearance.TextColorSelected = clBlack
             TabAppearance.TextColorDisabled = clGray
-            TabAppearance.ShadowColor = 13087391
-            TabAppearance.HighLightColorSelected = 13087391
-            TabAppearance.HighLightColorHot = 16643823
-            TabAppearance.HighLightColorSelectedHot = 15784647
-            TabAppearance.HighLightColorDown = 16181209
-            TabAppearance.BackGround.Color = 15784647
-            TabAppearance.BackGround.ColorTo = 16643823
+            TabAppearance.ShadowColor = clNone
+            TabAppearance.HighLightColorSelected = clNone
+            TabAppearance.HighLightColorHot = clNone
+            TabAppearance.HighLightColorSelectedHot = clNone
+            TabAppearance.HighLightColorDown = clNone
+            TabAppearance.BackGround.Color = 16185078
+            TabAppearance.BackGround.ColorTo = clNone
             TabAppearance.BackGround.Direction = gdHorizontal
           end>
         AdvOfficeTabSetStyler = AdvOfficeTabSetOfficeStyler1
@@ -891,14 +903,19 @@ inherited fmDoorSchedule: TfmDoorSchedule
         ButtonSettings.ScrollButtonPrevHint = 'Previous'
         ButtonSettings.ScrollButtonFirstHint = 'First'
         ButtonSettings.ScrollButtonLastHint = 'Last'
+        TabSettings.Rounding = 0
         OnChange = menuTabChange
       end
       object List: TAdvSmoothPanel
-        Left = 26
-        Top = 33
-        Width = 976
-        Height = 707
+        Left = 34
+        Top = 43
+        Width = 1276
+        Height = 925
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = 'List'
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -910,23 +927,30 @@ inherited fmDoorSchedule: TfmDoorSchedule
         Caption.Font.Height = -15
         Caption.Font.Name = #45208#45588#44256#46357
         Caption.Font.Style = [fsBold]
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         TabOrder = 1
         object lb_SearchName: TAdvSmoothLabel
-          Left = 27
-          Top = 39
-          Width = 146
-          Height = 22
+          Left = 35
+          Top = 51
+          Width = 191
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -950,22 +974,26 @@ inherited fmDoorSchedule: TfmDoorSchedule
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object sg_List: TAdvStringGrid
-          Left = 27
-          Top = 78
-          Width = 657
-          Height = 397
+          Left = 35
+          Top = 102
+          Width = 859
+          Height = 519
           Cursor = crDefault
           Hint = #49688#51221#49884#50640#45716' '#54644#45817#49472#51012' '#45908#48660#53364#47533#54616#49464#50836'.'
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           ColCount = 10
           DrawingStyle = gdsClassic
           FixedCols = 0
           RowCount = 15
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -12
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -975,19 +1003,33 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ShowHint = True
           TabOrder = 0
           OnDblClick = sg_ListDblClick
+          GridLineColor = 13027014
+          GridFixedLineColor = 13027014
+          HoverRowCells = [hcNormal, hcSelected]
           OnCheckBoxClick = sg_ListCheckBoxClick
           ActiveCellFont.Charset = DEFAULT_CHARSET
           ActiveCellFont.Color = clWindowText
           ActiveCellFont.Height = -11
           ActiveCellFont.Name = 'Tahoma'
           ActiveCellFont.Style = [fsBold]
+          ActiveCellColor = 16448250
+          ActiveCellColorTo = 16448250
+          BorderColor = 13027014
           ColumnHeaders.Strings = (
             ''
             #52636#51077#47928)
-          ControlLook.FixedGradientHoverFrom = clGray
-          ControlLook.FixedGradientHoverTo = clWhite
-          ControlLook.FixedGradientDownFrom = clGray
-          ControlLook.FixedGradientDownTo = clSilver
+          ControlLook.FixedGradientMirrorFrom = 16448250
+          ControlLook.FixedGradientMirrorTo = 16448250
+          ControlLook.FixedGradientHoverFrom = 16576740
+          ControlLook.FixedGradientHoverTo = 16576740
+          ControlLook.FixedGradientHoverMirrorFrom = 16576740
+          ControlLook.FixedGradientHoverMirrorTo = 16576740
+          ControlLook.FixedGradientHoverBorder = 15381630
+          ControlLook.FixedGradientDownFrom = 16573128
+          ControlLook.FixedGradientDownTo = 16573128
+          ControlLook.FixedGradientDownMirrorFrom = 16573128
+          ControlLook.FixedGradientDownMirrorTo = 16573128
+          ControlLook.FixedGradientDownBorder = 15048022
           ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
           ControlLook.DropDownHeader.Font.Color = clWindowText
           ControlLook.DropDownHeader.Font.Height = -11
@@ -1009,6 +1051,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
           FilterDropDown.Font.Name = 'Tahoma'
           FilterDropDown.Font.Style = []
           FilterDropDownClear = '(All)'
+          FilterEdit.TypeNames.Strings = (
+            'Starts with'
+            'Ends with'
+            'Contains'
+            'Not contains'
+            'Equal'
+            'Not equal'
+            'Clear')
           FixedColWidth = 32
           FixedRowHeight = 22
           FixedFont.Charset = DEFAULT_CHARSET
@@ -1017,6 +1067,7 @@ inherited fmDoorSchedule: TfmDoorSchedule
           FixedFont.Name = 'Tahoma'
           FixedFont.Style = [fsBold]
           FloatFormat = '%.2f'
+          Look = glOffice2007
           PrintSettings.DateFormat = 'dd/mm/yyyy'
           PrintSettings.Font.Charset = DEFAULT_CHARSET
           PrintSettings.Font.Color = clWindowText
@@ -1039,6 +1090,9 @@ inherited fmDoorSchedule: TfmDoorSchedule
           PrintSettings.FooterFont.Name = 'Tahoma'
           PrintSettings.FooterFont.Style = []
           PrintSettings.PageNumSep = '/'
+          ScrollWidth = 21
+          SearchFooter.Color = 16448250
+          SearchFooter.ColorTo = 16448250
           SearchFooter.FindNextCaption = 'Find &next'
           SearchFooter.FindPrevCaption = 'Find &previous'
           SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -1052,7 +1106,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
           SearchFooter.HintFindPrev = 'Find previous occurrence'
           SearchFooter.HintHighlight = 'Highlight occurrences'
           SearchFooter.MatchCaseCaption = 'Match case'
-          Version = '6.0.4.4'
+          SelectionColor = 14327846
+          SelectionTextColor = clWhite
+          SortSettings.DefaultFormat = ssAutomatic
+          SortSettings.HeaderColor = 16448250
+          SortSettings.HeaderColorTo = 16448250
+          SortSettings.HeaderMirrorColor = 16448250
+          SortSettings.HeaderMirrorColorTo = 16448250
+          Version = '7.2.8.0'
           ColWidths = (
             32
             594
@@ -1066,15 +1127,19 @@ inherited fmDoorSchedule: TfmDoorSchedule
             64)
         end
         object btn_Search: TAdvGlassButton
-          Left = 346
-          Top = 39
-          Width = 74
-          Height = 22
+          Left = 452
+          Top = 51
+          Width = 97
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clBlue
           Caption = #44160#49353
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clBlue
@@ -1084,19 +1149,23 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clBlue
           TabOrder = 1
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           OnClick = btn_SearchClick
         end
         object btn_Add: TAdvGlassButton
-          Left = 512
-          Top = 507
-          Width = 177
-          Height = 22
+          Left = 670
+          Top = 663
+          Width = 231
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clBlue
           Caption = #49828#52992#51460#52628#44032
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clBlue
@@ -1106,14 +1175,18 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clBlue
           TabOrder = 2
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           OnClick = btn_AddClick
         end
         object tv_buildingCode: TTreeView
-          Left = 131
-          Top = 194
-          Width = 121
-          Height = 132
+          Left = 171
+          Top = 254
+          Width = 159
+          Height = 172
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Indent = 19
           TabOrder = 3
           Visible = False
@@ -1127,51 +1200,77 @@ inherited fmDoorSchedule: TfmDoorSchedule
             00000001038CD6ACC03200}
         end
         object ed_BuildingCode: TAdvEdit
-          Left = 512
-          Top = 108
-          Width = 80
-          Height = 20
+          Left = 670
+          Top = 141
+          Width = 104
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'Tahoma'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clWindowText
-          Font.Height = -12
+          Font.Height = -15
           Font.Name = #44404#47548
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
           ParentFont = False
           TabOrder = 4
+          Text = ''
           Visible = False
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object ed_SearchName: TAdvEdit
-          Left = 179
-          Top = 39
-          Width = 161
-          Height = 23
+          Left = 234
+          Top = 51
+          Width = 211
+          Height = 28
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'Tahoma'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 5
+          Text = ''
           Visible = True
           OnChange = ed_SearchNameChange
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object tv_buildingName: TTreeView
-          Left = 742
-          Top = 22
-          Width = 172
-          Height = 257
+          Left = 970
+          Top = 29
+          Width = 225
+          Height = 336
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           DragMode = dmAutomatic
           Indent = 19
           TabOrder = 6
@@ -1188,11 +1287,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
         end
       end
       object Add: TAdvSmoothPanel
-        Left = 3
-        Top = 111
-        Width = 999
-        Height = 707
+        Left = 4
+        Top = 145
+        Width = 1306
+        Height = 925
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = 'Add'
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -1204,23 +1307,32 @@ inherited fmDoorSchedule: TfmDoorSchedule
         Caption.Font.Height = -15
         Caption.Font.Name = #45208#45588#44256#46357
         Caption.Font.Style = [fsBold]
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         TabOrder = 2
         object btn_AddWeek: TAdvSmoothButton
-          Left = 13
-          Top = 68
-          Width = 100
-          Height = 35
+          Left = 17
+          Top = 89
+          Width = 131
+          Height = 46
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          Appearance.SimpleLayout = True
+          Appearance.Rounding = 0
           Status.Caption = '0'
           Status.Appearance.Fill.Color = clRed
           Status.Appearance.Fill.ColorMirror = clNone
@@ -1237,14 +1349,21 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Status.Appearance.Font.Name = 'Tahoma'
           Status.Appearance.Font.Style = []
           Caption = #54217#51068
+          Color = 16185078
           TabOrder = 0
-          Version = '1.8.1.0'
+          Version = '2.0.1.0'
         end
         object btn_AddSaturday: TAdvSmoothButton
-          Left = 13
-          Top = 165
-          Width = 100
-          Height = 35
+          Left = 17
+          Top = 216
+          Width = 131
+          Height = 46
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          Appearance.SimpleLayout = True
+          Appearance.Rounding = 0
           Status.Caption = '0'
           Status.Appearance.Fill.Color = clRed
           Status.Appearance.Fill.ColorMirror = clNone
@@ -1261,14 +1380,21 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Status.Appearance.Font.Name = 'Tahoma'
           Status.Appearance.Font.Style = []
           Caption = #53664#50836#51068
+          Color = 16185078
           TabOrder = 1
-          Version = '1.8.1.0'
+          Version = '2.0.1.0'
         end
         object btn_AddSunday: TAdvSmoothButton
-          Left = 13
-          Top = 262
-          Width = 100
-          Height = 35
+          Left = 17
+          Top = 343
+          Width = 131
+          Height = 45
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          Appearance.SimpleLayout = True
+          Appearance.Rounding = 0
           Status.Caption = '0'
           Status.Appearance.Fill.Color = clRed
           Status.Appearance.Fill.ColorMirror = clNone
@@ -1285,14 +1411,21 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Status.Appearance.Font.Name = 'Tahoma'
           Status.Appearance.Font.Style = []
           Caption = #51068#50836#51068
+          Color = 16185078
           TabOrder = 2
-          Version = '1.8.1.0'
+          Version = '2.0.1.0'
         end
         object btn_AddHoliday: TAdvSmoothButton
-          Left = 13
-          Top = 359
-          Width = 100
-          Height = 35
+          Left = 17
+          Top = 469
+          Width = 131
+          Height = 46
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          Appearance.SimpleLayout = True
+          Appearance.Rounding = 0
           Status.Caption = '0'
           Status.Appearance.Fill.Color = clRed
           Status.Appearance.Fill.ColorMirror = clNone
@@ -1309,15 +1442,20 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Status.Appearance.Font.Name = 'Tahoma'
           Status.Appearance.Font.Style = []
           Caption = #53945#51221#51068
+          Color = 16185078
           TabOrder = 3
-          Version = '1.8.1.0'
+          Version = '2.0.1.0'
         end
         object pan_AddWeek1: TAdvSmoothPanel
-          Left = 127
-          Top = 68
-          Width = 171
-          Height = 101
+          Left = 166
+          Top = 89
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '1'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -1329,37 +1467,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 4
           object lb_AddWeekHH1: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddWeekMM1: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_W1HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 5
             MaxLength = 2
@@ -1393,10 +1546,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_W1MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -1417,10 +1574,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddW1Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -1434,11 +1595,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddWeek2: TAdvSmoothPanel
-          Left = 297
-          Top = 68
-          Width = 171
-          Height = 101
+          Left = 388
+          Top = 89
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '2'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -1450,37 +1615,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 5
           object lb_AddWeekHH2: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddWeekMM2: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_W2HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 12
             MaxLength = 2
@@ -1514,10 +1694,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_W2MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -1538,10 +1722,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddW2Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -1555,11 +1743,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddWeek3: TAdvSmoothPanel
-          Left = 467
-          Top = 68
-          Width = 171
-          Height = 101
+          Left = 611
+          Top = 89
+          Width = 223
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '3'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -1571,37 +1763,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 6
           object lb_AddWeekHH3: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddWeekMM3: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_W3HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 13
             MaxLength = 2
@@ -1635,10 +1842,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_W3MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -1659,10 +1870,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddW3Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -1676,11 +1891,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddWeek4: TAdvSmoothPanel
-          Left = 637
-          Top = 68
-          Width = 171
-          Height = 101
+          Left = 833
+          Top = 89
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '4'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -1692,37 +1911,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 7
           object lb_AddWeekHH4: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddWeekMM4: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_W4HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 18
             MaxLength = 2
@@ -1756,10 +1990,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_W4MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -1780,10 +2018,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddW4Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -1797,11 +2039,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddWeek5: TAdvSmoothPanel
-          Left = 807
-          Top = 68
-          Width = 171
-          Height = 101
+          Left = 1055
+          Top = 89
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '5'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -1813,37 +2059,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 8
           object lb_AddWeekHH5: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddWeekMM5: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object ComboBox13: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -1879,10 +2140,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object ComboBox14: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -1905,10 +2170,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddW5Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -1922,11 +2191,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddSaturday1: TAdvSmoothPanel
-          Left = 127
-          Top = 165
-          Width = 171
-          Height = 101
+          Left = 166
+          Top = 216
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '1'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -1938,37 +2211,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 9
           object lb_AddSaturdayHH1: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddSaturdayMM1: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_S1HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 5
             MaxLength = 2
@@ -2002,10 +2290,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_S1MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -2026,10 +2318,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddS1Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -2043,11 +2339,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddSaturday2: TAdvSmoothPanel
-          Left = 297
-          Top = 165
-          Width = 171
-          Height = 101
+          Left = 388
+          Top = 216
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '2'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -2059,37 +2359,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 10
           object lb_AddSaturdayHH2: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddSaturdayMM2: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_S2HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 12
             MaxLength = 2
@@ -2123,10 +2438,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_S2MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -2147,10 +2466,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddS2Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -2164,11 +2487,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddSaturday3: TAdvSmoothPanel
-          Left = 467
-          Top = 165
-          Width = 171
-          Height = 101
+          Left = 611
+          Top = 216
+          Width = 223
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '3'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -2180,37 +2507,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 11
           object lb_AddSaturdayHH3: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddSaturdayMM3: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_S3HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 13
             MaxLength = 2
@@ -2244,10 +2586,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_S3MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -2268,10 +2614,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddS3Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -2285,11 +2635,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddSaturday4: TAdvSmoothPanel
-          Left = 637
-          Top = 165
-          Width = 171
-          Height = 101
+          Left = 833
+          Top = 216
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '4'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -2301,37 +2655,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 12
           object lb_AddSaturdayHH4: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddSaturdayMM4: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_S4HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 18
             MaxLength = 2
@@ -2365,10 +2734,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_S4MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -2389,10 +2762,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddS4Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -2406,11 +2783,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddSaturday5: TAdvSmoothPanel
-          Left = 807
-          Top = 165
-          Width = 171
-          Height = 101
+          Left = 1055
+          Top = 216
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '5'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -2422,37 +2803,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 13
           object lb_AddSaturdayHH5: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddSaturdayMM5: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object ComboBox28: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -2488,10 +2884,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object ComboBox29: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -2514,10 +2914,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddS5Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -2531,11 +2935,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddSunday1: TAdvSmoothPanel
-          Left = 127
-          Top = 262
-          Width = 171
-          Height = 101
+          Left = 166
+          Top = 343
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '1'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -2547,37 +2955,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 14
           object lb_AddSundayHH1: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddSundayMM1: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_N1HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 5
             MaxLength = 2
@@ -2611,10 +3034,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_N1MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -2635,10 +3062,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddN1Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -2652,11 +3083,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddSunday2: TAdvSmoothPanel
-          Left = 297
-          Top = 262
-          Width = 171
-          Height = 101
+          Left = 388
+          Top = 343
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '2'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -2668,37 +3103,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 15
           object lb_AddSundayHH2: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddSundayMM2: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_N2HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 12
             MaxLength = 2
@@ -2732,10 +3182,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_N2MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -2756,10 +3210,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddN2Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -2773,11 +3231,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddSunday3: TAdvSmoothPanel
-          Left = 467
-          Top = 262
-          Width = 171
-          Height = 101
+          Left = 611
+          Top = 343
+          Width = 223
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '3'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -2789,37 +3251,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 16
           object lb_AddSundayHH3: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddSundayMM3: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_N3HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 13
             MaxLength = 2
@@ -2853,10 +3330,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_N3MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -2877,10 +3358,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddN3Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -2894,11 +3379,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddSunday4: TAdvSmoothPanel
-          Left = 637
-          Top = 262
-          Width = 171
-          Height = 101
+          Left = 833
+          Top = 343
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '4'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -2910,37 +3399,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 17
           object lb_AddSundayHH4: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddSundayMM4: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_N4HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 18
             MaxLength = 2
@@ -2974,10 +3478,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_N4MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -2998,10 +3506,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddN4Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -3015,11 +3527,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddSunday5: TAdvSmoothPanel
-          Left = 807
-          Top = 262
-          Width = 171
-          Height = 101
+          Left = 1055
+          Top = 343
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '5'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -3031,37 +3547,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 18
           object lb_AddSundayHH5: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddSundayMM5: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object ComboBox43: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -3097,10 +3628,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object ComboBox44: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -3123,10 +3658,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddN5Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -3140,11 +3679,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddHoliday1: TAdvSmoothPanel
-          Left = 127
-          Top = 359
-          Width = 171
-          Height = 101
+          Left = 166
+          Top = 469
+          Width = 224
+          Height = 133
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '1'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -3156,37 +3699,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 19
           object lb_AddHolidayHH1: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddHolidayMM1: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_H1HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 5
             MaxLength = 2
@@ -3220,10 +3778,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_H1MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -3244,10 +3806,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddH1Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -3261,11 +3827,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddHoliday2: TAdvSmoothPanel
-          Left = 297
-          Top = 359
-          Width = 171
-          Height = 101
+          Left = 388
+          Top = 469
+          Width = 224
+          Height = 133
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '2'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -3277,37 +3847,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 20
           object lb_AddHolidayHH2: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddHolidayMM2: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_H2HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 12
             MaxLength = 2
@@ -3341,10 +3926,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_H2MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -3365,10 +3954,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddH2Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -3382,11 +3975,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddHoliday3: TAdvSmoothPanel
-          Left = 467
-          Top = 359
-          Width = 171
-          Height = 101
+          Left = 611
+          Top = 469
+          Width = 223
+          Height = 133
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '3'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -3398,37 +3995,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 21
           object lb_AddHolidayHH3: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddHolidayMM3: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_H3HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 13
             MaxLength = 2
@@ -3462,10 +4074,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_H3MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -3486,10 +4102,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddH3Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -3503,11 +4123,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddHoliday4: TAdvSmoothPanel
-          Left = 637
-          Top = 359
-          Width = 171
-          Height = 101
+          Left = 833
+          Top = 469
+          Width = 224
+          Height = 133
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '4'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -3519,37 +4143,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 22
           object lb_AddHolidayHH4: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddHolidayMM4: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_H4HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 18
             MaxLength = 2
@@ -3583,10 +4222,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_H4MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -3607,10 +4250,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddH4Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -3624,11 +4271,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_AddHoliday5: TAdvSmoothPanel
-          Left = 807
-          Top = 359
-          Width = 171
-          Height = 101
+          Left = 1055
+          Top = 469
+          Width = 224
+          Height = 133
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '5'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -3640,37 +4291,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 23
           object lb_AddHolidayHH5: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_AddHolidayMM5: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object ComboBox58: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -3706,10 +4372,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object ComboBox59: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -3732,10 +4402,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_AddH5Mode: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -3749,15 +4423,19 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object btn_AddSave: TAdvGlassButton
-          Left = 814
-          Top = 462
-          Width = 158
-          Height = 22
+          Left = 1064
+          Top = 604
+          Width = 207
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clBlue
           Caption = #49828#52992#51460#51200#51109
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clBlue
@@ -3767,19 +4445,23 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clBlue
           TabOrder = 24
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           OnClick = btn_AddSaveClick
         end
         object btn_AddTimeInitialize: TAdvGlassButton
-          Left = 629
-          Top = 40
-          Width = 158
-          Height = 22
+          Left = 823
+          Top = 52
+          Width = 206
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clBlue
           Caption = #49884#44036#52488#44592#54868
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clBlue
@@ -3789,19 +4471,23 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clBlue
           TabOrder = 25
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           OnClick = btn_AddTimeInitializeClick
         end
         object btn_AddAllManager: TAdvGlassButton
-          Left = 793
-          Top = 40
-          Width = 87
-          Height = 22
+          Left = 1037
+          Top = 52
+          Width = 114
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clLime
           Caption = #51204#52404#50868#50689
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clLime
@@ -3811,20 +4497,24 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clLime
           TabOrder = 26
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           OnClick = btn_AddAllManagerClick
         end
         object btn_AddAllOpenMode: TAdvGlassButton
           Tag = 1
-          Left = 886
-          Top = 40
-          Width = 87
-          Height = 22
+          Left = 1159
+          Top = 52
+          Width = 113
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clGreen
           Caption = #51204#52404#44060#48169
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clGreen
@@ -3834,20 +4524,24 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clGreen
           TabOrder = 27
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           OnClick = btn_AddAllManagerClick
         end
         object btn_AddAllClose: TAdvGlassButton
           Tag = 2
-          Left = 886
-          Top = 12
-          Width = 87
-          Height = 22
+          Left = 1159
+          Top = 16
+          Width = 113
+          Height = 28
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clRed
           Caption = #51204#52404#54224#49604
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clRed
@@ -3857,17 +4551,21 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clRed
           TabOrder = 28
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           Visible = False
           OnClick = btn_AddAllManagerClick
         end
       end
       object Update: TAdvSmoothPanel
-        Left = 109
-        Top = 568
-        Width = 1006
-        Height = 707
+        Left = 143
+        Top = 743
+        Width = 1315
+        Height = 924
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = 'Update'
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -3879,74 +4577,116 @@ inherited fmDoorSchedule: TfmDoorSchedule
         Caption.Font.Height = -15
         Caption.Font.Name = #45208#45588#44256#46357
         Caption.Font.Style = [fsBold]
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         TabOrder = 3
         object ed_UpdateNodeNoCode: TAdvEdit
-          Left = 30
-          Top = 7
-          Width = 161
-          Height = 23
+          Left = 39
+          Top = 9
+          Width = 211
+          Height = 28
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'Tahoma'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 0
+          Text = ''
           Visible = False
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object ed_UpdateDoorCode: TAdvEdit
-          Left = 364
-          Top = 3
-          Width = 161
-          Height = 23
+          Left = 476
+          Top = 4
+          Width = 211
+          Height = 28
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'Tahoma'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 1
+          Text = ''
           Visible = False
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object ed_UpdateEcuCode: TAdvEdit
-          Left = 197
-          Top = 3
-          Width = 161
-          Height = 23
+          Left = 258
+          Top = 4
+          Width = 210
+          Height = 28
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'Tahoma'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 2
+          Text = ''
           Visible = False
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object btn_UpdateWeek: TAdvSmoothButton
-          Left = 13
-          Top = 68
-          Width = 100
-          Height = 35
+          Left = 17
+          Top = 89
+          Width = 131
+          Height = 46
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          Appearance.SimpleLayout = True
+          Appearance.Rounding = 0
           Status.Caption = '0'
           Status.Appearance.Fill.Color = clRed
           Status.Appearance.Fill.ColorMirror = clNone
@@ -3963,14 +4703,21 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Status.Appearance.Font.Name = 'Tahoma'
           Status.Appearance.Font.Style = []
           Caption = #54217#51068
+          Color = 16185078
           TabOrder = 3
-          Version = '1.8.1.0'
+          Version = '2.0.1.0'
         end
         object btn_UpdateSaturday: TAdvSmoothButton
-          Left = 13
-          Top = 165
-          Width = 100
-          Height = 35
+          Left = 17
+          Top = 216
+          Width = 131
+          Height = 46
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          Appearance.SimpleLayout = True
+          Appearance.Rounding = 0
           Status.Caption = '0'
           Status.Appearance.Fill.Color = clRed
           Status.Appearance.Fill.ColorMirror = clNone
@@ -3987,14 +4734,21 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Status.Appearance.Font.Name = 'Tahoma'
           Status.Appearance.Font.Style = []
           Caption = #53664#50836#51068
+          Color = 16185078
           TabOrder = 4
-          Version = '1.8.1.0'
+          Version = '2.0.1.0'
         end
         object btn_UpdateSunday: TAdvSmoothButton
-          Left = 13
-          Top = 262
-          Width = 100
-          Height = 35
+          Left = 17
+          Top = 343
+          Width = 131
+          Height = 45
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          Appearance.SimpleLayout = True
+          Appearance.Rounding = 0
           Status.Caption = '0'
           Status.Appearance.Fill.Color = clRed
           Status.Appearance.Fill.ColorMirror = clNone
@@ -4011,14 +4765,21 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Status.Appearance.Font.Name = 'Tahoma'
           Status.Appearance.Font.Style = []
           Caption = #51068#50836#51068
+          Color = 16185078
           TabOrder = 5
-          Version = '1.8.1.0'
+          Version = '2.0.1.0'
         end
         object btn_UpdateHoliday: TAdvSmoothButton
-          Left = 13
-          Top = 359
-          Width = 100
-          Height = 35
+          Left = 17
+          Top = 469
+          Width = 131
+          Height = 46
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          Appearance.SimpleLayout = True
+          Appearance.Rounding = 0
           Status.Caption = '0'
           Status.Appearance.Fill.Color = clRed
           Status.Appearance.Fill.ColorMirror = clNone
@@ -4035,15 +4796,20 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Status.Appearance.Font.Name = 'Tahoma'
           Status.Appearance.Font.Style = []
           Caption = #53945#51221#51068
+          Color = 16185078
           TabOrder = 6
-          Version = '1.8.1.0'
+          Version = '2.0.1.0'
         end
         object pan_UpdateWeek1: TAdvSmoothPanel
-          Left = 127
-          Top = 68
-          Width = 171
-          Height = 101
+          Left = 166
+          Top = 89
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '1'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -4055,37 +4821,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 7
           object lb_UpdateWeekHH1: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateWeekMM1: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateW1HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 5
             MaxLength = 2
@@ -4119,10 +4900,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateW1MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -4143,10 +4928,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateW1MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -4160,11 +4949,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateWeek2: TAdvSmoothPanel
-          Left = 297
-          Top = 68
-          Width = 171
-          Height = 101
+          Left = 388
+          Top = 89
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '2'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -4176,37 +4969,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 14
           object lb_UpdateWeekHH2: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateWeekMM2: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateW2HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 12
             MaxLength = 2
@@ -4240,10 +5048,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateW2MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -4264,10 +5076,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateW2MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -4281,11 +5097,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateWeek3: TAdvSmoothPanel
-          Left = 467
-          Top = 68
-          Width = 171
-          Height = 101
+          Left = 611
+          Top = 89
+          Width = 223
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '3'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -4297,37 +5117,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 15
           object lb_UpdateWeekHH3: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateWeekMM3: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateW3HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 13
             MaxLength = 2
@@ -4361,10 +5196,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateW3MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -4385,10 +5224,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateW3MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -4402,11 +5245,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateWeek5: TAdvSmoothPanel
-          Left = 807
-          Top = 68
-          Width = 171
-          Height = 101
+          Left = 1055
+          Top = 89
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '5'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -4418,37 +5265,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 25
           object lb_UpdateWeekHH5: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateWeekMM5: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateW5HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -4484,10 +5346,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateW5MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -4510,10 +5376,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateW5MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -4527,11 +5397,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateWeek4: TAdvSmoothPanel
-          Left = 637
-          Top = 68
-          Width = 171
-          Height = 101
+          Left = 833
+          Top = 89
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '4'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -4543,37 +5417,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 26
           object lb_UpdateWeekHH4: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateWeekMM4: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateW4HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 18
             MaxLength = 2
@@ -4607,10 +5496,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateW4MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -4631,10 +5524,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateW4MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -4648,15 +5545,19 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object btn_UpdateSave: TAdvGlassButton
-          Left = 814
-          Top = 462
-          Width = 158
-          Height = 22
+          Left = 1064
+          Top = 604
+          Width = 207
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clBlue
           Caption = #49828#52992#51460#51200#51109
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clBlue
@@ -4666,20 +5567,24 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clBlue
           TabOrder = 27
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           OnClick = btn_UpdateSaveClick
         end
         object AdvGlassButton2: TAdvGlassButton
           Tag = 2
-          Left = 886
-          Top = 40
-          Width = 87
-          Height = 22
+          Left = 1159
+          Top = 52
+          Width = 113
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clRed
           Caption = #51204#52404#54224#49604
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clRed
@@ -4689,21 +5594,25 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clRed
           TabOrder = 28
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           Visible = False
           OnClick = btn_UpdateAllManagerClick
         end
         object btn_UpdateAllOpenMode: TAdvGlassButton
           Tag = 1
-          Left = 886
-          Top = 40
-          Width = 87
-          Height = 22
+          Left = 1159
+          Top = 52
+          Width = 113
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clGreen
           Caption = #51204#52404#44060#48169
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clGreen
@@ -4713,19 +5622,23 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clGreen
           TabOrder = 29
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           OnClick = btn_UpdateAllManagerClick
         end
         object btn_UpdateAllManager: TAdvGlassButton
-          Left = 793
-          Top = 40
-          Width = 87
-          Height = 22
+          Left = 1037
+          Top = 52
+          Width = 114
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clLime
           Caption = #51204#52404#50868#50689
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clLime
@@ -4735,19 +5648,23 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clLime
           TabOrder = 30
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           OnClick = btn_UpdateAllManagerClick
         end
         object btn_UpdateTimeInitialize: TAdvGlassButton
-          Left = 629
-          Top = 40
-          Width = 158
-          Height = 22
+          Left = 823
+          Top = 52
+          Width = 206
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           BackColor = clBlue
           Caption = #49884#44036#52488#44592#54868
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -15
           Font.Name = 'Tahoma'
           Font.Style = []
           ForeColor = clBlue
@@ -4757,15 +5674,19 @@ inherited fmDoorSchedule: TfmDoorSchedule
           ParentFont = False
           ShineColor = clBlue
           TabOrder = 31
-          Version = '1.2.3.1'
+          Version = '1.3.0.0'
           OnClick = btn_UpdateTimeInitializeClick
         end
         object pan_UpdateSaturday5: TAdvSmoothPanel
-          Left = 807
-          Top = 165
-          Width = 171
-          Height = 101
+          Left = 1055
+          Top = 216
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '5'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -4777,37 +5698,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 24
           object lb_UpdateSaturdayHH5: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateSaturdayMM5: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateS5HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -4843,10 +5779,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateS5MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -4869,10 +5809,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateS5MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -4886,11 +5830,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateSaturday1: TAdvSmoothPanel
-          Left = 127
-          Top = 165
-          Width = 171
-          Height = 101
+          Left = 166
+          Top = 216
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '1'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -4902,37 +5850,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 8
           object lb_UpdateSaturdayHH1: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateSaturdayMM1: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateS1HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 5
             MaxLength = 2
@@ -4966,10 +5929,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateS1MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -4990,10 +5957,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateS1MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -5007,11 +5978,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateSaturday2: TAdvSmoothPanel
-          Left = 297
-          Top = 165
-          Width = 171
-          Height = 101
+          Left = 388
+          Top = 216
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '2'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -5023,37 +5998,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 13
           object lb_UpdateSaturdayHH2: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateSaturdayMM2: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateS2HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 12
             MaxLength = 2
@@ -5087,10 +6077,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateS2MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -5111,10 +6105,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateS2MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -5128,11 +6126,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateSaturday3: TAdvSmoothPanel
-          Left = 467
-          Top = 165
-          Width = 171
-          Height = 101
+          Left = 611
+          Top = 216
+          Width = 223
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '3'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -5144,37 +6146,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 16
           object lb_UpdateSaturdayHH3: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateSaturdayMM3: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateS3HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 13
             MaxLength = 2
@@ -5208,10 +6225,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateS3MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -5232,10 +6253,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateS3MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -5249,11 +6274,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateSaturday4: TAdvSmoothPanel
-          Left = 637
-          Top = 165
-          Width = 171
-          Height = 101
+          Left = 833
+          Top = 216
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '4'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -5265,37 +6294,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 23
           object lb_UpdateSaturdayHH4: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateSaturdayMM4: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateS4HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 18
             MaxLength = 2
@@ -5329,10 +6373,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateS4MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -5353,10 +6401,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateS4MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -5370,11 +6422,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateSunday5: TAdvSmoothPanel
-          Left = 807
-          Top = 262
-          Width = 171
-          Height = 101
+          Left = 1055
+          Top = 343
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '5'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -5386,37 +6442,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 21
           object lb_UpdateSundayHH5: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateSundayMM5: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateN5HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -5452,10 +6523,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateN5MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -5478,10 +6553,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateN5MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -5495,11 +6574,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateSunday4: TAdvSmoothPanel
-          Left = 637
-          Top = 262
-          Width = 171
-          Height = 101
+          Left = 833
+          Top = 343
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '4'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -5511,37 +6594,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 22
           object lb_UpdateSundayHH4: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateSundayMM4: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateN4HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 18
             MaxLength = 2
@@ -5575,10 +6673,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateN4MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -5599,10 +6701,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateN4MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -5616,11 +6722,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateSunday2: TAdvSmoothPanel
-          Left = 297
-          Top = 262
-          Width = 171
-          Height = 101
+          Left = 388
+          Top = 343
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '2'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -5632,37 +6742,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 12
           object lb_UpdateSundayHH2: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateSundayMM2: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateN2HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 12
             MaxLength = 2
@@ -5696,10 +6821,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateN2MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -5720,10 +6849,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateN2MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -5737,11 +6870,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateSunday1: TAdvSmoothPanel
-          Left = 127
-          Top = 262
-          Width = 171
-          Height = 101
+          Left = 166
+          Top = 343
+          Width = 224
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '1'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -5753,37 +6890,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 9
           object lb_UpdateSundayHH1: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateSundayMM1: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateN1HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 5
             MaxLength = 2
@@ -5817,10 +6969,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateN1MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -5841,10 +6997,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateN1MODE: TComboBox
-            Left = 3
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 4
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -5858,11 +7018,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateSunday3: TAdvSmoothPanel
-          Left = 467
-          Top = 262
-          Width = 171
-          Height = 101
+          Left = 611
+          Top = 343
+          Width = 223
+          Height = 132
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '3'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -5874,37 +7038,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 17
           object lb_UpdateSundayHH3: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateSundayMM3: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateN3HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 13
             MaxLength = 2
@@ -5938,10 +7117,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateN3MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -5962,10 +7145,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateN3MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -5979,11 +7166,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateHoliday5: TAdvSmoothPanel
-          Left = 807
-          Top = 359
-          Width = 171
-          Height = 101
+          Left = 1055
+          Top = 469
+          Width = 224
+          Height = 133
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '5'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -5995,37 +7186,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 20
           object lb_UpdateHolidayHH5: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateHolidayMM5: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateH5HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -6061,10 +7267,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateH5MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Enabled = False
             ImeName = 'Microsoft Office IME 2007'
@@ -6087,10 +7297,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateH5MODE: TComboBox
-            Left = 7
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 9
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -6104,11 +7318,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateHoliday4: TAdvSmoothPanel
-          Left = 637
-          Top = 359
-          Width = 171
-          Height = 101
+          Left = 833
+          Top = 469
+          Width = 224
+          Height = 133
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '4'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -6120,37 +7338,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 19
           object lb_UpdateHolidayHH4: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateHolidayMM4: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateH4HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 18
             MaxLength = 2
@@ -6184,10 +7417,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateH4MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -6208,10 +7445,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateH4MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -6225,11 +7466,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateHoliday3: TAdvSmoothPanel
-          Left = 467
-          Top = 359
-          Width = 171
-          Height = 101
+          Left = 611
+          Top = 469
+          Width = 223
+          Height = 133
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '3'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -6241,37 +7486,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 18
           object lb_UpdateHolidayHH3: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateHolidayMM3: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateH3HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 13
             MaxLength = 2
@@ -6305,10 +7565,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateH3MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -6329,10 +7593,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateH3MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -6346,11 +7614,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateHoliday2: TAdvSmoothPanel
-          Left = 297
-          Top = 359
-          Width = 171
-          Height = 101
+          Left = 388
+          Top = 469
+          Width = 224
+          Height = 133
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '2'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -6362,37 +7634,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 11
           object lb_UpdateHolidayHH2: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateHolidayMM2: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateH2HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 12
             MaxLength = 2
@@ -6426,10 +7713,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateH2MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -6450,10 +7741,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateH2MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -6467,11 +7762,15 @@ inherited fmDoorSchedule: TfmDoorSchedule
           end
         end
         object pan_UpdateHoliday1: TAdvSmoothPanel
-          Left = 127
-          Top = 359
-          Width = 171
-          Height = 101
+          Left = 166
+          Top = 469
+          Width = 224
+          Height = 133
           Cursor = crDefault
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption.Text = '1'#44396#44036
           Caption.HTMLFont.Charset = DEFAULT_CHARSET
           Caption.HTMLFont.Color = clWindowText
@@ -6483,37 +7782,52 @@ inherited fmDoorSchedule: TfmDoorSchedule
           Caption.Font.Height = -13
           Caption.Font.Name = #44404#47548
           Caption.Font.Style = [fsBold]
-          Fill.Color = 16445929
-          Fill.ColorTo = 15587527
-          Fill.ColorMirror = 15587527
-          Fill.ColorMirrorTo = 16773863
+          Caption.ColorStart = clBlack
+          Caption.ColorEnd = clBlack
+          Caption.LineColor = 13027014
+          Fill.Color = clWhite
+          Fill.ColorTo = clWhite
+          Fill.ColorMirror = clNone
+          Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
           Fill.GradientMirrorType = gtVertical
-          Fill.BorderColor = 14922381
-          Fill.Rounding = 10
-          Fill.ShadowOffset = 10
-          Fill.Glow = gmNone
-          Version = '1.2.1.0'
+          Fill.BorderColor = 13027014
+          Fill.Rounding = 0
+          Fill.ShadowOffset = 0
+          Fill.Glow = gmRadial
+          Version = '1.3.0.3'
           TabOrder = 10
           object lb_UpdateHolidayHH1: TLabel
-            Left = 52
-            Top = 29
-            Width = 12
-            Height = 15
+            Left = 68
+            Top = 38
+            Width = 15
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #49884
           end
           object lb_UpdateHolidayMM1: TLabel
-            Left = 111
-            Top = 29
-            Width = 39
-            Height = 15
+            Left = 145
+            Top = 38
+            Width = 49
+            Height = 20
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Caption = #48516' '#44620#51648
           end
           object cmb_UpdateH1HH: TComboBox
-            Left = 11
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 14
+            Top = 33
+            Width = 46
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 5
             MaxLength = 2
@@ -6547,10 +7861,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '24')
           end
           object cmb_UpdateH1MM: TComboBox
-            Left = 70
-            Top = 25
-            Width = 35
-            Height = 23
+            Left = 92
+            Top = 33
+            Width = 45
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             ImeName = 'Microsoft Office IME 2007'
             ItemIndex = 0
             MaxLength = 2
@@ -6571,10 +7889,14 @@ inherited fmDoorSchedule: TfmDoorSchedule
               '55')
           end
           object cmb_UpdateH1MODE: TComboBox
-            Left = 11
-            Top = 54
-            Width = 142
-            Height = 23
+            Left = 14
+            Top = 71
+            Width = 186
+            Height = 28
+            Margins.Left = 4
+            Margins.Top = 4
+            Margins.Right = 4
+            Margins.Bottom = 4
             Style = csDropDownList
             Color = clLime
             ImeName = 'Microsoft Office IME 2007'
@@ -6601,58 +7923,60 @@ inherited fmDoorSchedule: TfmDoorSchedule
   end
   object AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler
     ButtonBorderColor = clNone
-    GlowButtonAppearance.BorderColor = 13087391
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.Color = 16643823
-    GlowButtonAppearance.ColorTo = 15784647
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
-    GlowButtonAppearance.ColorDisabled = 15921906
-    GlowButtonAppearance.ColorDisabledTo = 15921906
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15784647
-    GlowButtonAppearance.ColorMirrorTo = 15784647
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
-    GlowButtonAppearance.ColorMirrorDisabled = 11974326
+    GlowButtonAppearance.BorderColor = 13027014
+    GlowButtonAppearance.BorderColorHot = 15381630
+    GlowButtonAppearance.BorderColorDown = 15048022
+    GlowButtonAppearance.BorderColorChecked = 16750899
+    GlowButtonAppearance.BorderColorDisabled = 11316396
+    GlowButtonAppearance.Color = 16185078
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 16750899
+    GlowButtonAppearance.ColorCheckedTo = clNone
+    GlowButtonAppearance.ColorDisabled = 15658734
+    GlowButtonAppearance.ColorDisabledTo = clNone
+    GlowButtonAppearance.ColorDown = 16573128
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16576740
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = 16185078
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = 16576740
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = 16573128
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = 16750899
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
+    GlowButtonAppearance.ColorMirrorDisabled = 15658734
     GlowButtonAppearance.ColorMirrorDisabledTo = 15921906
     GlowButtonAppearance.GradientHot = ggVertical
     GlowButtonAppearance.GradientMirrorHot = ggVertical
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
-    Style = tsOffice2010Blue
-    TabAppearance.BorderColor = 13087391
-    TabAppearance.BorderColorHot = 12236209
-    TabAppearance.BorderColorSelected = 13087391
-    TabAppearance.BorderColorSelectedHot = 13087391
+    TabRounding = 0
+    Style = tsOffice2013LightGray
+    TabAppearance.BorderColor = 13027014
+    TabAppearance.BorderColorHot = clNone
+    TabAppearance.BorderColorSelected = 13027014
+    TabAppearance.BorderColorSelectedHot = 13027014
     TabAppearance.BorderColorDisabled = clNone
-    TabAppearance.BorderColorDown = clNone
+    TabAppearance.BorderColorDown = 13027014
     TabAppearance.Color = clBtnFace
     TabAppearance.ColorTo = clWhite
-    TabAppearance.ColorSelected = 15784647
-    TabAppearance.ColorSelectedTo = 15784647
-    TabAppearance.ColorDisabled = 15921906
-    TabAppearance.ColorDisabledTo = 15921906
-    TabAppearance.ColorHot = 15920100
-    TabAppearance.ColorHotTo = 15920100
+    TabAppearance.ColorSelected = 16448250
+    TabAppearance.ColorSelectedTo = clNone
+    TabAppearance.ColorDisabled = 15658734
+    TabAppearance.ColorDisabledTo = clNone
+    TabAppearance.ColorHot = 16185078
+    TabAppearance.ColorHotTo = clNone
     TabAppearance.ColorMirror = clWhite
     TabAppearance.ColorMirrorTo = clWhite
-    TabAppearance.ColorMirrorHot = 15920100
-    TabAppearance.ColorMirrorHotTo = 15920100
-    TabAppearance.ColorMirrorSelected = 15784647
-    TabAppearance.ColorMirrorSelectedTo = 15784647
-    TabAppearance.ColorMirrorDisabled = 15921906
-    TabAppearance.ColorMirrorDisabledTo = 15921906
+    TabAppearance.ColorMirrorHot = 16185078
+    TabAppearance.ColorMirrorHotTo = clNone
+    TabAppearance.ColorMirrorSelected = 16448250
+    TabAppearance.ColorMirrorSelectedTo = clNone
+    TabAppearance.ColorMirrorDisabled = 15658734
+    TabAppearance.ColorMirrorDisabledTo = clNone
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -11
@@ -6670,13 +7994,13 @@ inherited fmDoorSchedule: TfmDoorSchedule
     TabAppearance.TextColorHot = clBlack
     TabAppearance.TextColorSelected = clBlack
     TabAppearance.TextColorDisabled = clGray
-    TabAppearance.ShadowColor = 13087391
-    TabAppearance.HighLightColorSelected = 13087391
-    TabAppearance.HighLightColorHot = 16643823
-    TabAppearance.HighLightColorSelectedHot = 15784647
-    TabAppearance.HighLightColorDown = 16181209
-    TabAppearance.BackGround.Color = 15784647
-    TabAppearance.BackGround.ColorTo = 16643823
+    TabAppearance.ShadowColor = clNone
+    TabAppearance.HighLightColorSelected = clNone
+    TabAppearance.HighLightColorHot = clNone
+    TabAppearance.HighLightColorSelectedHot = clNone
+    TabAppearance.HighLightColorDown = clNone
+    TabAppearance.BackGround.Color = 16185078
+    TabAppearance.BackGround.ColorTo = clNone
     TabAppearance.BackGround.Direction = gdHorizontal
     Left = 264
   end
@@ -6686,7 +8010,7 @@ inherited fmDoorSchedule: TfmDoorSchedule
     Left = 176
     Top = 112
     Bitmap = {
-      494C010103009400D40110001000FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
+      494C010103009400D80110001000FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000707071E898989D7ACACACFFABAB
       ABFFACACACFFABACABFFABABACFFACABABFFACABABFFABABABFFABACABFFABAB
@@ -6826,9 +8150,18 @@ inherited fmDoorSchedule: TfmDoorSchedule
       000000000000}
   end
   object AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler
-    Style = bsOffice2010Silver
+    AppColor.AppButtonColor = 13005312
+    AppColor.AppButtonHoverColor = 16755772
+    AppColor.TextColor = clWhite
+    AppColor.HoverColor = 16246477
+    AppColor.HoverTextColor = clBlack
+    AppColor.HoverBorderColor = 15187578
+    AppColor.SelectedColor = 15187578
+    AppColor.SelectedTextColor = clBlack
+    AppColor.SelectedBorderColor = 15187578
+    Style = bsOffice2013LightGray
     BackGroundDisplay = bdStretch
-    BorderColor = 13087391
+    BorderColor = clGray
     BorderColorHot = 15590880
     ButtonAppearance.Color = clWhite
     ButtonAppearance.ColorTo = 15590880
@@ -6861,8 +8194,8 @@ inherited fmDoorSchedule: TfmDoorSchedule
     CaptionFont.Style = []
     ContainerAppearance.LineColor = clBtnShadow
     ContainerAppearance.Line3D = True
-    Color.Color = clWhite
-    Color.ColorTo = 15590880
+    Color.Color = 16448250
+    Color.ColorTo = 16448250
     Color.Direction = gdVertical
     Color.Mirror.Color = 16777214
     Color.Mirror.ColorTo = 16777214
@@ -6903,8 +8236,8 @@ inherited fmDoorSchedule: TfmDoorSchedule
     CompactGlowButtonAppearance.GradientDown = ggVertical
     CompactGlowButtonAppearance.GradientMirrorDown = ggVertical
     CompactGlowButtonAppearance.GradientChecked = ggVertical
-    DockColor.Color = 15590880
-    DockColor.ColorTo = clWhite
+    DockColor.Color = 16448250
+    DockColor.ColorTo = 16448250
     DockColor.Direction = gdHorizontal
     DockColor.Steps = 128
     FloatingWindowBorderColor = 13486790
@@ -6913,27 +8246,28 @@ inherited fmDoorSchedule: TfmDoorSchedule
     Font.Height = -27
     Font.Name = 'Segoe UI'
     Font.Style = []
-    GlowButtonAppearance.BorderColor = 13815240
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.ColorTo = 15590880
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
+    GlowButtonAppearance.BorderColor = 16448250
+    GlowButtonAppearance.BorderColorHot = 15187578
+    GlowButtonAppearance.BorderColorDown = 15187578
+    GlowButtonAppearance.BorderColorChecked = 15187578
+    GlowButtonAppearance.Color = 16448250
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 15187578
+    GlowButtonAppearance.ColorCheckedTo = clNone
     GlowButtonAppearance.ColorDisabled = clNone
     GlowButtonAppearance.ColorDisabledTo = clNone
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15590880
-    GlowButtonAppearance.ColorMirrorTo = 15590880
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
+    GlowButtonAppearance.ColorDown = 15187578
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16246477
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = clNone
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = clNone
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = clNone
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = clNone
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
     GlowButtonAppearance.ColorMirrorDisabled = clNone
     GlowButtonAppearance.ColorMirrorDisabledTo = clNone
     GlowButtonAppearance.GradientHot = ggVertical
@@ -6941,6 +8275,7 @@ inherited fmDoorSchedule: TfmDoorSchedule
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
+    GroupAppearance.Background = clInfoBk
     GroupAppearance.BorderColor = 1340927
     GroupAppearance.Color = 4636927
     GroupAppearance.ColorTo = 4636927
@@ -7044,7 +8379,7 @@ inherited fmDoorSchedule: TfmDoorSchedule
     PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -13
+    PagerCaption.Font.Height = -17
     PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 13815240
@@ -7053,12 +8388,10 @@ inherited fmDoorSchedule: TfmDoorSchedule
     QATAppearance.FullSizeBorderColor = 13815240
     QATAppearance.FullSizeColor = clWhite
     QATAppearance.FullSizeColorTo = 15590880
-    RightHandleColor = clWhite
-    RightHandleColorTo = 15590880
-    RightHandleColorHot = 14285309
-    RightHandleColorHotTo = 9102333
-    RightHandleColorDown = 8122111
-    RightHandleColorDownTo = 7131391
+    RightHandleColorHot = 7368816
+    RightHandleColorHotTo = 7368816
+    RightHandleColorDown = clGray
+    RightHandleColorDownTo = clGray
     TabAppearance.BorderColor = 13815240
     TabAppearance.BorderColorHot = 12236209
     TabAppearance.BorderColorSelected = 12565174
@@ -7109,5 +8442,11 @@ inherited fmDoorSchedule: TfmDoorSchedule
     TabAppearance.BackGround.Direction = gdVertical
     Left = 300
     Top = 4
+  end
+  object AdvFormStyler1: TAdvFormStyler
+    MetroColor = clSkyBlue
+    Style = tsOffice2013LightGray
+    Left = 640
+    Top = 64
   end
 end

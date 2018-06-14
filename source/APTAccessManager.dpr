@@ -16,7 +16,7 @@ uses
   uAreaCodeAdmin in 'fmAreaCodeAdmin\uAreaCodeAdmin.pas' {fmAreaCodeAdmin},
   uFormUtil in '..\lib\common\uFormUtil.pas',
   uSubForm in '..\lib\common\uSubForm.pas' {fmASubForm},
-  uAccessReport in 'fmAccessReport\uAccessReport.pas' {fmAccessReport},
+  uAlarmReport in 'fmAlarmReport\uAlarmReport.pas' {fmAlarmReport},
   uMessage in '..\lib\common\uMessage.pas',
   uPermitCodeAdmin in 'fmPermitCodeAdmin\uPermitCodeAdmin.pas' {fmPermitCodeAdmin},
   uNodeAdmin in 'fmNodeAdmin\uNodeAdmin.pas' {fmNodeAdmin},
@@ -44,7 +44,9 @@ uses
   uSolarLunar in '..\lib\Date\uSolarLunar.pas',
   uDeviceDoorSchedule in '..\lib\DeviceNetwork\uDeviceDoorSchedule.pas' {dmDoorSchedule: TDataModule},
   uDBFormName in '..\lib\DataBase\uDBFormName.pas' {dmFormName: TDataModule},
-  uFormFontUtil in '..\lib\common\uFormFontUtil.pas' {dmFormFontUtil: TDataModule};
+  uFormFontUtil in '..\lib\common\uFormFontUtil.pas' {dmFormFontUtil: TDataModule},
+  uNetConfig in 'fmNetConfig\uNetConfig.pas' {fmNetConfig},
+  uAccessReport in 'fmAccessReport\uAccessReport.pas' {fmAccessReport};
 
 {$R *.res}
 {$R manifest.RES}
@@ -55,8 +57,8 @@ begin
   Application.CreateForm(TdmDataBase, dmDataBase);
   Application.CreateForm(TdmDeviceControlCenter, dmDeviceControlCenter);
   Application.CreateForm(TdmCardPermit, dmCardPermit);
-  Application.CreateForm(TfmMain, fmMain);
-  Application.CreateForm(TdmDoorSchedule, dmDoorSchedule);
   Application.CreateForm(TdmFormFontUtil, dmFormFontUtil);
+  Application.CreateForm(TdmDoorSchedule, dmDoorSchedule);
+  Application.CreateForm(TfmMain, fmMain);
   Application.Run;
 end.

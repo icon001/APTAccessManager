@@ -8,7 +8,8 @@ uses
   AdvOfficeTabSetStylers, AdvSmoothPanel, Vcl.ExtCtrls, AdvSmoothLabel,
   Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
   AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
-  Vcl.Mask, AdvSpin, AdvOfficeButtons, AdvToolBar, AdvToolBarStylers, Vcl.Menus;
+  Vcl.Mask, AdvSpin, AdvOfficeButtons, AdvToolBar, AdvToolBarStylers, Vcl.Menus,
+  AdvAppStyler;
 
 type
   TfmCardAdmin = class(TfmASubForm)
@@ -73,6 +74,7 @@ type
     cmb_EtcSearch1: TComboBox;
     cmb_Condition1: TAdvComboBox;
     cmb_Condition2: TAdvComboBox;
+    AdvFormStyler1: TAdvFormStyler;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);

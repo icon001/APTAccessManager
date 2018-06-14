@@ -4,10 +4,10 @@ inherited fmAccessReport: TfmAccessReport
   BorderIcons = []
   BorderStyle = bsNone
   Caption = #12450#12463#12475#12473'  '#12524#12509#12540#12488
-  ClientHeight = 464
-  ClientWidth = 1093
+  ClientHeight = 535
+  ClientWidth = 1348
   Font.Charset = HANGEUL_CHARSET
-  Font.Height = -12
+  Font.Height = -15
   Font.Name = 'MS Gothic'
   FormStyle = fsMDIChild
   Visible = True
@@ -15,29 +15,37 @@ inherited fmAccessReport: TfmAccessReport
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  ExplicitWidth = 1109
-  ExplicitHeight = 502
-  PixelsPerInch = 96
-  TextHeight = 12
+  ExplicitWidth = 1366
+  ExplicitHeight = 580
+  PixelsPerInch = 120
+  TextHeight = 15
   object Image1: TImage [0]
     Left = 0
     Top = 0
-    Width = 1093
-    Height = 464
+    Width = 1348
+    Height = 535
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Align = alClient
-    ExplicitWidth = 930
-    ExplicitHeight = 278
+    ExplicitWidth = 1366
+    ExplicitHeight = 580
   end
   object BodyPanel: TW7Panel [1]
     Left = 0
     Top = 0
-    Width = 1093
-    Height = 464
-    Version = '1.0.1.2'
+    Width = 1348
+    Height = 535
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Version = '1.0.2.0'
     Caption = 'BodyPanel'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Gothic'
     Font.Style = []
     SolidColor = clBlack
@@ -53,8 +61,12 @@ inherited fmAccessReport: TfmAccessReport
     object menuTab: TAdvOfficeTabSet
       Left = 0
       Top = 0
-      Width = 1093
-      Height = 23
+      Width = 1348
+      Height = 29
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       AdvOfficeTabs = <
         item
           Caption = #45803#44592
@@ -446,28 +458,28 @@ inherited fmAccessReport: TfmAccessReport
             167015090C4C6003EA2A6656038E53FDE9A8D7FD22E367138C3F762E57FF0049
             29FF0083B49D4FF3097CCB1A4CB35A84695E8D027358CAAA95215E494F2AC95F
             8563448DBEDE01ABC9E1F877E849D2E3F13C4AF5BFFFD9}
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -485,40 +497,40 @@ inherited fmAccessReport: TfmAccessReport
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end
         item
           Caption = #48372#44256#49436
           Name = 'TOfficeTabCollectionItem2'
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -536,13 +548,13 @@ inherited fmAccessReport: TfmAccessReport
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end>
       AdvOfficeTabSetStyler = AdvOfficeTabSetOfficeStyler1
@@ -831,43 +843,53 @@ inherited fmAccessReport: TfmAccessReport
       ButtonSettings.ScrollButtonPrevHint = 'Previous'
       ButtonSettings.ScrollButtonFirstHint = 'First'
       ButtonSettings.ScrollButtonLastHint = 'Last'
+      TabSettings.Rounding = 0
       OnChange = menuTabChange
     end
     object pan_DoorList: TAdvPanel
       Left = 0
-      Top = 23
-      Width = 1093
-      Height = 441
+      Top = 29
+      Width = 1348
+      Height = 506
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Align = alClient
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWindowText
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Gothic'
       Font.Style = []
       ParentFont = False
       TabOrder = 1
       UseDockManager = True
-      Version = '2.1.0.4'
+      Version = '2.3.0.0'
       Caption.Color = clHighlight
       Caption.ColorTo = clNone
       Caption.Font.Charset = HANGEUL_CHARSET
       Caption.Font.Color = clWindowText
-      Caption.Font.Height = -11
+      Caption.Font.Height = -15
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Caption.Height = 17
+      Caption.Height = 21
       StatusBar.Font.Charset = DEFAULT_CHARSET
       StatusBar.Font.Color = clWindowText
       StatusBar.Font.Height = -11
       StatusBar.Font.Name = 'MS Gothic'
       StatusBar.Font.Style = []
+      Text = ''
       FullHeight = 200
       object pan_CardListHeader: TAdvSmoothPanel
         Left = 1
         Top = 1
-        Width = 1091
-        Height = 120
+        Width = 1346
+        Height = 150
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption.Text = #12450#12463#12475#12473'  '#12524#12509#12540#12488
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -879,27 +901,34 @@ inherited fmAccessReport: TfmAccessReport
         Caption.Font.Height = -13
         Caption.Font.Name = 'MS Gothic'
         Caption.Font.Style = [fsBold]
-        Fill.Color = 16445929
-        Fill.ColorTo = 15587527
-        Fill.ColorMirror = 15587527
-        Fill.ColorMirrorTo = 16773863
+        Caption.ColorStart = clBlack
+        Caption.ColorEnd = clBlack
+        Caption.LineColor = 13027014
+        Fill.Color = clWhite
+        Fill.ColorTo = clWhite
+        Fill.ColorMirror = clNone
+        Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
         Fill.GradientMirrorType = gtVertical
-        Fill.BorderColor = 14922381
-        Fill.Rounding = 10
-        Fill.ShadowOffset = 10
-        Fill.Glow = gmNone
-        Version = '1.2.1.0'
+        Fill.BorderColor = 13027014
+        Fill.Rounding = 0
+        Fill.ShadowOffset = 0
+        Fill.Glow = gmRadial
+        Version = '1.3.0.3'
         Align = alTop
         TabOrder = 0
         DesignSize = (
-          1091
-          120)
+          1346
+          150)
         object lb_Date: TAdvSmoothLabel
-          Left = 21
-          Top = 27
-          Width = 69
-          Height = 18
+          Left = 26
+          Top = 34
+          Width = 87
+          Height = 22
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -923,13 +952,17 @@ inherited fmAccessReport: TfmAccessReport
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_Door: TAdvSmoothLabel
-          Left = 21
-          Top = 52
-          Width = 62
-          Height = 18
+          Left = 26
+          Top = 65
+          Width = 78
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -953,33 +986,41 @@ inherited fmAccessReport: TfmAccessReport
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object btn_Search: TSpeedButton
-          Left = 833
-          Top = 25
-          Width = 104
-          Height = 23
+          Left = 1041
+          Top = 31
+          Width = 130
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Caption = #26908#32034
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
           OnClick = btn_SearchClick
         end
         object btn_Excel: TSpeedButton
-          Left = 934
-          Top = 26
-          Width = 125
-          Height = 29
+          Left = 1150
+          Top = 33
+          Width = 156
+          Height = 36
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akTop, akRight]
           Caption = 'CSV'
           Enabled = False
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           Glyph.Data = {
@@ -1096,19 +1137,23 @@ inherited fmAccessReport: TfmAccessReport
           NumGlyphs = 2
           ParentFont = False
           OnClick = btn_ExcelClick
-          ExplicitLeft = 982
+          ExplicitLeft = 1168
         end
         object btn_Print: TSpeedButton
-          Left = 934
-          Top = 70
-          Width = 125
-          Height = 30
+          Left = 1150
+          Top = 88
+          Width = 156
+          Height = 37
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Anchors = [akRight, akBottom]
           Caption = #52636#47141
           Enabled = False
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           Glyph.Data = {
@@ -1225,13 +1270,17 @@ inherited fmAccessReport: TfmAccessReport
           NumGlyphs = 2
           ParentFont = False
           OnClick = btn_PrintClick
-          ExplicitLeft = 691
+          ExplicitLeft = 1168
         end
         object lb_Company: TAdvSmoothLabel
-          Left = 301
-          Top = 27
-          Width = 62
-          Height = 18
+          Left = 376
+          Top = 34
+          Width = 78
+          Height = 22
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1255,13 +1304,17 @@ inherited fmAccessReport: TfmAccessReport
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_Depart: TAdvSmoothLabel
-          Left = 573
-          Top = 28
-          Width = 62
-          Height = 18
+          Left = 716
+          Top = 35
+          Width = 78
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1285,13 +1338,17 @@ inherited fmAccessReport: TfmAccessReport
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_Gubun: TAdvSmoothLabel
-          Left = 21
-          Top = 76
-          Width = 62
-          Height = 18
+          Left = 26
+          Top = 95
+          Width = 78
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1315,17 +1372,21 @@ inherited fmAccessReport: TfmAccessReport
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'MS Gothic'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object cmb_ListDongCode: TComboBox
-          Left = 96
-          Top = 51
-          Width = 188
-          Height = 21
+          Left = 120
+          Top = 64
+          Width = 235
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1334,15 +1395,19 @@ inherited fmAccessReport: TfmAccessReport
           OnChange = cmb_ListDongCodeChange
         end
         object dt_endDate: TDateTimePicker
-          Left = 193
-          Top = 26
-          Width = 91
-          Height = 21
+          Left = 241
+          Top = 33
+          Width = 114
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Date = 41228.562543576380000000
           Time = 41228.562543576380000000
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1351,14 +1416,18 @@ inherited fmAccessReport: TfmAccessReport
           OnChange = dt_StartDateChange
         end
         object cmb_Company: TComboBox
-          Left = 376
-          Top = 27
-          Width = 179
-          Height = 21
+          Left = 470
+          Top = 34
+          Width = 224
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1367,14 +1436,18 @@ inherited fmAccessReport: TfmAccessReport
           OnChange = cmb_CompanyChange
         end
         object cmb_Depart: TComboBox
-          Left = 648
-          Top = 27
-          Width = 179
-          Height = 21
+          Left = 810
+          Top = 34
+          Width = 224
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1382,14 +1455,18 @@ inherited fmAccessReport: TfmAccessReport
           TabOrder = 3
         end
         object ComboBox3: TComboBox
-          Left = 96
-          Top = 75
-          Width = 188
-          Height = 21
+          Left = 120
+          Top = 94
+          Width = 235
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1398,15 +1475,19 @@ inherited fmAccessReport: TfmAccessReport
           OnChange = cmb_ListDongCodeChange
         end
         object dt_StartDate: TDateTimePicker
-          Left = 96
-          Top = 26
-          Width = 91
-          Height = 21
+          Left = 120
+          Top = 33
+          Width = 114
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Date = 41228.562543576380000000
           Time = 41228.562543576380000000
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1415,14 +1496,18 @@ inherited fmAccessReport: TfmAccessReport
           OnChange = dt_StartDateChange
         end
         object cmb_EtcSearch1: TComboBox
-          Left = 299
-          Top = 51
-          Width = 138
-          Height = 21
+          Left = 374
+          Top = 64
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1430,60 +1515,86 @@ inherited fmAccessReport: TfmAccessReport
           TabOrder = 6
         end
         object ed_EtcSearch1: TAdvEdit
-          Left = 455
-          Top = 51
-          Width = 138
-          Height = 21
+          Left = 569
+          Top = 64
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'MS Gothic'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
           ParentFont = False
           TabOrder = 7
+          Text = ''
           Visible = True
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object ed_EtcSearch2: TAdvEdit
-          Left = 455
-          Top = 75
-          Width = 138
-          Height = 21
+          Left = 569
+          Top = 94
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'MS Gothic'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
           ParentFont = False
           TabOrder = 8
+          Text = ''
           Visible = True
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object cmb_EtcSearch2: TComboBox
-          Left = 299
-          Top = 75
-          Width = 138
-          Height = 21
+          Left = 374
+          Top = 94
+          Width = 172
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -1491,14 +1602,20 @@ inherited fmAccessReport: TfmAccessReport
           TabOrder = 9
         end
         object cmb_Condition1: TAdvComboBox
-          Left = 609
-          Top = 52
-          Width = 125
-          Height = 19
+          Left = 761
+          Top = 65
+          Width = 157
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Color = clWindow
-          Version = '1.4.0.0'
+          Version = '1.5.1.0'
           Visible = True
+          ButtonWidth = 23
           Style = csDropDownList
+          EmptyTextStyle = []
           DropWidth = 0
           Enabled = True
           ImeName = 'Microsoft Office IME 2007'
@@ -1511,14 +1628,20 @@ inherited fmAccessReport: TfmAccessReport
           TabOrder = 10
         end
         object cmb_Condition2: TAdvComboBox
-          Left = 609
-          Top = 76
-          Width = 125
-          Height = 19
+          Left = 761
+          Top = 95
+          Width = 157
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Color = clWindow
-          Version = '1.4.0.0'
+          Version = '1.5.1.0'
           Visible = True
+          ButtonWidth = 23
           Style = csDropDownList
+          EmptyTextStyle = []
           DropWidth = 0
           Enabled = True
           ImeName = 'Microsoft Office IME 2007'
@@ -1533,10 +1656,14 @@ inherited fmAccessReport: TfmAccessReport
       end
       object sg_report: TAdvStringGrid
         Left = 1
-        Top = 121
-        Width = 1091
-        Height = 319
+        Top = 151
+        Width = 1346
+        Height = 354
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Align = alClient
         ColCount = 12
         DrawingStyle = gdsClassic
@@ -1544,7 +1671,7 @@ inherited fmAccessReport: TfmAccessReport
         RowCount = 2
         Font.Charset = HANGEUL_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goColMoving]
@@ -1552,12 +1679,18 @@ inherited fmAccessReport: TfmAccessReport
         ScrollBars = ssBoth
         TabOrder = 1
         OnColumnMoved = sg_reportColumnMoved
+        GridLineColor = 13027014
+        GridFixedLineColor = 13027014
+        HoverRowCells = [hcNormal, hcSelected]
         OnResize = sg_reportResize
         ActiveCellFont.Charset = ANSI_CHARSET
         ActiveCellFont.Color = clWindowText
         ActiveCellFont.Height = -11
         ActiveCellFont.Name = 'MS Gothic'
         ActiveCellFont.Style = []
+        ActiveCellColor = 16448250
+        ActiveCellColorTo = 16448250
+        BorderColor = 13027014
         ColumnHeaders.Strings = (
           #52636#51077#49884#44036
           #52636#51077#47928
@@ -1568,10 +1701,18 @@ inherited fmAccessReport: TfmAccessReport
           #52852#46300#48264#54840
           #44396#48516
           #49849#51064#44208#44284)
-        ControlLook.FixedGradientHoverFrom = clGray
-        ControlLook.FixedGradientHoverTo = clWhite
-        ControlLook.FixedGradientDownFrom = clGray
-        ControlLook.FixedGradientDownTo = clSilver
+        ControlLook.FixedGradientMirrorFrom = 16448250
+        ControlLook.FixedGradientMirrorTo = 16448250
+        ControlLook.FixedGradientHoverFrom = 16576740
+        ControlLook.FixedGradientHoverTo = 16576740
+        ControlLook.FixedGradientHoverMirrorFrom = 16576740
+        ControlLook.FixedGradientHoverMirrorTo = 16576740
+        ControlLook.FixedGradientHoverBorder = 15381630
+        ControlLook.FixedGradientDownFrom = 16573128
+        ControlLook.FixedGradientDownTo = 16573128
+        ControlLook.FixedGradientDownMirrorFrom = 16573128
+        ControlLook.FixedGradientDownMirrorTo = 16573128
+        ControlLook.FixedGradientDownBorder = 15048022
         ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
         ControlLook.DropDownHeader.Font.Color = clWindowText
         ControlLook.DropDownHeader.Font.Height = -11
@@ -1593,6 +1734,14 @@ inherited fmAccessReport: TfmAccessReport
         FilterDropDown.Font.Name = 'MS Gothic'
         FilterDropDown.Font.Style = []
         FilterDropDownClear = '(All)'
+        FilterEdit.TypeNames.Strings = (
+          'Starts with'
+          'Ends with'
+          'Contains'
+          'Not contains'
+          'Equal'
+          'Not equal'
+          'Clear')
         FixedColWidth = 166
         FixedRowHeight = 22
         FixedFont.Charset = DEFAULT_CHARSET
@@ -1601,6 +1750,7 @@ inherited fmAccessReport: TfmAccessReport
         FixedFont.Name = 'MS Gothic'
         FixedFont.Style = []
         FloatFormat = '%.2f'
+        Look = glOffice2007
         PrintSettings.DateFormat = 'dd/mm/yyyy'
         PrintSettings.Font.Charset = DEFAULT_CHARSET
         PrintSettings.Font.Color = clWindowText
@@ -1623,6 +1773,9 @@ inherited fmAccessReport: TfmAccessReport
         PrintSettings.FooterFont.Name = 'MS Gothic'
         PrintSettings.FooterFont.Style = []
         PrintSettings.PageNumSep = '/'
+        ScrollWidth = 21
+        SearchFooter.Color = 16448250
+        SearchFooter.ColorTo = 16448250
         SearchFooter.FindNextCaption = 'Find &next'
         SearchFooter.FindPrevCaption = 'Find &previous'
         SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -1636,7 +1789,14 @@ inherited fmAccessReport: TfmAccessReport
         SearchFooter.HintFindPrev = 'Find previous occurrence'
         SearchFooter.HintHighlight = 'Highlight occurrences'
         SearchFooter.MatchCaseCaption = 'Match case'
-        Version = '6.0.4.4'
+        SelectionColor = 14327846
+        SelectionTextColor = clWhite
+        SortSettings.DefaultFormat = ssAutomatic
+        SortSettings.HeaderColor = 16448250
+        SortSettings.HeaderColorTo = 16448250
+        SortSettings.HeaderMirrorColor = 16448250
+        SortSettings.HeaderMirrorColorTo = 16448250
+        Version = '7.2.8.0'
         ColWidths = (
           166
           108
@@ -1654,82 +1814,96 @@ inherited fmAccessReport: TfmAccessReport
     end
   end
   object pan_gauge: TPanel [2]
-    Left = 281
-    Top = 191
-    Width = 282
-    Height = 63
+    Left = 351
+    Top = 239
+    Width = 353
+    Height = 79
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     TabOrder = 2
     Visible = False
     object lb_Message: TLabel
-      Left = 21
-      Top = 14
-      Width = 120
-      Height = 12
+      Left = 26
+      Top = 18
+      Width = 160
+      Height = 15
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption = #45936#51060#53552' '#51204#49569#51473#51077#45768#45796'.'
     end
     object Gauge1: TGauge
-      Left = 21
-      Top = 34
-      Width = 247
-      Height = 15
+      Left = 26
+      Top = 43
+      Width = 309
+      Height = 18
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       ForeColor = clBlue
       Progress = 0
     end
   end
   object AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler
     ButtonBorderColor = clNone
-    GlowButtonAppearance.BorderColor = 13087391
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.Color = 16643823
-    GlowButtonAppearance.ColorTo = 15784647
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
-    GlowButtonAppearance.ColorDisabled = 15921906
-    GlowButtonAppearance.ColorDisabledTo = 15921906
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15784647
-    GlowButtonAppearance.ColorMirrorTo = 15784647
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
-    GlowButtonAppearance.ColorMirrorDisabled = 11974326
+    GlowButtonAppearance.BorderColor = 13027014
+    GlowButtonAppearance.BorderColorHot = 15381630
+    GlowButtonAppearance.BorderColorDown = 15048022
+    GlowButtonAppearance.BorderColorChecked = 16750899
+    GlowButtonAppearance.BorderColorDisabled = 11316396
+    GlowButtonAppearance.Color = 16185078
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 16750899
+    GlowButtonAppearance.ColorCheckedTo = clNone
+    GlowButtonAppearance.ColorDisabled = 15658734
+    GlowButtonAppearance.ColorDisabledTo = clNone
+    GlowButtonAppearance.ColorDown = 16573128
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16576740
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = 16185078
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = 16576740
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = 16573128
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = 16750899
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
+    GlowButtonAppearance.ColorMirrorDisabled = 15658734
     GlowButtonAppearance.ColorMirrorDisabledTo = 15921906
     GlowButtonAppearance.GradientHot = ggVertical
     GlowButtonAppearance.GradientMirrorHot = ggVertical
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
-    Style = tsOffice2010Blue
-    TabAppearance.BorderColor = 13087391
-    TabAppearance.BorderColorHot = 12236209
-    TabAppearance.BorderColorSelected = 13087391
-    TabAppearance.BorderColorSelectedHot = 13087391
+    TabRounding = 0
+    Style = tsOffice2013LightGray
+    TabAppearance.BorderColor = 13027014
+    TabAppearance.BorderColorHot = clNone
+    TabAppearance.BorderColorSelected = 13027014
+    TabAppearance.BorderColorSelectedHot = 13027014
     TabAppearance.BorderColorDisabled = clNone
-    TabAppearance.BorderColorDown = clNone
+    TabAppearance.BorderColorDown = 13027014
     TabAppearance.Color = clBtnFace
     TabAppearance.ColorTo = clWhite
-    TabAppearance.ColorSelected = 15784647
-    TabAppearance.ColorSelectedTo = 15784647
-    TabAppearance.ColorDisabled = 15921906
-    TabAppearance.ColorDisabledTo = 15921906
-    TabAppearance.ColorHot = 15920100
-    TabAppearance.ColorHotTo = 15920100
+    TabAppearance.ColorSelected = 16448250
+    TabAppearance.ColorSelectedTo = clNone
+    TabAppearance.ColorDisabled = 15658734
+    TabAppearance.ColorDisabledTo = clNone
+    TabAppearance.ColorHot = 16185078
+    TabAppearance.ColorHotTo = clNone
     TabAppearance.ColorMirror = clWhite
     TabAppearance.ColorMirrorTo = clWhite
-    TabAppearance.ColorMirrorHot = 15920100
-    TabAppearance.ColorMirrorHotTo = 15920100
-    TabAppearance.ColorMirrorSelected = 15784647
-    TabAppearance.ColorMirrorSelectedTo = 15784647
-    TabAppearance.ColorMirrorDisabled = 15921906
-    TabAppearance.ColorMirrorDisabledTo = 15921906
+    TabAppearance.ColorMirrorHot = 16185078
+    TabAppearance.ColorMirrorHotTo = clNone
+    TabAppearance.ColorMirrorSelected = 16448250
+    TabAppearance.ColorMirrorSelectedTo = clNone
+    TabAppearance.ColorMirrorDisabled = 15658734
+    TabAppearance.ColorMirrorDisabledTo = clNone
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -13
@@ -1747,13 +1921,13 @@ inherited fmAccessReport: TfmAccessReport
     TabAppearance.TextColorHot = clBlack
     TabAppearance.TextColorSelected = clBlack
     TabAppearance.TextColorDisabled = clGray
-    TabAppearance.ShadowColor = 13087391
-    TabAppearance.HighLightColorSelected = 13087391
-    TabAppearance.HighLightColorHot = 16643823
-    TabAppearance.HighLightColorSelectedHot = 15784647
-    TabAppearance.HighLightColorDown = 16181209
-    TabAppearance.BackGround.Color = 15784647
-    TabAppearance.BackGround.ColorTo = 16643823
+    TabAppearance.ShadowColor = clNone
+    TabAppearance.HighLightColorSelected = clNone
+    TabAppearance.HighLightColorHot = clNone
+    TabAppearance.HighLightColorSelectedHot = clNone
+    TabAppearance.HighLightColorDown = clNone
+    TabAppearance.BackGround.Color = 16185078
+    TabAppearance.BackGround.ColorTo = clNone
     TabAppearance.BackGround.Direction = gdHorizontal
     Left = 264
   end
@@ -1763,7 +1937,7 @@ inherited fmAccessReport: TfmAccessReport
     Left = 192
     Top = 272
     Bitmap = {
-      494C010101000400640020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000400680020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000002000000001002000000000000040
       000000000000000000000000000000000000FEFEFE00FEFEFE00FEFEFE00FEFE
       FE00FEFEFE00FEFEFE00C7C7C700C7C7C700FEFEFE00FEFEFE00FCFEFE00C7C7
@@ -2305,7 +2479,7 @@ inherited fmAccessReport: TfmAccessReport
     Left = 72
     Top = 168
     Bitmap = {
-      494C010106000900640018001800FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
+      494C010106000900680018001800FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000600000003000000001002000000000000048
       000000000000000000000000000000000000FFFFFF00FDFFFF00FFFEFF00FFFF
       FF00C0C0C000C0C1BF00FBFFFF00010002000000000002000000FDFFFF00FFFF
@@ -2915,9 +3089,18 @@ inherited fmAccessReport: TfmAccessReport
     Top = 448
   end
   object AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler
-    Style = bsOffice2010Silver
+    AppColor.AppButtonColor = 13005312
+    AppColor.AppButtonHoverColor = 16755772
+    AppColor.TextColor = clWhite
+    AppColor.HoverColor = 16246477
+    AppColor.HoverTextColor = clBlack
+    AppColor.HoverBorderColor = 15187578
+    AppColor.SelectedColor = 15187578
+    AppColor.SelectedTextColor = clBlack
+    AppColor.SelectedBorderColor = 15187578
+    Style = bsOffice2013LightGray
     BackGroundDisplay = bdStretch
-    BorderColor = 13087391
+    BorderColor = clGray
     BorderColorHot = 15590880
     ButtonAppearance.Color = clWhite
     ButtonAppearance.ColorTo = 15590880
@@ -2933,7 +3116,7 @@ inherited fmAccessReport: TfmAccessReport
     ButtonAppearance.CaptionFont.Charset = DEFAULT_CHARSET
     ButtonAppearance.CaptionFont.Color = clWindowText
     ButtonAppearance.CaptionFont.Height = -11
-    ButtonAppearance.CaptionFont.Name = 'MS Gothic'
+    ButtonAppearance.CaptionFont.Name = 'Segoe UI'
     ButtonAppearance.CaptionFont.Style = []
     CaptionAppearance.CaptionColor = 15921133
     CaptionAppearance.CaptionColorTo = 15921133
@@ -2946,12 +3129,12 @@ inherited fmAccessReport: TfmAccessReport
     CaptionFont.Charset = DEFAULT_CHARSET
     CaptionFont.Color = clWindowText
     CaptionFont.Height = -11
-    CaptionFont.Name = 'MS Gothic'
+    CaptionFont.Name = 'Segoe UI'
     CaptionFont.Style = []
     ContainerAppearance.LineColor = clBtnShadow
     ContainerAppearance.Line3D = True
-    Color.Color = clWhite
-    Color.ColorTo = 15590880
+    Color.Color = 16448250
+    Color.ColorTo = 16448250
     Color.Direction = gdVertical
     Color.Mirror.Color = 16777214
     Color.Mirror.ColorTo = 16777214
@@ -2992,37 +3175,38 @@ inherited fmAccessReport: TfmAccessReport
     CompactGlowButtonAppearance.GradientDown = ggVertical
     CompactGlowButtonAppearance.GradientMirrorDown = ggVertical
     CompactGlowButtonAppearance.GradientChecked = ggVertical
-    DockColor.Color = 15590880
-    DockColor.ColorTo = clWhite
+    DockColor.Color = 16448250
+    DockColor.ColorTo = 16448250
     DockColor.Direction = gdHorizontal
     DockColor.Steps = 128
     FloatingWindowBorderColor = 13486790
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clBlack
     Font.Height = -27
-    Font.Name = 'MS Gothic'
+    Font.Name = 'Segoe UI'
     Font.Style = []
-    GlowButtonAppearance.BorderColor = 13815240
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.ColorTo = 15590880
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
+    GlowButtonAppearance.BorderColor = 16448250
+    GlowButtonAppearance.BorderColorHot = 15187578
+    GlowButtonAppearance.BorderColorDown = 15187578
+    GlowButtonAppearance.BorderColorChecked = 15187578
+    GlowButtonAppearance.Color = 16448250
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 15187578
+    GlowButtonAppearance.ColorCheckedTo = clNone
     GlowButtonAppearance.ColorDisabled = clNone
     GlowButtonAppearance.ColorDisabledTo = clNone
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15590880
-    GlowButtonAppearance.ColorMirrorTo = 15590880
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
+    GlowButtonAppearance.ColorDown = 15187578
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16246477
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = clNone
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = clNone
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = clNone
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = clNone
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
     GlowButtonAppearance.ColorMirrorDisabled = clNone
     GlowButtonAppearance.ColorMirrorDisabledTo = clNone
     GlowButtonAppearance.GradientHot = ggVertical
@@ -3030,6 +3214,7 @@ inherited fmAccessReport: TfmAccessReport
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
+    GroupAppearance.Background = clInfoBk
     GroupAppearance.BorderColor = 1340927
     GroupAppearance.Color = 4636927
     GroupAppearance.ColorTo = 4636927
@@ -3038,7 +3223,7 @@ inherited fmAccessReport: TfmAccessReport
     GroupAppearance.Font.Charset = DEFAULT_CHARSET
     GroupAppearance.Font.Color = clWindowText
     GroupAppearance.Font.Height = -11
-    GroupAppearance.Font.Name = 'MS Gothic'
+    GroupAppearance.Font.Name = 'Segoe UI'
     GroupAppearance.Font.Style = []
     GroupAppearance.Gradient = ggVertical
     GroupAppearance.GradientMirror = ggVertical
@@ -3133,8 +3318,8 @@ inherited fmAccessReport: TfmAccessReport
     PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -13
-    PagerCaption.Font.Name = 'MS Gothic'
+    PagerCaption.Font.Height = -17
+    PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 13815240
     QATAppearance.Color = clWhite
@@ -3142,12 +3327,10 @@ inherited fmAccessReport: TfmAccessReport
     QATAppearance.FullSizeBorderColor = 13815240
     QATAppearance.FullSizeColor = clWhite
     QATAppearance.FullSizeColorTo = 15590880
-    RightHandleColor = clWhite
-    RightHandleColorTo = 15590880
-    RightHandleColorHot = 14285309
-    RightHandleColorHotTo = 9102333
-    RightHandleColorDown = 8122111
-    RightHandleColorDownTo = 7131391
+    RightHandleColorHot = 7368816
+    RightHandleColorHotTo = 7368816
+    RightHandleColorDown = clGray
+    RightHandleColorDownTo = clGray
     TabAppearance.BorderColor = 13815240
     TabAppearance.BorderColorHot = 12236209
     TabAppearance.BorderColorSelected = 12565174
@@ -3173,7 +3356,7 @@ inherited fmAccessReport: TfmAccessReport
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -11
-    TabAppearance.Font.Name = 'MS Gothic'
+    TabAppearance.Font.Name = 'Segoe UI'
     TabAppearance.Font.Style = []
     TabAppearance.Gradient = ggVertical
     TabAppearance.GradientMirror = ggVertical
@@ -3198,5 +3381,11 @@ inherited fmAccessReport: TfmAccessReport
     TabAppearance.BackGround.Direction = gdVertical
     Left = 364
     Top = 65532
+  end
+  object AdvFormStyler1: TAdvFormStyler
+    MetroColor = clSkyBlue
+    Style = tsOffice2013LightGray
+    Left = 640
+    Top = 64
   end
 end

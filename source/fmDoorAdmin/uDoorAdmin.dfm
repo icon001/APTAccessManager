@@ -4,10 +4,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
   BorderIcons = []
   BorderStyle = bsNone
   Caption = #52636#51077#47928#44288#47532
-  ClientHeight = 659
-  ClientWidth = 647
+  ClientHeight = 779
+  ClientWidth = 791
   Font.Charset = HANGEUL_CHARSET
-  Font.Height = -12
+  Font.Height = -15
   Font.Name = #45208#45588#44256#46357
   FormStyle = fsMDIChild
   Visible = True
@@ -16,29 +16,37 @@ inherited fmDoorAdmin: TfmDoorAdmin
   OnCreate = FormCreate
   OnResize = FormResize
   OnShow = FormShow
-  ExplicitWidth = 663
-  ExplicitHeight = 697
-  PixelsPerInch = 96
-  TextHeight = 12
+  ExplicitWidth = 809
+  ExplicitHeight = 824
+  PixelsPerInch = 120
+  TextHeight = 15
   object Image1: TImage [0]
     Left = 0
     Top = 0
-    Width = 647
-    Height = 659
+    Width = 791
+    Height = 779
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Align = alClient
-    ExplicitWidth = 573
-    ExplicitHeight = 431
+    ExplicitWidth = 809
+    ExplicitHeight = 824
   end
   object BodyPanel: TW7Panel [1]
-    Left = 6
+    Left = 8
     Top = 0
-    Width = 577
-    Height = 539
-    Version = '1.0.1.2'
+    Width = 721
+    Height = 674
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Version = '1.0.2.0'
     Caption = 'BodyPanel'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -9
+    Font.Height = -10
     Font.Name = 'Segoe UI'
     Font.Style = []
     SolidColor = clBlack
@@ -53,8 +61,12 @@ inherited fmDoorAdmin: TfmDoorAdmin
     object menuTab: TAdvOfficeTabSet
       Left = 0
       Top = 0
-      Width = 577
-      Height = 24
+      Width = 721
+      Height = 30
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       AdvOfficeTabs = <
         item
           Caption = #45803#44592
@@ -884,11 +896,15 @@ inherited fmDoorAdmin: TfmDoorAdmin
       OnChange = menuTabChange
     end
     object pan_DoorCodeList: TAdvSmoothPanel
-      Left = -64
-      Top = 17
-      Width = 578
-      Height = 519
+      Left = -80
+      Top = 21
+      Width = 723
+      Height = 649
       Cursor = crDefault
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption.Text = #52636#51077#47928#44288#47532
       Caption.HTMLFont.Charset = DEFAULT_CHARSET
       Caption.HTMLFont.Color = clWindowText
@@ -900,23 +916,30 @@ inherited fmDoorAdmin: TfmDoorAdmin
       Caption.Font.Height = -15
       Caption.Font.Name = #45208#45588#44256#46357
       Caption.Font.Style = [fsBold]
-      Fill.Color = 16445929
-      Fill.ColorTo = 15587527
-      Fill.ColorMirror = 15587527
-      Fill.ColorMirrorTo = 16773863
+      Caption.ColorStart = clBlack
+      Caption.ColorEnd = clBlack
+      Caption.LineColor = 13027014
+      Fill.Color = clWhite
+      Fill.ColorTo = clWhite
+      Fill.ColorMirror = clNone
+      Fill.ColorMirrorTo = clNone
       Fill.GradientType = gtVertical
       Fill.GradientMirrorType = gtVertical
-      Fill.BorderColor = 14922381
-      Fill.Rounding = 10
-      Fill.ShadowOffset = 10
-      Fill.Glow = gmNone
-      Version = '1.2.1.0'
+      Fill.BorderColor = 13027014
+      Fill.Rounding = 0
+      Fill.ShadowOffset = 0
+      Fill.Glow = gmRadial
+      Version = '1.3.0.3'
       TabOrder = 1
       object lb_Door: TAdvSmoothLabel
-        Left = 23
-        Top = 82
-        Width = 150
-        Height = 16
+        Left = 29
+        Top = 103
+        Width = 187
+        Height = 20
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -940,34 +963,50 @@ inherited fmDoorAdmin: TfmDoorAdmin
         CaptionShadow.Font.Height = -27
         CaptionShadow.Font.Name = 'Tahoma'
         CaptionShadow.Font.Style = []
-        Version = '1.5.0.1'
+        Version = '1.6.0.2'
       end
       object btn_Search: TSpeedButton
-        Left = 301
-        Top = 79
-        Width = 64
-        Height = 18
+        Left = 376
+        Top = 99
+        Width = 80
+        Height = 22
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         OnClick = btn_SearchClick
       end
       object btn_Delete: TSpeedButton
-        Left = 489
-        Top = 420
-        Width = 64
-        Height = 18
+        Left = 611
+        Top = 525
+        Width = 80
+        Height = 23
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         OnClick = btn_DeleteClick
       end
       object btn_add: TSpeedButton
-        Left = 411
-        Top = 420
-        Width = 64
-        Height = 18
+        Left = 514
+        Top = 525
+        Width = 80
+        Height = 23
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         OnClick = btn_addClick
       end
       object lb_Company: TAdvSmoothLabel
-        Left = 23
-        Top = 25
-        Width = 150
-        Height = 16
+        Left = 29
+        Top = 31
+        Width = 187
+        Height = 20
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -991,13 +1030,17 @@ inherited fmDoorAdmin: TfmDoorAdmin
         CaptionShadow.Font.Height = -27
         CaptionShadow.Font.Name = 'Tahoma'
         CaptionShadow.Font.Style = []
-        Version = '1.5.0.1'
+        Version = '1.6.0.2'
       end
       object lb_Depart: TAdvSmoothLabel
-        Left = 23
-        Top = 54
-        Width = 150
-        Height = 15
+        Left = 29
+        Top = 68
+        Width = 187
+        Height = 18
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -1021,40 +1064,55 @@ inherited fmDoorAdmin: TfmDoorAdmin
         CaptionShadow.Font.Height = -27
         CaptionShadow.Font.Name = 'Tahoma'
         CaptionShadow.Font.Style = []
-        Version = '1.5.0.1'
+        Version = '1.6.0.2'
       end
       object ed_Doorname: TAdvEdit
-        Left = 176
-        Top = 78
-        Width = 119
+        Left = 220
+        Top = 98
+        Width = 149
         Height = 20
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
         LabelFont.Height = -11
         LabelFont.Name = 'Tahoma'
         LabelFont.Style = []
+        Lookup.Font.Charset = DEFAULT_CHARSET
+        Lookup.Font.Color = clWindowText
+        Lookup.Font.Height = -13
+        Lookup.Font.Name = 'Arial'
+        Lookup.Font.Style = []
         Lookup.Separator = ';'
         Color = clWindow
         ImeName = 'Microsoft Office IME 2007'
         TabOrder = 0
+        Text = ''
         Visible = True
         OnChange = ed_DoornameChange
-        Version = '2.9.3.1'
+        Version = '3.3.2.0'
       end
       object sg_DoorList: TAdvStringGrid
-        Left = 23
-        Top = 115
-        Width = 530
-        Height = 283
+        Left = 29
+        Top = 144
+        Width = 662
+        Height = 354
         Cursor = crDefault
         Hint = #49688#51221#49884#50640#45716' '#54644#45817#49472#51012' '#45908#48660#53364#47533#54616#49464#50836'.'
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         ColCount = 12
         DrawingStyle = gdsClassic
         FixedCols = 0
         RowCount = 17
         Font.Charset = HANGEUL_CHARSET
         Font.Color = clWindowText
-        Font.Height = -9
+        Font.Height = -10
         Font.Name = 'Tahoma'
         Font.Style = []
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -1067,12 +1125,18 @@ inherited fmDoorAdmin: TfmDoorAdmin
         OnDblClick = sg_DoorListDblClick
         OnKeyPress = sg_DoorListKeyPress
         OnKeyUp = sg_DoorListKeyUp
+        GridLineColor = 13027014
+        GridFixedLineColor = 13027014
+        HoverRowCells = [hcNormal, hcSelected]
         OnCheckBoxClick = sg_DoorListCheckBoxClick
         ActiveCellFont.Charset = DEFAULT_CHARSET
         ActiveCellFont.Color = clWindowText
         ActiveCellFont.Height = -11
         ActiveCellFont.Name = 'Tahoma'
         ActiveCellFont.Style = [fsBold]
+        ActiveCellColor = 16448250
+        ActiveCellColorTo = 16448250
+        BorderColor = 13027014
         ColumnHeaders.Strings = (
           ''
           #46041
@@ -1082,10 +1146,18 @@ inherited fmDoorAdmin: TfmDoorAdmin
           #44592#44592#48264#54840
           #45432#46300#48264#54840
           #52636#51077#47928#48264#54840)
-        ControlLook.FixedGradientHoverFrom = clGray
-        ControlLook.FixedGradientHoverTo = clWhite
-        ControlLook.FixedGradientDownFrom = clGray
-        ControlLook.FixedGradientDownTo = clSilver
+        ControlLook.FixedGradientMirrorFrom = 16448250
+        ControlLook.FixedGradientMirrorTo = 16448250
+        ControlLook.FixedGradientHoverFrom = 16576740
+        ControlLook.FixedGradientHoverTo = 16576740
+        ControlLook.FixedGradientHoverMirrorFrom = 16576740
+        ControlLook.FixedGradientHoverMirrorTo = 16576740
+        ControlLook.FixedGradientHoverBorder = 15381630
+        ControlLook.FixedGradientDownFrom = 16573128
+        ControlLook.FixedGradientDownTo = 16573128
+        ControlLook.FixedGradientDownMirrorFrom = 16573128
+        ControlLook.FixedGradientDownMirrorTo = 16573128
+        ControlLook.FixedGradientDownBorder = 15048022
         ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
         ControlLook.DropDownHeader.Font.Color = clWindowText
         ControlLook.DropDownHeader.Font.Height = -11
@@ -1107,6 +1179,14 @@ inherited fmDoorAdmin: TfmDoorAdmin
         FilterDropDown.Font.Name = 'Tahoma'
         FilterDropDown.Font.Style = []
         FilterDropDownClear = '(All)'
+        FilterEdit.TypeNames.Strings = (
+          'Starts with'
+          'Ends with'
+          'Contains'
+          'Not contains'
+          'Equal'
+          'Not equal'
+          'Clear')
         FixedColWidth = 32
         FixedRowHeight = 22
         FixedFont.Charset = DEFAULT_CHARSET
@@ -1115,6 +1195,7 @@ inherited fmDoorAdmin: TfmDoorAdmin
         FixedFont.Name = 'Tahoma'
         FixedFont.Style = [fsBold]
         FloatFormat = '%.2f'
+        Look = glOffice2007
         PrintSettings.DateFormat = 'dd/mm/yyyy'
         PrintSettings.Font.Charset = DEFAULT_CHARSET
         PrintSettings.Font.Color = clWindowText
@@ -1137,6 +1218,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
         PrintSettings.FooterFont.Name = 'Tahoma'
         PrintSettings.FooterFont.Style = []
         PrintSettings.PageNumSep = '/'
+        ScrollWidth = 21
+        SearchFooter.Color = 16448250
+        SearchFooter.ColorTo = 16448250
         SearchFooter.FindNextCaption = 'Find &next'
         SearchFooter.FindPrevCaption = 'Find &previous'
         SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -1150,7 +1234,14 @@ inherited fmDoorAdmin: TfmDoorAdmin
         SearchFooter.HintFindPrev = 'Find previous occurrence'
         SearchFooter.HintHighlight = 'Highlight occurrences'
         SearchFooter.MatchCaseCaption = 'Match case'
-        Version = '6.0.4.4'
+        SelectionColor = 14327846
+        SelectionTextColor = clWhite
+        SortSettings.DefaultFormat = ssAutomatic
+        SortSettings.HeaderColor = 16448250
+        SortSettings.HeaderColorTo = 16448250
+        SortSettings.HeaderMirrorColor = 16448250
+        SortSettings.HeaderMirrorColorTo = 16448250
+        Version = '7.2.8.0'
         ColWidths = (
           32
           143
@@ -1166,20 +1257,28 @@ inherited fmDoorAdmin: TfmDoorAdmin
           64)
       end
       object cmb_ListDongCode: TComboBox
-        Left = 176
-        Top = 21
-        Width = 119
+        Left = 220
+        Top = 26
+        Width = 149
         Height = 20
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Style = csDropDownList
         ImeName = 'Microsoft Office IME 2007'
         TabOrder = 2
         OnChange = cmb_ListDongCodeChange
       end
       object cmb_ListAreaCode: TComboBox
-        Left = 176
-        Top = 49
-        Width = 119
+        Left = 220
+        Top = 61
+        Width = 149
         Height = 20
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Style = csDropDownList
         ImeName = 'Microsoft Office IME 2007'
         TabOrder = 3
@@ -1187,11 +1286,15 @@ inherited fmDoorAdmin: TfmDoorAdmin
       end
     end
     object pan_DoorAdd: TAdvSmoothPanel
-      Left = 350
-      Top = 73
-      Width = 437
-      Height = 325
+      Left = 438
+      Top = 91
+      Width = 546
+      Height = 407
       Cursor = crDefault
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption.Text = #52636#51077#47928#52628#44032
       Caption.HTMLFont.Charset = DEFAULT_CHARSET
       Caption.HTMLFont.Color = clWindowText
@@ -1203,23 +1306,30 @@ inherited fmDoorAdmin: TfmDoorAdmin
       Caption.Font.Height = -15
       Caption.Font.Name = #45208#45588#44256#46357
       Caption.Font.Style = [fsBold]
-      Fill.Color = 16445929
-      Fill.ColorTo = 15587527
-      Fill.ColorMirror = 15587527
-      Fill.ColorMirrorTo = 16773863
+      Caption.ColorStart = clBlack
+      Caption.ColorEnd = clBlack
+      Caption.LineColor = 13027014
+      Fill.Color = clWhite
+      Fill.ColorTo = clWhite
+      Fill.ColorMirror = clNone
+      Fill.ColorMirrorTo = clNone
       Fill.GradientType = gtVertical
       Fill.GradientMirrorType = gtVertical
-      Fill.BorderColor = 14922381
-      Fill.Rounding = 10
-      Fill.ShadowOffset = 10
-      Fill.Glow = gmNone
-      Version = '1.2.1.0'
+      Fill.BorderColor = 13027014
+      Fill.Rounding = 0
+      Fill.ShadowOffset = 0
+      Fill.Glow = gmRadial
+      Version = '1.3.0.3'
       TabOrder = 2
       object lb_DoorAdd: TAdvSmoothLabel
-        Left = 23
-        Top = 44
-        Width = 150
-        Height = 15
+        Left = 29
+        Top = 55
+        Width = 187
+        Height = 19
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -1243,45 +1353,68 @@ inherited fmDoorAdmin: TfmDoorAdmin
         CaptionShadow.Font.Height = -27
         CaptionShadow.Font.Name = 'Tahoma'
         CaptionShadow.Font.Style = []
-        Version = '1.5.0.1'
+        Version = '1.6.0.2'
       end
       object btn_InsertSave: TSpeedButton
-        Left = 340
-        Top = 46
-        Width = 64
-        Height = 18
+        Left = 425
+        Top = 58
+        Width = 80
+        Height = 22
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         OnClick = btn_InsertSaveClick
       end
       object ed_InsertName: TAdvEdit
-        Left = 183
-        Top = 46
-        Width = 151
+        Left = 229
+        Top = 58
+        Width = 189
         Height = 20
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
         LabelFont.Height = -11
         LabelFont.Name = 'Tahoma'
         LabelFont.Style = []
+        Lookup.Font.Charset = DEFAULT_CHARSET
+        Lookup.Font.Color = clWindowText
+        Lookup.Font.Height = -13
+        Lookup.Font.Name = 'Arial'
+        Lookup.Font.Style = []
         Lookup.Separator = ';'
         Color = clWindow
         ImeName = 'Microsoft Office IME 2007'
         TabOrder = 0
+        Text = ''
         Visible = True
         OnKeyPress = ed_InsertNameKeyPress
-        Version = '2.9.3.1'
+        Version = '3.3.2.0'
       end
       object gb_DeviceInfoAdd: TAdvGroupBox
-        Left = 22
-        Top = 70
-        Width = 380
-        Height = 110
+        Left = 28
+        Top = 88
+        Width = 475
+        Height = 137
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption = #44592#44592#51221#48372
         TabOrder = 1
         object lb_NodeAdd: TAdvSmoothLabel
-          Left = 18
-          Top = 20
-          Width = 150
-          Height = 16
+          Left = 23
+          Top = 25
+          Width = 187
+          Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1305,13 +1438,17 @@ inherited fmDoorAdmin: TfmDoorAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_DeviceAdd: TAdvSmoothLabel
-          Left = 18
-          Top = 40
-          Width = 150
-          Height = 17
+          Left = 23
+          Top = 50
+          Width = 187
+          Height = 21
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1335,13 +1472,17 @@ inherited fmDoorAdmin: TfmDoorAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_LockTimeAdd: TAdvSmoothLabel
-          Left = 18
-          Top = 61
-          Width = 150
-          Height = 16
+          Left = 23
+          Top = 76
+          Width = 187
+          Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1365,23 +1506,31 @@ inherited fmDoorAdmin: TfmDoorAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object cmb_InsertNodeNo: TComboBox
-          Left = 174
-          Top = 20
-          Width = 119
+          Left = 218
+          Top = 25
+          Width = 148
           Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 0
           OnChange = cmb_InsertNodeNoChange
         end
         object se_InsertDeviceNo: TAdvSpinEdit
-          Left = 174
-          Top = 40
-          Width = 119
+          Left = 218
+          Top = 50
+          Width = 148
           Height = 21
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Value = 1
           FloatValue = 1.000000000000000000
           TimeValue = 0.041666666666666660
@@ -1397,41 +1546,57 @@ inherited fmDoorAdmin: TfmDoorAdmin
           MinValue = 1
           TabOrder = 1
           Visible = True
-          Version = '1.5.1.2'
+          Version = '1.6.0.0'
         end
         object cmb_InsertLockTime: TComboBox
-          Left = 174
-          Top = 62
-          Width = 119
+          Left = 218
+          Top = 78
+          Width = 148
           Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 2
         end
         object chk_InsertSchedule: TAdvOfficeCheckBox
-          Left = 174
-          Top = 84
-          Width = 88
-          Height = 23
+          Left = 218
+          Top = 105
+          Width = 110
+          Height = 29
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           TabOrder = 3
           Alignment = taLeftJustify
           Caption = #49828#52992#51460#49324#50857
           ReturnIsTab = False
-          Version = '1.3.4.1'
+          Version = '1.3.7.0'
         end
       end
       object gb_CompanyInfoAdd: TAdvGroupBox
-        Left = 22
-        Top = 186
-        Width = 380
-        Height = 74
+        Left = 28
+        Top = 233
+        Width = 475
+        Height = 92
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption = #50948#52824#51221#48372
         TabOrder = 2
         object lb_CompanyAdd: TAdvSmoothLabel
-          Left = 18
-          Top = 20
-          Width = 150
-          Height = 16
+          Left = 23
+          Top = 25
+          Width = 187
+          Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1455,13 +1620,17 @@ inherited fmDoorAdmin: TfmDoorAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_DepartAdd: TAdvSmoothLabel
-          Left = 18
-          Top = 40
-          Width = 150
-          Height = 17
+          Left = 23
+          Top = 50
+          Width = 187
+          Height = 21
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1485,23 +1654,31 @@ inherited fmDoorAdmin: TfmDoorAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object cmb_InsertDongCode: TComboBox
-          Left = 174
-          Top = 20
-          Width = 119
+          Left = 218
+          Top = 25
+          Width = 148
           Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 0
           OnChange = cmb_InsertDongCodeChange
         end
         object cmb_InsertAreaCode: TComboBox
-          Left = 174
-          Top = 40
-          Width = 119
+          Left = 218
+          Top = 50
+          Width = 148
           Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 1
@@ -1509,11 +1686,15 @@ inherited fmDoorAdmin: TfmDoorAdmin
       end
     end
     object pan_DoorCodeUpdate: TAdvSmoothPanel
-      Left = -229
-      Top = 187
-      Width = 436
-      Height = 519
+      Left = -286
+      Top = 234
+      Width = 545
+      Height = 649
       Cursor = crDefault
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption.Text = #52636#51077#47928#49688#51221
       Caption.HTMLFont.Charset = DEFAULT_CHARSET
       Caption.HTMLFont.Color = clWindowText
@@ -1525,23 +1706,30 @@ inherited fmDoorAdmin: TfmDoorAdmin
       Caption.Font.Height = -15
       Caption.Font.Name = #45208#45588#44256#46357
       Caption.Font.Style = [fsBold]
-      Fill.Color = 16445929
-      Fill.ColorTo = 15587527
-      Fill.ColorMirror = 15587527
-      Fill.ColorMirrorTo = 16773863
+      Caption.ColorStart = clBlack
+      Caption.ColorEnd = clBlack
+      Caption.LineColor = 13027014
+      Fill.Color = clWhite
+      Fill.ColorTo = clWhite
+      Fill.ColorMirror = clNone
+      Fill.ColorMirrorTo = clNone
       Fill.GradientType = gtVertical
       Fill.GradientMirrorType = gtVertical
-      Fill.BorderColor = 14922381
-      Fill.Rounding = 10
-      Fill.ShadowOffset = 10
-      Fill.Glow = gmNone
-      Version = '1.2.1.0'
+      Fill.BorderColor = 13027014
+      Fill.Rounding = 0
+      Fill.ShadowOffset = 0
+      Fill.Glow = gmRadial
+      Version = '1.3.0.3'
       TabOrder = 3
       object lb_DoorUpdate: TAdvSmoothLabel
-        Left = 23
-        Top = 48
-        Width = 154
-        Height = 15
+        Left = 29
+        Top = 60
+        Width = 192
+        Height = 19
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -1565,45 +1753,68 @@ inherited fmDoorAdmin: TfmDoorAdmin
         CaptionShadow.Font.Height = -27
         CaptionShadow.Font.Name = 'Tahoma'
         CaptionShadow.Font.Style = []
-        Version = '1.5.0.1'
+        Version = '1.6.0.2'
       end
       object btn_UpdateSave: TSpeedButton
-        Left = 338
-        Top = 46
-        Width = 64
-        Height = 18
+        Left = 423
+        Top = 58
+        Width = 80
+        Height = 22
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         OnClick = btn_UpdateSaveClick
       end
       object ed_UpdateName: TAdvEdit
-        Left = 183
-        Top = 45
-        Width = 151
+        Left = 229
+        Top = 56
+        Width = 189
         Height = 20
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
         LabelFont.Height = -11
         LabelFont.Name = 'Tahoma'
         LabelFont.Style = []
+        Lookup.Font.Charset = DEFAULT_CHARSET
+        Lookup.Font.Color = clWindowText
+        Lookup.Font.Height = -13
+        Lookup.Font.Name = 'Arial'
+        Lookup.Font.Style = []
         Lookup.Separator = ';'
         Color = clWindow
         ImeName = 'Microsoft Office IME 2007'
         TabOrder = 0
+        Text = ''
         Visible = True
         OnKeyPress = ed_UpdateNameKeyPress
-        Version = '2.9.3.1'
+        Version = '3.3.2.0'
       end
       object gb_DeviceInfoUpdate: TAdvGroupBox
-        Left = 22
-        Top = 70
-        Width = 380
-        Height = 121
+        Left = 28
+        Top = 88
+        Width = 475
+        Height = 151
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption = #44592#44592#51221#48372
         TabOrder = 1
         object lb_NodeUpdate: TAdvSmoothLabel
-          Left = 18
-          Top = 25
-          Width = 150
-          Height = 16
+          Left = 23
+          Top = 31
+          Width = 187
+          Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1627,13 +1838,17 @@ inherited fmDoorAdmin: TfmDoorAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_DeviceUpdate: TAdvSmoothLabel
-          Left = 18
-          Top = 45
-          Width = 150
-          Height = 17
+          Left = 23
+          Top = 56
+          Width = 187
+          Height = 22
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1657,13 +1872,17 @@ inherited fmDoorAdmin: TfmDoorAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_LockTimeUpdate: TAdvSmoothLabel
-          Left = 18
-          Top = 67
-          Width = 150
-          Height = 16
+          Left = 23
+          Top = 84
+          Width = 187
+          Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1687,22 +1906,30 @@ inherited fmDoorAdmin: TfmDoorAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object cmb_UpdateNodeNo: TComboBox
-          Left = 174
-          Top = 23
-          Width = 119
+          Left = 218
+          Top = 29
+          Width = 148
           Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 0
         end
         object se_UpdateDeviceNo: TAdvSpinEdit
-          Left = 174
-          Top = 43
-          Width = 119
+          Left = 218
+          Top = 54
+          Width = 148
           Height = 21
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Value = 1
           FloatValue = 1.000000000000000000
           TimeValue = 0.041666666666666660
@@ -1718,41 +1945,57 @@ inherited fmDoorAdmin: TfmDoorAdmin
           MinValue = 1
           TabOrder = 1
           Visible = True
-          Version = '1.5.1.2'
+          Version = '1.6.0.0'
         end
         object cmb_UpdateLockTime: TComboBox
-          Left = 174
-          Top = 65
-          Width = 119
+          Left = 218
+          Top = 81
+          Width = 148
           Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 2
         end
         object chk_UpdateSchedule: TAdvOfficeCheckBox
-          Left = 174
-          Top = 87
-          Width = 147
-          Height = 25
+          Left = 218
+          Top = 109
+          Width = 183
+          Height = 31
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           TabOrder = 3
           Alignment = taLeftJustify
           Caption = #49828#52992#51460#49324#50857
           ReturnIsTab = False
-          Version = '1.3.4.1'
+          Version = '1.3.7.0'
         end
       end
       object gb_CompanyInfoUpdate: TAdvGroupBox
-        Left = 23
-        Top = 197
-        Width = 380
-        Height = 74
+        Left = 29
+        Top = 246
+        Width = 475
+        Height = 93
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption = #50948#52824#51221#48372
         TabOrder = 2
         object lb_CompanyUpdate: TAdvSmoothLabel
-          Left = 18
-          Top = 20
-          Width = 150
-          Height = 16
+          Left = 23
+          Top = 25
+          Width = 187
+          Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1776,13 +2019,17 @@ inherited fmDoorAdmin: TfmDoorAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_DepartUpdate: TAdvSmoothLabel
-          Left = 18
-          Top = 40
-          Width = 150
-          Height = 17
+          Left = 23
+          Top = 50
+          Width = 187
+          Height = 21
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1806,119 +2053,152 @@ inherited fmDoorAdmin: TfmDoorAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object cmb_UpdateDongCode: TComboBox
-          Left = 173
-          Top = 18
-          Width = 119
+          Left = 216
+          Top = 23
+          Width = 149
           Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 0
           OnChange = cmb_UpdateDongCodeChange
         end
         object cmb_UpdateAreaCode: TComboBox
-          Left = 173
-          Top = 38
-          Width = 119
+          Left = 216
+          Top = 48
+          Width = 149
           Height = 20
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 1
         end
       end
       object ed_OldNodeNo: TAdvEdit
-        Left = 70
-        Top = 23
-        Width = 60
+        Left = 88
+        Top = 29
+        Width = 75
         Height = 20
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
         LabelFont.Height = -11
         LabelFont.Name = 'Tahoma'
         LabelFont.Style = []
+        Lookup.Font.Charset = DEFAULT_CHARSET
+        Lookup.Font.Color = clWindowText
+        Lookup.Font.Height = -13
+        Lookup.Font.Name = 'Arial'
+        Lookup.Font.Style = []
         Lookup.Separator = ';'
         Color = clWindow
         ImeName = 'Microsoft Office IME 2007'
         TabOrder = 3
+        Text = ''
         Visible = False
         OnKeyPress = ed_UpdateNameKeyPress
-        Version = '2.9.3.1'
+        Version = '3.3.2.0'
       end
       object ed_OldDeviceNo: TAdvEdit
-        Left = 135
-        Top = 23
-        Width = 59
+        Left = 169
+        Top = 29
+        Width = 74
         Height = 20
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
         LabelFont.Height = -11
         LabelFont.Name = 'Tahoma'
         LabelFont.Style = []
+        Lookup.Font.Charset = DEFAULT_CHARSET
+        Lookup.Font.Color = clWindowText
+        Lookup.Font.Height = -13
+        Lookup.Font.Name = 'Arial'
+        Lookup.Font.Style = []
         Lookup.Separator = ';'
         Color = clWindow
         ImeName = 'Microsoft Office IME 2007'
         TabOrder = 4
+        Text = ''
         Visible = False
         OnKeyPress = ed_UpdateNameKeyPress
-        Version = '2.9.3.1'
+        Version = '3.3.2.0'
       end
     end
   end
   object AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler
     ButtonBorderColor = clNone
-    GlowButtonAppearance.BorderColor = 14727579
-    GlowButtonAppearance.BorderColorHot = 10079963
-    GlowButtonAppearance.BorderColorDown = 4548219
-    GlowButtonAppearance.BorderColorChecked = clBlack
-    GlowButtonAppearance.Color = 15653832
-    GlowButtonAppearance.ColorTo = 16178633
-    GlowButtonAppearance.ColorChecked = 11918331
-    GlowButtonAppearance.ColorCheckedTo = 7915518
-    GlowButtonAppearance.ColorDisabled = 15921906
-    GlowButtonAppearance.ColorDisabledTo = 15921906
-    GlowButtonAppearance.ColorDown = 7778289
-    GlowButtonAppearance.ColorDownTo = 4296947
-    GlowButtonAppearance.ColorHot = 15465983
-    GlowButtonAppearance.ColorHotTo = 11332863
-    GlowButtonAppearance.ColorMirror = 15586496
-    GlowButtonAppearance.ColorMirrorTo = 16245200
-    GlowButtonAppearance.ColorMirrorHot = 5888767
-    GlowButtonAppearance.ColorMirrorHotTo = 10807807
-    GlowButtonAppearance.ColorMirrorDown = 946929
-    GlowButtonAppearance.ColorMirrorDownTo = 5021693
-    GlowButtonAppearance.ColorMirrorChecked = 10480637
-    GlowButtonAppearance.ColorMirrorCheckedTo = 5682430
-    GlowButtonAppearance.ColorMirrorDisabled = 11974326
+    GlowButtonAppearance.BorderColor = 13027014
+    GlowButtonAppearance.BorderColorHot = 15381630
+    GlowButtonAppearance.BorderColorDown = 15048022
+    GlowButtonAppearance.BorderColorChecked = 16750899
+    GlowButtonAppearance.BorderColorDisabled = 11316396
+    GlowButtonAppearance.Color = 16185078
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 16750899
+    GlowButtonAppearance.ColorCheckedTo = clNone
+    GlowButtonAppearance.ColorDisabled = 15658734
+    GlowButtonAppearance.ColorDisabledTo = clNone
+    GlowButtonAppearance.ColorDown = 16573128
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16576740
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = 16185078
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = 16576740
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = 16573128
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = 16750899
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
+    GlowButtonAppearance.ColorMirrorDisabled = 15658734
     GlowButtonAppearance.ColorMirrorDisabledTo = 15921906
     GlowButtonAppearance.GradientHot = ggVertical
     GlowButtonAppearance.GradientMirrorHot = ggVertical
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
-    TabAppearance.BorderColor = clNone
-    TabAppearance.BorderColorHot = clHighlight
-    TabAppearance.BorderColorSelected = 14922381
-    TabAppearance.BorderColorSelectedHot = 6343929
+    TabRounding = 0
+    Style = tsOffice2013LightGray
+    TabAppearance.BorderColor = 13027014
+    TabAppearance.BorderColorHot = clNone
+    TabAppearance.BorderColorSelected = 13027014
+    TabAppearance.BorderColorSelectedHot = 13027014
     TabAppearance.BorderColorDisabled = clNone
-    TabAppearance.BorderColorDown = clNone
+    TabAppearance.BorderColorDown = 13027014
     TabAppearance.Color = clBtnFace
     TabAppearance.ColorTo = clWhite
-    TabAppearance.ColorSelected = 16709360
-    TabAppearance.ColorSelectedTo = 16445929
-    TabAppearance.ColorDisabled = clWhite
-    TabAppearance.ColorDisabledTo = clSilver
-    TabAppearance.ColorHot = 13432063
-    TabAppearance.ColorHotTo = 13432063
+    TabAppearance.ColorSelected = 16448250
+    TabAppearance.ColorSelectedTo = clNone
+    TabAppearance.ColorDisabled = 15658734
+    TabAppearance.ColorDisabledTo = clNone
+    TabAppearance.ColorHot = 16185078
+    TabAppearance.ColorHotTo = clNone
     TabAppearance.ColorMirror = clWhite
     TabAppearance.ColorMirrorTo = clWhite
-    TabAppearance.ColorMirrorHot = 13432063
-    TabAppearance.ColorMirrorHotTo = 9556223
-    TabAppearance.ColorMirrorSelected = 16445929
-    TabAppearance.ColorMirrorSelectedTo = 16181984
-    TabAppearance.ColorMirrorDisabled = clWhite
-    TabAppearance.ColorMirrorDisabledTo = clSilver
+    TabAppearance.ColorMirrorHot = 16185078
+    TabAppearance.ColorMirrorHotTo = clNone
+    TabAppearance.ColorMirrorSelected = 16448250
+    TabAppearance.ColorMirrorSelectedTo = clNone
+    TabAppearance.ColorMirrorDisabled = 15658734
+    TabAppearance.ColorMirrorDisabledTo = clNone
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -11
@@ -1936,13 +2216,13 @@ inherited fmDoorAdmin: TfmDoorAdmin
     TabAppearance.TextColorHot = clBlack
     TabAppearance.TextColorSelected = clBlack
     TabAppearance.TextColorDisabled = clGray
-    TabAppearance.ShadowColor = 15450020
-    TabAppearance.HighLightColorSelected = 16775871
-    TabAppearance.HighLightColorHot = 16643309
-    TabAppearance.HighLightColorSelectedHot = 12451839
-    TabAppearance.HighLightColorDown = 16776144
-    TabAppearance.BackGround.Color = 14986888
-    TabAppearance.BackGround.ColorTo = 16440004
+    TabAppearance.ShadowColor = clNone
+    TabAppearance.HighLightColorSelected = clNone
+    TabAppearance.HighLightColorHot = clNone
+    TabAppearance.HighLightColorSelectedHot = clNone
+    TabAppearance.HighLightColorDown = clNone
+    TabAppearance.BackGround.Color = 16185078
+    TabAppearance.BackGround.ColorTo = clNone
     TabAppearance.BackGround.Direction = gdHorizontal
     Left = 264
   end
@@ -1956,9 +2236,18 @@ inherited fmDoorAdmin: TfmDoorAdmin
     end
   end
   object AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler
-    Style = bsOffice2010Silver
+    AppColor.AppButtonColor = 13005312
+    AppColor.AppButtonHoverColor = 16755772
+    AppColor.TextColor = clWhite
+    AppColor.HoverColor = 16246477
+    AppColor.HoverTextColor = clBlack
+    AppColor.HoverBorderColor = 15187578
+    AppColor.SelectedColor = 15187578
+    AppColor.SelectedTextColor = clBlack
+    AppColor.SelectedBorderColor = 15187578
+    Style = bsOffice2013LightGray
     BackGroundDisplay = bdStretch
-    BorderColor = 13087391
+    BorderColor = clGray
     BorderColorHot = 15590880
     ButtonAppearance.Color = clWhite
     ButtonAppearance.ColorTo = 15590880
@@ -1974,7 +2263,7 @@ inherited fmDoorAdmin: TfmDoorAdmin
     ButtonAppearance.CaptionFont.Charset = DEFAULT_CHARSET
     ButtonAppearance.CaptionFont.Color = clWindowText
     ButtonAppearance.CaptionFont.Height = -11
-    ButtonAppearance.CaptionFont.Name = 'MS Gothic'
+    ButtonAppearance.CaptionFont.Name = 'Segoe UI'
     ButtonAppearance.CaptionFont.Style = []
     CaptionAppearance.CaptionColor = 15921133
     CaptionAppearance.CaptionColorTo = 15921133
@@ -1987,12 +2276,12 @@ inherited fmDoorAdmin: TfmDoorAdmin
     CaptionFont.Charset = DEFAULT_CHARSET
     CaptionFont.Color = clWindowText
     CaptionFont.Height = -11
-    CaptionFont.Name = 'MS Gothic'
+    CaptionFont.Name = 'Segoe UI'
     CaptionFont.Style = []
     ContainerAppearance.LineColor = clBtnShadow
     ContainerAppearance.Line3D = True
-    Color.Color = clWhite
-    Color.ColorTo = 15590880
+    Color.Color = 16448250
+    Color.ColorTo = 16448250
     Color.Direction = gdVertical
     Color.Mirror.Color = 16777214
     Color.Mirror.ColorTo = 16777214
@@ -2033,37 +2322,38 @@ inherited fmDoorAdmin: TfmDoorAdmin
     CompactGlowButtonAppearance.GradientDown = ggVertical
     CompactGlowButtonAppearance.GradientMirrorDown = ggVertical
     CompactGlowButtonAppearance.GradientChecked = ggVertical
-    DockColor.Color = 15590880
-    DockColor.ColorTo = clWhite
+    DockColor.Color = 16448250
+    DockColor.ColorTo = 16448250
     DockColor.Direction = gdHorizontal
     DockColor.Steps = 128
     FloatingWindowBorderColor = 13486790
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clBlack
     Font.Height = -27
-    Font.Name = 'MS Gothic'
+    Font.Name = 'Segoe UI'
     Font.Style = []
-    GlowButtonAppearance.BorderColor = 13815240
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.ColorTo = 15590880
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
+    GlowButtonAppearance.BorderColor = 16448250
+    GlowButtonAppearance.BorderColorHot = 15187578
+    GlowButtonAppearance.BorderColorDown = 15187578
+    GlowButtonAppearance.BorderColorChecked = 15187578
+    GlowButtonAppearance.Color = 16448250
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 15187578
+    GlowButtonAppearance.ColorCheckedTo = clNone
     GlowButtonAppearance.ColorDisabled = clNone
     GlowButtonAppearance.ColorDisabledTo = clNone
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15590880
-    GlowButtonAppearance.ColorMirrorTo = 15590880
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
+    GlowButtonAppearance.ColorDown = 15187578
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16246477
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = clNone
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = clNone
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = clNone
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = clNone
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
     GlowButtonAppearance.ColorMirrorDisabled = clNone
     GlowButtonAppearance.ColorMirrorDisabledTo = clNone
     GlowButtonAppearance.GradientHot = ggVertical
@@ -2071,6 +2361,7 @@ inherited fmDoorAdmin: TfmDoorAdmin
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
+    GroupAppearance.Background = clInfoBk
     GroupAppearance.BorderColor = 1340927
     GroupAppearance.Color = 4636927
     GroupAppearance.ColorTo = 4636927
@@ -2079,7 +2370,7 @@ inherited fmDoorAdmin: TfmDoorAdmin
     GroupAppearance.Font.Charset = DEFAULT_CHARSET
     GroupAppearance.Font.Color = clWindowText
     GroupAppearance.Font.Height = -11
-    GroupAppearance.Font.Name = 'MS Gothic'
+    GroupAppearance.Font.Name = 'Segoe UI'
     GroupAppearance.Font.Style = []
     GroupAppearance.Gradient = ggVertical
     GroupAppearance.GradientMirror = ggVertical
@@ -2174,8 +2465,8 @@ inherited fmDoorAdmin: TfmDoorAdmin
     PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -13
-    PagerCaption.Font.Name = 'MS Gothic'
+    PagerCaption.Font.Height = -17
+    PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 13815240
     QATAppearance.Color = clWhite
@@ -2183,12 +2474,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
     QATAppearance.FullSizeBorderColor = 13815240
     QATAppearance.FullSizeColor = clWhite
     QATAppearance.FullSizeColorTo = 15590880
-    RightHandleColor = clWhite
-    RightHandleColorTo = 15590880
-    RightHandleColorHot = 14285309
-    RightHandleColorHotTo = 9102333
-    RightHandleColorDown = 8122111
-    RightHandleColorDownTo = 7131391
+    RightHandleColorHot = 7368816
+    RightHandleColorHotTo = 7368816
+    RightHandleColorDown = clGray
+    RightHandleColorDownTo = clGray
     TabAppearance.BorderColor = 13815240
     TabAppearance.BorderColorHot = 12236209
     TabAppearance.BorderColorSelected = 12565174
@@ -2214,7 +2503,7 @@ inherited fmDoorAdmin: TfmDoorAdmin
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -11
-    TabAppearance.Font.Name = 'MS Gothic'
+    TabAppearance.Font.Name = 'Segoe UI'
     TabAppearance.Font.Style = []
     TabAppearance.Gradient = ggVertical
     TabAppearance.GradientMirror = ggVertical
@@ -2239,5 +2528,11 @@ inherited fmDoorAdmin: TfmDoorAdmin
     TabAppearance.BackGround.Direction = gdVertical
     Left = 308
     Top = 65532
+  end
+  object AdvFormStyler1: TAdvFormStyler
+    MetroColor = clSkyBlue
+    Style = tsOffice2013LightGray
+    Left = 640
+    Top = 64
   end
 end

@@ -1,0 +1,783 @@
+﻿unit uAlarmReport;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, W7Classes, W7Panels, AdvOfficeTabSet,
+  AdvOfficeTabSetStylers, AdvSmoothPanel, Vcl.ExtCtrls, AdvSmoothLabel,
+  Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
+  AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
+  Vcl.Mask, AdvSpin, AdvOfficeButtons, AdvPanel, Vcl.ComCtrls, AdvListV,
+  Vcl.ImgList, Vcl.Menus, AdvMenus, AdvExplorerTreeview, paramtreeview,
+  System.iniFiles, Vcl.Samples.Gauges, AdvToolBar,
+  AdvToolBarStylers, AdvAppStyler;
+
+
+type
+  TfmAlarmReport = class(TfmASubForm)
+    AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler;
+    Image1: TImage;
+    BodyPanel: TW7Panel;
+    menuTab: TAdvOfficeTabSet;
+    pan_DoorList: TAdvPanel;
+    pan_CardListHeader: TAdvSmoothPanel;
+    lb_Date: TAdvSmoothLabel;
+    cmb_ListDongCode: TComboBox;
+    ImageList1: TImageList;
+    toolslist: TImageList;
+    lb_Door: TAdvSmoothLabel;
+    dt_endDate: TDateTimePicker;
+    btn_Excel: TSpeedButton;
+    btn_Print: TSpeedButton;
+    sg_report: TAdvStringGrid;
+    SaveDialog1: TSaveDialog;
+    pan_gauge: TPanel;
+    lb_Message: TLabel;
+    Gauge1: TGauge;
+    AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler;
+    dt_StartDate: TDateTimePicker;
+    AdvFormStyler1: TAdvFormStyler;
+    procedure menuTabChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure ed_AddNameKeyPress(Sender: TObject; var Key: Char);
+    procedure FormActivate(Sender: TObject);
+    procedure AdvSmoothPanel8Resize(Sender: TObject);
+    procedure btn_SearchClick(Sender: TObject);
+    procedure ed_nameKeyPress(Sender: TObject; var Key: Char);
+    procedure btn_ExcelClick(Sender: TObject);
+    procedure btn_PrintClick(Sender: TObject);
+    procedure sg_reportResize(Sender: TObject);
+    procedure sg_reportColumnMoved(Sender: TObject; FromIndex,
+      ToIndex: Integer);
+  private
+    ListDoorCodeList : TStringList;
+    ListCompanyCodeList : TStringList;
+    ListDepartCodeList : TStringList;
+    ReportHeaderNameList : TStringList;
+    ReportFieldNameList : TStringList;
+    L_arrAccessReportIndexArray:Array of integer; //출입이벤트 리스트 순서 배열
+    L_arrRelAccessReportIndexArray:Array of integer; //출입이벤트 실제 위치
+    L_arrAccessReportShowTable : Array of integer;  //출입이벤트 조회 항목테이블
+    L_arrAccessReportSizeTable : Array of integer;  //출입이벤트 Cell Size
+    L_nShowCount : integer;
+    L_nMaxReportColCount : integer;
+    { Private declarations }
+    function AccessReportHeaderNameSetting(aList: TAdvStringGrid):Boolean;
+    function AccessReportFieldNameSetting:Boolean;
+    function ReportConfigRead:Boolean;
+    function ReportCellHide(aList:TAdvStringGrid):Boolean;
+    function ReportHeaderNameSetting:Boolean;
+    function WriteIniConfig:Boolean;
+    procedure FormNameSetting;
+    procedure FontSetting;
+    procedure ChangeAccessReportIndex(FromIndex,ToIndex:integer);
+  private
+    procedure LoadDeviceCode(cmbBox:TComboBox;aList:TStringList;aAll:Boolean);
+    procedure LoadParentCode(cmbBox:TComboBox;stringList:TStringList;aAll:Boolean);
+    procedure LoadChildCode(aParentCode:string;aPosition:integer;cmbBox:TComboBox;aList:TStringList;aAll:Boolean);
+
+    procedure AdvStrinGridSetAllCheck(Sender: TObject;bchkState:Boolean);
+
+    function GetstChangeStateName(aInputType:string):string;
+  private
+    procedure SearchAccessReport;
+  public
+    { Public declarations }
+    procedure Form_Close;
+  end;
+
+var
+  fmAlarmReport: TfmAlarmReport;
+
+implementation
+uses
+  uCommonVariable,
+  uDataBase,
+  uDBFormName,
+  uFormUtil,
+  uFunction,
+  udmCardPermit,
+  uExcelSave,
+  uFormFontUtil;
+
+{$R *.dfm}
+
+
+function TfmAlarmReport.AccessReportFieldNameSetting: Boolean;
+begin
+  ReportFieldNameList.Clear;
+  ReportFieldNameList.Add('ALTIME');
+  ReportFieldNameList.Add('DO_NAME');
+  ReportFieldNameList.Add('AE_ALARMCODE');
+  ReportFieldNameList.Add('ALNAME');
+  ReportFieldNameList.Add('AE_INSERTTIME');
+
+end;
+
+function TfmAlarmReport.AccessReportHeaderNameSetting(
+  aList: TAdvStringGrid): Boolean;
+var
+  i : integer;
+begin
+  aList.ColCount := ReportHeaderNameList.Count;
+  for i := LOW(L_arrAccessReportIndexArray) to HIGH(L_arrAccessReportIndexArray) do
+  begin
+    if (aList.ColCount - 1) < i then Exit;
+    if (ReportHeaderNameList.Count - 1) < i then Exit;
+
+    aList.cells[L_arrAccessReportIndexArray[i],0] := ReportHeaderNameList[i];
+  end;
+end;
+
+procedure TfmAlarmReport.AdvSmoothPanel8Resize(Sender: TObject);
+var
+  nWidth : integer;
+begin
+  inherited;
+end;
+
+procedure TfmAlarmReport.AdvStrinGridSetAllCheck(Sender: TObject;
+  bchkState: Boolean);
+var
+  i : integer;
+begin
+    for i:= 1 to (Sender as TAdvStringGrid).RowCount - 1  do
+    begin
+      (Sender as TAdvStringGrid).SetCheckBoxState(0,i,bchkState);
+    end;
+end;
+
+procedure TfmAlarmReport.btn_ExcelClick(Sender: TObject);
+var
+  stRefFileName,stSaveFileName:String;
+  stPrintRefPath : string;
+  nExcelRowStart:integer;
+  ini_fun : TiniFile;
+  aFileName : string;
+  stTitle : string;
+begin
+  btn_Excel.Enabled := False;
+  SaveDialog1.FileName := dmFormName.GetFormMessage('1','M00061');
+  SaveDialog1.DefaultExt := 'CSV';
+  SaveDialog1.Filter := 'CSV Files (*.CSV)|*.CSV|All Files (*.*)|*.*';
+  if SaveDialog1.Execute then
+  begin
+    stSaveFileName := SaveDialog1.FileName;
+
+    if SaveDialog1.FileName <> '' then
+    begin
+      //sg_Report.SaveToXLS(stSaveFileName,True);
+      if fileexists(stSaveFileName) then
+        deletefile(stSaveFileName);
+      if G_nLangeType =  1 then sg_Report.SaveToCSV(stSaveFileName,False)
+      else sg_Report.SaveToCSV(stSaveFileName,True);
+      //advgridexcelio1.XLSExport(stSaveFileName);
+    end;
+  end;
+  btn_Excel.Enabled := True;
+  Exit;
+  (*
+  btn_Excel.Enabled := False;
+  Screen.Cursor:= crHourGlass;
+  stTitle := dmFormName.GetFormMessage('3','M00002');
+  ini_fun := TiniFile.Create(G_stExeFolder + '\print.ini');
+  stPrintRefPath := G_stExeFolder + '\..\print\' ;
+  stPrintRefPath := ini_fun.ReadString('Config','PrintRefPath',stPrintRefPath);
+  stRefFileName  := ini_fun.ReadString('출입보고서','참조파일','ACReport.xls');
+  stRefFileName := stPrintRefPath + stRefFileName;
+  nExcelRowStart := ini_fun.ReadInteger('출입보고서','시작위치',6);
+  ini_fun.Free;
+
+  aFileName:='출입보고서';
+  SaveDialog1.FileName := aFileName;
+  if SaveDialog1.Execute then
+  begin
+    stSaveFileName := SaveDialog1.FileName;
+
+    if SaveDialog1.FileName <> '' then
+    begin
+      pan_gauge.Visible := True;
+      Screen.Cursor:= crHourGlass;
+      dmExcelSave.ExcelPrintOut(sg_Report,stRefFileName,stSaveFileName,True,nExcelRowStart,stTitle,False,False,Gauge1);
+    end;
+  end;
+  pan_gauge.Visible := False;
+  Screen.Cursor:= crDefault;
+  btn_Excel.Enabled := True;  *)
+end;
+
+procedure TfmAlarmReport.btn_PrintClick(Sender: TObject);
+var
+  stRefFileName,stSaveFileName:String;
+  stPrintRefPath : string;
+  nExcelRowStart:integer;
+  ini_fun : TiniFile;
+  stTitle : string;
+begin
+  sg_Report.Print;
+  Exit;
+(*  btn_Print.Enabled := False;
+  Screen.Cursor:= crHourGlass;
+  stTitle := '출입이력보고서';
+  ini_fun := TiniFile.Create(G_stExeFolder + '\print.ini');
+  stPrintRefPath := G_stExeFolder + '\..\print\' ;
+  stPrintRefPath := ini_fun.ReadString('환경설정','PrintRefPath',stPrintRefPath);
+  stRefFileName  := ini_fun.ReadString('출입보고서','참조파일','ACReport.xls');
+  stRefFileName := stPrintRefPath + stRefFileName;
+  nExcelRowStart := ini_fun.ReadInteger('출입보고서','시작위치',6);
+  ini_fun.Free;
+
+  dmExcelSave.ExcelPrintOut(sg_Report,stRefFileName,stSaveFileName,False,nExcelRowStart,stTitle,False,False,Gauge1);
+
+  btn_Print.Enabled := True;
+  Screen.Cursor:= crDefault; *)
+
+end;
+
+procedure TfmAlarmReport.btn_SearchClick(Sender: TObject);
+begin
+  inherited;
+  SearchAccessReport;
+end;
+
+procedure TfmAlarmReport.ChangeAccessReportIndex(FromIndex, ToIndex: integer);
+var
+  i : integer;
+  nChangData : integer;
+begin
+  nChangData := L_arrRelAccessReportIndexArray[FromIndex];
+  if FromIndex > ToIndex then   //뒤에 있는 놈이 앞으로 오는 경우
+  begin
+    for i := FromIndex downto ToIndex + 1 do
+    begin
+      L_arrRelAccessReportIndexArray[i] := L_arrRelAccessReportIndexArray[i - 1];
+    end;
+    L_arrRelAccessReportIndexArray[ToIndex] := nChangData;
+  end else   //앞에 있는 놈이 뒤로 가는 경우
+  begin
+    for i := FromIndex to ToIndex - 1 do
+    begin
+      L_arrRelAccessReportIndexArray[i] := L_arrRelAccessReportIndexArray[i + 1];
+    end;
+    L_arrRelAccessReportIndexArray[ToIndex] := nChangData;
+  end;
+
+  for i := LOW(L_arrRelAccessReportIndexArray) to HIGH(L_arrRelAccessReportIndexArray) do
+  begin
+    L_arrAccessReportIndexArray[L_arrRelAccessReportIndexArray[i]] := i;
+  end;
+
+end;
+
+procedure TfmAlarmReport.ed_AddNameKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  inherited;
+  if Key = #13 then
+  begin
+    Perform(WM_NEXTDLGCTL,0,0);
+  end;
+end;
+
+procedure TfmAlarmReport.ed_nameKeyPress(Sender: TObject; var Key: Char);
+begin
+  inherited;
+  if Key = #13 then
+  begin
+    Key := #0;
+    SearchAccessReport;
+  end;
+
+end;
+
+procedure TfmAlarmReport.FontSetting;
+begin
+  dmFormFontUtil.TravelFormFontSetting(self,G_stFontName,inttostr(G_nFontSize));
+  dmFormFontUtil.TravelAdvOfficeTabSetOfficeStylerFontSetting(AdvOfficeTabSetOfficeStyler1, G_stFontName,inttostr(G_nFontSize));
+  dmFormFontUtil.FormAdvOfficeTabSetOfficeStylerSetting(AdvOfficeTabSetOfficeStyler1,G_stFormStyle);
+  dmFormFontUtil.FormAdvToolBarOfficeStylerSetting(AdvToolBarOfficeStyler1,G_stFormStyle);
+  dmFormFontUtil.FormStyleSetting(self,AdvToolBarOfficeStyler1);
+
+end;
+
+procedure TfmAlarmReport.FormActivate(Sender: TObject);
+begin
+  inherited;
+  WindowState := wsMaximized;
+end;
+
+procedure TfmAlarmReport.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['NAME'] := inttostr(FORMALARMREPORT);
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['VALUE'] := 'FALSE';
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Execute;
+
+  WriteIniConfig;
+
+  ListDoorCodeList.Free;
+  ListCompanyCodeList.Free;
+  ListDepartCodeList.Free;
+
+  Action := caFree;
+end;
+
+procedure TfmAlarmReport.FormCreate(Sender: TObject);
+begin
+  L_nMaxReportColCount := 30;
+  L_nShowCount := 0;
+
+  ListDoorCodeList := TStringList.Create;
+  ListCompanyCodeList := TStringList.Create;
+  ListDepartCodeList := TStringList.Create;
+  ReportFieldNameList := TStringList.Create;
+  ReportHeaderNameList := TStringList.Create;
+
+  SetLength(L_arrAccessReportIndexArray,L_nMaxReportColCount + 1);
+  SetLength(L_arrRelAccessReportIndexArray,L_nMaxReportColCount + 1);
+  SetLength(L_arrAccessReportShowTable,L_nMaxReportColCount + 1);
+  SetLength(L_arrAccessReportSizeTable,L_nMaxReportColCount + 1);
+
+  menuTab.ActiveTabIndex := 1;
+  menuTabChange(self);
+
+  LoadDeviceCode(cmb_ListDongCode,ListDoorCodeList,True);
+  dt_StartDate.Date := Now;
+  dt_endDate.Date := now;
+  FontSetting;
+end;
+
+
+procedure TfmAlarmReport.FormNameSetting;
+begin
+  Caption := dmFormName.GetFormMessage('1','M00023');
+  menuTab.AdvOfficeTabs[0].Caption := dmFormName.GetFormMessage('1','M00035');
+  menuTab.AdvOfficeTabs[1].Caption := dmFormName.GetFormMessage('1','M00036');
+  pan_CardListHeader.Caption.Text := dmFormName.GetFormMessage('1','M00023');
+  lb_Date.Caption.Text := dmFormName.GetFormMessage('4','M00001');
+  lb_Door.Caption.Text := dmFormName.GetFormMessage('4','M00002');
+  btn_Excel.Caption :=  dmFormName.GetFormMessage('4','M00008');
+  btn_Print.Caption :=  dmFormName.GetFormMessage('4','M00009');
+
+  lb_Message.Caption := dmFormName.GetFormMessage('2','M00011');
+
+
+
+end;
+
+procedure TfmAlarmReport.FormShow(Sender: TObject);
+begin
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['NAME'] := inttostr(FORMALARMREPORT);
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['VALUE'] := 'TRUE';
+  self.FindSubForm('Main').FindCommand('FORMENABLE').Execute;
+
+  ReportHeaderNameSetting;
+  ReportConfigRead;
+  FormNameSetting;
+  AccessReportHeaderNameSetting(sg_Report);
+  AccessReportFieldNameSetting;
+  ReportCellHide(sg_Report);
+  SearchAccessReport;
+end;
+
+procedure TfmAlarmReport.Form_Close;
+begin
+  Close;
+end;
+
+
+
+
+function TfmAlarmReport.GetstChangeStateName(aInputType: string): string;
+begin
+  case aInputType[1] of
+    'c' : begin
+      result := dmFormName.GetFormMessage('3','M00004');
+    end;
+    'p' : begin
+      result := dmFormName.GetFormMessage('3','M00005');
+    end;
+    'm' : begin
+      result := dmFormName.GetFormMessage('3','M00006');
+    end;
+    else begin
+      result := aInputType;
+    end;
+  end;
+end;
+
+procedure TfmAlarmReport.LoadChildCode(aParentCode: string; aPosition: integer;
+  cmbBox: TComboBox; aList: TStringList; aAll: Boolean);
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  cmbBox.Items.Clear;
+  aList.Clear;
+  if aAll then
+  begin
+    cmbBox.Items.Add(dmFormName.GetFormMessage('3','M00007'));
+    aList.Add('');
+    cmbBox.ItemIndex := 0;
+  end;
+  if aParentCode = '' then Exit;
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+    stSql := 'SELECT * FROM TB_BUILDINGCODE ';
+    stSql := stSql + '  Where BC_POSITION = ' + inttostr(aPosition);
+    stSql := stSql + '  AND BC_PARENTCODE = ''' + aParentCode + ''' ';
+    stSql := stSql + '  ORDER BY idx  ';
+    with TempAdoQuery do
+    begin
+      Close;
+      sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then Exit;
+      while Not Eof do
+      begin
+        cmbBox.Items.Add(FindField('BC_NAME').AsString);
+        aList.Add(FindField('BC_CHILDCODE').AsString);
+        Next;
+      end;
+      if cmbBox.Items.Count > 0 then cmbBox.ItemIndex := 0;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+procedure TfmAlarmReport.LoadDeviceCode(cmbBox: TComboBox; aList: TStringList; aAll: Boolean);
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  cmbBox.Items.Clear;
+  aList.Clear;
+  if aAll then
+  begin
+    cmbBox.Items.Add(dmFormName.GetFormMessage('3','M00007'));
+    aList.Add('');
+    cmbBox.ItemIndex := 0;
+  end;
+
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+    stSql := 'SELECT * FROM TB_DOOR ';
+    stSql := stSql + '  ORDER BY idx  ';
+    with TempAdoQuery do
+    begin
+      Close;
+      sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then Exit;
+      while Not Eof do
+      begin
+        cmbBox.Items.Add(FindField('DO_NAME').AsString);
+        aList.Add(FillZeroNumber(FindField('ND_NODENO').AsInteger,G_nNodeCodeLength) + FillZeroNumber(strtoint(FindField('DE_DEVICEID').AsString),G_nDeviceCodeLength) + FillZeroNumber(FindField('DO_DOORNO').AsInteger,G_nDoorCodeLength));
+        Next;
+      end;
+      if cmbBox.Items.Count > 0 then cmbBox.ItemIndex := 0;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+
+
+procedure TfmAlarmReport.LoadParentCode(cmbBox: TComboBox;
+  stringList: TStringList; aAll: Boolean);
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  cmbBox.Items.Clear;
+  stringList.Clear;
+  if aAll then
+  begin
+    cmbBox.Items.Add(dmFormName.GetFormMessage('3','M00007'));
+    stringList.Add('');
+    cmbBox.ItemIndex := 0;
+  end;
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+    stSql := 'SELECT * FROM TB_BUILDINGCODE ';
+    stSql := stSql + '  Where BC_POSITION = 1 ';
+    stSql := stSql + ' ORDER BY idx  ';
+    with TempAdoQuery do
+    begin
+      Close;
+      sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then Exit;
+      while Not Eof do
+      begin
+        cmbBox.Items.Add(FindField('BC_NAME').AsString);
+        stringList.Add(FindField('BC_CHILDCODE').AsString);
+        Next;
+      end;
+      if cmbBox.Items.Count > 0 then cmbBox.ItemIndex := 0;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+procedure TfmAlarmReport.menuTabChange(Sender: TObject);
+var
+  stBuildingCode : string;
+  stAreaCode : string;
+  nIndex : integer;
+begin
+  if menuTab.ActiveTabIndex = 0 then //Ȩ
+  begin
+    if menuTab.AdvOfficeTabs.Items[0].Caption = dmFormName.GetFormMessage('1','M00035') then Close
+    else
+    begin
+      menuTab.ActiveTabIndex := 1;
+      menuTabChange(self);
+    end;
+  end;
+end;
+
+
+function TfmAlarmReport.ReportCellHide(aList: TAdvStringGrid): Boolean;
+var
+  i : integer;
+begin
+  for i := 0 to aList.ColCount - 1 do
+  begin
+    if L_arrAccessReportShowTable[i] = 0 then
+    begin
+      aList.ColWidths[L_arrAccessReportIndexArray[i]] := 0;
+    end else
+    begin
+      if L_arrAccessReportSizeTable[L_arrAccessReportIndexArray[i]] <> 0 then aList.ColWidths[L_arrAccessReportIndexArray[i]] := L_arrAccessReportSizeTable[L_arrAccessReportIndexArray[i]]
+      else aList.ColWidths[L_arrAccessReportIndexArray[i]] := 90;
+    end;
+  end;
+end;
+
+function TfmAlarmReport.ReportConfigRead: Boolean;
+var
+  ini_fun : TiniFile;
+  nShowCount : integer;
+  nSize : integer;
+  i : integer;
+begin
+  L_nShowCount := 0;
+  ini_fun := TiniFile.Create(G_stExeFolder + '\AlarmReport.INI');
+  Try
+    with ini_fun do
+    begin
+      for i := LOW(L_arrAccessReportIndexArray) to HIGH(L_arrAccessReportIndexArray) do
+      begin
+        L_arrAccessReportIndexArray[i] := ReadInteger('ALARMREPORT','IndexArray'+inttostr(i),i);
+      end;
+      for i := LOW(L_arrRelAccessReportIndexArray) to HIGH(L_arrRelAccessReportIndexArray) do
+      begin
+        L_arrRelAccessReportIndexArray[i] := ReadInteger('ALARMREPORT','RelIndexArray'+inttostr(i),i);
+      end;
+      for i := LOW(L_arrAccessReportShowTable) to HIGH(L_arrAccessReportShowTable) do
+      begin
+        L_arrAccessReportShowTable[i] := ReadInteger('ALARMREPORT','RelShowArray'+inttostr(i),1);
+        L_nShowCount := L_nShowCount + L_arrAccessReportShowTable[i];
+      end;
+      nSize := 90;
+      for i := LOW(L_arrAccessReportSizeTable) to HIGH(L_arrAccessReportSizeTable) do
+      begin
+        L_arrAccessReportSizeTable[i] := ReadInteger('ALARMREPORT','RelSizeArray'+inttostr(i),nSize);
+      end;
+    end;
+  Finally
+    ini_fun.Free;
+  End;
+end;
+
+function TfmAlarmReport.ReportHeaderNameSetting: Boolean;
+begin
+  ReportHeaderNameList.Clear;
+  ReportHeaderNameList.Add(dmFormName.GetFormMessage('4','M00143'));
+  ReportHeaderNameList.Add(dmFormName.GetFormMessage('4','M00002'));
+  ReportHeaderNameList.Add(dmFormName.GetFormMessage('4','M00144'));
+  ReportHeaderNameList.Add(dmFormName.GetFormMessage('4','M00145'));
+
+  result := True;
+
+end;
+
+procedure TfmAlarmReport.SearchAccessReport;
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+  nRow : integer;
+  stStartDate : string;
+  stEndDate : string;
+  stNodeNo : string;
+  stDeviceID : string;
+  stDoorNo : string;
+  stChangeStateName : string;
+  stCompanyCode : string;
+  stDepartCode : string;
+  i : integer;
+  stTemp : string;
+begin
+  btn_Excel.Enabled := False;
+  btn_Print.Enabled := False;
+  stStartDate := FormatDateTime('yyyymmdd',dt_StartDate.DateTime);
+  stEndDate := FormatDateTime('yyyymmdd',dt_endDate.DateTime);
+  if cmb_ListDongCode.ItemIndex > 0 then
+  begin
+    stNodeNo := copy(ListDoorCodeList.strings[cmb_ListDongCode.ItemIndex],1,G_nNodeCodeLength);
+    stDeviceID := copy(ListDoorCodeList.strings[cmb_ListDongCode.ItemIndex],G_nNodeCodeLength + 1,G_nDeviceCodeLength);
+    stDoorNo := copy(ListDoorCodeList.strings[cmb_ListDongCode.ItemIndex],G_nNodeCodeLength + G_nDeviceCodeLength + 1,G_nDoorCodeLength);
+  end;
+
+  stCompanyCode := '';
+  stDepartCode := '';
+
+  GridInit(sg_report,5);
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+    stSql := 'SELECT a.*,(a.AE_DATE + a.AE_TIME) as ALTIME,b.DO_NAME,c.AE_ALARMNAME as ALNAME FROM ';
+    stSql := stSql + ' ( ';
+    stSql := stSql + ' ( ';
+    stSql := stSql + ' (select * from TB_ALARMEVENT ) a ';
+    stSql := stSql + ' Left Join TB_DOOR b ';
+    stSql := stSql + ' ON (a.GROUP_CODE = b.GROUP_CODE ) ';
+    stSql := stSql + ' AND (a.ND_NODENO = b.ND_NODENO ) ';
+    stSql := stSql + ' AND (a.DE_DEVICEID = b.DE_DEVICEID ) ';
+    stSql := stSql + ' AND (a.DO_DOORNO = b.DO_DOORNO ) ';
+    stSql := stSql + ' ) ';
+    stSql := stSql + ' Left Join TB_ALARMCODE c ';
+    stSql := stSql + ' ON(a.GROUP_CODE = c.GROUP_CODE) ';
+    stSql := stSql + ' AND(a.AE_ALARMCODE =c.AE_ALARMCODE) ';
+    stSql := stSql + ' ) ';
+
+    stSql := stSql + ' Where a.GROUP_CODE = ''' + G_stGroupCode + ''' ';
+    stSql := stSql + ' AND a.AE_DATE BETWEEN ''' + stStartDate + ''' AND ''' + stEndDate + ''' ';
+    if cmb_ListDongCode.ItemIndex > 0 then
+    begin
+      if isDigit(stNodeNo) then
+        stSql := stSql + ' AND a.ND_NODENO = ' + inttostr(strtoint(stNodeNo));
+      stSql := stSql + ' AND a.DE_DEVICEID = ''' + stDeviceID + ''' ';
+      if isDigit(stNodeNo) then
+        stSql := stSql + ' AND a.DO_DOORNO = ' + inttostr(strtoint(stDoorNo));
+    end;
+
+    with TempAdoQuery do
+    begin
+      Close;
+      sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordcount < 1 then
+      begin
+        showmessage(dmFormName.GetFormMessage('2','M00021'));
+        Exit;
+      end;
+      with sg_report do
+      begin
+        nRow := 1;
+        RowCount := RecordCount + 1;
+        while Not Eof do
+        begin
+          for i := 0 to ReportFieldNameList.Count - 1 do
+          begin
+            stTemp := FindField(ReportFieldNameList.Strings[i]).AsString;
+            if ReportFieldNameList.Strings[i] = 'ALTIME' then stTemp := MakeDatetimeStr(stTemp);
+            cells[L_arrAccessReportIndexArray[i],nRow] := stTemp;
+          end;
+
+          nRow := nRow + 1;
+          Next;
+        end;
+      end;
+      btn_Excel.Enabled := True;
+      btn_Print.Enabled := True;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
+procedure TfmAlarmReport.sg_reportColumnMoved(Sender: TObject; FromIndex,
+  ToIndex: Integer);
+begin
+  inherited;
+  ChangeAccessReportIndex(FromIndex,ToIndex);
+
+end;
+
+procedure TfmAlarmReport.sg_reportResize(Sender: TObject);
+begin
+  inherited;
+//  sg_report.DefaultColWidth := (sg_report.Width - 20) div sg_report.ColCount;
+end;
+
+function TfmAlarmReport.WriteIniConfig: Boolean;
+var
+  ini_fun : TiniFile;
+  i : integer;
+begin
+  ini_fun := TiniFile.Create(G_stExeFolder + '\AccessReport.INI');
+  Try
+    with ini_fun do
+    begin
+      for i := LOW(L_arrAccessReportIndexArray) to HIGH(L_arrAccessReportIndexArray) do
+      begin
+        WriteInteger('ACCESSREPORT','AccessIndexArray'+inttostr(i),L_arrAccessReportIndexArray[i]);
+      end;
+      for i := LOW(L_arrRelAccessReportIndexArray) to HIGH(L_arrRelAccessReportIndexArray) do
+      begin
+        WriteInteger('ACCESSREPORT','RelAccessIndexArray'+inttostr(i),L_arrRelAccessReportIndexArray[i]);
+      end;
+      for i := 0 to sg_Report.ColCount - 1 do
+      begin
+        if i > HIGH(L_arrAccessReportSizeTable) then break;
+
+        L_arrAccessReportSizeTable[i] := sg_Report.ColWidths[i];
+        WriteInteger('ACCESSREPORT','RelAccessSizeArray' + inttostr(i),sg_Report.ColWidths[i]);
+      end;
+    end;
+  Finally
+    ini_fun.Free;
+  End;
+end;
+
+initialization
+  RegisterClass(TfmAlarmReport);
+Finalization
+  UnRegisterClass(TfmAlarmReport);
+
+end.

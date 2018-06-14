@@ -4,10 +4,10 @@ inherited fmCardAdmin: TfmCardAdmin
   BorderIcons = []
   BorderStyle = bsNone
   Caption = #52852#46300#44288#47532
-  ClientHeight = 724
-  ClientWidth = 1086
+  ClientHeight = 860
+  ClientWidth = 1340
   Font.Charset = HANGEUL_CHARSET
-  Font.Height = -12
+  Font.Height = -15
   Font.Name = 'MS Gothic'
   FormStyle = fsMDIChild
   Visible = True
@@ -16,29 +16,37 @@ inherited fmCardAdmin: TfmCardAdmin
   OnCreate = FormCreate
   OnResize = FormResize
   OnShow = FormShow
-  ExplicitWidth = 1102
-  ExplicitHeight = 762
-  PixelsPerInch = 96
-  TextHeight = 12
+  ExplicitWidth = 1358
+  ExplicitHeight = 905
+  PixelsPerInch = 120
+  TextHeight = 15
   object Image1: TImage [0]
     Left = 0
     Top = 0
-    Width = 1086
-    Height = 724
+    Width = 1340
+    Height = 860
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Align = alClient
-    ExplicitWidth = 697
-    ExplicitHeight = 506
+    ExplicitWidth = 1358
+    ExplicitHeight = 905
   end
   object BodyPanel: TW7Panel [1]
     Left = 0
     Top = 0
-    Width = 1086
-    Height = 724
+    Width = 1340
+    Height = 860
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Version = '1.0.2.0'
     Caption = 'BodyPanel'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Gothic'
     Font.Style = []
     SolidColor = clBlack
@@ -51,13 +59,15 @@ inherited fmCardAdmin: TfmCardAdmin
     Align = alClient
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 823
-    ExplicitHeight = 535
     object menuTab: TAdvOfficeTabSet
       Left = 0
       Top = 0
-      Width = 1086
-      Height = 23
+      Width = 1340
+      Height = 29
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       AdvOfficeTabs = <
         item
           Caption = #45803#44592
@@ -449,28 +459,28 @@ inherited fmCardAdmin: TfmCardAdmin
             167015090C4C6003EA2A6656038E53FDE9A8D7FD22E367138C3F762E57FF0049
             29FF0083B49D4FF3097CCB1A4CB35A84695E8D027358CAAA95215E494F2AC95F
             8563448DBEDE01ABC9E1F877E849D2E3F13C4AF5BFFFD9}
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -488,40 +498,40 @@ inherited fmCardAdmin: TfmCardAdmin
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end
         item
           Caption = #52852#46300#44288#47532
           Name = 'TOfficeTabCollectionItem2'
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -539,40 +549,40 @@ inherited fmCardAdmin: TfmCardAdmin
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end
         item
           Caption = #52852#46300#52628#44032
           Name = 'TOfficeTabCollectionItem3'
-          TabAppearance.BorderColor = 13087391
-          TabAppearance.BorderColorHot = 12236209
-          TabAppearance.BorderColorSelected = 13087391
-          TabAppearance.BorderColorSelectedHot = 13087391
+          TabAppearance.BorderColor = 13027014
+          TabAppearance.BorderColorHot = clNone
+          TabAppearance.BorderColorSelected = 13027014
+          TabAppearance.BorderColorSelectedHot = 13027014
           TabAppearance.BorderColorDisabled = clNone
-          TabAppearance.BorderColorDown = clNone
+          TabAppearance.BorderColorDown = 13027014
           TabAppearance.Color = clBtnFace
           TabAppearance.ColorTo = clWhite
-          TabAppearance.ColorSelected = 15784647
-          TabAppearance.ColorSelectedTo = 15784647
-          TabAppearance.ColorDisabled = 15921906
-          TabAppearance.ColorDisabledTo = 15921906
-          TabAppearance.ColorHot = 15920100
-          TabAppearance.ColorHotTo = 15920100
+          TabAppearance.ColorSelected = 16448250
+          TabAppearance.ColorSelectedTo = clNone
+          TabAppearance.ColorDisabled = 15658734
+          TabAppearance.ColorDisabledTo = clNone
+          TabAppearance.ColorHot = 16185078
+          TabAppearance.ColorHotTo = clNone
           TabAppearance.ColorMirror = clWhite
           TabAppearance.ColorMirrorTo = clWhite
-          TabAppearance.ColorMirrorHot = 15920100
-          TabAppearance.ColorMirrorHotTo = 15920100
-          TabAppearance.ColorMirrorSelected = 15784647
-          TabAppearance.ColorMirrorSelectedTo = 15784647
-          TabAppearance.ColorMirrorDisabled = 15921906
-          TabAppearance.ColorMirrorDisabledTo = 15921906
+          TabAppearance.ColorMirrorHot = 16185078
+          TabAppearance.ColorMirrorHotTo = clNone
+          TabAppearance.ColorMirrorSelected = 16448250
+          TabAppearance.ColorMirrorSelectedTo = clNone
+          TabAppearance.ColorMirrorDisabled = 15658734
+          TabAppearance.ColorMirrorDisabledTo = clNone
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -13
@@ -590,13 +600,13 @@ inherited fmCardAdmin: TfmCardAdmin
           TabAppearance.TextColorHot = clBlack
           TabAppearance.TextColorSelected = clBlack
           TabAppearance.TextColorDisabled = clGray
-          TabAppearance.ShadowColor = 13087391
-          TabAppearance.HighLightColorSelected = 13087391
-          TabAppearance.HighLightColorHot = 16643823
-          TabAppearance.HighLightColorSelectedHot = 15784647
-          TabAppearance.HighLightColorDown = 16181209
-          TabAppearance.BackGround.Color = 15784647
-          TabAppearance.BackGround.ColorTo = 16643823
+          TabAppearance.ShadowColor = clNone
+          TabAppearance.HighLightColorSelected = clNone
+          TabAppearance.HighLightColorHot = clNone
+          TabAppearance.HighLightColorSelectedHot = clNone
+          TabAppearance.HighLightColorDown = clNone
+          TabAppearance.BackGround.Color = 16185078
+          TabAppearance.BackGround.ColorTo = clNone
           TabAppearance.BackGround.Direction = gdHorizontal
         end>
       AdvOfficeTabSetStyler = AdvOfficeTabSetOfficeStyler1
@@ -885,15 +895,19 @@ inherited fmCardAdmin: TfmCardAdmin
       ButtonSettings.ScrollButtonPrevHint = 'Previous'
       ButtonSettings.ScrollButtonFirstHint = 'First'
       ButtonSettings.ScrollButtonLastHint = 'Last'
+      TabSettings.Rounding = 0
       OnChange = menuTabChange
-      ExplicitWidth = 823
     end
     object pan_CardList: TAdvSmoothPanel
-      Left = -6
-      Top = 29
-      Width = 675
-      Height = 606
+      Left = -8
+      Top = 36
+      Width = 844
+      Height = 758
       Cursor = crDefault
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption.Text = #52852#46300#44288#47532
       Caption.HTMLFont.Charset = DEFAULT_CHARSET
       Caption.HTMLFont.Color = clWindowText
@@ -905,63 +919,82 @@ inherited fmCardAdmin: TfmCardAdmin
       Caption.Font.Height = -15
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = [fsBold]
-      Fill.Color = 16445929
-      Fill.ColorTo = 15587527
-      Fill.ColorMirror = 15587527
-      Fill.ColorMirrorTo = 16773863
+      Caption.ColorStart = clBlack
+      Caption.ColorEnd = clBlack
+      Caption.LineColor = 13027014
+      Fill.Color = clWhite
+      Fill.ColorTo = clWhite
+      Fill.ColorMirror = clNone
+      Fill.ColorMirrorTo = clNone
       Fill.GradientType = gtVertical
       Fill.GradientMirrorType = gtVertical
-      Fill.BorderColor = 14922381
-      Fill.Rounding = 10
-      Fill.ShadowOffset = 10
-      Fill.Glow = gmNone
+      Fill.BorderColor = 13027014
+      Fill.Rounding = 0
+      Fill.ShadowOffset = 0
+      Fill.Glow = gmRadial
       Version = '1.3.0.3'
       OnResize = pan_CardListResize
       TabOrder = 1
       object btn_Search: TSpeedButton
-        Left = 353
-        Top = 31
-        Width = 125
-        Height = 29
+        Left = 441
+        Top = 39
+        Width = 157
+        Height = 36
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ParentFont = False
         OnClick = btn_SearchClick
       end
       object btn_Delete: TSpeedButton
-        Left = 570
-        Top = 506
-        Width = 75
-        Height = 21
+        Left = 713
+        Top = 633
+        Width = 93
+        Height = 26
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ParentFont = False
         OnClick = btn_DeleteClick
       end
       object btn_add: TSpeedButton
-        Left = 483
-        Top = 506
-        Width = 75
-        Height = 21
+        Left = 604
+        Top = 633
+        Width = 94
+        Height = 26
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ParentFont = False
         OnClick = btn_addClick
       end
       object lb_Company: TAdvSmoothLabel
-        Left = 27
-        Top = 32
-        Width = 150
-        Height = 18
+        Left = 34
+        Top = 40
+        Width = 187
+        Height = 23
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -988,10 +1021,14 @@ inherited fmCardAdmin: TfmCardAdmin
         Version = '1.6.0.2'
       end
       object lb_Depart: TAdvSmoothLabel
-        Left = 27
-        Top = 57
-        Width = 150
-        Height = 18
+        Left = 34
+        Top = 71
+        Width = 187
+        Height = 23
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -1018,15 +1055,19 @@ inherited fmCardAdmin: TfmCardAdmin
         Version = '1.6.0.2'
       end
       object btn_Excel: TSpeedButton
-        Left = 484
-        Top = 31
-        Width = 125
-        Height = 29
+        Left = 605
+        Top = 39
+        Width = 156
+        Height = 36
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption = 'CSV'
         Enabled = False
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         Glyph.Data = {
@@ -1145,10 +1186,14 @@ inherited fmCardAdmin: TfmCardAdmin
         OnClick = btn_ExcelClick
       end
       object ed_name: TAdvEdit
-        Left = 183
-        Top = 81
-        Width = 138
-        Height = 21
+        Left = 229
+        Top = 101
+        Width = 172
+        Height = 25
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
@@ -1164,7 +1209,7 @@ inherited fmCardAdmin: TfmCardAdmin
         Color = clWindow
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ImeName = 'Microsoft Office IME 2007'
@@ -1176,11 +1221,15 @@ inherited fmCardAdmin: TfmCardAdmin
         Version = '3.3.2.0'
       end
       object sg_CardList: TAdvStringGrid
-        Left = 27
-        Top = 148
-        Width = 618
-        Height = 330
+        Left = 34
+        Top = 185
+        Width = 772
+        Height = 413
         Cursor = crDefault
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         ColCount = 11
         DefaultColWidth = 110
         DrawingStyle = gdsClassic
@@ -1188,7 +1237,7 @@ inherited fmCardAdmin: TfmCardAdmin
         RowCount = 17
         Font.Charset = HANGEUL_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSizing, goColSizing, goEditing, goRowSelect]
@@ -1201,6 +1250,8 @@ inherited fmCardAdmin: TfmCardAdmin
         OnDblClick = sg_CardListDblClick
         OnKeyPress = sg_CardListKeyPress
         OnKeyUp = sg_CardListKeyUp
+        GridLineColor = 13027014
+        GridFixedLineColor = 13027014
         HoverRowCells = [hcNormal, hcSelected]
         OnCheckBoxClick = sg_CardListCheckBoxClick
         ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -1208,6 +1259,9 @@ inherited fmCardAdmin: TfmCardAdmin
         ActiveCellFont.Height = -13
         ActiveCellFont.Name = 'MS Gothic'
         ActiveCellFont.Style = []
+        ActiveCellColor = 16448250
+        ActiveCellColorTo = 16448250
+        BorderColor = 13027014
         ColumnHeaders.Strings = (
           ''
           #54924#49324
@@ -1218,10 +1272,18 @@ inherited fmCardAdmin: TfmCardAdmin
           #52852#46300#48264#54840
           #51204#54868#48264#54840
           #44428#54620)
-        ControlLook.FixedGradientHoverFrom = clGray
-        ControlLook.FixedGradientHoverTo = clWhite
-        ControlLook.FixedGradientDownFrom = clGray
-        ControlLook.FixedGradientDownTo = clSilver
+        ControlLook.FixedGradientMirrorFrom = 16448250
+        ControlLook.FixedGradientMirrorTo = 16448250
+        ControlLook.FixedGradientHoverFrom = 16576740
+        ControlLook.FixedGradientHoverTo = 16576740
+        ControlLook.FixedGradientHoverMirrorFrom = 16576740
+        ControlLook.FixedGradientHoverMirrorTo = 16576740
+        ControlLook.FixedGradientHoverBorder = 15381630
+        ControlLook.FixedGradientDownFrom = 16573128
+        ControlLook.FixedGradientDownTo = 16573128
+        ControlLook.FixedGradientDownMirrorFrom = 16573128
+        ControlLook.FixedGradientDownMirrorTo = 16573128
+        ControlLook.FixedGradientDownBorder = 15048022
         ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
         ControlLook.DropDownHeader.Font.Color = clWindowText
         ControlLook.DropDownHeader.Font.Height = -11
@@ -1259,6 +1321,7 @@ inherited fmCardAdmin: TfmCardAdmin
         FixedFont.Name = 'MS Gothic'
         FixedFont.Style = []
         FloatFormat = '%.2f'
+        Look = glOffice2007
         PrintSettings.DateFormat = 'dd/mm/yyyy'
         PrintSettings.Font.Charset = DEFAULT_CHARSET
         PrintSettings.Font.Color = clWindowText
@@ -1281,6 +1344,9 @@ inherited fmCardAdmin: TfmCardAdmin
         PrintSettings.FooterFont.Name = 'MS Gothic'
         PrintSettings.FooterFont.Style = []
         PrintSettings.PageNumSep = '/'
+        ScrollWidth = 21
+        SearchFooter.Color = 16448250
+        SearchFooter.ColorTo = 16448250
         SearchFooter.FindNextCaption = 'Find &next'
         SearchFooter.FindPrevCaption = 'Find &previous'
         SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -1294,7 +1360,13 @@ inherited fmCardAdmin: TfmCardAdmin
         SearchFooter.HintFindPrev = 'Find previous occurrence'
         SearchFooter.HintHighlight = 'Highlight occurrences'
         SearchFooter.MatchCaseCaption = 'Match case'
+        SelectionColor = 14327846
+        SelectionTextColor = clWhite
         SortSettings.DefaultFormat = ssAutomatic
+        SortSettings.HeaderColor = 16448250
+        SortSettings.HeaderColorTo = 16448250
+        SortSettings.HeaderMirrorColor = 16448250
+        SortSettings.HeaderMirrorColorTo = 16448250
         Version = '7.2.8.0'
         ColWidths = (
           26
@@ -1310,14 +1382,18 @@ inherited fmCardAdmin: TfmCardAdmin
           110)
       end
       object cmb_ListDongCode: TComboBox
-        Left = 183
-        Top = 31
-        Width = 138
-        Height = 21
+        Left = 229
+        Top = 39
+        Width = 172
+        Height = 25
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Style = csDropDownList
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ImeName = 'Microsoft Office IME 2007'
@@ -1326,14 +1402,18 @@ inherited fmCardAdmin: TfmCardAdmin
         OnChange = cmb_ListDongCodeChange
       end
       object cmb_ListAreaCode: TComboBox
-        Left = 183
-        Top = 56
-        Width = 138
-        Height = 21
+        Left = 229
+        Top = 70
+        Width = 172
+        Height = 25
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Style = csDropDownList
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ImeName = 'Microsoft Office IME 2007'
@@ -1342,14 +1422,18 @@ inherited fmCardAdmin: TfmCardAdmin
         OnChange = cmb_ListAreaCodeChange
       end
       object cmb_EtcSearch2: TComboBox
-        Left = 27
-        Top = 109
-        Width = 138
-        Height = 21
+        Left = 34
+        Top = 136
+        Width = 172
+        Height = 25
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Style = csDropDownList
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ImeName = 'Microsoft Office IME 2007'
@@ -1358,10 +1442,14 @@ inherited fmCardAdmin: TfmCardAdmin
         OnChange = cmb_ListAreaCodeChange
       end
       object ed_EtcSearch: TAdvEdit
-        Left = 183
-        Top = 107
-        Width = 138
-        Height = 21
+        Left = 229
+        Top = 134
+        Width = 172
+        Height = 25
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
@@ -1377,7 +1465,7 @@ inherited fmCardAdmin: TfmCardAdmin
         Color = clWindow
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ImeName = 'Microsoft Office IME 2007'
@@ -1389,14 +1477,18 @@ inherited fmCardAdmin: TfmCardAdmin
         Version = '3.3.2.0'
       end
       object cmb_EtcSearch1: TComboBox
-        Left = 27
-        Top = 82
-        Width = 138
-        Height = 21
+        Left = 34
+        Top = 103
+        Width = 172
+        Height = 25
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Style = csDropDownList
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ImeName = 'Microsoft Office IME 2007'
@@ -1405,13 +1497,18 @@ inherited fmCardAdmin: TfmCardAdmin
         OnChange = cmb_ListAreaCodeChange
       end
       object cmb_Condition1: TAdvComboBox
-        Left = 353
-        Top = 83
-        Width = 125
-        Height = 19
+        Left = 441
+        Top = 104
+        Width = 157
+        Height = 23
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Color = clWindow
         Version = '1.5.1.0'
         Visible = True
+        ButtonWidth = 23
         Style = csDropDownList
         EmptyTextStyle = []
         DropWidth = 0
@@ -1426,13 +1523,18 @@ inherited fmCardAdmin: TfmCardAdmin
         TabOrder = 7
       end
       object cmb_Condition2: TAdvComboBox
-        Left = 353
-        Top = 108
-        Width = 125
-        Height = 19
+        Left = 441
+        Top = 135
+        Width = 157
+        Height = 23
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Color = clWindow
         Version = '1.5.1.0'
         Visible = True
+        ButtonWidth = 23
         Style = csDropDownList
         EmptyTextStyle = []
         DropWidth = 0
@@ -1448,11 +1550,15 @@ inherited fmCardAdmin: TfmCardAdmin
       end
     end
     object pan_CardAdd: TAdvSmoothPanel
-      Left = 260
-      Top = 271
-      Width = 509
-      Height = 606
+      Left = 325
+      Top = 339
+      Width = 636
+      Height = 757
       Cursor = crDefault
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption.Text = #52852#46300#52628#44032
       Caption.HTMLFont.Charset = DEFAULT_CHARSET
       Caption.HTMLFont.Color = clWindowText
@@ -1464,30 +1570,41 @@ inherited fmCardAdmin: TfmCardAdmin
       Caption.Font.Height = -13
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Fill.Color = 16445929
-      Fill.ColorTo = 15587527
-      Fill.ColorMirror = 15587527
-      Fill.ColorMirrorTo = 16773863
+      Caption.ColorStart = clBlack
+      Caption.ColorEnd = clBlack
+      Caption.LineColor = 13027014
+      Fill.Color = clWhite
+      Fill.ColorTo = clWhite
+      Fill.ColorMirror = clNone
+      Fill.ColorMirrorTo = clNone
       Fill.GradientType = gtVertical
       Fill.GradientMirrorType = gtVertical
-      Fill.BorderColor = 14922381
-      Fill.Rounding = 10
-      Fill.ShadowOffset = 10
-      Fill.Glow = gmNone
+      Fill.BorderColor = 13027014
+      Fill.Rounding = 0
+      Fill.ShadowOffset = 0
+      Fill.Glow = gmRadial
       Version = '1.3.0.3'
       TabOrder = 2
       object btn_InsertSave: TSpeedButton
-        Left = 321
-        Top = 44
-        Width = 75
-        Height = 21
+        Left = 401
+        Top = 55
+        Width = 94
+        Height = 26
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         OnClick = btn_InsertSaveClick
       end
       object lb_CardnoAdd: TAdvSmoothLabel
-        Left = 25
-        Top = 45
-        Width = 150
-        Height = 19
+        Left = 31
+        Top = 56
+        Width = 188
+        Height = 24
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -1514,23 +1631,31 @@ inherited fmCardAdmin: TfmCardAdmin
         Version = '1.6.0.2'
       end
       object gb_CardInfoAdd: TAdvGroupBox
-        Left = 23
-        Top = 71
-        Width = 370
-        Height = 226
+        Left = 29
+        Top = 89
+        Width = 462
+        Height = 282
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption = #52852#46300#51221#48372
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ParentFont = False
         TabOrder = 0
         object lb_nameAdd: TAdvSmoothLabel
-          Left = 14
-          Top = 34
-          Width = 150
-          Height = 19
+          Left = 18
+          Top = 43
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1557,10 +1682,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object lb_CompanyAdd: TAdvSmoothLabel
-          Left = 13
-          Top = 57
-          Width = 150
-          Height = 19
+          Left = 16
+          Top = 71
+          Width = 188
+          Height = 24
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1587,10 +1716,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object lb_DepartAdd: TAdvSmoothLabel
-          Left = 14
-          Top = 82
-          Width = 150
-          Height = 19
+          Left = 18
+          Top = 103
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1617,10 +1750,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object lb_EmCodeAdd: TAdvSmoothLabel
-          Left = 14
-          Top = 130
-          Width = 150
-          Height = 19
+          Left = 18
+          Top = 163
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1647,10 +1784,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object lb_PhoneAdd: TAdvSmoothLabel
-          Left = 14
-          Top = 154
-          Width = 150
-          Height = 19
+          Left = 18
+          Top = 193
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1677,10 +1818,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object lb_PosiNameAdd: TAdvSmoothLabel
-          Left = 14
-          Top = 106
-          Width = 150
-          Height = 19
+          Left = 18
+          Top = 133
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1707,10 +1852,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object ed_AddName: TAdvEdit
-          Left = 180
-          Top = 34
-          Width = 138
-          Height = 19
+          Left = 225
+          Top = 43
+          Width = 173
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
@@ -1732,10 +1881,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '3.3.2.0'
         end
         object cmb_InsertDongCode: TComboBox
-          Left = 180
-          Top = 58
-          Width = 138
-          Height = 21
+          Left = 225
+          Top = 73
+          Width = 173
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 1
@@ -1743,20 +1896,28 @@ inherited fmCardAdmin: TfmCardAdmin
           OnKeyPress = ed_AddNameKeyPress
         end
         object cmb_InsertAreaCode: TComboBox
-          Left = 180
-          Top = 82
-          Width = 138
-          Height = 21
+          Left = 225
+          Top = 103
+          Width = 173
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 2
           OnKeyPress = ed_AddNameKeyPress
         end
         object ed_AddPosition: TAdvEdit
-          Left = 180
-          Top = 106
-          Width = 138
-          Height = 19
+          Left = 225
+          Top = 133
+          Width = 173
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
@@ -1778,10 +1939,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '3.3.2.0'
         end
         object ed_AddTelNo: TAdvEdit
-          Left = 180
-          Top = 154
-          Width = 138
-          Height = 19
+          Left = 225
+          Top = 193
+          Width = 173
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
@@ -1803,13 +1968,17 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '3.3.2.0'
         end
         object chk_AccPermit: TAdvOfficeCheckBox
-          Left = 14
-          Top = 178
-          Width = 238
-          Height = 23
+          Left = 18
+          Top = 223
+          Width = 297
+          Height = 28
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -13
+          Font.Height = -17
           Font.Name = 'MS Gothic'
           Font.Style = []
           ParentFont = False
@@ -1820,10 +1989,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.3.7.0'
         end
         object ed_AddEmCode: TAdvEdit
-          Left = 180
-          Top = 130
-          Width = 138
-          Height = 19
+          Left = 225
+          Top = 163
+          Width = 173
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
@@ -1846,10 +2019,14 @@ inherited fmCardAdmin: TfmCardAdmin
         end
       end
       object ed_AddCardNo: TAdvEdit
-        Left = 203
-        Top = 44
-        Width = 113
-        Height = 21
+        Left = 254
+        Top = 55
+        Width = 141
+        Height = 25
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
@@ -1865,7 +2042,7 @@ inherited fmCardAdmin: TfmCardAdmin
         Color = clWindow
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ImeName = 'Microsoft Office IME 2007'
@@ -1878,11 +2055,15 @@ inherited fmCardAdmin: TfmCardAdmin
       end
     end
     object pan_CardUpdate: TAdvSmoothPanel
-      Left = 646
-      Top = 123
-      Width = 508
-      Height = 606
+      Left = 808
+      Top = 154
+      Width = 635
+      Height = 757
       Cursor = crDefault
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption.Text = #52852#46300#49688#51221
       Caption.HTMLFont.Charset = DEFAULT_CHARSET
       Caption.HTMLFont.Color = clWindowText
@@ -1894,23 +2075,30 @@ inherited fmCardAdmin: TfmCardAdmin
       Caption.Font.Height = -13
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Fill.Color = 16445929
-      Fill.ColorTo = 15587527
-      Fill.ColorMirror = 15587527
-      Fill.ColorMirrorTo = 16773863
+      Caption.ColorStart = clBlack
+      Caption.ColorEnd = clBlack
+      Caption.LineColor = 13027014
+      Fill.Color = clWhite
+      Fill.ColorTo = clWhite
+      Fill.ColorMirror = clNone
+      Fill.ColorMirrorTo = clNone
       Fill.GradientType = gtVertical
       Fill.GradientMirrorType = gtVertical
-      Fill.BorderColor = 14922381
-      Fill.Rounding = 10
-      Fill.ShadowOffset = 10
-      Fill.Glow = gmNone
+      Fill.BorderColor = 13027014
+      Fill.Rounding = 0
+      Fill.ShadowOffset = 0
+      Fill.Glow = gmRadial
       Version = '1.3.0.3'
       TabOrder = 3
       object lb_CardnoUpdate: TAdvSmoothLabel
-        Left = 25
-        Top = 53
-        Width = 150
-        Height = 19
+        Left = 31
+        Top = 66
+        Width = 188
+        Height = 24
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -1937,23 +2125,31 @@ inherited fmCardAdmin: TfmCardAdmin
         Version = '1.6.0.2'
       end
       object btn_UpdateSave: TSpeedButton
-        Left = 336
-        Top = 52
-        Width = 75
-        Height = 21
+        Left = 420
+        Top = 65
+        Width = 94
+        Height = 26
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ParentFont = False
         OnClick = btn_UpdateSaveClick
       end
       object ed_OldCardNo: TAdvEdit
-        Left = 82
-        Top = 27
-        Width = 138
-        Height = 19
+        Left = 103
+        Top = 34
+        Width = 172
+        Height = 23
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
@@ -1975,10 +2171,14 @@ inherited fmCardAdmin: TfmCardAdmin
         Version = '3.3.2.0'
       end
       object ed_UpdateCardNo: TAdvEdit
-        Left = 202
-        Top = 52
-        Width = 114
-        Height = 21
+        Left = 253
+        Top = 65
+        Width = 142
+        Height = 25
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
@@ -1994,7 +2194,7 @@ inherited fmCardAdmin: TfmCardAdmin
         Color = clWindow
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ImeName = 'Microsoft Office IME 2007'
@@ -2006,23 +2206,31 @@ inherited fmCardAdmin: TfmCardAdmin
         Version = '3.3.2.0'
       end
       object gb_CardInfoUpdate: TAdvGroupBox
-        Left = 15
-        Top = 89
-        Width = 378
-        Height = 226
+        Left = 19
+        Top = 111
+        Width = 472
+        Height = 283
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption = #52852#46300#51221#48372
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -17
         Font.Name = 'MS Gothic'
         Font.Style = []
         ParentFont = False
         TabOrder = 2
         object lb_nameUpdate: TAdvSmoothLabel
-          Left = 14
-          Top = 34
-          Width = 150
-          Height = 19
+          Left = 18
+          Top = 43
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -2049,10 +2257,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object lb_CompanyUpdate: TAdvSmoothLabel
-          Left = 14
-          Top = 58
-          Width = 150
-          Height = 19
+          Left = 18
+          Top = 73
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -2079,10 +2291,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object lb_DepartUpdate: TAdvSmoothLabel
-          Left = 14
-          Top = 82
-          Width = 150
-          Height = 19
+          Left = 18
+          Top = 103
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -2109,10 +2325,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object lb_EmCodeUpdate: TAdvSmoothLabel
-          Left = 14
-          Top = 130
-          Width = 150
-          Height = 19
+          Left = 18
+          Top = 163
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -2139,10 +2359,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object lb_PhoneUpdate: TAdvSmoothLabel
-          Left = 14
-          Top = 154
-          Width = 150
-          Height = 19
+          Left = 18
+          Top = 193
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -2169,10 +2393,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object lb_PosiNameUpdate: TAdvSmoothLabel
-          Left = 14
-          Top = 106
-          Width = 150
-          Height = 19
+          Left = 18
+          Top = 133
+          Width = 187
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -2199,10 +2427,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.6.0.2'
         end
         object ed_UpdateName: TAdvEdit
-          Left = 172
-          Top = 34
-          Width = 138
-          Height = 19
+          Left = 215
+          Top = 43
+          Width = 173
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
@@ -2224,10 +2456,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '3.3.2.0'
         end
         object cmb_UpdateDongCode: TComboBox
-          Left = 172
-          Top = 58
-          Width = 138
-          Height = 21
+          Left = 215
+          Top = 73
+          Width = 173
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 1
@@ -2235,20 +2471,28 @@ inherited fmCardAdmin: TfmCardAdmin
           OnKeyPress = ed_AddNameKeyPress
         end
         object cmb_UpdateAreaCode: TComboBox
-          Left = 172
-          Top = 82
-          Width = 138
-          Height = 21
+          Left = 215
+          Top = 103
+          Width = 173
+          Height = 25
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Style = csDropDownList
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 2
           OnKeyPress = ed_AddNameKeyPress
         end
         object ed_UpdatePosition: TAdvEdit
-          Left = 172
-          Top = 107
-          Width = 138
-          Height = 19
+          Left = 215
+          Top = 134
+          Width = 173
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
@@ -2270,10 +2514,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '3.3.2.0'
         end
         object ed_UpdateTelNo: TAdvEdit
-          Left = 172
-          Top = 154
-          Width = 138
-          Height = 19
+          Left = 215
+          Top = 193
+          Width = 173
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
@@ -2295,10 +2543,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '3.3.2.0'
         end
         object chk_UpdateAccPermit: TAdvOfficeCheckBox
-          Left = 14
-          Top = 186
-          Width = 275
-          Height = 23
+          Left = 18
+          Top = 233
+          Width = 343
+          Height = 28
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           TabOrder = 5
           Alignment = taLeftJustify
           Caption = #44057#51008#50948#52824#51032' '#52636#51077#47928#50640' '#44428#54620' '#51088#46041#48512#50668
@@ -2306,10 +2558,14 @@ inherited fmCardAdmin: TfmCardAdmin
           Version = '1.3.7.0'
         end
         object ed_UpdateEmCode: TAdvEdit
-          Left = 172
-          Top = 130
-          Width = 138
-          Height = 19
+          Left = 215
+          Top = 163
+          Width = 173
+          Height = 23
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
@@ -2343,9 +2599,9 @@ inherited fmCardAdmin: TfmCardAdmin
     AppColor.SelectedColor = 15187578
     AppColor.SelectedTextColor = clBlack
     AppColor.SelectedBorderColor = 15187578
-    Style = bsOffice2010Silver
+    Style = bsOffice2013LightGray
     BackGroundDisplay = bdStretch
-    BorderColor = 13087391
+    BorderColor = clGray
     BorderColorHot = 15590880
     ButtonAppearance.Color = clWhite
     ButtonAppearance.ColorTo = 15590880
@@ -2361,7 +2617,7 @@ inherited fmCardAdmin: TfmCardAdmin
     ButtonAppearance.CaptionFont.Charset = DEFAULT_CHARSET
     ButtonAppearance.CaptionFont.Color = clWindowText
     ButtonAppearance.CaptionFont.Height = -11
-    ButtonAppearance.CaptionFont.Name = 'MS Gothic'
+    ButtonAppearance.CaptionFont.Name = 'Segoe UI'
     ButtonAppearance.CaptionFont.Style = []
     CaptionAppearance.CaptionColor = 15921133
     CaptionAppearance.CaptionColorTo = 15921133
@@ -2374,12 +2630,12 @@ inherited fmCardAdmin: TfmCardAdmin
     CaptionFont.Charset = DEFAULT_CHARSET
     CaptionFont.Color = clWindowText
     CaptionFont.Height = -11
-    CaptionFont.Name = 'MS Gothic'
+    CaptionFont.Name = 'Segoe UI'
     CaptionFont.Style = []
     ContainerAppearance.LineColor = clBtnShadow
     ContainerAppearance.Line3D = True
-    Color.Color = clWhite
-    Color.ColorTo = 15590880
+    Color.Color = 16448250
+    Color.ColorTo = 16448250
     Color.Direction = gdVertical
     Color.Mirror.Color = 16777214
     Color.Mirror.ColorTo = 16777214
@@ -2420,37 +2676,38 @@ inherited fmCardAdmin: TfmCardAdmin
     CompactGlowButtonAppearance.GradientDown = ggVertical
     CompactGlowButtonAppearance.GradientMirrorDown = ggVertical
     CompactGlowButtonAppearance.GradientChecked = ggVertical
-    DockColor.Color = 15590880
-    DockColor.ColorTo = clWhite
+    DockColor.Color = 16448250
+    DockColor.ColorTo = 16448250
     DockColor.Direction = gdHorizontal
     DockColor.Steps = 128
     FloatingWindowBorderColor = 13486790
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clBlack
     Font.Height = -27
-    Font.Name = 'MS Gothic'
+    Font.Name = 'Segoe UI'
     Font.Style = []
-    GlowButtonAppearance.BorderColor = 13815240
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.ColorTo = 15590880
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
+    GlowButtonAppearance.BorderColor = 16448250
+    GlowButtonAppearance.BorderColorHot = 15187578
+    GlowButtonAppearance.BorderColorDown = 15187578
+    GlowButtonAppearance.BorderColorChecked = 15187578
+    GlowButtonAppearance.Color = 16448250
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 15187578
+    GlowButtonAppearance.ColorCheckedTo = clNone
     GlowButtonAppearance.ColorDisabled = clNone
     GlowButtonAppearance.ColorDisabledTo = clNone
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15590880
-    GlowButtonAppearance.ColorMirrorTo = 15590880
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
+    GlowButtonAppearance.ColorDown = 15187578
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16246477
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = clNone
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = clNone
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = clNone
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = clNone
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
     GlowButtonAppearance.ColorMirrorDisabled = clNone
     GlowButtonAppearance.ColorMirrorDisabledTo = clNone
     GlowButtonAppearance.GradientHot = ggVertical
@@ -2467,7 +2724,7 @@ inherited fmCardAdmin: TfmCardAdmin
     GroupAppearance.Font.Charset = DEFAULT_CHARSET
     GroupAppearance.Font.Color = clWindowText
     GroupAppearance.Font.Height = -11
-    GroupAppearance.Font.Name = 'MS Gothic'
+    GroupAppearance.Font.Name = 'Segoe UI'
     GroupAppearance.Font.Style = []
     GroupAppearance.Gradient = ggVertical
     GroupAppearance.GradientMirror = ggVertical
@@ -2562,8 +2819,8 @@ inherited fmCardAdmin: TfmCardAdmin
     PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -13
-    PagerCaption.Font.Name = 'MS Gothic'
+    PagerCaption.Font.Height = -17
+    PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 13815240
     QATAppearance.Color = clWhite
@@ -2571,12 +2828,10 @@ inherited fmCardAdmin: TfmCardAdmin
     QATAppearance.FullSizeBorderColor = 13815240
     QATAppearance.FullSizeColor = clWhite
     QATAppearance.FullSizeColorTo = 15590880
-    RightHandleColor = clWhite
-    RightHandleColorTo = 15590880
-    RightHandleColorHot = 14285309
-    RightHandleColorHotTo = 9102333
-    RightHandleColorDown = 8122111
-    RightHandleColorDownTo = 7131391
+    RightHandleColorHot = 7368816
+    RightHandleColorHotTo = 7368816
+    RightHandleColorDown = clGray
+    RightHandleColorDownTo = clGray
     TabAppearance.BorderColor = 13815240
     TabAppearance.BorderColorHot = 12236209
     TabAppearance.BorderColorSelected = 12565174
@@ -2602,7 +2857,7 @@ inherited fmCardAdmin: TfmCardAdmin
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -11
-    TabAppearance.Font.Name = 'MS Gothic'
+    TabAppearance.Font.Name = 'Segoe UI'
     TabAppearance.Font.Style = []
     TabAppearance.Gradient = ggVertical
     TabAppearance.GradientMirror = ggVertical
@@ -2630,58 +2885,60 @@ inherited fmCardAdmin: TfmCardAdmin
   end
   object AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler
     ButtonBorderColor = clNone
-    GlowButtonAppearance.BorderColor = 13087391
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.Color = 16643823
-    GlowButtonAppearance.ColorTo = 15784647
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
-    GlowButtonAppearance.ColorDisabled = 15921906
-    GlowButtonAppearance.ColorDisabledTo = 15921906
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15784647
-    GlowButtonAppearance.ColorMirrorTo = 15784647
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
-    GlowButtonAppearance.ColorMirrorDisabled = 11974326
+    GlowButtonAppearance.BorderColor = 13027014
+    GlowButtonAppearance.BorderColorHot = 15381630
+    GlowButtonAppearance.BorderColorDown = 15048022
+    GlowButtonAppearance.BorderColorChecked = 16750899
+    GlowButtonAppearance.BorderColorDisabled = 11316396
+    GlowButtonAppearance.Color = 16185078
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 16750899
+    GlowButtonAppearance.ColorCheckedTo = clNone
+    GlowButtonAppearance.ColorDisabled = 15658734
+    GlowButtonAppearance.ColorDisabledTo = clNone
+    GlowButtonAppearance.ColorDown = 16573128
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16576740
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = 16185078
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = 16576740
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = 16573128
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = 16750899
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
+    GlowButtonAppearance.ColorMirrorDisabled = 15658734
     GlowButtonAppearance.ColorMirrorDisabledTo = 15921906
     GlowButtonAppearance.GradientHot = ggVertical
     GlowButtonAppearance.GradientMirrorHot = ggVertical
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
-    Style = tsOffice2010Blue
-    TabAppearance.BorderColor = 13087391
-    TabAppearance.BorderColorHot = 12236209
-    TabAppearance.BorderColorSelected = 13087391
-    TabAppearance.BorderColorSelectedHot = 13087391
+    TabRounding = 0
+    Style = tsOffice2013LightGray
+    TabAppearance.BorderColor = 13027014
+    TabAppearance.BorderColorHot = clNone
+    TabAppearance.BorderColorSelected = 13027014
+    TabAppearance.BorderColorSelectedHot = 13027014
     TabAppearance.BorderColorDisabled = clNone
-    TabAppearance.BorderColorDown = clNone
+    TabAppearance.BorderColorDown = 13027014
     TabAppearance.Color = clBtnFace
     TabAppearance.ColorTo = clWhite
-    TabAppearance.ColorSelected = 15784647
-    TabAppearance.ColorSelectedTo = 15784647
-    TabAppearance.ColorDisabled = 15921906
-    TabAppearance.ColorDisabledTo = 15921906
-    TabAppearance.ColorHot = 15920100
-    TabAppearance.ColorHotTo = 15920100
+    TabAppearance.ColorSelected = 16448250
+    TabAppearance.ColorSelectedTo = clNone
+    TabAppearance.ColorDisabled = 15658734
+    TabAppearance.ColorDisabledTo = clNone
+    TabAppearance.ColorHot = 16185078
+    TabAppearance.ColorHotTo = clNone
     TabAppearance.ColorMirror = clWhite
     TabAppearance.ColorMirrorTo = clWhite
-    TabAppearance.ColorMirrorHot = 15920100
-    TabAppearance.ColorMirrorHotTo = 15920100
-    TabAppearance.ColorMirrorSelected = 15784647
-    TabAppearance.ColorMirrorSelectedTo = 15784647
-    TabAppearance.ColorMirrorDisabled = 15921906
-    TabAppearance.ColorMirrorDisabledTo = 15921906
+    TabAppearance.ColorMirrorHot = 16185078
+    TabAppearance.ColorMirrorHotTo = clNone
+    TabAppearance.ColorMirrorSelected = 16448250
+    TabAppearance.ColorMirrorSelectedTo = clNone
+    TabAppearance.ColorMirrorDisabled = 15658734
+    TabAppearance.ColorMirrorDisabledTo = clNone
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -13
@@ -2699,13 +2956,13 @@ inherited fmCardAdmin: TfmCardAdmin
     TabAppearance.TextColorHot = clBlack
     TabAppearance.TextColorSelected = clBlack
     TabAppearance.TextColorDisabled = clGray
-    TabAppearance.ShadowColor = 13087391
-    TabAppearance.HighLightColorSelected = 13087391
-    TabAppearance.HighLightColorHot = 16643823
-    TabAppearance.HighLightColorSelectedHot = 15784647
-    TabAppearance.HighLightColorDown = 16181209
-    TabAppearance.BackGround.Color = 15784647
-    TabAppearance.BackGround.ColorTo = 16643823
+    TabAppearance.ShadowColor = clNone
+    TabAppearance.HighLightColorSelected = clNone
+    TabAppearance.HighLightColorHot = clNone
+    TabAppearance.HighLightColorSelectedHot = clNone
+    TabAppearance.HighLightColorDown = clNone
+    TabAppearance.BackGround.Color = 16185078
+    TabAppearance.BackGround.ColorTo = clNone
     TabAppearance.BackGround.Direction = gdHorizontal
     Left = 264
   end
@@ -2724,5 +2981,11 @@ inherited fmCardAdmin: TfmCardAdmin
     Options = [ofOverwritePrompt, ofHideReadOnly]
     Left = 72
     Top = 448
+  end
+  object AdvFormStyler1: TAdvFormStyler
+    MetroColor = clSkyBlue
+    Style = tsOffice2013LightGray
+    Left = 640
+    Top = 64
   end
 end

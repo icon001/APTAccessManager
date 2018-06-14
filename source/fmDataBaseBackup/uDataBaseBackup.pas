@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, ExtCtrls, StdCtrls,ADODB,ActiveX;
+  Dialogs, Buttons, ExtCtrls, StdCtrls,ADODB,ActiveX, AdvAppStyler;
 
 type
   TfmDataBaseBackup = class(TForm)
@@ -13,6 +13,7 @@ type
     btn_CardBackup: TSpeedButton;
     btn_AccessEventBackup: TSpeedButton;
     SaveDialog1: TSaveDialog;
+    AdvFormStyler1: TAdvFormStyler;
     procedure sbSaveClick(Sender: TObject);
     procedure btn_CardBackupClick(Sender: TObject);
     procedure btn_AccessEventBackupClick(Sender: TObject);

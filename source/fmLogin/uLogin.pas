@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, ExtCtrls, StdCtrls,ADODB,ActiveX, DB;
+  Dialogs, Buttons, ExtCtrls, StdCtrls,ADODB,ActiveX, DB, AdvAppStyler;
 
 type
 
@@ -30,6 +30,7 @@ type
     sbLogin: TSpeedButton;
     sbCancel: TSpeedButton;
     ADOQuery: TADOQuery;
+    AdvFormStyler1: TAdvFormStyler;
     procedure sbCancelClick(Sender: TObject);
     procedure sbLoginClick(Sender: TObject);
     procedure edPasswordKeyPress(Sender: TObject; var Key: Char);

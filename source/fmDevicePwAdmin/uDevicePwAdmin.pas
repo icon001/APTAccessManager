@@ -9,7 +9,7 @@ uses
   Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
   AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
   Vcl.Mask, AdvSpin, AdvOfficeButtons, AdvPanel, Vcl.ComCtrls, AdvListV,
-  Vcl.ImgList, Vcl.Menus, AdvMenus, AdvToolBar, AdvToolBarStylers;
+  Vcl.ImgList, Vcl.Menus, AdvMenus, AdvToolBar, AdvToolBarStylers, AdvAppStyler;
 
 type
   TfmDevicePwAdmin = class(TfmASubForm)
@@ -41,6 +41,7 @@ type
     btn_PasswordPermitDelete: TSpeedButton;
     AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler;
     AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler;
+    AdvFormStyler1: TAdvFormStyler;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);

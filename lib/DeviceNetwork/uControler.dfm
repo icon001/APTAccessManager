@@ -26,7 +26,7 @@ object dmControler: TdmControler
   end
   object ApdWinsockPort: TApdWinsockPort
     WsLocalAddresses.Strings = (
-      '192.168.0.20')
+      '192.168.0.8')
     WsLocalAddressIndex = 0
     WsPort = 'telnet'
     WsSocksServerInfo.Port = 0

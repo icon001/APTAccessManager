@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, ExtCtrls, StdCtrls,ADODB,ActiveX;
+  Dialogs, Buttons, ExtCtrls, StdCtrls,ADODB,ActiveX, AdvAppStyler;
 
 type
   TfmPwChange = class(TForm)
@@ -17,6 +17,7 @@ type
     edNewPw1: TEdit;
     lb_ReNewPassword: TLabel;
     edNewPw2: TEdit;
+    AdvFormStyler1: TAdvFormStyler;
     procedure sbCancelClick(Sender: TObject);
     procedure sbSaveClick(Sender: TObject);
     procedure edOrgpwKeyPress(Sender: TObject; var Key: Char);

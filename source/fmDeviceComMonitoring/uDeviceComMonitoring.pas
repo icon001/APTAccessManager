@@ -10,7 +10,7 @@ uses
   AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
   Vcl.Mask, AdvSpin, AdvOfficeButtons, AdvPanel, Vcl.ComCtrls, AdvListV,
   Vcl.ImgList, Vcl.Menus, AdvMenus, AdvExplorerTreeview, paramtreeview,
-  AdvToolBar, AdvToolBarStylers;
+  AdvToolBar, AdvToolBarStylers, AdvAppStyler;
 
 
 type
@@ -35,6 +35,7 @@ type
     AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler;
     chk_ACK: TAdvOfficeCheckBox;
     chk_ENQ: TAdvOfficeCheckBox;
+    AdvFormStyler1: TAdvFormStyler;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);

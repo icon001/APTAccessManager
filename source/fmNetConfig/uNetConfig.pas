@@ -93,7 +93,10 @@ type
     procedure btn_LSettingClick(Sender: TObject);
     procedure chk_MCUChangeClick(Sender: TObject);
     procedure IdUDPServer1UDPRead(AThread: TIdUDPListenerThread;
+      AData: array of Byte; ABinding: TIdSocketHandle);
+(*    procedure IdUDPServer1UDPRead(AThread: TIdUDPListenerThread;
       AData: TIdBytes; ABinding: TIdSocketHandle);
+*)
   private
     SelectMAC :string;
     bNetConfigSet : Boolean;
@@ -103,7 +106,7 @@ type
 
     Procedure ClearWiznetInfo;
     Procedure ClearLanInfo;
-    procedure DetailWizNetList(aWiznetData:string);
+    procedure DetailWizNetList(aWiznetData:Ansistring);
 
     procedure RegLanWiznet;  //UDP로 LAN 모듈 셋팅
 
@@ -121,7 +124,7 @@ var
   DoCloseWinsock : Boolean;
   StopConnection : Boolean; //연결 해제 버튼시 True
   L_bConnected : Boolean;
-  wiznetData : String;
+  wiznetData : AnsiString;
   Sent_Ver : string;
   ComBuff : string;  //수신된 메시지 버퍼
   Rcv_MsgNo     : Char;
@@ -194,10 +197,131 @@ begin
   ComBuff := '';
   MCUID := '';
 
-  IdUDPServer1.OnUDPRead := IdUDPServer1UDPRead;
+  IdUDPServer1.OnUDPRead := IdUDPServer1UDPRead;//IdUDPServer1UDPRead;
 end;
 
+procedure TfmNetConfig.IdUDPServer1UDPRead(AThread: TIdUDPListenerThread;
+  AData: array of Byte; ABinding: TIdSocketHandle);
+type
+  TData = record
+    cData: String[60];
+  end;
+var
+  DataStringStream: TStringStream;
+  Stream: TMemoryStream;
+  RecvData : AnsiString;
+  S,st : Ansistring;
+  MAcStr : string;
+  nRow : integer;
+  bSearch : Boolean;
+  nLen : integer;
+  aTemp : TData;
+  B: Byte;
+  i : integer;
+  stTemp : string;
+  strAnsiName : AnsiString;
+begin
+  DataStringStream := TStringStream.Create('');
+  Stream := TMemoryStream.Create;
+  nLen := Length(AData);
+  try
+    {DataStringStream.Write(AData[0], Length(AData));
+    stTemp:=DataStringStream.DataString;
+    RecvData := BytesToString(AData);  //Text
+    BytesToRaw(AData, aTemp, Length(AData));
+    RecvData := aTemp.cData;
+    Stream.Write(AData[0], Length(AData));
+    Stream.Position := 0;
+    RecvData := '';
+    for i := 0 to Stream.Size - 1 do
+    begin
+      Stream.ReadBuffer(B,1);
+      RecvData := RecvData + IntToHex(Trunc(B),2);
+    end;
+    RecvData := Hex2Ascii(RecvData); }
+    //RecvData := AnsiString(TEncoding.UTF8.GetString(AData));
+    SetLength(RecvData, nLen);
+    Move(AData[0],RecvData[1],nLen);
+    stTemp := Ascii2Hex(RecvData);
+    //SetString(strAnsiName, PAnsiChar(@AData[0]), nLen);
+    //RecvData := strAnsiName;
+    //RecvData := BytesToStringRaw(AData);
+//    Stream.Position := 0;
+//    Stream.ReadBuffer(RecvData,Stream.Size);
+    //DataStringStream.LoadFromStream(Stream);
+    //RecvData := DataStringStream.DataString;
+    //Stream.SetSize(Length(AData));
+        //CopyMemory(Stream.Memory, AData, Length(AData));
+        // or
+  finally
+    DataStringStream.Free;
+    Stream.Free;
+  end;
 
+  WiznetTimer.Enabled:= False;
+
+  S:= RecvData;
+
+  if  nLen < 47 then Exit;
+
+  {MAC Address}
+
+  if (copy(S,1,4) <> 'IMIN') and (copy(S,1,4) <> 'SETC')
+     and (copy(S,1,4) <> 'LNDT') and (copy(S,1,4) <> 'LNSD')
+  then Exit;
+
+  WiznetData:= S;
+  if(stTemp <>  Ascii2Hex(WiznetData)) then
+  begin
+    showmessage(Ascii2Hex(WiznetData));
+  end;
+  bWizeNetLanRecv := True; //조회 모드에서만
+
+  if bNetConfigSet then Exit;
+
+  if (copy(S,1,4) = 'IMIN') or (copy(S,1,4) <> 'SETC') then chk_ZeronType.Checked := False
+  else chk_ZeronType.Checked := True;
+
+  st:= copy(S,5,6);
+  MAcStr:= ToHexStrNoSpace(st);
+  MAcStr:=  Copy(MAcStr,1,2) + ':' +
+            Copy(MAcStr,3,2) + ':' +
+            Copy(MAcStr,5,2) + ':' +
+            Copy(MAcStr,7,2) + ':' +
+            Copy(MAcStr,9,2) + ':' +
+            Copy(MAcStr,11,2);
+  with sg_WiznetList do
+  begin
+    bSearch := False;
+    for nRow := 1 to RowCount - 1 do
+    begin
+      if cells[0,nRow] = MAcStr then
+      begin
+        cells[0,nRow] := MAcStr ;
+        cells[1,nRow] := Ascii2Hex(WiznetData);
+        sg_WiznetList.Row := nRow;
+        DetailWizNetList(WiznetData);
+        bSearch := True;
+        bWizeNetLanRecv := True; //설정 값 리턴
+      end;
+    end;
+    if Not bSearch then
+    begin
+      if Cells[0,1] <> '' then rowCount := RowCount + 1;
+      cells[0,RowCount - 1] := MAcStr ;
+      cells[1,RowCount - 1] := Ascii2Hex(WiznetData);
+      if RowCount = 2 then   DetailWizNetList(WiznetData);
+      if selectMAC = MAcStr then
+      begin
+        sg_WiznetList.Row := RowCount - 1;
+        DetailWizNetList(WiznetData);
+      end;
+    end;
+  end;
+
+end;
+
+(*
 procedure TfmNetConfig.IdUDPServer1UDPRead(AThread: TIdUDPListenerThread;
   AData: TIdBytes; ABinding: TIdSocketHandle);
 (*   // Sample
@@ -240,6 +364,7 @@ begin
   end;
 
 *)
+(*
 type
   TData = record
     cData: String[60];
@@ -348,6 +473,7 @@ begin
 
 end;
 
+*)
 procedure TfmNetConfig.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
@@ -564,24 +690,26 @@ var
 begin
   if sg_WiznetList.Cells[0,sg_WiznetList.Row] = '' then Exit;
 
-  WiznetData := sg_WiznetList.Cells[1,sg_WiznetList.Row];
+  WiznetData := Hex2Ascii(sg_WiznetList.Cells[1,sg_WiznetList.Row]);
   DetailWizNetList(WiznetData);
   SelectMAC := sg_WiznetList.Cells[0,sg_WiznetList.Row]
 
 end;
 
-procedure TfmNetConfig.DetailWizNetList(aWiznetData: string);
+procedure TfmNetConfig.DetailWizNetList(aWiznetData: Ansistring);
 var
   I: Integer;
-  S: string;
-  st: String;
-  st2: String;
+  S: Ansistring;
+  st: AnsiString;
+  st2: AnsiString;
   n: Integer;
-  MAcStr:String;
+  MAcStr:AnsiString;
+  stTemp : string;
 begin
   ClearWiznetInfo;
 
   S:= aWiznetData;
+  stTemp := Ascii2Hex(aWiznetData);
 
   //if  Length(S) < 47 then Exit;
 
@@ -827,13 +955,13 @@ type
     Data: String[50];
   end;
 var
-  st,st2 : string;
+  st,st2 : Ansistring;
   I : integer;
   No : integer;
   buf: TBytes;
 //  Buffer: TIdBytes;
 begin
-    WiznetData := sg_WiznetList.Cells[1,sg_WiznetList.Row];
+    WiznetData := Hex2Ascii(sg_WiznetList.Cells[1,sg_WiznetList.Row]);
 
     wiznetData[1]:='L';
     wiznetData[2]:='N';
@@ -848,7 +976,7 @@ begin
       //st:= FindCharCopy(IP_LLocalIP.Text,I,'.');
 
       No:= StrToInt(st);
-      st2:= st2 + Char(No);
+      st2:= st2 + AnsiChar(No);
     end;
     for I:= 1 to 4 do
     begin
@@ -862,7 +990,7 @@ begin
       st:= FindCharCopy(ed_LSunnet.Text,I,'.');
       //st:= FindCharCopy(IP_LSunnet.Text,I,'.');
       No:= StrToInt(st);
-      st2:= st2 + Char(No);
+      st2:= st2 + AnsiChar(No);
     end;
     for I:= 1 to 4 do
     begin
@@ -876,7 +1004,7 @@ begin
       st:= FindCharCopy(ed_LGateway.Text,I,'.');
       //st:= FindCharCopy(IP_LGateway.Text,I,'.');
       No:= StrToInt(st);
-      st2:= st2 + Char(No);
+      st2:= st2 + AnsiChar(No);
     end;
     for I:= 1 to 4 do
     begin
@@ -888,7 +1016,7 @@ begin
     st:= Dec2Hex(StrtoInt(ed_LLocalPort.Text),2);
     //st:= Dec2Hex(3000,2);
     if Length(st) < 4 then st:= '0'+st;
-    st2:= Chr(Hex2Dec(Copy(st,1,2)))+ Char(Hex2Dec(Copy(st,3,2)));
+    st2:= AnsiChar(Hex2Dec(Copy(st,1,2)))+ AnsiChar(Hex2Dec(Copy(st,3,2)));
     wiznetData[24]:= st2[1];
     wiznetData[25]:= st2[2];
 
@@ -900,7 +1028,7 @@ begin
       st:= FindCharCopy(Edit_ServerIp.Text,I,'.');
       //st:= FindCharCopy(IP_ServerIp.Text,I,'.');
       No:= StrToInt(st);
-      st2:= st2 + Char(No);
+      st2:= st2 + AnsiChar(No);
     end;
     for I:= 1 to 4 do
     begin
@@ -911,7 +1039,7 @@ begin
     st2:='';
     st:= Dec2Hex(StrtoInt(Edit_Serverport.Text),2);
     if Length(st) < 4 then st:= '0'+st;
-    st2:= Chr(Hex2Dec(Copy(st,1,2)))+ Char(Hex2Dec(Copy(st,3,2)));
+    st2:= Chr(Hex2Dec(Copy(st,1,2)))+ AnsiChar(Hex2Dec(Copy(st,3,2)));
     wiznetData[30]:= st2[1];
     wiznetData[31]:= st2[2];
 
@@ -964,7 +1092,7 @@ begin
     st:= Dec2Hex(StrtoInt(Edit_Time.Text),2);
     //if Length(st) < 4 then st:= '0'+st;
     st:=FillZeroStrNum(st,4);
-    st2:= Chr(Hex2Dec(Copy(st,1,2)))+ Char(Hex2Dec(Copy(st,3,2)));
+    st2:= Chr(Hex2Dec(Copy(st,1,2)))+ AnsiChar(Hex2Dec(Copy(st,3,2)));
     wiznetData[40]:= st2[1];
     wiznetData[41]:= st2[2];
 
@@ -972,19 +1100,19 @@ begin
     st2:='';
     st:= Dec2Hex(StrtoInt(Edit_Size.Text),2);
     if Length(st) < 4 then st:= '0'+st;
-    st2:= Chr(Hex2Dec(Copy(st,1,2)))+ Char(Hex2Dec(Copy(st,3,2)));
+    st2:= Chr(Hex2Dec(Copy(st,1,2)))+ AnsiChar(Hex2Dec(Copy(st,3,2)));
     wiznetData[38]:= st2[1];
     wiznetData[39]:= st2[2];
 
     {Delimeter Char}
     st:= Edit_Char.Text;
-    wiznetData[37]:= Char(Hex2Dec(st));
+    wiznetData[37]:= AnsiChar(Hex2Dec(st));
 
     {Delimeter IdleTIme}
     st2:='';
     st:= Dec2Hex(StrtoInt(Edit_Idle.Text),2);
     if Length(st) < 4 then st:= '0'+st;
-    st2:= Chr(Hex2Dec(Copy(st,1,2)))+ Char(Hex2Dec(Copy(st,3,2)));
+    st2:= Chr(Hex2Dec(Copy(st,1,2)))+ AnsiChar(Hex2Dec(Copy(st,3,2)));
     wiznetData[42]:= st2[1];
     wiznetData[43]:= st2[2];
     {Debug Mode}

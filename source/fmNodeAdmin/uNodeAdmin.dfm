@@ -4,10 +4,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
   BorderIcons = []
   BorderStyle = bsNone
   Caption = #45432#46300#44288#47532
-  ClientHeight = 369
-  ClientWidth = 727
+  ClientHeight = 723
+  ClientWidth = 1056
   Font.Charset = HANGEUL_CHARSET
-  Font.Height = -12
+  Font.Height = -15
   Font.Name = #45208#45588#44256#46357
   FormStyle = fsMDIChild
   Visible = True
@@ -16,29 +16,37 @@ inherited fmNodeAdmin: TfmNodeAdmin
   OnCreate = FormCreate
   OnResize = FormResize
   OnShow = FormShow
-  ExplicitWidth = 743
-  ExplicitHeight = 407
-  PixelsPerInch = 96
-  TextHeight = 12
+  ExplicitWidth = 1074
+  ExplicitHeight = 768
+  PixelsPerInch = 120
+  TextHeight = 15
   object Image1: TImage [0]
     Left = 0
     Top = 0
-    Width = 727
-    Height = 369
+    Width = 1056
+    Height = 723
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Align = alClient
-    ExplicitWidth = 759
-    ExplicitHeight = 445
+    ExplicitWidth = 909
+    ExplicitHeight = 461
   end
   object BodyPanel: TW7Panel [1]
-    Left = 7
+    Left = 9
     Top = 0
-    Width = 673
-    Height = 629
-    Version = '1.0.1.2'
+    Width = 841
+    Height = 786
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Version = '1.0.2.0'
     Caption = 'BodyPanel'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'Segoe UI'
     Font.Style = []
     SolidColor = clBlack
@@ -53,8 +61,12 @@ inherited fmNodeAdmin: TfmNodeAdmin
     object menuTab: TAdvOfficeTabSet
       Left = 0
       Top = 0
-      Width = 673
-      Height = 23
+      Width = 841
+      Height = 29
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       AdvOfficeTabs = <
         item
           Caption = #45803#44592
@@ -884,11 +896,15 @@ inherited fmNodeAdmin: TfmNodeAdmin
       OnChange = menuTabChange
     end
     object dongCodeList: TAdvSmoothPanel
-      Left = -5
-      Top = 28
-      Width = 675
-      Height = 606
+      Left = -6
+      Top = 35
+      Width = 844
+      Height = 758
       Cursor = crDefault
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption.Text = #45432#46300#44288#47532
       Caption.HTMLFont.Charset = DEFAULT_CHARSET
       Caption.HTMLFont.Color = clWindowText
@@ -900,23 +916,30 @@ inherited fmNodeAdmin: TfmNodeAdmin
       Caption.Font.Height = -15
       Caption.Font.Name = #45208#45588#44256#46357
       Caption.Font.Style = [fsBold]
-      Fill.Color = 16445929
-      Fill.ColorTo = 15587527
-      Fill.ColorMirror = 15587527
-      Fill.ColorMirrorTo = 16773863
+      Caption.ColorStart = clBlack
+      Caption.ColorEnd = clBlack
+      Caption.LineColor = 13027014
+      Fill.Color = clWhite
+      Fill.ColorTo = clWhite
+      Fill.ColorMirror = clNone
+      Fill.ColorMirrorTo = clNone
       Fill.GradientType = gtVertical
       Fill.GradientMirrorType = gtVertical
-      Fill.BorderColor = 14922381
-      Fill.Rounding = 10
-      Fill.ShadowOffset = 10
-      Fill.Glow = gmNone
-      Version = '1.2.1.0'
+      Fill.BorderColor = 13027014
+      Fill.Rounding = 0
+      Fill.ShadowOffset = 0
+      Fill.Glow = gmRadial
+      Version = '1.3.0.3'
       TabOrder = 1
       object lb_Nodename: TAdvSmoothLabel
-        Left = 27
-        Top = 51
-        Width = 121
-        Height = 18
+        Left = 34
+        Top = 64
+        Width = 151
+        Height = 22
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -940,61 +963,88 @@ inherited fmNodeAdmin: TfmNodeAdmin
         CaptionShadow.Font.Height = -27
         CaptionShadow.Font.Name = 'Tahoma'
         CaptionShadow.Font.Style = []
-        Version = '1.5.0.1'
+        Version = '1.6.0.2'
       end
       object btn_Search: TSpeedButton
-        Left = 297
-        Top = 51
-        Width = 65
-        Height = 18
+        Left = 371
+        Top = 64
+        Width = 82
+        Height = 22
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         OnClick = btn_SearchClick
       end
       object btn_Delete: TSpeedButton
-        Left = 581
-        Top = 419
-        Width = 64
-        Height = 18
+        Left = 726
+        Top = 524
+        Width = 80
+        Height = 22
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         OnClick = btn_DeleteClick
       end
       object btn_add: TSpeedButton
-        Left = 466
-        Top = 419
-        Width = 65
-        Height = 18
+        Left = 583
+        Top = 524
+        Width = 81
+        Height = 22
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         OnClick = btn_addClick
       end
       object ed_Nodename: TAdvEdit
-        Left = 154
-        Top = 50
-        Width = 138
-        Height = 21
+        Left = 193
+        Top = 63
+        Width = 172
+        Height = 28
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
         LabelFont.Height = -11
         LabelFont.Name = 'Tahoma'
         LabelFont.Style = []
+        Lookup.Font.Charset = DEFAULT_CHARSET
+        Lookup.Font.Color = clWindowText
+        Lookup.Font.Height = -13
+        Lookup.Font.Name = 'Arial'
+        Lookup.Font.Style = []
         Lookup.Separator = ';'
         Color = clWindow
         ImeName = 'Microsoft Office IME 2007'
         TabOrder = 0
+        Text = ''
         Visible = True
         OnChange = ed_NodenameChange
-        Version = '2.9.3.1'
+        Version = '3.3.2.0'
       end
       object sg_NodeList: TAdvStringGrid
-        Left = 27
-        Top = 82
-        Width = 618
-        Height = 330
+        Left = 34
+        Top = 103
+        Width = 772
+        Height = 412
         Cursor = crDefault
         Hint = #49688#51221#49884#50640#45716' '#54644#45817#49472#51012' '#45908#48660#53364#47533#54616#49464#50836'.'
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         ColCount = 8
         DrawingStyle = gdsClassic
         FixedCols = 0
         RowCount = 17
         Font.Charset = HANGEUL_CHARSET
         Font.Color = clWindowText
-        Font.Height = -11
+        Font.Height = -15
         Font.Name = 'Tahoma'
         Font.Style = []
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -1006,12 +1056,17 @@ inherited fmNodeAdmin: TfmNodeAdmin
         OnDblClick = sg_NodeListDblClick
         OnKeyPress = sg_NodeListKeyPress
         OnKeyUp = sg_NodeListKeyUp
+        GridLineColor = 15855083
+        GridFixedLineColor = 13745060
+        HoverRowCells = [hcNormal, hcSelected]
         OnCheckBoxClick = sg_NodeListCheckBoxClick
         ActiveCellFont.Charset = DEFAULT_CHARSET
         ActiveCellFont.Color = clWindowText
         ActiveCellFont.Height = -11
         ActiveCellFont.Name = 'Tahoma'
         ActiveCellFont.Style = [fsBold]
+        ActiveCellColor = 10344697
+        ActiveCellColorTo = 6210033
         ColumnHeaders.Strings = (
           ''
           #45432#46300#47749#52845
@@ -1021,10 +1076,18 @@ inherited fmNodeAdmin: TfmNodeAdmin
           #49884#47532#50620#54252#53944
           #45432#46300#48264#54840
           #45432#46300#53440#51077#53076#46300)
-        ControlLook.FixedGradientHoverFrom = clGray
-        ControlLook.FixedGradientHoverTo = clWhite
-        ControlLook.FixedGradientDownFrom = clGray
-        ControlLook.FixedGradientDownTo = clSilver
+        ControlLook.FixedGradientFrom = 16513526
+        ControlLook.FixedGradientTo = 15260626
+        ControlLook.FixedGradientHoverFrom = 15000287
+        ControlLook.FixedGradientHoverTo = 14406605
+        ControlLook.FixedGradientHoverMirrorFrom = 14406605
+        ControlLook.FixedGradientHoverMirrorTo = 13813180
+        ControlLook.FixedGradientHoverBorder = 12033927
+        ControlLook.FixedGradientDownFrom = 14991773
+        ControlLook.FixedGradientDownTo = 14991773
+        ControlLook.FixedGradientDownMirrorFrom = 14991773
+        ControlLook.FixedGradientDownMirrorTo = 14991773
+        ControlLook.FixedGradientDownBorder = 14991773
         ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
         ControlLook.DropDownHeader.Font.Color = clWindowText
         ControlLook.DropDownHeader.Font.Height = -11
@@ -1046,6 +1109,14 @@ inherited fmNodeAdmin: TfmNodeAdmin
         FilterDropDown.Font.Name = 'Tahoma'
         FilterDropDown.Font.Style = []
         FilterDropDownClear = '(All)'
+        FilterEdit.TypeNames.Strings = (
+          'Starts with'
+          'Ends with'
+          'Contains'
+          'Not contains'
+          'Equal'
+          'Not equal'
+          'Clear')
         FixedColWidth = 32
         FixedRowHeight = 22
         FixedFont.Charset = DEFAULT_CHARSET
@@ -1054,6 +1125,7 @@ inherited fmNodeAdmin: TfmNodeAdmin
         FixedFont.Name = 'Tahoma'
         FixedFont.Style = [fsBold]
         FloatFormat = '%.2f'
+        Look = glOffice2007
         PrintSettings.DateFormat = 'dd/mm/yyyy'
         PrintSettings.Font.Charset = DEFAULT_CHARSET
         PrintSettings.Font.Color = clWindowText
@@ -1076,6 +1148,9 @@ inherited fmNodeAdmin: TfmNodeAdmin
         PrintSettings.FooterFont.Name = 'Tahoma'
         PrintSettings.FooterFont.Style = []
         PrintSettings.PageNumSep = '/'
+        ScrollWidth = 21
+        SearchFooter.Color = 16448250
+        SearchFooter.ColorTo = 16448250
         SearchFooter.FindNextCaption = 'Find &next'
         SearchFooter.FindPrevCaption = 'Find &previous'
         SearchFooter.Font.Charset = DEFAULT_CHARSET
@@ -1089,7 +1164,14 @@ inherited fmNodeAdmin: TfmNodeAdmin
         SearchFooter.HintFindPrev = 'Find previous occurrence'
         SearchFooter.HintHighlight = 'Highlight occurrences'
         SearchFooter.MatchCaseCaption = 'Match case'
-        Version = '6.0.4.4'
+        SelectionColor = 14327846
+        SelectionTextColor = clWhite
+        SortSettings.DefaultFormat = ssAutomatic
+        SortSettings.HeaderColor = 16448250
+        SortSettings.HeaderColorTo = 16448250
+        SortSettings.HeaderMirrorColor = 16448250
+        SortSettings.HeaderMirrorColorTo = 16448250
+        Version = '7.2.8.0'
         ColWidths = (
           32
           347
@@ -1102,11 +1184,15 @@ inherited fmNodeAdmin: TfmNodeAdmin
       end
     end
     object NodeAdd: TAdvSmoothPanel
-      Left = 131
-      Top = 55
-      Width = 509
-      Height = 607
+      Left = -46
+      Top = 69
+      Width = 636
+      Height = 759
       Cursor = crDefault
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption.Text = #45432#46300#52628#44032
       Caption.HTMLFont.Charset = DEFAULT_CHARSET
       Caption.HTMLFont.Color = clWindowText
@@ -1118,23 +1204,30 @@ inherited fmNodeAdmin: TfmNodeAdmin
       Caption.Font.Height = -15
       Caption.Font.Name = #45208#45588#44256#46357
       Caption.Font.Style = [fsBold]
-      Fill.Color = 16445929
-      Fill.ColorTo = 15587527
-      Fill.ColorMirror = 15587527
-      Fill.ColorMirrorTo = 16773863
+      Caption.ColorStart = clBlack
+      Caption.ColorEnd = clBlack
+      Caption.LineColor = 13027014
+      Fill.Color = clWhite
+      Fill.ColorTo = clWhite
+      Fill.ColorMirror = clNone
+      Fill.ColorMirrorTo = clNone
       Fill.GradientType = gtVertical
       Fill.GradientMirrorType = gtVertical
-      Fill.BorderColor = 14922381
-      Fill.Rounding = 10
-      Fill.ShadowOffset = 10
-      Fill.Glow = gmNone
-      Version = '1.2.1.0'
+      Fill.BorderColor = 13027014
+      Fill.Rounding = 0
+      Fill.ShadowOffset = 0
+      Fill.Glow = gmRadial
+      Version = '1.3.0.3'
       TabOrder = 2
       object lb_NodeAdd: TAdvSmoothLabel
-        Left = 27
-        Top = 51
-        Width = 150
-        Height = 18
+        Left = 34
+        Top = 64
+        Width = 187
+        Height = 22
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -1158,20 +1251,28 @@ inherited fmNodeAdmin: TfmNodeAdmin
         CaptionShadow.Font.Height = -27
         CaptionShadow.Font.Name = 'Tahoma'
         CaptionShadow.Font.Style = []
-        Version = '1.5.0.1'
+        Version = '1.6.0.2'
       end
       object btn_InsertSave: TSpeedButton
-        Left = 380
-        Top = 48
-        Width = 65
-        Height = 18
+        Left = 475
+        Top = 60
+        Width = 81
+        Height = 23
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         OnClick = btn_InsertSaveClick
       end
       object lb_NodeTypeAdd: TAdvSmoothLabel
-        Left = 27
-        Top = 75
-        Width = 150
-        Height = 18
+        Left = 34
+        Top = 94
+        Width = 187
+        Height = 22
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -1195,34 +1296,51 @@ inherited fmNodeAdmin: TfmNodeAdmin
         CaptionShadow.Font.Height = -27
         CaptionShadow.Font.Name = 'Tahoma'
         CaptionShadow.Font.Style = []
-        Version = '1.5.0.1'
+        Version = '1.6.0.2'
       end
       object ed_InsertName: TAdvEdit
-        Left = 237
-        Top = 48
-        Width = 138
-        Height = 21
+        Left = 296
+        Top = 60
+        Width = 173
+        Height = 28
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
         LabelFont.Height = -11
         LabelFont.Name = 'Tahoma'
         LabelFont.Style = []
+        Lookup.Font.Charset = DEFAULT_CHARSET
+        Lookup.Font.Color = clWindowText
+        Lookup.Font.Height = -13
+        Lookup.Font.Name = 'Arial'
+        Lookup.Font.Style = []
         Lookup.Separator = ';'
         Color = clWindow
         ImeName = 'Microsoft Office IME 2007'
         TabOrder = 0
+        Text = ''
         Visible = True
         OnKeyPress = ed_InsertNameKeyPress
-        Version = '2.9.3.1'
+        Version = '3.3.2.0'
       end
       object cmb_InsertNodeType: TAdvComboBox
-        Left = 237
-        Top = 72
-        Width = 138
-        Height = 21
+        Left = 296
+        Top = 90
+        Width = 173
+        Height = 28
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Color = clWindow
-        Version = '1.4.0.0'
+        Version = '1.5.1.0'
         Visible = True
+        ButtonWidth = 23
+        EmptyTextStyle = []
         DropWidth = 0
         Enabled = True
         ImeName = 'Microsoft Office IME 2007'
@@ -1240,17 +1358,25 @@ inherited fmNodeAdmin: TfmNodeAdmin
         OnChange = cmb_InsertNodeTypeChange
       end
       object gb_RS232Config: TAdvGroupBox
-        Left = 27
-        Top = 103
-        Width = 414
-        Height = 82
+        Left = 34
+        Top = 129
+        Width = 517
+        Height = 102
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption = 'RS232 '#49444#51221#54872#44221
         TabOrder = 2
         object lb_rs232PortAdd: TAdvSmoothLabel
-          Left = 13
-          Top = 27
-          Width = 150
-          Height = 18
+          Left = 16
+          Top = 34
+          Width = 188
+          Height = 22
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1274,16 +1400,22 @@ inherited fmNodeAdmin: TfmNodeAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object cmb_InsertComPort: TAdvComboBox
-          Left = 210
-          Top = 27
-          Width = 138
-          Height = 21
+          Left = 263
+          Top = 34
+          Width = 172
+          Height = 28
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Color = clWindow
-          Version = '1.4.0.0'
+          Version = '1.5.1.0'
           Visible = True
+          ButtonWidth = 23
+          EmptyTextStyle = []
           DropWidth = 0
           Enabled = True
           ImeName = 'Microsoft Office IME 2007'
@@ -1301,18 +1433,26 @@ inherited fmNodeAdmin: TfmNodeAdmin
         end
       end
       object gb_TCPIPConfig: TAdvGroupBox
-        Left = 27
-        Top = 207
-        Width = 414
-        Height = 82
+        Left = 34
+        Top = 259
+        Width = 517
+        Height = 102
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption = 'TCPIP '#49444#51221#54872#44221
         TabOrder = 3
         Visible = False
         object lb_NodeIPAdd: TAdvSmoothLabel
-          Left = 27
-          Top = 23
-          Width = 150
-          Height = 19
+          Left = 34
+          Top = 29
+          Width = 187
+          Height = 24
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1336,13 +1476,17 @@ inherited fmNodeAdmin: TfmNodeAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_NodePortAdd: TAdvSmoothLabel
-          Left = 27
-          Top = 47
-          Width = 150
-          Height = 19
+          Left = 34
+          Top = 59
+          Width = 187
+          Height = 24
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1366,36 +1510,57 @@ inherited fmNodeAdmin: TfmNodeAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object ed_InsertNodeIP: TAdvEdit
-          Left = 210
-          Top = 23
-          Width = 138
-          Height = 19
+          Left = 263
+          Top = 29
+          Width = 172
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'Tahoma'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 0
+          Text = ''
           Visible = True
           OnKeyPress = ed_InsertNameKeyPress
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object ed_InsertNodePort: TAdvEdit
-          Left = 210
-          Top = 47
-          Width = 138
-          Height = 19
+          Left = 263
+          Top = 59
+          Width = 172
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'Tahoma'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           ImeName = 'Microsoft Office IME 2007'
@@ -1403,16 +1568,20 @@ inherited fmNodeAdmin: TfmNodeAdmin
           Text = '3000'
           Visible = True
           OnKeyPress = ed_InsertNameKeyPress
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
       end
     end
     object dongCodeUpdate: TAdvSmoothPanel
-      Left = -220
-      Top = 335
-      Width = 507
-      Height = 606
+      Left = -275
+      Top = 419
+      Width = 634
+      Height = 757
       Cursor = crDefault
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
       Caption.Text = #45432#46300#49688#51221
       Caption.HTMLFont.Charset = DEFAULT_CHARSET
       Caption.HTMLFont.Color = clWindowText
@@ -1424,23 +1593,30 @@ inherited fmNodeAdmin: TfmNodeAdmin
       Caption.Font.Height = -15
       Caption.Font.Name = #45208#45588#44256#46357
       Caption.Font.Style = [fsBold]
-      Fill.Color = 16445929
-      Fill.ColorTo = 15587527
-      Fill.ColorMirror = 15587527
-      Fill.ColorMirrorTo = 16773863
+      Caption.ColorStart = clBlack
+      Caption.ColorEnd = clBlack
+      Caption.LineColor = 13027014
+      Fill.Color = clWhite
+      Fill.ColorTo = clWhite
+      Fill.ColorMirror = clNone
+      Fill.ColorMirrorTo = clNone
       Fill.GradientType = gtVertical
       Fill.GradientMirrorType = gtVertical
-      Fill.BorderColor = 14922381
-      Fill.Rounding = 10
-      Fill.ShadowOffset = 10
-      Fill.Glow = gmNone
-      Version = '1.2.1.0'
+      Fill.BorderColor = 13027014
+      Fill.Rounding = 0
+      Fill.ShadowOffset = 0
+      Fill.Glow = gmRadial
+      Version = '1.3.0.3'
       TabOrder = 3
       object lb_NodeUpdate: TAdvSmoothLabel
-        Left = 27
-        Top = 51
-        Width = 150
-        Height = 18
+        Left = 34
+        Top = 64
+        Width = 187
+        Height = 22
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -1464,20 +1640,28 @@ inherited fmNodeAdmin: TfmNodeAdmin
         CaptionShadow.Font.Height = -27
         CaptionShadow.Font.Name = 'Tahoma'
         CaptionShadow.Font.Style = []
-        Version = '1.5.0.1'
+        Version = '1.6.0.2'
       end
       object btn_UpdateSave: TSpeedButton
-        Left = 374
-        Top = 48
-        Width = 65
-        Height = 18
+        Left = 468
+        Top = 60
+        Width = 81
+        Height = 23
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         OnClick = btn_UpdateSaveClick
       end
       object lb_NodeTypeUpdate: TAdvSmoothLabel
-        Left = 27
-        Top = 75
-        Width = 150
-        Height = 18
+        Left = 34
+        Top = 94
+        Width = 187
+        Height = 22
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Fill.ColorMirror = clNone
         Fill.ColorMirrorTo = clNone
         Fill.GradientType = gtVertical
@@ -1501,52 +1685,80 @@ inherited fmNodeAdmin: TfmNodeAdmin
         CaptionShadow.Font.Height = -27
         CaptionShadow.Font.Name = 'Tahoma'
         CaptionShadow.Font.Style = []
-        Version = '1.5.0.1'
+        Version = '1.6.0.2'
       end
       object ed_UpdateName: TAdvEdit
-        Left = 231
-        Top = 48
-        Width = 138
-        Height = 21
+        Left = 289
+        Top = 60
+        Width = 172
+        Height = 28
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
         LabelFont.Height = -11
         LabelFont.Name = 'Tahoma'
         LabelFont.Style = []
+        Lookup.Font.Charset = DEFAULT_CHARSET
+        Lookup.Font.Color = clWindowText
+        Lookup.Font.Height = -13
+        Lookup.Font.Name = 'Arial'
+        Lookup.Font.Style = []
         Lookup.Separator = ';'
         Color = clWindow
         ImeName = 'Microsoft Office IME 2007'
         TabOrder = 0
+        Text = ''
         Visible = True
         OnKeyPress = ed_UpdateNameKeyPress
-        Version = '2.9.3.1'
+        Version = '3.3.2.0'
       end
       object ed_UpdateNodeNo: TAdvEdit
-        Left = 82
-        Top = 27
-        Width = 138
-        Height = 21
+        Left = 103
+        Top = 34
+        Width = 172
+        Height = 28
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        EmptyTextStyle = []
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
         LabelFont.Height = -11
         LabelFont.Name = 'Tahoma'
         LabelFont.Style = []
+        Lookup.Font.Charset = DEFAULT_CHARSET
+        Lookup.Font.Color = clWindowText
+        Lookup.Font.Height = -13
+        Lookup.Font.Name = 'Arial'
+        Lookup.Font.Style = []
         Lookup.Separator = ';'
         Color = clWindow
         ImeName = 'Microsoft Office IME 2007'
         TabOrder = 1
+        Text = ''
         Visible = False
         OnKeyPress = ed_InsertNameKeyPress
-        Version = '2.9.3.1'
+        Version = '3.3.2.0'
       end
       object cmb_UpdateNodeType: TAdvComboBox
-        Left = 231
-        Top = 72
-        Width = 138
-        Height = 21
+        Left = 289
+        Top = 90
+        Width = 172
+        Height = 28
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Color = clWindow
-        Version = '1.4.0.0'
+        Version = '1.5.1.0'
         Visible = True
+        ButtonWidth = 23
+        EmptyTextStyle = []
         DropWidth = 0
         Enabled = True
         ImeName = 'Microsoft Office IME 2007'
@@ -1564,17 +1776,25 @@ inherited fmNodeAdmin: TfmNodeAdmin
         OnChange = cmb_UpdateNodeTypeChange
       end
       object gb_UpdateRS232Config: TAdvGroupBox
-        Left = 27
-        Top = 99
-        Width = 414
-        Height = 82
+        Left = 34
+        Top = 124
+        Width = 517
+        Height = 102
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption = 'RS232 '#49444#51221#54872#44221
         TabOrder = 3
         object lb_rs232PortUpdate: TAdvSmoothLabel
-          Left = 13
-          Top = 27
-          Width = 150
-          Height = 18
+          Left = 16
+          Top = 34
+          Width = 188
+          Height = 22
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1598,16 +1818,22 @@ inherited fmNodeAdmin: TfmNodeAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object cmb_UpdateComPort: TAdvComboBox
-          Left = 202
-          Top = 26
-          Width = 138
-          Height = 21
+          Left = 253
+          Top = 33
+          Width = 172
+          Height = 28
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Color = clWindow
-          Version = '1.4.0.0'
+          Version = '1.5.1.0'
           Visible = True
+          ButtonWidth = 23
+          EmptyTextStyle = []
           DropWidth = 0
           Enabled = True
           ImeName = 'Microsoft Office IME 2007'
@@ -1625,18 +1851,26 @@ inherited fmNodeAdmin: TfmNodeAdmin
         end
       end
       object gb_UpdateTCPIPConfig: TAdvGroupBox
-        Left = 27
-        Top = 207
-        Width = 414
-        Height = 82
+        Left = 34
+        Top = 259
+        Width = 517
+        Height = 102
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
         Caption = 'TCPIP '#49444#51221#54872#44221
         TabOrder = 4
         Visible = False
         object lb_NodeIPUpdate: TAdvSmoothLabel
-          Left = 27
-          Top = 23
-          Width = 150
-          Height = 19
+          Left = 34
+          Top = 29
+          Width = 187
+          Height = 24
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1660,13 +1894,17 @@ inherited fmNodeAdmin: TfmNodeAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object lb_NodePortUpdate: TAdvSmoothLabel
-          Left = 27
-          Top = 47
-          Width = 150
-          Height = 19
+          Left = 34
+          Top = 59
+          Width = 187
+          Height = 24
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -1690,100 +1928,125 @@ inherited fmNodeAdmin: TfmNodeAdmin
           CaptionShadow.Font.Height = -27
           CaptionShadow.Font.Name = 'Tahoma'
           CaptionShadow.Font.Style = []
-          Version = '1.5.0.1'
+          Version = '1.6.0.2'
         end
         object ed_UpdateNodeIP: TAdvEdit
-          Left = 202
-          Top = 23
-          Width = 138
-          Height = 19
+          Left = 253
+          Top = 29
+          Width = 172
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'Tahoma'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 0
+          Text = ''
           Visible = True
           OnKeyPress = ed_InsertNameKeyPress
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
         object ed_UpdateNodePort: TAdvEdit
-          Left = 202
-          Top = 47
-          Width = 138
-          Height = 19
+          Left = 253
+          Top = 59
+          Width = 172
+          Height = 26
+          Margins.Left = 4
+          Margins.Top = 4
+          Margins.Right = 4
+          Margins.Bottom = 4
+          EmptyTextStyle = []
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
           LabelFont.Name = 'Tahoma'
           LabelFont.Style = []
+          Lookup.Font.Charset = DEFAULT_CHARSET
+          Lookup.Font.Color = clWindowText
+          Lookup.Font.Height = -13
+          Lookup.Font.Name = 'Arial'
+          Lookup.Font.Style = []
           Lookup.Separator = ';'
           Color = clWindow
           ImeName = 'Microsoft Office IME 2007'
           TabOrder = 1
+          Text = ''
           Visible = True
           OnKeyPress = ed_InsertNameKeyPress
-          Version = '2.9.3.1'
+          Version = '3.3.2.0'
         end
       end
     end
   end
   object AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler
     ButtonBorderColor = clNone
-    GlowButtonAppearance.BorderColor = 14727579
-    GlowButtonAppearance.BorderColorHot = 10079963
-    GlowButtonAppearance.BorderColorDown = 4548219
-    GlowButtonAppearance.BorderColorChecked = clBlack
-    GlowButtonAppearance.Color = 15653832
-    GlowButtonAppearance.ColorTo = 16178633
-    GlowButtonAppearance.ColorChecked = 11918331
-    GlowButtonAppearance.ColorCheckedTo = 7915518
-    GlowButtonAppearance.ColorDisabled = 15921906
-    GlowButtonAppearance.ColorDisabledTo = 15921906
-    GlowButtonAppearance.ColorDown = 7778289
-    GlowButtonAppearance.ColorDownTo = 4296947
-    GlowButtonAppearance.ColorHot = 15465983
-    GlowButtonAppearance.ColorHotTo = 11332863
-    GlowButtonAppearance.ColorMirror = 15586496
-    GlowButtonAppearance.ColorMirrorTo = 16245200
-    GlowButtonAppearance.ColorMirrorHot = 5888767
-    GlowButtonAppearance.ColorMirrorHotTo = 10807807
-    GlowButtonAppearance.ColorMirrorDown = 946929
-    GlowButtonAppearance.ColorMirrorDownTo = 5021693
-    GlowButtonAppearance.ColorMirrorChecked = 10480637
-    GlowButtonAppearance.ColorMirrorCheckedTo = 5682430
-    GlowButtonAppearance.ColorMirrorDisabled = 11974326
+    GlowButtonAppearance.BorderColor = 13027014
+    GlowButtonAppearance.BorderColorHot = 15381630
+    GlowButtonAppearance.BorderColorDown = 15048022
+    GlowButtonAppearance.BorderColorChecked = 16750899
+    GlowButtonAppearance.BorderColorDisabled = 11316396
+    GlowButtonAppearance.Color = 16185078
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 16750899
+    GlowButtonAppearance.ColorCheckedTo = clNone
+    GlowButtonAppearance.ColorDisabled = 15658734
+    GlowButtonAppearance.ColorDisabledTo = clNone
+    GlowButtonAppearance.ColorDown = 16573128
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16576740
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = 16185078
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = 16576740
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = 16573128
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = 16750899
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
+    GlowButtonAppearance.ColorMirrorDisabled = 15658734
     GlowButtonAppearance.ColorMirrorDisabledTo = 15921906
     GlowButtonAppearance.GradientHot = ggVertical
     GlowButtonAppearance.GradientMirrorHot = ggVertical
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
-    TabAppearance.BorderColor = clNone
-    TabAppearance.BorderColorHot = clHighlight
-    TabAppearance.BorderColorSelected = 14922381
-    TabAppearance.BorderColorSelectedHot = 6343929
+    TabRounding = 0
+    Style = tsOffice2013LightGray
+    TabAppearance.BorderColor = 13027014
+    TabAppearance.BorderColorHot = clNone
+    TabAppearance.BorderColorSelected = 13027014
+    TabAppearance.BorderColorSelectedHot = 13027014
     TabAppearance.BorderColorDisabled = clNone
-    TabAppearance.BorderColorDown = clNone
+    TabAppearance.BorderColorDown = 13027014
     TabAppearance.Color = clBtnFace
     TabAppearance.ColorTo = clWhite
-    TabAppearance.ColorSelected = 16709360
-    TabAppearance.ColorSelectedTo = 16445929
-    TabAppearance.ColorDisabled = clWhite
-    TabAppearance.ColorDisabledTo = clSilver
-    TabAppearance.ColorHot = 13432063
-    TabAppearance.ColorHotTo = 13432063
+    TabAppearance.ColorSelected = 16448250
+    TabAppearance.ColorSelectedTo = clNone
+    TabAppearance.ColorDisabled = 15658734
+    TabAppearance.ColorDisabledTo = clNone
+    TabAppearance.ColorHot = 16185078
+    TabAppearance.ColorHotTo = clNone
     TabAppearance.ColorMirror = clWhite
     TabAppearance.ColorMirrorTo = clWhite
-    TabAppearance.ColorMirrorHot = 13432063
-    TabAppearance.ColorMirrorHotTo = 9556223
-    TabAppearance.ColorMirrorSelected = 16445929
-    TabAppearance.ColorMirrorSelectedTo = 16181984
-    TabAppearance.ColorMirrorDisabled = clWhite
-    TabAppearance.ColorMirrorDisabledTo = clSilver
+    TabAppearance.ColorMirrorHot = 16185078
+    TabAppearance.ColorMirrorHotTo = clNone
+    TabAppearance.ColorMirrorSelected = 16448250
+    TabAppearance.ColorMirrorSelectedTo = clNone
+    TabAppearance.ColorMirrorDisabled = 15658734
+    TabAppearance.ColorMirrorDisabledTo = clNone
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -11
@@ -1801,20 +2064,29 @@ inherited fmNodeAdmin: TfmNodeAdmin
     TabAppearance.TextColorHot = clBlack
     TabAppearance.TextColorSelected = clBlack
     TabAppearance.TextColorDisabled = clGray
-    TabAppearance.ShadowColor = 15450020
-    TabAppearance.HighLightColorSelected = 16775871
-    TabAppearance.HighLightColorHot = 16643309
-    TabAppearance.HighLightColorSelectedHot = 12451839
-    TabAppearance.HighLightColorDown = 16776144
-    TabAppearance.BackGround.Color = 14986888
-    TabAppearance.BackGround.ColorTo = 16440004
+    TabAppearance.ShadowColor = clNone
+    TabAppearance.HighLightColorSelected = clNone
+    TabAppearance.HighLightColorHot = clNone
+    TabAppearance.HighLightColorSelectedHot = clNone
+    TabAppearance.HighLightColorDown = clNone
+    TabAppearance.BackGround.Color = 16185078
+    TabAppearance.BackGround.ColorTo = clNone
     TabAppearance.BackGround.Direction = gdHorizontal
     Left = 264
   end
   object AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler
-    Style = bsOffice2010Silver
+    AppColor.AppButtonColor = 13005312
+    AppColor.AppButtonHoverColor = 16755772
+    AppColor.TextColor = clWhite
+    AppColor.HoverColor = 16246477
+    AppColor.HoverTextColor = clBlack
+    AppColor.HoverBorderColor = 15187578
+    AppColor.SelectedColor = 15187578
+    AppColor.SelectedTextColor = clBlack
+    AppColor.SelectedBorderColor = 15187578
+    Style = bsOffice2013LightGray
     BackGroundDisplay = bdStretch
-    BorderColor = 13087391
+    BorderColor = clGray
     BorderColorHot = 15590880
     ButtonAppearance.Color = clWhite
     ButtonAppearance.ColorTo = 15590880
@@ -1830,7 +2102,7 @@ inherited fmNodeAdmin: TfmNodeAdmin
     ButtonAppearance.CaptionFont.Charset = DEFAULT_CHARSET
     ButtonAppearance.CaptionFont.Color = clWindowText
     ButtonAppearance.CaptionFont.Height = -11
-    ButtonAppearance.CaptionFont.Name = 'MS Gothic'
+    ButtonAppearance.CaptionFont.Name = 'Segoe UI'
     ButtonAppearance.CaptionFont.Style = []
     CaptionAppearance.CaptionColor = 15921133
     CaptionAppearance.CaptionColorTo = 15921133
@@ -1843,12 +2115,12 @@ inherited fmNodeAdmin: TfmNodeAdmin
     CaptionFont.Charset = DEFAULT_CHARSET
     CaptionFont.Color = clWindowText
     CaptionFont.Height = -11
-    CaptionFont.Name = 'MS Gothic'
+    CaptionFont.Name = 'Segoe UI'
     CaptionFont.Style = []
     ContainerAppearance.LineColor = clBtnShadow
     ContainerAppearance.Line3D = True
-    Color.Color = clWhite
-    Color.ColorTo = 15590880
+    Color.Color = 16448250
+    Color.ColorTo = 16448250
     Color.Direction = gdVertical
     Color.Mirror.Color = 16777214
     Color.Mirror.ColorTo = 16777214
@@ -1889,37 +2161,38 @@ inherited fmNodeAdmin: TfmNodeAdmin
     CompactGlowButtonAppearance.GradientDown = ggVertical
     CompactGlowButtonAppearance.GradientMirrorDown = ggVertical
     CompactGlowButtonAppearance.GradientChecked = ggVertical
-    DockColor.Color = 15590880
-    DockColor.ColorTo = clWhite
+    DockColor.Color = 16448250
+    DockColor.ColorTo = 16448250
     DockColor.Direction = gdHorizontal
     DockColor.Steps = 128
     FloatingWindowBorderColor = 13486790
     Font.Charset = HANGEUL_CHARSET
     Font.Color = clBlack
     Font.Height = -27
-    Font.Name = 'MS Gothic'
+    Font.Name = 'Segoe UI'
     Font.Style = []
-    GlowButtonAppearance.BorderColor = 13815240
-    GlowButtonAppearance.BorderColorHot = 5819121
-    GlowButtonAppearance.BorderColorDown = 3181250
-    GlowButtonAppearance.BorderColorChecked = 3181250
-    GlowButtonAppearance.ColorTo = 15590880
-    GlowButtonAppearance.ColorChecked = 14285309
-    GlowButtonAppearance.ColorCheckedTo = 7131391
+    GlowButtonAppearance.BorderColor = 16448250
+    GlowButtonAppearance.BorderColorHot = 15187578
+    GlowButtonAppearance.BorderColorDown = 15187578
+    GlowButtonAppearance.BorderColorChecked = 15187578
+    GlowButtonAppearance.Color = 16448250
+    GlowButtonAppearance.ColorTo = clNone
+    GlowButtonAppearance.ColorChecked = 15187578
+    GlowButtonAppearance.ColorCheckedTo = clNone
     GlowButtonAppearance.ColorDisabled = clNone
     GlowButtonAppearance.ColorDisabledTo = clNone
-    GlowButtonAppearance.ColorDown = 7131391
-    GlowButtonAppearance.ColorDownTo = 8122111
-    GlowButtonAppearance.ColorHot = 9102333
-    GlowButtonAppearance.ColorHotTo = 14285309
-    GlowButtonAppearance.ColorMirror = 15590880
-    GlowButtonAppearance.ColorMirrorTo = 15590880
-    GlowButtonAppearance.ColorMirrorHot = 14285309
-    GlowButtonAppearance.ColorMirrorHotTo = 9102333
-    GlowButtonAppearance.ColorMirrorDown = 8122111
-    GlowButtonAppearance.ColorMirrorDownTo = 7131391
-    GlowButtonAppearance.ColorMirrorChecked = 7131391
-    GlowButtonAppearance.ColorMirrorCheckedTo = 7131391
+    GlowButtonAppearance.ColorDown = 15187578
+    GlowButtonAppearance.ColorDownTo = clNone
+    GlowButtonAppearance.ColorHot = 16246477
+    GlowButtonAppearance.ColorHotTo = clNone
+    GlowButtonAppearance.ColorMirror = clNone
+    GlowButtonAppearance.ColorMirrorTo = clNone
+    GlowButtonAppearance.ColorMirrorHot = clNone
+    GlowButtonAppearance.ColorMirrorHotTo = clNone
+    GlowButtonAppearance.ColorMirrorDown = clNone
+    GlowButtonAppearance.ColorMirrorDownTo = clNone
+    GlowButtonAppearance.ColorMirrorChecked = clNone
+    GlowButtonAppearance.ColorMirrorCheckedTo = clNone
     GlowButtonAppearance.ColorMirrorDisabled = clNone
     GlowButtonAppearance.ColorMirrorDisabledTo = clNone
     GlowButtonAppearance.GradientHot = ggVertical
@@ -1927,6 +2200,7 @@ inherited fmNodeAdmin: TfmNodeAdmin
     GlowButtonAppearance.GradientDown = ggVertical
     GlowButtonAppearance.GradientMirrorDown = ggVertical
     GlowButtonAppearance.GradientChecked = ggVertical
+    GroupAppearance.Background = clInfoBk
     GroupAppearance.BorderColor = 1340927
     GroupAppearance.Color = 4636927
     GroupAppearance.ColorTo = 4636927
@@ -1935,7 +2209,7 @@ inherited fmNodeAdmin: TfmNodeAdmin
     GroupAppearance.Font.Charset = DEFAULT_CHARSET
     GroupAppearance.Font.Color = clWindowText
     GroupAppearance.Font.Height = -11
-    GroupAppearance.Font.Name = 'MS Gothic'
+    GroupAppearance.Font.Name = 'Segoe UI'
     GroupAppearance.Font.Style = []
     GroupAppearance.Gradient = ggVertical
     GroupAppearance.GradientMirror = ggVertical
@@ -2030,8 +2304,8 @@ inherited fmNodeAdmin: TfmNodeAdmin
     PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -13
-    PagerCaption.Font.Name = 'MS Gothic'
+    PagerCaption.Font.Height = -17
+    PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 13815240
     QATAppearance.Color = clWhite
@@ -2039,12 +2313,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
     QATAppearance.FullSizeBorderColor = 13815240
     QATAppearance.FullSizeColor = clWhite
     QATAppearance.FullSizeColorTo = 15590880
-    RightHandleColor = clWhite
-    RightHandleColorTo = 15590880
-    RightHandleColorHot = 14285309
-    RightHandleColorHotTo = 9102333
-    RightHandleColorDown = 8122111
-    RightHandleColorDownTo = 7131391
+    RightHandleColorHot = 7368816
+    RightHandleColorHotTo = 7368816
+    RightHandleColorDown = clGray
+    RightHandleColorDownTo = clGray
     TabAppearance.BorderColor = 13815240
     TabAppearance.BorderColorHot = 12236209
     TabAppearance.BorderColorSelected = 12565174
@@ -2070,7 +2342,7 @@ inherited fmNodeAdmin: TfmNodeAdmin
     TabAppearance.Font.Charset = DEFAULT_CHARSET
     TabAppearance.Font.Color = clWindowText
     TabAppearance.Font.Height = -11
-    TabAppearance.Font.Name = 'MS Gothic'
+    TabAppearance.Font.Name = 'Segoe UI'
     TabAppearance.Font.Style = []
     TabAppearance.Gradient = ggVertical
     TabAppearance.GradientMirror = ggVertical
@@ -2095,5 +2367,11 @@ inherited fmNodeAdmin: TfmNodeAdmin
     TabAppearance.BackGround.Direction = gdVertical
     Left = 300
     Top = 4
+  end
+  object AdvFormStyler1: TAdvFormStyler
+    MetroColor = clSkyBlue
+    Style = tsOffice2013LightGray
+    Left = 640
+    Top = 64
   end
 end
