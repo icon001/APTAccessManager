@@ -22,6 +22,9 @@ type
     function Table002VersionMake: Boolean;
     function Table003VersionMake: Boolean;
     function Table004VersionMake: Boolean;
+    function Table005VersionMake: Boolean;
+    function Table006VersionMake: Boolean;
+    function Table007VersionMake: Boolean;
 
   public
     { Public declarations }
@@ -537,13 +540,39 @@ end;
 
 function TDataBaseConfig.Table004VersionMake: Boolean;
 begin
-  dmDBInsert.InsertIntoTB_FormName_Value('4','M00104','알람이벤트','','');
-  dmDBInsert.InsertIntoTB_FormName_Value('4','M00105','알람시간','','');
-  dmDBInsert.InsertIntoTB_FormName_Value('4','M00106','알람코드','','');
-  dmDBInsert.InsertIntoTB_FormName_Value('4','M00107','알람내용','','');
 
   dmDBCreate.CreateTB_ALARMEVENT ;
+  dmDBCreate.CreateTB_ALARMCODE;
+  dmDBInsert.InsertIntoTB_ALARMCODE_Value('q','화재발생','1','1','1',inttostr(clRed));
+  dmDBInsert.InsertIntoTB_ALARMCODE_Value('r','화재복구','1','0','0',inttostr(clWhite));
+  dmDBInsert.InsertIntoTB_ALARMCODE_Value('s','비상발생','1','1','1',inttostr(clRed));
+  dmDBInsert.InsertIntoTB_ALARMCODE_Value('u','케이스열림','1','1','1',inttostr(clRed));
+  dmDBInsert.InsertIntoTB_ALARMCODE_Value('w','케이스닫힘','1','0','0',inttostr(clWhite));
   dmDBUpdate.UpdateTB_CONFIG_Value('COMMON','TABLE_VER','4');
+end;
+
+function TDataBaseConfig.Table005VersionMake: Boolean;
+begin
+  dmDBInsert.InsertIntoTB_FormName_Value('4','M00142','알람이벤트','','');
+  dmDBInsert.InsertIntoTB_FormName_Value('4','M00143','알람시간','','');
+  dmDBInsert.InsertIntoTB_FormName_Value('4','M00144','알람코드','','');
+  dmDBInsert.InsertIntoTB_FormName_Value('4','M00145','알람내용','','');
+
+  dmDBUpdate.UpdateTB_CONFIG_Value('COMMON','TABLE_VER','5');
+end;
+
+function TDataBaseConfig.Table006VersionMake: Boolean;
+begin
+  dmDBInsert.InsertIntoTB_ALARMCODE_Value('t','비상복구','1','0','0',inttostr(clWhite));
+
+  dmDBUpdate.UpdateTB_CONFIG_Value('COMMON','TABLE_VER','6');
+end;
+
+function TDataBaseConfig.Table007VersionMake: Boolean;
+begin
+  dmDBInsert.InsertIntoTB_FormName_Value('1','M00063','알람보고서','','');
+
+  dmDBUpdate.UpdateTB_CONFIG_Value('COMMON','TABLE_VER','7');
 end;
 
 procedure TDataBaseConfig.TableVersionCheck;
@@ -554,6 +583,10 @@ begin
   if nTableVersion < 1 then Table001VersionMake;
   if nTableVersion < 2 then Table002VersionMake;
   if nTableVersion < 3 then Table003VersionMake;
+  if nTableVersion < 4 then Table004VersionMake;
+  if nTableVersion < 5 then Table005VersionMake;
+  if nTableVersion < 6 then Table006VersionMake;
+  if nTableVersion < 7 then Table007VersionMake;
 
 end;
 

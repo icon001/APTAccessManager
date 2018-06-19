@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, AdvPanel,
-  W7Classes, W7Buttons, Vcl.ImgList,System.iniFiles,Data.DB,Data.Win.ADODB;
+  W7Classes, W7Buttons, Vcl.ImgList,System.iniFiles,Data.DB,Data.Win.ADODB,Winapi.ActiveX;
 
 type
   TDataBaseConfig = class(TComponent)
@@ -25,6 +25,7 @@ type
     function Table005VersionMake: Boolean;
     function Table006VersionMake: Boolean;
     function Table007VersionMake: Boolean;
+    function Table008VersionMake: Boolean;
 
   public
     { Public declarations }
@@ -575,6 +576,16 @@ begin
   dmDBUpdate.UpdateTB_CONFIG_Value('COMMON','TABLE_VER','7');
 end;
 
+function TDataBaseConfig.Table008VersionMake: Boolean;
+var
+  TempAdoQuery : TADOQuery;
+  stSql : string;
+begin
+  stSql := 'update TB_PERMITCODE set PE_PERMITNAME = ''Access'' where PE_PERMITCODE = ''1'' and PE_PERMITNAME = ''Accsse'' ';
+  dmDataBase.ProcessExecSQL(stSql);
+  dmDBUpdate.UpdateTB_CONFIG_Value('COMMON','TABLE_VER','8');
+end;
+
 procedure TDataBaseConfig.TableVersionCheck;
 var
   nTableVersion : integer;
@@ -586,6 +597,8 @@ begin
   if nTableVersion < 4 then Table004VersionMake;
   if nTableVersion < 5 then Table005VersionMake;
   if nTableVersion < 6 then Table006VersionMake;
+  if nTableVersion < 7 then Table007VersionMake;
+  if nTableVersion < 8 then Table008VersionMake;
 
 end;
 

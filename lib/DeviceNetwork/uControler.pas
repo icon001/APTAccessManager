@@ -31,6 +31,7 @@ type
 
     NodeDeviceList : TStringList;
 
+    L_bNodeDestroy : Boolean;
     L_stComBuffer : string; //통신 수신시 받는 데이터
     L_bDataSendStarting : Boolean;  //DataSend Start
     L_bDataReceive : Boolean;  //기기 수신 여부
@@ -119,6 +120,7 @@ type
     FTCSSendPacket : TCriticalSection;
 
     ReserveTimer: TTimer;
+    L_bControlerDestroy : Boolean;
     L_bDeviceResponse : Array [0..100] of Boolean; //송신 후 수신 점검 패킷
     L_stLastPacket : string;  //최종 패킷
     L_stAccessLastPacket : string;  //최종 출입 패킷
@@ -369,6 +371,7 @@ begin
   inherited;
   L_bDataSendStarting := False;
   L_stComBuffer := '';
+  L_bNodeDestroy := False;
   ComPort := nil;
 {$IFDEF TApdWinsockport}
   ApdWinsockPort := TApdWinsockPort.Create(nil);
@@ -450,6 +453,7 @@ end;
 
 destructor TNode.Destroy;
 begin
+  L_bNodeDestroy := True;
   DelayTimer.Enabled := False;
   DelayTimer.Free;
   SocketReceiveTimer.Enabled := False;
@@ -634,6 +638,8 @@ begin
   Try
     L_bNextDevicePacketSending := True;
 
+    if NodeDeviceList.Count < 1 then Exit;
+
     if L_nSearchDeviceIndex > (NodeDeviceList.Count - 1) then L_nSearchDeviceIndex := 0;
     stSelectDeviceID := NodeDeviceList.Strings[L_nSearchDeviceIndex];
     nIndex := DeviceList.IndexOf(FillZeroNumber(NodeNO,G_nNodeCodeLength) + stSelectDeviceID);
@@ -709,6 +715,8 @@ begin
     else stTemp := 'DisConnecting';
     OnRcvData(Self,NodeNo,'0000000','01','e','0','K1',stTemp);
   end;
+
+  if L_bNodeDestroy then Exit;
 
   FTCSDeviceOpen.Enter;
   Try
@@ -798,7 +806,7 @@ begin
       Exit;
     End;
   Finally
-    FTCSDeviceOpen.Leave;
+    if Not L_bNodeDestroy then FTCSDeviceOpen.Leave;
   End;
 end;
 
@@ -953,6 +961,7 @@ end;
 constructor TDevice.Create(AOwner: TComponent);
 begin
   inherited;
+  L_bControlerDestroy := False;
   FTCSSendPacket := TCriticalSection.Create;
 
   ReceiveDataList := TStringList.Create;
@@ -972,6 +981,8 @@ end;
 
 destructor TDevice.Destroy;
 begin
+  L_bControlerDestroy := True;
+  Delay(10);
   ReserveTimer.Enabled := False;
   ReserveTimer.Free;
   ReceiveDataList.Free;
@@ -1039,6 +1050,7 @@ begin
 
     //if Not FNode.Open then Exit;
   if Not FNode.Connected then Exit;
+  if L_bControlerDestroy then Exit;
 
   Try
     FTCSSendPacket.Enter;
@@ -1151,7 +1163,7 @@ begin
   Finally
     L_nReserveIndex := -1;  //여기서 예약 풀고
     //FNode.DelayTimer.Enabled := True;
-    FTCSSendPacket.Leave;
+    if Not L_bControlerDestroy then FTCSSendPacket.Leave;
   End;
 
 end;
@@ -1337,7 +1349,7 @@ begin
   stTime  := FormatDateTime('yyyymmddhhnnss',now);
   stChangeState := aRealData[3]; //변경사유  c:카드,p:비밀번호,m:마스터번호
 
-  if((stChangeState = 'q') or (stChangeState = 'r') or (stChangeState = 's') or (stChangeState = 'u') or (stChangeState = 'w') ) then
+  if(AlarmCodeList.IndexOf(stChangeState) > -1 ) then
   begin
     if Assigned(FOnAlarmEvent) then
     begin
@@ -1346,7 +1358,7 @@ begin
     end;
 
   end;
-  if(Length(aRealData) < 14) then exit; //출입이벤트가 아니다.
+  if(Length(aRealData) < 10) then exit; //출입이벤트가 아니다.
   stAccessResult := aRealData[1]; //출입승인결과  1:승인,A:미승인
   DoorMode:=  aRealData[2]; //운영/개방
   stCardMsgNo := aRealData[4];

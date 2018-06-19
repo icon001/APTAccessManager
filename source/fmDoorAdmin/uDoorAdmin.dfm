@@ -4,10 +4,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
   BorderIcons = []
   BorderStyle = bsNone
   Caption = #52636#51077#47928#44288#47532
-  ClientHeight = 779
-  ClientWidth = 791
+  ClientHeight = 689
+  ClientWidth = 722
   Font.Charset = HANGEUL_CHARSET
-  Font.Height = -15
+  Font.Height = -12
   Font.Name = #45208#45588#44256#46357
   FormStyle = fsMDIChild
   Visible = True
@@ -16,28 +16,28 @@ inherited fmDoorAdmin: TfmDoorAdmin
   OnCreate = FormCreate
   OnResize = FormResize
   OnShow = FormShow
-  ExplicitWidth = 809
-  ExplicitHeight = 824
-  PixelsPerInch = 120
-  TextHeight = 15
+  ExplicitWidth = 738
+  ExplicitHeight = 727
+  PixelsPerInch = 96
+  TextHeight = 14
   object Image1: TImage [0]
     Left = 0
     Top = 0
-    Width = 791
-    Height = 779
+    Width = 722
+    Height = 689
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
     Align = alClient
-    ExplicitWidth = 809
-    ExplicitHeight = 824
+    ExplicitWidth = 738
+    ExplicitHeight = 727
   end
   object BodyPanel: TW7Panel [1]
-    Left = 8
+    Left = 7
     Top = 0
-    Width = 721
-    Height = 674
+    Width = 673
+    Height = 629
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -46,7 +46,7 @@ inherited fmDoorAdmin: TfmDoorAdmin
     Caption = 'BodyPanel'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -10
+    Font.Height = -9
     Font.Name = 'Segoe UI'
     Font.Style = []
     SolidColor = clBlack
@@ -61,8 +61,8 @@ inherited fmDoorAdmin: TfmDoorAdmin
     object menuTab: TAdvOfficeTabSet
       Left = 0
       Top = 0
-      Width = 721
-      Height = 30
+      Width = 673
+      Height = 28
       Margins.Left = 4
       Margins.Top = 4
       Margins.Right = 4
@@ -896,10 +896,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
       OnChange = menuTabChange
     end
     object pan_DoorCodeList: TAdvSmoothPanel
-      Left = -80
-      Top = 21
-      Width = 723
-      Height = 649
+      Left = -75
+      Top = 20
+      Width = 675
+      Height = 605
       Cursor = crDefault
       Margins.Left = 4
       Margins.Top = 4
@@ -932,10 +932,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
       Version = '1.3.0.3'
       TabOrder = 1
       object lb_Door: TAdvSmoothLabel
-        Left = 29
-        Top = 103
-        Width = 187
-        Height = 20
+        Left = 27
+        Top = 96
+        Width = 175
+        Height = 19
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -966,10 +966,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Version = '1.6.0.2'
       end
       object btn_Search: TSpeedButton
-        Left = 376
-        Top = 99
-        Width = 80
-        Height = 22
+        Left = 351
+        Top = 92
+        Width = 75
+        Height = 21
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -977,10 +977,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         OnClick = btn_SearchClick
       end
       object btn_Delete: TSpeedButton
-        Left = 611
-        Top = 525
-        Width = 80
-        Height = 23
+        Left = 570
+        Top = 490
+        Width = 75
+        Height = 21
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -988,10 +988,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         OnClick = btn_DeleteClick
       end
       object btn_add: TSpeedButton
-        Left = 514
-        Top = 525
-        Width = 80
-        Height = 23
+        Left = 480
+        Top = 490
+        Width = 74
+        Height = 21
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -999,10 +999,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         OnClick = btn_addClick
       end
       object lb_Company: TAdvSmoothLabel
-        Left = 29
-        Top = 31
-        Width = 187
-        Height = 20
+        Left = 27
+        Top = 29
+        Width = 175
+        Height = 19
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1033,10 +1033,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Version = '1.6.0.2'
       end
       object lb_Depart: TAdvSmoothLabel
-        Left = 29
-        Top = 68
-        Width = 187
-        Height = 18
+        Left = 27
+        Top = 63
+        Width = 175
+        Height = 17
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1067,9 +1067,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Version = '1.6.0.2'
       end
       object ed_Doorname: TAdvEdit
-        Left = 220
-        Top = 98
-        Width = 149
+        Left = 205
+        Top = 91
+        Width = 139
         Height = 20
         Margins.Left = 4
         Margins.Top = 4
@@ -1096,10 +1096,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Version = '3.3.2.0'
       end
       object sg_DoorList: TAdvStringGrid
-        Left = 29
-        Top = 144
-        Width = 662
-        Height = 354
+        Left = 27
+        Top = 134
+        Width = 618
+        Height = 331
         Cursor = crDefault
         Hint = #49688#51221#49884#50640#45716' '#54644#45817#49472#51012' '#45908#48660#53364#47533#54616#49464#50836'.'
         Margins.Left = 4
@@ -1112,7 +1112,7 @@ inherited fmDoorAdmin: TfmDoorAdmin
         RowCount = 17
         Font.Charset = HANGEUL_CHARSET
         Font.Color = clWindowText
-        Font.Height = -10
+        Font.Height = -9
         Font.Name = 'Tahoma'
         Font.Style = []
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -1125,8 +1125,8 @@ inherited fmDoorAdmin: TfmDoorAdmin
         OnDblClick = sg_DoorListDblClick
         OnKeyPress = sg_DoorListKeyPress
         OnKeyUp = sg_DoorListKeyUp
-        GridLineColor = 13027014
-        GridFixedLineColor = 13027014
+        GridLineColor = 15855083
+        GridFixedLineColor = 13745060
         HoverRowCells = [hcNormal, hcSelected]
         OnCheckBoxClick = sg_DoorListCheckBoxClick
         ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -1134,9 +1134,8 @@ inherited fmDoorAdmin: TfmDoorAdmin
         ActiveCellFont.Height = -11
         ActiveCellFont.Name = 'Tahoma'
         ActiveCellFont.Style = [fsBold]
-        ActiveCellColor = 16448250
-        ActiveCellColorTo = 16448250
-        BorderColor = 13027014
+        ActiveCellColor = 10344697
+        ActiveCellColorTo = 6210033
         ColumnHeaders.Strings = (
           ''
           #46041
@@ -1146,18 +1145,18 @@ inherited fmDoorAdmin: TfmDoorAdmin
           #44592#44592#48264#54840
           #45432#46300#48264#54840
           #52636#51077#47928#48264#54840)
-        ControlLook.FixedGradientMirrorFrom = 16448250
-        ControlLook.FixedGradientMirrorTo = 16448250
-        ControlLook.FixedGradientHoverFrom = 16576740
-        ControlLook.FixedGradientHoverTo = 16576740
-        ControlLook.FixedGradientHoverMirrorFrom = 16576740
-        ControlLook.FixedGradientHoverMirrorTo = 16576740
-        ControlLook.FixedGradientHoverBorder = 15381630
-        ControlLook.FixedGradientDownFrom = 16573128
-        ControlLook.FixedGradientDownTo = 16573128
-        ControlLook.FixedGradientDownMirrorFrom = 16573128
-        ControlLook.FixedGradientDownMirrorTo = 16573128
-        ControlLook.FixedGradientDownBorder = 15048022
+        ControlLook.FixedGradientFrom = 16513526
+        ControlLook.FixedGradientTo = 15260626
+        ControlLook.FixedGradientHoverFrom = 15000287
+        ControlLook.FixedGradientHoverTo = 14406605
+        ControlLook.FixedGradientHoverMirrorFrom = 14406605
+        ControlLook.FixedGradientHoverMirrorTo = 13813180
+        ControlLook.FixedGradientHoverBorder = 12033927
+        ControlLook.FixedGradientDownFrom = 14991773
+        ControlLook.FixedGradientDownTo = 14991773
+        ControlLook.FixedGradientDownMirrorFrom = 14991773
+        ControlLook.FixedGradientDownMirrorTo = 14991773
+        ControlLook.FixedGradientDownBorder = 14991773
         ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
         ControlLook.DropDownHeader.Font.Color = clWindowText
         ControlLook.DropDownHeader.Font.Height = -11
@@ -1257,9 +1256,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
           64)
       end
       object cmb_ListDongCode: TComboBox
-        Left = 220
-        Top = 26
-        Width = 149
+        Left = 205
+        Top = 24
+        Width = 139
         Height = 20
         Margins.Left = 4
         Margins.Top = 4
@@ -1271,9 +1270,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
         OnChange = cmb_ListDongCodeChange
       end
       object cmb_ListAreaCode: TComboBox
-        Left = 220
-        Top = 61
-        Width = 149
+        Left = 205
+        Top = 57
+        Width = 139
         Height = 20
         Margins.Left = 4
         Margins.Top = 4
@@ -1286,10 +1285,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
       end
     end
     object pan_DoorAdd: TAdvSmoothPanel
-      Left = 438
-      Top = 91
-      Width = 546
-      Height = 407
+      Left = 277
+      Top = 83
+      Width = 509
+      Height = 380
       Cursor = crDefault
       Margins.Left = 4
       Margins.Top = 4
@@ -1322,10 +1321,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
       Version = '1.3.0.3'
       TabOrder = 2
       object lb_DoorAdd: TAdvSmoothLabel
-        Left = 29
-        Top = 55
-        Width = 187
-        Height = 19
+        Left = 27
+        Top = 51
+        Width = 175
+        Height = 18
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1356,10 +1355,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Version = '1.6.0.2'
       end
       object btn_InsertSave: TSpeedButton
-        Left = 425
-        Top = 58
-        Width = 80
-        Height = 22
+        Left = 397
+        Top = 54
+        Width = 74
+        Height = 21
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1367,9 +1366,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
         OnClick = btn_InsertSaveClick
       end
       object ed_InsertName: TAdvEdit
-        Left = 229
-        Top = 58
-        Width = 189
+        Left = 214
+        Top = 54
+        Width = 176
         Height = 20
         Margins.Left = 4
         Margins.Top = 4
@@ -1396,10 +1395,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Version = '3.3.2.0'
       end
       object gb_DeviceInfoAdd: TAdvGroupBox
-        Left = 28
-        Top = 88
-        Width = 475
-        Height = 137
+        Left = 26
+        Top = 82
+        Width = 443
+        Height = 128
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1407,10 +1406,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Caption = #44592#44592#51221#48372
         TabOrder = 1
         object lb_NodeAdd: TAdvSmoothLabel
-          Left = 23
-          Top = 25
-          Width = 187
-          Height = 20
+          Left = 21
+          Top = 23
+          Width = 175
+          Height = 19
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1441,10 +1440,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.2'
         end
         object lb_DeviceAdd: TAdvSmoothLabel
-          Left = 23
-          Top = 50
-          Width = 187
-          Height = 21
+          Left = 21
+          Top = 47
+          Width = 175
+          Height = 19
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1475,10 +1474,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.2'
         end
         object lb_LockTimeAdd: TAdvSmoothLabel
-          Left = 23
-          Top = 76
-          Width = 187
-          Height = 20
+          Left = 21
+          Top = 71
+          Width = 175
+          Height = 19
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1509,9 +1508,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.2'
         end
         object cmb_InsertNodeNo: TComboBox
-          Left = 218
-          Top = 25
-          Width = 148
+          Left = 203
+          Top = 23
+          Width = 139
           Height = 20
           Margins.Left = 4
           Margins.Top = 4
@@ -1523,9 +1522,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
           OnChange = cmb_InsertNodeNoChange
         end
         object se_InsertDeviceNo: TAdvSpinEdit
-          Left = 218
-          Top = 50
-          Width = 148
+          Left = 203
+          Top = 47
+          Width = 139
           Height = 21
           Margins.Left = 4
           Margins.Top = 4
@@ -1549,9 +1548,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.0'
         end
         object cmb_InsertLockTime: TComboBox
-          Left = 218
-          Top = 78
-          Width = 148
+          Left = 203
+          Top = 73
+          Width = 139
           Height = 20
           Margins.Left = 4
           Margins.Top = 4
@@ -1562,10 +1561,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
           TabOrder = 2
         end
         object chk_InsertSchedule: TAdvOfficeCheckBox
-          Left = 218
-          Top = 105
-          Width = 110
-          Height = 29
+          Left = 203
+          Top = 98
+          Width = 103
+          Height = 27
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1578,10 +1577,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         end
       end
       object gb_CompanyInfoAdd: TAdvGroupBox
-        Left = 28
-        Top = 233
-        Width = 475
-        Height = 92
+        Left = 26
+        Top = 217
+        Width = 443
+        Height = 86
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1589,10 +1588,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Caption = #50948#52824#51221#48372
         TabOrder = 2
         object lb_CompanyAdd: TAdvSmoothLabel
-          Left = 23
-          Top = 25
-          Width = 187
-          Height = 20
+          Left = 21
+          Top = 23
+          Width = 175
+          Height = 19
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1623,10 +1622,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.2'
         end
         object lb_DepartAdd: TAdvSmoothLabel
-          Left = 23
-          Top = 50
-          Width = 187
-          Height = 21
+          Left = 21
+          Top = 47
+          Width = 175
+          Height = 19
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1657,9 +1656,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.2'
         end
         object cmb_InsertDongCode: TComboBox
-          Left = 218
-          Top = 25
-          Width = 148
+          Left = 203
+          Top = 23
+          Width = 139
           Height = 20
           Margins.Left = 4
           Margins.Top = 4
@@ -1671,9 +1670,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
           OnChange = cmb_InsertDongCodeChange
         end
         object cmb_InsertAreaCode: TComboBox
-          Left = 218
-          Top = 50
-          Width = 148
+          Left = 203
+          Top = 47
+          Width = 139
           Height = 20
           Margins.Left = 4
           Margins.Top = 4
@@ -1686,10 +1685,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
       end
     end
     object pan_DoorCodeUpdate: TAdvSmoothPanel
-      Left = -286
-      Top = 234
-      Width = 545
-      Height = 649
+      Left = -267
+      Top = 218
+      Width = 509
+      Height = 606
       Cursor = crDefault
       Margins.Left = 4
       Margins.Top = 4
@@ -1722,10 +1721,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
       Version = '1.3.0.3'
       TabOrder = 3
       object lb_DoorUpdate: TAdvSmoothLabel
-        Left = 29
-        Top = 60
-        Width = 192
-        Height = 19
+        Left = 27
+        Top = 56
+        Width = 179
+        Height = 18
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1756,10 +1755,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Version = '1.6.0.2'
       end
       object btn_UpdateSave: TSpeedButton
-        Left = 423
-        Top = 58
-        Width = 80
-        Height = 22
+        Left = 395
+        Top = 54
+        Width = 74
+        Height = 21
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1767,9 +1766,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
         OnClick = btn_UpdateSaveClick
       end
       object ed_UpdateName: TAdvEdit
-        Left = 229
-        Top = 56
-        Width = 189
+        Left = 214
+        Top = 52
+        Width = 176
         Height = 20
         Margins.Left = 4
         Margins.Top = 4
@@ -1796,10 +1795,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Version = '3.3.2.0'
       end
       object gb_DeviceInfoUpdate: TAdvGroupBox
-        Left = 28
-        Top = 88
-        Width = 475
-        Height = 151
+        Left = 26
+        Top = 82
+        Width = 443
+        Height = 141
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1807,10 +1806,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Caption = #44592#44592#51221#48372
         TabOrder = 1
         object lb_NodeUpdate: TAdvSmoothLabel
-          Left = 23
-          Top = 31
-          Width = 187
-          Height = 20
+          Left = 21
+          Top = 29
+          Width = 175
+          Height = 19
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1841,10 +1840,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.2'
         end
         object lb_DeviceUpdate: TAdvSmoothLabel
-          Left = 23
-          Top = 56
-          Width = 187
-          Height = 22
+          Left = 21
+          Top = 52
+          Width = 175
+          Height = 21
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1875,10 +1874,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.2'
         end
         object lb_LockTimeUpdate: TAdvSmoothLabel
-          Left = 23
-          Top = 84
-          Width = 187
-          Height = 20
+          Left = 21
+          Top = 78
+          Width = 175
+          Height = 19
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1909,9 +1908,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.2'
         end
         object cmb_UpdateNodeNo: TComboBox
-          Left = 218
-          Top = 29
-          Width = 148
+          Left = 203
+          Top = 27
+          Width = 139
           Height = 20
           Margins.Left = 4
           Margins.Top = 4
@@ -1922,9 +1921,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
           TabOrder = 0
         end
         object se_UpdateDeviceNo: TAdvSpinEdit
-          Left = 218
-          Top = 54
-          Width = 148
+          Left = 203
+          Top = 50
+          Width = 139
           Height = 21
           Margins.Left = 4
           Margins.Top = 4
@@ -1948,9 +1947,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.0'
         end
         object cmb_UpdateLockTime: TComboBox
-          Left = 218
-          Top = 81
-          Width = 148
+          Left = 203
+          Top = 76
+          Width = 139
           Height = 20
           Margins.Left = 4
           Margins.Top = 4
@@ -1961,10 +1960,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
           TabOrder = 2
         end
         object chk_UpdateSchedule: TAdvOfficeCheckBox
-          Left = 218
-          Top = 109
-          Width = 183
-          Height = 31
+          Left = 203
+          Top = 102
+          Width = 171
+          Height = 29
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1977,10 +1976,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         end
       end
       object gb_CompanyInfoUpdate: TAdvGroupBox
-        Left = 29
-        Top = 246
-        Width = 475
-        Height = 93
+        Left = 27
+        Top = 230
+        Width = 443
+        Height = 86
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1988,10 +1987,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Caption = #50948#52824#51221#48372
         TabOrder = 2
         object lb_CompanyUpdate: TAdvSmoothLabel
-          Left = 23
-          Top = 25
-          Width = 187
-          Height = 20
+          Left = 21
+          Top = 23
+          Width = 175
+          Height = 19
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -2022,10 +2021,10 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.2'
         end
         object lb_DepartUpdate: TAdvSmoothLabel
-          Left = 23
-          Top = 50
-          Width = 187
-          Height = 21
+          Left = 21
+          Top = 47
+          Width = 175
+          Height = 19
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -2056,9 +2055,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
           Version = '1.6.0.2'
         end
         object cmb_UpdateDongCode: TComboBox
-          Left = 216
-          Top = 23
-          Width = 149
+          Left = 202
+          Top = 21
+          Width = 139
           Height = 20
           Margins.Left = 4
           Margins.Top = 4
@@ -2070,9 +2069,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
           OnChange = cmb_UpdateDongCodeChange
         end
         object cmb_UpdateAreaCode: TComboBox
-          Left = 216
-          Top = 48
-          Width = 149
+          Left = 202
+          Top = 45
+          Width = 139
           Height = 20
           Margins.Left = 4
           Margins.Top = 4
@@ -2084,9 +2083,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
         end
       end
       object ed_OldNodeNo: TAdvEdit
-        Left = 88
-        Top = 29
-        Width = 75
+        Left = 82
+        Top = 27
+        Width = 70
         Height = 20
         Margins.Left = 4
         Margins.Top = 4
@@ -2113,9 +2112,9 @@ inherited fmDoorAdmin: TfmDoorAdmin
         Version = '3.3.2.0'
       end
       object ed_OldDeviceNo: TAdvEdit
-        Left = 169
-        Top = 29
-        Width = 74
+        Left = 158
+        Top = 27
+        Width = 69
         Height = 20
         Margins.Left = 4
         Margins.Top = 4
@@ -2465,7 +2464,7 @@ inherited fmDoorAdmin: TfmDoorAdmin
     PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -17
+    PagerCaption.Font.Height = -13
     PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 13815240

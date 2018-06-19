@@ -16,7 +16,8 @@ const
 
     WSAEWOULDBLOCK = 10035;  //비동기 에러 메시지
 
-//{$DEFINE TApdWinsockport}  //{$DEFINE TClientSocket}
+//{$DEFINE TApdWinsockport}
+{$DEFINE TClientSocket}
 
 type
 
@@ -1327,7 +1328,6 @@ var
   stExitButton : string;
   bExitButton : Boolean;
 begin
-
   bExitButton := False;
   stDoorNo:=  '1';
   stReaderNo := '1';

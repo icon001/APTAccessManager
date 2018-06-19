@@ -4,8 +4,8 @@ inherited fmMonitoring: TfmMonitoring
   BorderIcons = []
   BorderStyle = bsNone
   Caption = #47784#45768#53552#47553
-  ClientHeight = 617
-  ClientWidth = 1120
+  ClientHeight = 527
+  ClientWidth = 1084
   Font.Height = -15
   Font.Name = 'MS Gothic'
   FormStyle = fsMDIChild
@@ -14,15 +14,15 @@ inherited fmMonitoring: TfmMonitoring
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  ExplicitWidth = 1138
-  ExplicitHeight = 662
+  ExplicitWidth = 1102
+  ExplicitHeight = 572
   PixelsPerInch = 120
   TextHeight = 15
   object Image1: TImage [0]
     Left = 0
     Top = 0
-    Width = 1120
-    Height = 617
+    Width = 1084
+    Height = 527
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -34,8 +34,8 @@ inherited fmMonitoring: TfmMonitoring
   object BodyPanel: TW7Panel [1]
     Left = 0
     Top = 0
-    Width = 1120
-    Height = 617
+    Width = 1084
+    Height = 527
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -57,12 +57,10 @@ inherited fmMonitoring: TfmMonitoring
     Align = alClient
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 1070
-    ExplicitHeight = 249
     object menuTab: TAdvOfficeTabSet
       Left = 0
       Top = 0
-      Width = 1120
+      Width = 1084
       Height = 29
       Margins.Left = 4
       Margins.Top = 4
@@ -846,13 +844,12 @@ inherited fmMonitoring: TfmMonitoring
       ButtonSettings.ScrollButtonLastHint = 'Last'
       TabSettings.Rounding = 0
       OnChange = menuTabChange
-      ExplicitWidth = 1070
     end
     object pan_DoorList: TAdvPanel
       Left = 335
       Top = 29
-      Width = 785
-      Height = 588
+      Width = 749
+      Height = 498
       Margins.Left = 4
       Margins.Top = 4
       Margins.Right = 4
@@ -881,13 +878,32 @@ inherited fmMonitoring: TfmMonitoring
       StatusBar.Font.Name = 'MS Gothic'
       StatusBar.Font.Style = []
       Text = ''
-      ExplicitWidth = 735
-      ExplicitHeight = 220
       FullHeight = 200
+      object AdvSplitter3: TAdvSplitter
+        Left = 1
+        Top = 395
+        Width = 747
+        Height = 2
+        Cursor = crVSplit
+        Margins.Left = 4
+        Margins.Top = 4
+        Margins.Right = 4
+        Margins.Bottom = 4
+        Align = alBottom
+        Appearance.BorderColor = clNone
+        Appearance.BorderColorHot = clNone
+        Appearance.Color = clWhite
+        Appearance.ColorTo = clSilver
+        Appearance.ColorHot = clWhite
+        Appearance.ColorHotTo = clGray
+        GripStyle = sgDots
+        ExplicitTop = 101
+        ExplicitWidth = 783
+      end
       object pan_CardListHeader: TAdvSmoothPanel
         Left = 1
         Top = 1
-        Width = 783
+        Width = 747
         Height = 100
         Cursor = crDefault
         Margins.Left = 4
@@ -921,7 +937,6 @@ inherited fmMonitoring: TfmMonitoring
         Version = '1.3.0.3'
         Align = alTop
         TabOrder = 0
-        ExplicitWidth = 733
         object lb_Door: TAdvSmoothLabel
           Left = 34
           Top = 45
@@ -979,8 +994,8 @@ inherited fmMonitoring: TfmMonitoring
       object sg_AccessEvent: TAdvStringGrid
         Left = 1
         Top = 101
-        Width = 783
-        Height = 386
+        Width = 747
+        Height = 294
         Cursor = crDefault
         Margins.Left = 4
         Margins.Top = 4
@@ -988,12 +1003,13 @@ inherited fmMonitoring: TfmMonitoring
         Margins.Bottom = 4
         Align = alClient
         ColCount = 9
+        DefaultRowHeight = 24
         DrawingStyle = gdsClassic
         FixedCols = 0
         RowCount = 2
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -17
+        Font.Height = -15
         Font.Name = 'MS Gothic'
         Font.Style = []
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing]
@@ -1001,8 +1017,8 @@ inherited fmMonitoring: TfmMonitoring
         ScrollBars = ssBoth
         TabOrder = 1
         OnKeyDown = sg_AccessEventKeyDown
-        GridLineColor = 13027014
-        GridFixedLineColor = 13027014
+        GridLineColor = 15855083
+        GridFixedLineColor = 13745060
         HoverRowCells = [hcNormal, hcSelected]
         OnResize = sg_AccessEventResize
         ActiveCellFont.Charset = DEFAULT_CHARSET
@@ -1010,9 +1026,8 @@ inherited fmMonitoring: TfmMonitoring
         ActiveCellFont.Height = -13
         ActiveCellFont.Name = 'MS Gothic'
         ActiveCellFont.Style = []
-        ActiveCellColor = 16448250
-        ActiveCellColorTo = 16448250
-        BorderColor = 13027014
+        ActiveCellColor = 10344697
+        ActiveCellColorTo = 6210033
         ColumnHeaders.Strings = (
           #12450#12463#12475#12473#26178#38291
           #12489#12450#12434
@@ -1023,18 +1038,18 @@ inherited fmMonitoring: TfmMonitoring
           #12459#12540#12489#30058#21495
           #25805#20316#21306#20998
           #25215#35469#32080#26524)
-        ControlLook.FixedGradientMirrorFrom = 16448250
-        ControlLook.FixedGradientMirrorTo = 16448250
-        ControlLook.FixedGradientHoverFrom = 16576740
-        ControlLook.FixedGradientHoverTo = 16576740
-        ControlLook.FixedGradientHoverMirrorFrom = 16576740
-        ControlLook.FixedGradientHoverMirrorTo = 16576740
-        ControlLook.FixedGradientHoverBorder = 15381630
-        ControlLook.FixedGradientDownFrom = 16573128
-        ControlLook.FixedGradientDownTo = 16573128
-        ControlLook.FixedGradientDownMirrorFrom = 16573128
-        ControlLook.FixedGradientDownMirrorTo = 16573128
-        ControlLook.FixedGradientDownBorder = 15048022
+        ControlLook.FixedGradientFrom = 16513526
+        ControlLook.FixedGradientTo = 15260626
+        ControlLook.FixedGradientHoverFrom = 15000287
+        ControlLook.FixedGradientHoverTo = 14406605
+        ControlLook.FixedGradientHoverMirrorFrom = 14406605
+        ControlLook.FixedGradientHoverMirrorTo = 13813180
+        ControlLook.FixedGradientHoverBorder = 12033927
+        ControlLook.FixedGradientDownFrom = 14991773
+        ControlLook.FixedGradientDownTo = 14991773
+        ControlLook.FixedGradientDownMirrorFrom = 14991773
+        ControlLook.FixedGradientDownMirrorTo = 14991773
+        ControlLook.FixedGradientDownBorder = 14991773
         ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
         ControlLook.DropDownHeader.Font.Color = clWindowText
         ControlLook.DropDownHeader.Font.Height = -11
@@ -1065,10 +1080,10 @@ inherited fmMonitoring: TfmMonitoring
           'Not equal'
           'Clear')
         FixedColWidth = 180
-        FixedRowHeight = 22
+        FixedRowHeight = 24
         FixedFont.Charset = DEFAULT_CHARSET
         FixedFont.Color = clWindowText
-        FixedFont.Height = -13
+        FixedFont.Height = -15
         FixedFont.Name = 'MS Gothic'
         FixedFont.Style = []
         FloatFormat = '%.2f'
@@ -1120,8 +1135,6 @@ inherited fmMonitoring: TfmMonitoring
         SortSettings.HeaderMirrorColor = 16448250
         SortSettings.HeaderMirrorColorTo = 16448250
         Version = '7.2.8.0'
-        ExplicitWidth = 733
-        ExplicitHeight = 118
         ColWidths = (
           180
           108
@@ -1133,10 +1146,10 @@ inherited fmMonitoring: TfmMonitoring
           103
           81)
       end
-      object AdvSmoothPanel1: TAdvSmoothPanel
+      object pan_AlarmListHeader: TAdvSmoothPanel
         Left = 1
-        Top = 487
-        Width = 783
+        Top = 397
+        Width = 747
         Height = 100
         Cursor = crDefault
         Margins.Left = 4
@@ -1169,27 +1182,27 @@ inherited fmMonitoring: TfmMonitoring
         Fill.Glow = gmRadial
         Version = '1.3.0.3'
         Align = alBottom
+        OnResize = pan_AlarmListHeaderResize
         TabOrder = 2
-        ExplicitTop = 1
-        ExplicitWidth = 733
-        object AdvStringGrid1: TAdvStringGrid
+        object sg_alarmEvent: TAdvStringGrid
           Left = 0
-          Top = 16
-          Width = 783
-          Height = 84
+          Top = 15
+          Width = 747
+          Height = 85
           Cursor = crDefault
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
           Margins.Bottom = 4
           Align = alBottom
-          ColCount = 9
+          ColCount = 4
+          DefaultRowHeight = 24
           DrawingStyle = gdsClassic
           FixedCols = 0
           RowCount = 2
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -17
+          Font.Height = -15
           Font.Name = 'MS Gothic'
           Font.Style = []
           Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing]
@@ -1262,10 +1275,10 @@ inherited fmMonitoring: TfmMonitoring
             'Not equal'
             'Clear')
           FixedColWidth = 180
-          FixedRowHeight = 22
+          FixedRowHeight = 24
           FixedFont.Charset = DEFAULT_CHARSET
           FixedFont.Color = clWindowText
-          FixedFont.Height = -13
+          FixedFont.Height = -15
           FixedFont.Name = 'MS Gothic'
           FixedFont.Style = []
           FloatFormat = '%.2f'
@@ -1319,14 +1332,9 @@ inherited fmMonitoring: TfmMonitoring
           Version = '7.2.8.0'
           ColWidths = (
             180
-            108
-            111
-            130
-            126
-            157
-            113
-            103
-            81)
+            178
+            92
+            322)
         end
       end
     end
@@ -1334,7 +1342,7 @@ inherited fmMonitoring: TfmMonitoring
       Left = 0
       Top = 29
       Width = 335
-      Height = 588
+      Height = 498
       Cursor = crDefault
       Margins.Left = 4
       Margins.Top = 4
@@ -1368,7 +1376,6 @@ inherited fmMonitoring: TfmMonitoring
       Align = alLeft
       OnResize = pan_DoorStateResize
       TabOrder = 2
-      ExplicitHeight = 220
       object TreeView_DoorList: TTreeView
         Left = 4
         Top = 34
@@ -1434,7 +1441,7 @@ inherited fmMonitoring: TfmMonitoring
     Left = 200
     Top = 208
     Bitmap = {
-      494C0101020004006C0020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000400740020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000002000000001002000000000000040
       000000000000000000000000000000000000FEFEFE00FEFEFE00FEFEFE00FEFE
       FE00FEFEFE00FEFEFE00C7C7C700C7C7C700FEFEFE00FEFEFE00FCFEFE00C7C7
@@ -1976,7 +1983,7 @@ inherited fmMonitoring: TfmMonitoring
     Left = 72
     Top = 168
     Bitmap = {
-      494C0101080009006C0018001800FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
+      494C010108000900740018001800FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000480000000100200000000000006C
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

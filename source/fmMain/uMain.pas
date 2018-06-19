@@ -135,6 +135,7 @@ type
     DoorScheduleList : TStringList;
     HoliDayList : TStringList;
 
+    procedure LoadAlarmCode;
     procedure AlarmConfigSetting;
     procedure CardRegistPortOpen;
     procedure RcvCardDataByReader(aData:string);
@@ -342,8 +343,15 @@ begin
     ini_fun := TiniFile.Create(G_stExeFolder + '\Monitoring.INI');
     with ini_fun do
     begin
-      if ReadInteger('AlarmEvent','Show',0) = 1 then  btn_AlarmReport.Visible := True
-      else btn_AlarmReport.Visible := False;
+      if ReadInteger('AlarmEvent','Show',0) = 1 then
+      begin
+        btn_AlarmReport.Visible := True;
+        AdvToolBar3.Width := 220;
+      end  else
+      begin
+        btn_AlarmReport.Visible := False;
+        AdvToolBar3.Width := 110;
+      end;
     end;
   Finally
     ini_fun.Free;
@@ -1177,6 +1185,7 @@ begin
     TDataBaseConfig.GetObject.ShowDataBaseConfig;
   end;
   Logined := False;
+  LoadAlarmCode;
 //showmessage('1-2');
   for i := 0 to HIGH(G_bFormEnabled) do G_bFormEnabled[i] := False;
 
@@ -1276,6 +1285,59 @@ begin
 end;
 
 
+
+procedure TfmMain.LoadAlarmCode;
+var
+  TempAdoQuery : TADOQuery;
+  stSql : string;
+begin
+  if AlarmCodeList = nil then  AlarmCodeList := TStringList.Create;
+  AlarmCodeList.Clear;
+  stSql := 'select * from TB_ALARMCODE ';
+
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+    TempAdoQuery.DisableControls;
+
+    with TempAdoQuery  do
+    begin
+      Close;
+      SQL.Text := stSql;
+
+      Try
+        Open;
+      Except
+        LogSave(G_stExeFolder + '\..\log\err'+ FormatDateTIme('yyyymmdd',Now)+'.log','LoadAlarmCode Error');
+
+        Exit;
+      End;
+
+      if RecordCount > 0  then
+      begin
+        First;
+        Try
+          while not eof do
+          begin
+            if G_bApplicationTerminate then Exit;
+            AlarmCodeList.Add( FindField('AE_ALARMCODE').AsString);
+            Next;
+            Application.ProcessMessages;
+          end;
+        Except
+          LogSave(G_stExeFolder + '\..\log\err'+ FormatDateTIme('yyyymmdd',Now)+'.log','LoadAlarmCode Error');
+
+        End;
+      end;
+    end;
+  Finally
+    TempAdoQuery.EnableControls;
+    TempAdoQuery.Free;
+    CoUninitialize;
+    L_bCardDownLoad := False;
+  End;
+end;
 
 function TfmMain.LoadCardFromFile(aFileName: string): Boolean;
 var

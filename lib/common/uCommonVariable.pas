@@ -111,6 +111,8 @@ var
   G_nFontSize : integer = 9;
   G_stMenuCaption : string;
 
+  AlarmCodeList : TStringList;
+
 implementation
 
 end.

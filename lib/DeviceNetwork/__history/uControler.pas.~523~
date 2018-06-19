@@ -16,7 +16,8 @@ const
 
     WSAEWOULDBLOCK = 10035;  //비동기 에러 메시지
 
-//{$DEFINE TApdWinsockport}  //{$DEFINE TClientSocket}
+//{$DEFINE TApdWinsockport}
+{$DEFINE TClientSocket}
 
 type
 
@@ -1332,11 +1333,10 @@ begin
   stDoorNo:=  '1';
   stReaderNo := '1';
   stInOut := '*';
+  stCardMode := '*'; //Posi/Neg
   stTime  := FormatDateTime('yyyymmddhhnnss',now);
-  stCardMode := '*'; //Posi/Nega
-  DoorMode:=  aRealData[2]; //운영/개방
   stChangeState := aRealData[3]; //변경사유  c:카드,p:비밀번호,m:마스터번호
-  stAccessResult := aRealData[1]; //출입승인결과  1:승인,A:미승인
+
   if((stChangeState = 'q') or (stChangeState = 'r') or (stChangeState = 's') or (stChangeState = 'u') or (stChangeState = 'w') ) then
   begin
     if Assigned(FOnAlarmEvent) then
@@ -1346,8 +1346,10 @@ begin
     end;
 
   end;
-  if(Length(aRealData) < 14) then exit; //출입이벤트가 아니다.
-  if(Length(aRealData) >= 4) then stCardMsgNo := aRealData[4];
+  if(Length(aRealData) < 10) then exit; //출입이벤트가 아니다.
+  stAccessResult := aRealData[1]; //출입승인결과  1:승인,A:미승인
+  DoorMode:=  aRealData[2]; //운영/개방
+  stCardMsgNo := aRealData[4];
   stDoorState:= '*'; //문상태
   stATButton:= '*'; //근태버튼
 

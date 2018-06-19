@@ -33,7 +33,7 @@ type
     AdvPreviewMenuOfficeStyler1: TAdvPreviewMenuOfficeStyler;
     AdvToolBar2: TAdvToolBar;
     AdvToolBar3: TAdvToolBar;
-    AdvGlowButton21: TAdvGlowButton;
+    btn_AlarmReport: TAdvGlowButton;
     AdvGlowButton67: TAdvGlowButton;
     AdvGlowButton6: TAdvGlowButton;
     AdvGlowButton7: TAdvGlowButton;
@@ -65,6 +65,7 @@ type
     AdvGlowButton9: TAdvGlowButton;
     PCScheduleTimer: TTimer;
     AdvFormStyler1: TAdvFormStyler;
+    AdvGlowButton10: TAdvGlowButton;
     procedure AdvPreviewMenu1MenuItems3Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure StartMenuMenuItems1Click(Sender: TObject);
@@ -90,7 +91,7 @@ type
     procedure AdvGlowButton2Click(Sender: TObject);
     procedure mn_btnMonitoringClick(Sender: TObject);
     procedure AdvGlowButton4Click(Sender: TObject);
-    procedure AdvGlowButton21Click(Sender: TObject);
+    procedure btn_AlarmReportClick(Sender: TObject);
     procedure CommandArrayCommandsTSTATUSMSGExecute(Command: TCommand;
       Params: TStringList);
     procedure CardAutoDownTimerTimer(Sender: TObject);
@@ -113,6 +114,7 @@ type
     procedure CommandArrayCommandsTCHANGEExecute(Command: TCommand;
       Params: TStringList);
     procedure FormActivate(Sender: TObject);
+    procedure AdvGlowButton10Click(Sender: TObject);
   private
     FLogined: Boolean;
 
@@ -133,6 +135,8 @@ type
     DoorScheduleList : TStringList;
     HoliDayList : TStringList;
 
+    procedure LoadAlarmCode;
+    procedure AlarmConfigSetting;
     procedure CardRegistPortOpen;
     procedure RcvCardDataByReader(aData:string);
     procedure CardRegisterReadingProcess(aData:string);
@@ -205,10 +209,16 @@ uses
   uMonitoring,
 //  uRemoteControl,
   uDataBaseBackup,
-  //uNetConfig,
+  uNetConfig,
   uFormFontUtil;
 
 {$R *.dfm}
+
+procedure TfmMain.AdvGlowButton10Click(Sender: TObject);
+begin
+  inherited;
+  MDIChildShow('TfmAccessReport');
+end;
 
 procedure TfmMain.AdvGlowButton1Click(Sender: TObject);
 begin
@@ -217,10 +227,10 @@ begin
 
 end;
 
-procedure TfmMain.AdvGlowButton21Click(Sender: TObject);
+procedure TfmMain.btn_AlarmReportClick(Sender: TObject);
 begin
   inherited;
-  MDIChildShow('TfmAccessReport');
+  MDIChildShow('TfmAlarmReport');
 end;
 
 procedure TfmMain.AdvGlowButton2Click(Sender: TObject);
@@ -323,6 +333,30 @@ procedure TfmMain.AdvToolBarPager1HelpClick(Sender: TObject);
 begin
   if Not Logined then ShowMessage(dmFormName.GetFormMessage('2','M00055'))
   else ShowMessage(dmFormName.GetFormMessage('2','M00056'));
+end;
+
+procedure TfmMain.AlarmConfigSetting;
+var
+  ini_fun : TiniFile;
+begin
+  Try
+    ini_fun := TiniFile.Create(G_stExeFolder + '\Monitoring.INI');
+    with ini_fun do
+    begin
+      if ReadInteger('AlarmEvent','Show',0) = 1 then
+      begin
+        btn_AlarmReport.Visible := True;
+        AdvToolBar3.Width := 220;
+      end  else
+      begin
+        btn_AlarmReport.Visible := False;
+        AdvToolBar3.Width := 110;
+      end;
+    end;
+  Finally
+    ini_fun.Free;
+  End;
+
 end;
 
 procedure TfmMain.AppException(Sender: TObject; E: Exception);
@@ -1151,6 +1185,7 @@ begin
     TDataBaseConfig.GetObject.ShowDataBaseConfig;
   end;
   Logined := False;
+  LoadAlarmCode;
 //showmessage('1-2');
   for i := 0 to HIGH(G_bFormEnabled) do G_bFormEnabled[i] := False;
 
@@ -1209,7 +1244,8 @@ begin
   AdvGlowButton2.Caption := dmFormName.GetFormMessage('1','M00020');
   mn_btnMonitoring.Caption := dmFormName.GetFormMessage('1','M00021');
   AdvGlowButton4.Caption := dmFormName.GetFormMessage('1','M00022');
-  AdvGlowButton21.Caption := dmFormName.GetFormMessage('1','M00023');
+  AdvGlowButton10.Caption := dmFormName.GetFormMessage('1','M00023');
+  btn_AlarmReport.Caption := dmFormName.GetFormMessage('1','M00063');
   AdvGlowButton3.Caption := dmFormName.GetFormMessage('1','M00060');
   btn_DeviceLanSetting.Caption := dmFormName.GetFormMessage('1','M00062');
   btn_fmConfigSetting.Caption := dmFormName.GetFormMessage('1','M00025');
@@ -1245,9 +1281,63 @@ begin
   CardAutoDownTimer.Enabled := True;
   dmDeviceControlCenter.Start := True;
   NodeOpenCheckTimer.Enabled := True;
+  AlarmConfigSetting;
 end;
 
 
+
+procedure TfmMain.LoadAlarmCode;
+var
+  TempAdoQuery : TADOQuery;
+  stSql : string;
+begin
+  if AlarmCodeList = nil then  AlarmCodeList := TStringList.Create;
+  AlarmCodeList.Clear;
+  stSql := 'select * from TB_ALARMCODE ';
+
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+    TempAdoQuery.DisableControls;
+
+    with TempAdoQuery  do
+    begin
+      Close;
+      SQL.Text := stSql;
+
+      Try
+        Open;
+      Except
+        LogSave(G_stExeFolder + '\..\log\err'+ FormatDateTIme('yyyymmdd',Now)+'.log','LoadAlarmCode Error');
+
+        Exit;
+      End;
+
+      if RecordCount > 0  then
+      begin
+        First;
+        Try
+          while not eof do
+          begin
+            if G_bApplicationTerminate then Exit;
+            AlarmCodeList.AddStrings(FindField('AE_ALARMCODE').AsString);
+            Next;
+            Application.ProcessMessages;
+          end;
+        Except
+          LogSave(G_stExeFolder + '\..\log\err'+ FormatDateTIme('yyyymmdd',Now)+'.log','LoadAlarmCode Error');
+
+        End;
+      end;
+    end;
+  Finally
+    TempAdoQuery.EnableControls;
+    TempAdoQuery.Free;
+    CoUninitialize;
+    L_bCardDownLoad := False;
+  End;
+end;
 
 function TfmMain.LoadCardFromFile(aFileName: string): Boolean;
 var
@@ -1849,7 +1939,7 @@ var
   stDeivceCaption : string;
   nResult : integer;
 begin
-  if ord(aDoorMode[1]) < 20 then aDoorMode := '0';
+//  if ord(aDoorMode[1]) < 20 then aDoorMode := '0';
 
   //출입 모니터링에 전송
   if G_bFormEnabled[FORMMONITORING] then

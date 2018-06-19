@@ -4,9 +4,9 @@ inherited fmMonitoring: TfmMonitoring
   BorderIcons = []
   BorderStyle = bsNone
   Caption = #47784#45768#53552#47553
-  ClientHeight = 527
-  ClientWidth = 1084
-  Font.Height = -15
+  ClientHeight = 422
+  ClientWidth = 867
+  Font.Height = -12
   Font.Name = 'MS Gothic'
   FormStyle = fsMDIChild
   Visible = True
@@ -16,35 +16,25 @@ inherited fmMonitoring: TfmMonitoring
   OnShow = FormShow
   ExplicitWidth = 1102
   ExplicitHeight = 572
-  PixelsPerInch = 120
-  TextHeight = 15
+  PixelsPerInch = 96
+  TextHeight = 12
   object Image1: TImage [0]
     Left = 0
     Top = 0
-    Width = 1084
-    Height = 527
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Width = 867
+    Height = 422
     Align = alClient
-    ExplicitWidth = 1124
-    ExplicitHeight = 384
   end
   object BodyPanel: TW7Panel [1]
     Left = 0
     Top = 0
-    Width = 1084
-    Height = 527
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Width = 867
+    Height = 422
     Version = '1.0.2.0'
     Caption = 'BodyPanel'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'MS Gothic'
     Font.Style = []
     SolidColor = clBlack
@@ -60,12 +50,8 @@ inherited fmMonitoring: TfmMonitoring
     object menuTab: TAdvOfficeTabSet
       Left = 0
       Top = 0
-      Width = 1084
-      Height = 29
-      Margins.Left = 4
-      Margins.Top = 4
-      Margins.Right = 4
-      Margins.Bottom = 4
+      Width = 867
+      Height = 23
       AdvOfficeTabs = <
         item
           Caption = #38281#12376#12427
@@ -846,18 +832,14 @@ inherited fmMonitoring: TfmMonitoring
       OnChange = menuTabChange
     end
     object pan_DoorList: TAdvPanel
-      Left = 335
-      Top = 29
-      Width = 749
-      Height = 498
-      Margins.Left = 4
-      Margins.Top = 4
-      Margins.Right = 4
-      Margins.Bottom = 4
+      Left = 268
+      Top = 23
+      Width = 599
+      Height = 399
       Align = alClient
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Gothic'
       Font.Style = []
       ParentFont = False
@@ -868,10 +850,10 @@ inherited fmMonitoring: TfmMonitoring
       Caption.ColorTo = clNone
       Caption.Font.Charset = DEFAULT_CHARSET
       Caption.Font.Color = clWindowText
-      Caption.Font.Height = -15
+      Caption.Font.Height = -12
       Caption.Font.Name = 'MS Gothic'
       Caption.Font.Style = []
-      Caption.Height = 21
+      Caption.Height = 17
       StatusBar.Font.Charset = DEFAULT_CHARSET
       StatusBar.Font.Color = clWindowText
       StatusBar.Font.Height = -11
@@ -881,14 +863,10 @@ inherited fmMonitoring: TfmMonitoring
       FullHeight = 200
       object AdvSplitter3: TAdvSplitter
         Left = 1
-        Top = 395
-        Width = 747
+        Top = 316
+        Width = 597
         Height = 2
         Cursor = crVSplit
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
         Align = alBottom
         Appearance.BorderColor = clNone
         Appearance.BorderColorHot = clNone
@@ -897,19 +875,13 @@ inherited fmMonitoring: TfmMonitoring
         Appearance.ColorHot = clWhite
         Appearance.ColorHotTo = clGray
         GripStyle = sgDots
-        ExplicitTop = 101
-        ExplicitWidth = 783
       end
       object pan_CardListHeader: TAdvSmoothPanel
         Left = 1
         Top = 1
-        Width = 747
-        Height = 100
+        Width = 597
+        Height = 80
         Cursor = crDefault
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
         Caption.Text = #12450#12463#12475#12473#29366#27841
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -938,14 +910,10 @@ inherited fmMonitoring: TfmMonitoring
         Align = alTop
         TabOrder = 0
         object lb_Door: TAdvSmoothLabel
-          Left = 34
-          Top = 45
-          Width = 97
-          Height = 23
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Left = 27
+          Top = 36
+          Width = 78
+          Height = 18
           Fill.ColorMirror = clNone
           Fill.ColorMirrorTo = clNone
           Fill.GradientType = gtVertical
@@ -972,18 +940,14 @@ inherited fmMonitoring: TfmMonitoring
           Version = '1.6.0.2'
         end
         object cmb_ListDoorCode: TComboBox
-          Left = 129
-          Top = 44
-          Width = 172
+          Left = 103
+          Top = 35
+          Width = 138
           Height = 25
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
           Style = csDropDownList
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -17
+          Font.Height = -13
           Font.Name = 'MS Gothic'
           Font.Style = []
           ImeName = 'Microsoft Office IME 2007'
@@ -993,14 +957,10 @@ inherited fmMonitoring: TfmMonitoring
       end
       object sg_AccessEvent: TAdvStringGrid
         Left = 1
-        Top = 101
-        Width = 747
-        Height = 294
+        Top = 81
+        Width = 597
+        Height = 235
         Cursor = crDefault
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
         Align = alClient
         ColCount = 9
         DefaultRowHeight = 24
@@ -1009,7 +969,7 @@ inherited fmMonitoring: TfmMonitoring
         RowCount = 2
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
+        Font.Height = -12
         Font.Name = 'MS Gothic'
         Font.Style = []
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing]
@@ -1148,14 +1108,10 @@ inherited fmMonitoring: TfmMonitoring
       end
       object pan_AlarmListHeader: TAdvSmoothPanel
         Left = 1
-        Top = 397
-        Width = 747
-        Height = 100
+        Top = 318
+        Width = 597
+        Height = 80
         Cursor = crDefault
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
         Caption.Text = #12450#12463#12475#12473#29366#27841
         Caption.HTMLFont.Charset = DEFAULT_CHARSET
         Caption.HTMLFont.Color = clWindowText
@@ -1186,14 +1142,10 @@ inherited fmMonitoring: TfmMonitoring
         TabOrder = 2
         object sg_alarmEvent: TAdvStringGrid
           Left = 0
-          Top = 15
-          Width = 747
-          Height = 85
+          Top = 12
+          Width = 597
+          Height = 68
           Cursor = crDefault
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
           Align = alBottom
           ColCount = 4
           DefaultRowHeight = 24
@@ -1202,7 +1154,7 @@ inherited fmMonitoring: TfmMonitoring
           RowCount = 2
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'MS Gothic'
           Font.Style = []
           Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing]
@@ -1330,6 +1282,7 @@ inherited fmMonitoring: TfmMonitoring
           SortSettings.HeaderMirrorColor = 16448250
           SortSettings.HeaderMirrorColorTo = 16448250
           Version = '7.2.8.0'
+          ExplicitWidth = 598
           ColWidths = (
             180
             178
@@ -1340,14 +1293,10 @@ inherited fmMonitoring: TfmMonitoring
     end
     object pan_DoorState: TAdvSmoothPanel
       Left = 0
-      Top = 29
-      Width = 335
-      Height = 498
+      Top = 23
+      Width = 268
+      Height = 399
       Cursor = crDefault
-      Margins.Left = 4
-      Margins.Top = 4
-      Margins.Right = 4
-      Margins.Bottom = 4
       Caption.Text = #12489#12450#12398#29694#29366
       Caption.HTMLFont.Charset = DEFAULT_CHARSET
       Caption.HTMLFont.Color = clWindowText
@@ -1377,17 +1326,13 @@ inherited fmMonitoring: TfmMonitoring
       OnResize = pan_DoorStateResize
       TabOrder = 2
       object TreeView_DoorList: TTreeView
-        Left = 4
-        Top = 34
-        Width = 299
-        Height = 456
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
+        Left = 3
+        Top = 27
+        Width = 239
+        Height = 365
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -17
+        Font.Height = -13
         Font.Name = 'MS Gothic'
         Font.Style = []
         Images = toolslist
@@ -1398,14 +1343,10 @@ inherited fmMonitoring: TfmMonitoring
         OnClick = TreeView_DoorListClick
       end
       object TreeView_LocationCode: TTreeView
-        Left = 26
-        Top = 310
-        Width = 263
-        Height = 140
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
+        Left = 21
+        Top = 248
+        Width = 210
+        Height = 112
         Align = alCustom
         BorderStyle = bsNone
         HotTrack = True
@@ -1441,7 +1382,7 @@ inherited fmMonitoring: TfmMonitoring
     Left = 200
     Top = 208
     Bitmap = {
-      494C010102000400740020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000400780020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000002000000001002000000000000040
       000000000000000000000000000000000000FEFEFE00FEFEFE00FEFEFE00FEFE
       FE00FEFEFE00FEFEFE00C7C7C700C7C7C700FEFEFE00FEFEFE00FCFEFE00C7C7
@@ -1983,7 +1924,7 @@ inherited fmMonitoring: TfmMonitoring
     Left = 72
     Top = 168
     Bitmap = {
-      494C010108000900740018001800FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
+      494C010108000900780018001800FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000060000000480000000100200000000000006C
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3175,7 +3116,7 @@ inherited fmMonitoring: TfmMonitoring
     PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -17
+    PagerCaption.Font.Height = -13
     PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 13815240

@@ -34,6 +34,7 @@ const
   FORMPERMITCODE = 13;     //출입승인코드관리
   FORMPERSONCARDPERMIT = 14; //개인별카드권한관리
   FORMREMOTECONTROL = 15; //원격지원서비스
+  FORMALARMREPORT = 16;    //알람보고서
 
 const
   NODESOCKETDELAYTIME = 60;
@@ -48,7 +49,7 @@ const
   TCPIP = 1;
 
   //통신 응답 대기 시간
-  REPLYDelayTime = 1000;
+  REPLYDelayTime = 5000;
   ENQDelayTime = 100;
   LASTPACKETRETRYCOUNT = 3; //최종 패킷이 반복적으로 올라 온 횟수
   DEVICECONNECTERRORMAXCOUNT = 100; //ENQ에 의한 응답이 없는 경우 통신실패로 판단
@@ -75,7 +76,7 @@ var
   G_nCardFixedLength : integer = 8;  //해당 길이 데이터만 다운로드 하자...
   G_nPasswordFixedLength : integer = 4;  //해당 길이 데이터만 다운로드 하자...
   G_nComDelayTime : integer = 20;   //다음 패킷을 보내기 위해 대기하는 시간.
-  G_nFormLanguageType : integer = 1; // 1.KOR
+  G_nLangeType : integer = 1;  //1.KOR,2.JAPAN,3.ENG
 
   G_stMasterNo : string;            //로그인비밀번호와 동일한 번호
   G_stDeviceVer : string = 'K1';
@@ -103,6 +104,12 @@ var
   G_nChildFormDefaultHeight : integer = 620 ;
   //등록기 포트번호
   G_nCardRegisterPort : integer = 0;
+
+//폰트
+  G_stFormStyle : string;
+  G_stFontName : string = '맑은 고딕';
+  G_nFontSize : integer = 9;
+  G_stMenuCaption : string;
 
 implementation
 

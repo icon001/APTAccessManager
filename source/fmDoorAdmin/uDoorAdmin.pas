@@ -126,6 +126,7 @@ type
 
     function GetMaxDeviceNo(aNodeNo:string):integer;
     Function DupCheckDoor(aNodeNo,aDeviceNo:string;var aDupName:string):Boolean;
+    function CheckTB_DEVICE_NodeCount(aNodeNo:string):integer;
   private
     procedure LoadChildCode(aParentCode:string;aPosition:integer;cmbBox:TComboBox;aList:TStringList;aAll:Boolean);
     procedure LoadNodeCode(cmbBox:TComboBox;aList:TStringList;aAll:Boolean);
@@ -392,6 +393,40 @@ begin
 
 end;
 
+function TfmDoorAdmin.CheckTB_DEVICE_NodeCount(aNodeNo: string): integer;
+var
+  stSql : string;
+  TempAdoQuery : TADOQuery;
+begin
+  result := 0;
+  Try
+    CoInitialize(nil);
+    TempAdoQuery := TADOQuery.Create(nil);
+    TempAdoQuery.Connection := dmDataBase.ADOConnection;
+
+    stSql := 'Select count(*) as cnt from TB_DEVICE ';
+    stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+    stSql := stSql + ' AND ND_NODENO = ' + aNodeNo ;
+
+    with TempAdoQuery do
+    begin
+      Close;
+      Sql.Text := stSql;
+      Try
+        Open;
+      Except
+        Exit;
+      End;
+      if recordCount < 1 then Exit;
+
+      result := FindField('cnt').AsInteger;
+    end;
+  Finally
+    TempAdoQuery.Free;
+    CoUninitialize;
+  End;
+end;
+
 procedure TfmDoorAdmin.cmb_InsertDongCodeChange(Sender: TObject);
 var
   stParentCode : string;
@@ -465,6 +500,15 @@ begin
   stSql := stSql + ' AND DO_DOORNO = ' + aDoorNo + ' ';
 
   result := dmDataBase.ProcessExecSQL(stSql);
+
+  if CheckTB_DEVICE_NodeCount(aNodeNo) = 0 then
+  begin
+    stSql := ' Delete from TB_NODE ';
+    stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+    stSql := stSql + ' AND ND_NODENO = ' + aNodeNo;
+
+    result := dmDataBase.ProcessExecSQL(stSql);
+  end;
 
 end;
 
@@ -703,7 +747,7 @@ var
   stSql : string;
   TempAdoQuery : TADOQuery;
 begin
-  nDeviceNo := 0;
+  nDeviceNo := 1;
   Try
     CoInitialize(nil);
     TempAdoQuery := TADOQuery.Create(nil);

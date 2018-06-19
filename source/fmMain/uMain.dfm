@@ -3,11 +3,11 @@ inherited fmMain: TfmMain
   Top = 0
   BorderIcons = []
   Caption = #52636#51077#44288#47532#49884#49828#53596
-  ClientHeight = 938
-  ClientWidth = 1260
+  ClientHeight = 750
+  ClientWidth = 1008
   Font.Charset = HANGEUL_CHARSET
   Font.Color = clBlack
-  Font.Height = -15
+  Font.Height = -12
   Font.Name = #44404#47548
   FormStyle = fsMDIForm
   WindowState = wsMaximized
@@ -15,20 +15,15 @@ inherited fmMain: TfmMain
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  ExplicitLeft = -16
-  ExplicitWidth = 1278
-  ExplicitHeight = 983
-  PixelsPerInch = 120
-  TextHeight = 15
+  ExplicitWidth = 1024
+  ExplicitHeight = 788
+  PixelsPerInch = 96
+  TextHeight = 12
   object Image1: TImage [0]
     Left = 0
-    Top = 177
-    Width = 1260
-    Height = 742
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
+    Top = 142
+    Width = 1008
+    Height = 589
     Align = alClient
     Center = True
     Picture.Data = {
@@ -3763,19 +3758,14 @@ inherited fmMain: TfmMain
       C55D8ABB15762AEC55D8ABB15762AEC55D8ABB15762AEC55D8ABB15762AEC55D
       8ABB15762AEC55D8ABB15762AEC55D8ABB15762AEC55D8ABB15762AEC55D8ABB
       157FFFD9}
-    ExplicitTop = 201
-    ExplicitHeight = 713
+    ExplicitHeight = 593
   end
   object AdvToolBarPager1: TAdvToolBarPager [1]
     Left = 0
     Top = 0
-    Width = 1260
-    Height = 177
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    ActivePage = ApManagerAdmin
+    Width = 1008
+    Height = 142
+    ActivePage = ApBasicAdmin
     Caption.Caption = ' '#52636#51077#44288#47532#49884#49828#53596
     CaptionButtons = [cbClose, cbMinimize, cbMaximize]
     Hints.MDICloseBtnHint = 'Close'
@@ -3960,23 +3950,15 @@ inherited fmMain: TfmMain
     object ApBasicAdmin: TAdvPage
       Left = -1
       Top = 53
-      Width = 1262
-      Height = 124
-      Margins.Left = 4
-      Margins.Top = 4
-      Margins.Right = 4
-      Margins.Bottom = 4
+      Width = 1010
+      Height = 89
       Caption = #44592#48376#49444#51221
       ShortCutHint = 'N'
       object AdvToolBar7: TAdvToolBar
-        Left = 251
+        Left = 202
         Top = 3
-        Width = 376
-        Height = 118
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
+        Width = 301
+        Height = 83
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -4010,18 +3992,14 @@ inherited fmMain: TfmMain
         object AdvGlowButton42: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 118
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 94
+          Height = 67
           Align = alLeft
           BorderStyle = bsNone
           Caption = #45432#46300#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -4137,19 +4115,15 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object AdvGlowButton67: TAdvGlowButton
-          Left = 118
+          Left = 94
           Top = 0
-          Width = 133
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 107
+          Height = 67
           Align = alLeft
           Caption = #52636#51077#47928#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -4329,19 +4303,15 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object AdvGlowButton3: TAdvGlowButton
-          Left = 251
+          Left = 201
           Top = 0
-          Width = 120
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 96
+          Height = 67
           Align = alLeft
           Caption = #49828#52992#51460#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -4492,12 +4462,8 @@ inherited fmMain: TfmMain
       object AdvToolBar8: TAdvToolBar
         Left = 3
         Top = 3
-        Width = 245
-        Height = 118
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
+        Width = 196
+        Height = 83
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -4531,18 +4497,14 @@ inherited fmMain: TfmMain
         object AdvGlowButton6: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 121
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 97
+          Height = 67
           Align = alLeft
           BorderStyle = bsNone
           Caption = #46041#53076#46300#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -4692,20 +4654,16 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object AdvGlowButton7: TAdvGlowButton
-          Left = 121
+          Left = 97
           Top = 0
-          Width = 117
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 93
+          Height = 67
           Align = alLeft
           BorderStyle = bsNone
           Caption = #52636#44396#53076#46300#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -5157,14 +5115,10 @@ inherited fmMain: TfmMain
         end
       end
       object AdvToolBar2: TAdvToolBar
-        Left = 630
+        Left = 506
         Top = 3
-        Width = 187
-        Height = 118
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
+        Width = 150
+        Height = 83
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -5198,17 +5152,13 @@ inherited fmMain: TfmMain
         object AdvGlowButton53: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 187
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 150
+          Height = 67
           Align = alClient
           Caption = #52636#51077#49345#53468#53076#46300#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -5357,14 +5307,10 @@ inherited fmMain: TfmMain
         end
       end
       object AdvToolBar9: TAdvToolBar
-        Left = 820
+        Left = 659
         Top = 3
-        Width = 137
-        Height = 118
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
+        Width = 110
+        Height = 83
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -5398,17 +5344,13 @@ inherited fmMain: TfmMain
         object AdvGlowButton9: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 137
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 110
+          Height = 67
           Align = alClient
           Caption = #53945#51221#51068#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -5560,23 +5502,15 @@ inherited fmMain: TfmMain
     object ApManagerAdmin: TAdvPage
       Left = -1
       Top = 53
-      Width = 1262
-      Height = 124
-      Margins.Left = 4
-      Margins.Top = 4
-      Margins.Right = 4
-      Margins.Bottom = 4
+      Width = 1010
+      Height = 89
       Caption = #50868#50689#44288#47532
       ShortCutHint = 'I'
       object AdvToolBar1: TAdvToolBar
         Left = 3
         Top = 3
-        Width = 492
-        Height = 118
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
+        Width = 394
+        Height = 83
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -5608,20 +5542,16 @@ inherited fmMain: TfmMain
         ParentOptionPicture = True
         ToolBarIndex = 0
         object AdvGlowButton2: TAdvGlowButton
-          Left = 343
+          Left = 274
           Top = 0
-          Width = 142
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 114
+          Height = 67
           Align = alLeft
           BorderStyle = bsNone
           Caption = #48708#48128#48264#54840#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -6078,18 +6008,14 @@ inherited fmMain: TfmMain
         object AdvGlowButton1: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 100
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 80
+          Height = 67
           Align = alLeft
           BorderStyle = bsNone
           Caption = #49324#50896#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -6523,20 +6449,16 @@ inherited fmMain: TfmMain
           DropDownMenu = pm_Person
         end
         object AdvGlowButton8: TAdvGlowButton
-          Left = 100
+          Left = 80
           Top = 0
-          Width = 100
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 80
+          Height = 67
           Align = alLeft
           BorderStyle = bsNone
           Caption = #44060#48324#44428#54620#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -6974,20 +6896,16 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object AdvGlowButton5: TAdvGlowButton
-          Left = 200
+          Left = 160
           Top = 0
-          Width = 143
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 114
+          Height = 67
           Align = alLeft
           BorderStyle = bsNone
           Caption = #52636#51077#47928#48324#44428#54620#44288#47532
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -7434,14 +7352,10 @@ inherited fmMain: TfmMain
         end
       end
       object AdvToolBar4: TAdvToolBar
-        Left = 498
+        Left = 400
         Top = 3
-        Width = 295
-        Height = 118
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
+        Width = 236
+        Height = 83
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -7475,19 +7389,15 @@ inherited fmMain: TfmMain
         object mn_btnMonitoring: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 129
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 103
+          Height = 67
           Align = alLeft
           AntiAlias = aaNone
           BorderStyle = bsNone
           Caption = #52636#51077#54788#54889#47784#45768#53552#47553
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -7941,21 +7851,17 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object AdvGlowButton4: TAdvGlowButton
-          Left = 129
+          Left = 103
           Top = 0
-          Width = 160
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 128
+          Height = 67
           Align = alLeft
           AntiAlias = aaNone
           BorderStyle = bsNone
           Caption = #44592#44592#53685#49888#54788#54889#47784#45768#53552#47553
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -8419,16 +8325,13 @@ inherited fmMain: TfmMain
         end
       end
       object AdvToolBar3: TAdvToolBar
-        Left = 796
+        Left = 639
         Top = 3
-        Width = 229
-        Height = 118
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
+        Width = 220
+        Height = 83
         AllowFloating = True
         AutoPositionControls = False
+        AutoSize = False
         Caption = #48372#44256#49436
         CaptionFont.Charset = DEFAULT_CHARSET
         CaptionFont.Color = clWindowText
@@ -8457,21 +8360,17 @@ inherited fmMain: TfmMain
         ParentOptionPicture = True
         ToolBarIndex = 2
         object btn_AlarmReport: TAdvGlowButton
-          Left = 113
+          Left = 110
           Top = 0
-          Width = 101
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 110
+          Height = 67
           Align = alLeft
           AntiAlias = aaNone
           BorderStyle = bsNone
           Caption = #44592#44036#48324#50508#46988#48372#44256#49436
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -8909,24 +8808,19 @@ inherited fmMain: TfmMain
           Appearance.GradientMirrorDown = ggVertical
           Appearance.GradientChecked = ggVertical
           Layout = blGlyphTop
-          ExplicitLeft = 144
         end
         object AdvGlowButton10: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 113
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 110
+          Height = 67
           Align = alLeft
           AntiAlias = aaNone
           BorderStyle = bsNone
           Caption = #44592#44036#48324#52636#51077#51060#47141#48372#44256#49436
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -9370,22 +9264,14 @@ inherited fmMain: TfmMain
     object ApEtc: TAdvPage
       Left = -1
       Top = 53
-      Width = 1262
-      Height = 124
-      Margins.Left = 4
-      Margins.Top = 4
-      Margins.Right = 4
-      Margins.Bottom = 4
+      Width = 1010
+      Height = 89
       Caption = #44592#53440
       object AdvToolBar5: TAdvToolBar
         Left = 3
         Top = 3
-        Width = 442
-        Height = 118
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
+        Width = 354
+        Height = 83
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -9408,18 +9294,14 @@ inherited fmMain: TfmMain
         object btn_fmConfigSetting: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 143
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 114
+          Height = 67
           Align = alLeft
           BorderStyle = bsNone
           Caption = #54872#44221#49444#51221
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -9877,20 +9759,16 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object btn_Upgrade: TAdvGlowButton
-          Left = 285
+          Left = 228
           Top = 0
-          Width = 143
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 114
+          Height = 67
           Align = alLeft
           BorderStyle = bsNone
           Caption = #50629#44536#47112#51060#46300
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -9992,20 +9870,16 @@ inherited fmMain: TfmMain
           Layout = blGlyphTop
         end
         object btn_DBBackup: TAdvGlowButton
-          Left = 143
+          Left = 114
           Top = 0
-          Width = 142
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 114
+          Height = 67
           Align = alLeft
           BorderStyle = bsNone
           Caption = 'DB'#48177#50629
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -10112,14 +9986,10 @@ inherited fmMain: TfmMain
         end
       end
       object AdvToolBar6: TAdvToolBar
-        Left = 448
+        Left = 360
         Top = 3
-        Width = 150
-        Height = 118
-        Margins.Left = 4
-        Margins.Top = 4
-        Margins.Right = 4
-        Margins.Bottom = 4
+        Width = 120
+        Height = 83
         AllowFloating = True
         AutoPositionControls = False
         AutoSize = False
@@ -10142,18 +10012,14 @@ inherited fmMain: TfmMain
         object btn_DeviceLanSetting: TAdvGlowButton
           Left = 0
           Top = 0
-          Width = 150
-          Height = 102
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
+          Width = 120
+          Height = 67
           Align = alClient
           BorderStyle = bsNone
           Caption = #44592#44592'LAN'#49444#51221
           Font.Charset = HANGEUL_CHARSET
           Font.Color = clBlack
-          Font.Height = -15
+          Font.Height = -12
           Font.Name = 'Segoe UI'
           Font.Style = []
           FocusType = ftHot
@@ -10266,10 +10132,6 @@ inherited fmMain: TfmMain
       Top = 30
       Width = 55
       Height = 24
-      Margins.Left = 4
-      Margins.Top = 4
-      Margins.Right = 4
-      Margins.Bottom = 4
       Appearance.Shape = bsOrb
       Appearance.BorderColor = clWhite
       Appearance.BorderColorHot = clWhite
@@ -10292,7 +10154,7 @@ inherited fmMain: TfmMain
       AdvPreviewMenu = StartMenu
       Font.Charset = HANGEUL_CHARSET
       Font.Color = clWhite
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = #47569#51008' '#44256#46357
       Font.Style = [fsBold]
       ParentFont = False
@@ -10305,13 +10167,9 @@ inherited fmMain: TfmMain
   end
   object sb_Status: TAdvOfficeStatusBar [2]
     Left = 0
-    Top = 919
-    Width = 1260
+    Top = 731
+    Width = 1008
     Height = 19
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
     AnchorHint = False
     Panels = <
       item
@@ -10416,7 +10274,7 @@ inherited fmMain: TfmMain
         Progress.ShowBorder = False
         Progress.Stacked = False
         Style = psTime
-        Text = '12:34:50'
+        Text = '12:18:09'
         TimeFormat = 'hh:mm:ss'
         Width = 562
       end>
@@ -10657,7 +10515,7 @@ inherited fmMain: TfmMain
     Left = 92
     Top = 273
     Bitmap = {
-      494C010102000400240110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101020004002C0110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000099877D00827165007B63
       54006D544300684F3E0063493700624736006248350063493500634935006349
@@ -10804,7 +10662,7 @@ inherited fmMain: TfmMain
     Left = 24
     Top = 268
     Bitmap = {
-      494C01010E00A300240120002000FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
+      494C01010E00A3002C0120002000FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000008000000001002000000000000000
       010000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
@@ -13152,7 +13010,7 @@ inherited fmMain: TfmMain
     PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -17
+    PagerCaption.Font.Height = -13
     PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 14005146
@@ -13215,8 +13073,8 @@ inherited fmMain: TfmMain
     TabAppearance.BackGround.Color = 16767935
     TabAppearance.BackGround.ColorTo = clNone
     TabAppearance.BackGround.Direction = gdVertical
-    Left = 764
-    Top = 76
+    Left = 796
+    Top = 140
   end
   object AdvPreviewMenuOfficeStyler1: TAdvPreviewMenuOfficeStyler
     FrameAppearance.BorderColor = 13217692
@@ -13380,8 +13238,8 @@ inherited fmMain: TfmMain
     StoredProps = [spBasic]
     TriggersOnRxChar = True
     OnRxChar = ComPortRxChar
-    Left = 728
-    Top = 88
+    Left = 744
+    Top = 160
   end
   object CardAutoDownTimer: TTimer
     Enabled = False

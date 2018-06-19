@@ -16,7 +16,8 @@ const
 
     WSAEWOULDBLOCK = 10035;  //비동기 에러 메시지
 
-//{$DEFINE TApdWinsockport}  //{$DEFINE TClientSocket}
+//{$DEFINE TApdWinsockport}
+{$DEFINE TClientSocket}
 
 type
 
@@ -198,7 +199,8 @@ type
     FDoorMode: string;
     FOnDeviceConnected: TComEventData;
     FDoorSTATE: string;
-    FOnCardAlarmEvent: TComEventData;
+    FOnAlarmEvent: TComEventData;
+
     Function ErrorDataProcess(aMcuID,aECUID,aCMD,aRcvMsgNo,aDeviceVer,aRealData:string):Boolean;
     procedure SetDoorMode(const Value: string);
     procedure SetDoorSTATE(const Value: string);
@@ -215,7 +217,7 @@ type
     property DoorSTATE : string read FDoorSTATE write SetDoorSTATE;
   public
     property OnCardAccessEvent : TComEventData read FOnCardAccessEvent write FOnCardAccessEvent;
-    property OnCardAlarmEvent : TComEventData read FOnCardAlarmEvent write FOnCardAlarmEvent;
+    property OnAlarmEvent : TComEventData read FOnAlarmEvent write FOnAlarmEvent;
     ProPerty OnCardRegData : TComEventData read FOnCardRegData write FOnCardRegData;
     proPerty OnDeviceConnected : TComEventData read FOnDeviceConnected write FOnDeviceConnected;
     property OnDeviceInitialize : TComEventData read FOnDeviceInitialize write FOnDeviceInitialize;
@@ -1326,16 +1328,14 @@ var
   stExitButton : string;
   bExitButton : Boolean;
 begin
-
   bExitButton := False;
   stDoorNo:=  '1';
   stReaderNo := '1';
   stInOut := '*';
+  stCardMode := '*'; //Posi/Neg
   stTime  := FormatDateTime('yyyymmddhhnnss',now);
-  stCardMode := '*'; //Posi/Nega
-  DoorMode:=  aRealData[2]; //운영/개방
   stChangeState := aRealData[3]; //변경사유  c:카드,p:비밀번호,m:마스터번호
-  stAccessResult := aRealData[1]; //출입승인결과  1:승인,A:미승인
+
   if((stChangeState = 'q') or (stChangeState = 'r') or (stChangeState = 's') or (stChangeState = 'u') or (stChangeState = 'w') ) then
   begin
     if Assigned(FOnAlarmEvent) then
@@ -1345,8 +1345,10 @@ begin
     end;
 
   end;
-  if(Length(aRealData) < 4) then exit; //출입이벤트가 아니다.
-  if(Length(aRealData) >= 4) then stCardMsgNo := aRealData[4];
+  if(Length(aRealData) < 10) then exit; //출입이벤트가 아니다.
+  stAccessResult := aRealData[1]; //출입승인결과  1:승인,A:미승인
+  DoorMode:=  aRealData[2]; //운영/개방
+  stCardMsgNo := aRealData[4];
   stDoorState:= '*'; //문상태
   stATButton:= '*'; //근태버튼
 

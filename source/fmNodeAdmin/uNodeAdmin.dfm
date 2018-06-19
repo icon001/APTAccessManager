@@ -4,10 +4,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
   BorderIcons = []
   BorderStyle = bsNone
   Caption = #45432#46300#44288#47532
-  ClientHeight = 723
-  ClientWidth = 1056
+  ClientHeight = 637
+  ClientWidth = 970
   Font.Charset = HANGEUL_CHARSET
-  Font.Height = -15
+  Font.Height = -12
   Font.Name = #45208#45588#44256#46357
   FormStyle = fsMDIChild
   Visible = True
@@ -16,28 +16,28 @@ inherited fmNodeAdmin: TfmNodeAdmin
   OnCreate = FormCreate
   OnResize = FormResize
   OnShow = FormShow
-  ExplicitWidth = 1074
-  ExplicitHeight = 768
-  PixelsPerInch = 120
-  TextHeight = 15
+  ExplicitWidth = 986
+  ExplicitHeight = 675
+  PixelsPerInch = 96
+  TextHeight = 14
   object Image1: TImage [0]
     Left = 0
     Top = 0
-    Width = 1056
-    Height = 723
+    Width = 970
+    Height = 637
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
     Align = alClient
-    ExplicitWidth = 909
-    ExplicitHeight = 461
+    ExplicitWidth = 986
+    ExplicitHeight = 675
   end
   object BodyPanel: TW7Panel [1]
-    Left = 9
+    Left = 8
     Top = 0
-    Width = 841
-    Height = 786
+    Width = 785
+    Height = 734
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -46,7 +46,7 @@ inherited fmNodeAdmin: TfmNodeAdmin
     Caption = 'BodyPanel'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     SolidColor = clBlack
@@ -61,8 +61,8 @@ inherited fmNodeAdmin: TfmNodeAdmin
     object menuTab: TAdvOfficeTabSet
       Left = 0
       Top = 0
-      Width = 841
-      Height = 29
+      Width = 785
+      Height = 27
       Margins.Left = 4
       Margins.Top = 4
       Margins.Right = 4
@@ -897,9 +897,9 @@ inherited fmNodeAdmin: TfmNodeAdmin
     end
     object dongCodeList: TAdvSmoothPanel
       Left = -6
-      Top = 35
-      Width = 844
-      Height = 758
+      Top = 33
+      Width = 788
+      Height = 707
       Cursor = crDefault
       Margins.Left = 4
       Margins.Top = 4
@@ -932,10 +932,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
       Version = '1.3.0.3'
       TabOrder = 1
       object lb_Nodename: TAdvSmoothLabel
-        Left = 34
-        Top = 64
-        Width = 151
-        Height = 22
+        Left = 32
+        Top = 60
+        Width = 141
+        Height = 20
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -966,10 +966,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         Version = '1.6.0.2'
       end
       object btn_Search: TSpeedButton
-        Left = 371
-        Top = 64
-        Width = 82
-        Height = 22
+        Left = 346
+        Top = 60
+        Width = 77
+        Height = 20
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -977,10 +977,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         OnClick = btn_SearchClick
       end
       object btn_Delete: TSpeedButton
-        Left = 726
-        Top = 524
-        Width = 80
-        Height = 22
+        Left = 678
+        Top = 489
+        Width = 74
+        Height = 21
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -988,10 +988,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         OnClick = btn_DeleteClick
       end
       object btn_add: TSpeedButton
-        Left = 583
-        Top = 524
-        Width = 81
-        Height = 22
+        Left = 544
+        Top = 489
+        Width = 76
+        Height = 21
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -999,10 +999,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         OnClick = btn_addClick
       end
       object ed_Nodename: TAdvEdit
-        Left = 193
-        Top = 63
-        Width = 172
-        Height = 28
+        Left = 180
+        Top = 59
+        Width = 161
+        Height = 25
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1028,10 +1028,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         Version = '3.3.2.0'
       end
       object sg_NodeList: TAdvStringGrid
-        Left = 34
-        Top = 103
-        Width = 772
-        Height = 412
+        Left = 32
+        Top = 96
+        Width = 720
+        Height = 385
         Cursor = crDefault
         Hint = #49688#51221#49884#50640#45716' '#54644#45817#49472#51012' '#45908#48660#53364#47533#54616#49464#50836'.'
         Margins.Left = 4
@@ -1044,7 +1044,7 @@ inherited fmNodeAdmin: TfmNodeAdmin
         RowCount = 17
         Font.Charset = HANGEUL_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
+        Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
@@ -1184,10 +1184,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
       end
     end
     object NodeAdd: TAdvSmoothPanel
-      Left = -46
-      Top = 69
-      Width = 636
-      Height = 759
+      Left = -43
+      Top = 64
+      Width = 594
+      Height = 709
       Cursor = crDefault
       Margins.Left = 4
       Margins.Top = 4
@@ -1220,10 +1220,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
       Version = '1.3.0.3'
       TabOrder = 2
       object lb_NodeAdd: TAdvSmoothLabel
-        Left = 34
-        Top = 64
-        Width = 187
-        Height = 22
+        Left = 32
+        Top = 60
+        Width = 174
+        Height = 20
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1254,10 +1254,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         Version = '1.6.0.2'
       end
       object btn_InsertSave: TSpeedButton
-        Left = 475
-        Top = 60
-        Width = 81
-        Height = 23
+        Left = 443
+        Top = 56
+        Width = 76
+        Height = 21
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1265,10 +1265,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         OnClick = btn_InsertSaveClick
       end
       object lb_NodeTypeAdd: TAdvSmoothLabel
-        Left = 34
-        Top = 94
-        Width = 187
-        Height = 22
+        Left = 32
+        Top = 88
+        Width = 174
+        Height = 20
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1299,10 +1299,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         Version = '1.6.0.2'
       end
       object ed_InsertName: TAdvEdit
-        Left = 296
-        Top = 60
-        Width = 173
-        Height = 28
+        Left = 276
+        Top = 56
+        Width = 162
+        Height = 25
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1328,10 +1328,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         Version = '3.3.2.0'
       end
       object cmb_InsertNodeType: TAdvComboBox
-        Left = 296
-        Top = 90
-        Width = 173
-        Height = 28
+        Left = 276
+        Top = 84
+        Width = 162
+        Height = 25
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1358,10 +1358,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         OnChange = cmb_InsertNodeTypeChange
       end
       object gb_RS232Config: TAdvGroupBox
-        Left = 34
-        Top = 129
-        Width = 517
-        Height = 102
+        Left = 32
+        Top = 120
+        Width = 482
+        Height = 96
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1369,10 +1369,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         Caption = 'RS232 '#49444#51221#54872#44221
         TabOrder = 2
         object lb_rs232PortAdd: TAdvSmoothLabel
-          Left = 16
-          Top = 34
-          Width = 188
-          Height = 22
+          Left = 15
+          Top = 32
+          Width = 175
+          Height = 20
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1403,10 +1403,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
           Version = '1.6.0.2'
         end
         object cmb_InsertComPort: TAdvComboBox
-          Left = 263
-          Top = 34
-          Width = 172
-          Height = 28
+          Left = 245
+          Top = 32
+          Width = 161
+          Height = 25
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1433,10 +1433,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         end
       end
       object gb_TCPIPConfig: TAdvGroupBox
-        Left = 34
-        Top = 259
-        Width = 517
-        Height = 102
+        Left = 32
+        Top = 242
+        Width = 482
+        Height = 95
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1445,10 +1445,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         TabOrder = 3
         Visible = False
         object lb_NodeIPAdd: TAdvSmoothLabel
-          Left = 34
-          Top = 29
-          Width = 187
-          Height = 24
+          Left = 32
+          Top = 27
+          Width = 174
+          Height = 22
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1479,10 +1479,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
           Version = '1.6.0.2'
         end
         object lb_NodePortAdd: TAdvSmoothLabel
-          Left = 34
-          Top = 59
-          Width = 187
-          Height = 24
+          Left = 32
+          Top = 55
+          Width = 174
+          Height = 22
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1513,10 +1513,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
           Version = '1.6.0.2'
         end
         object ed_InsertNodeIP: TAdvEdit
-          Left = 263
-          Top = 29
-          Width = 172
-          Height = 26
+          Left = 245
+          Top = 27
+          Width = 161
+          Height = 23
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1542,10 +1542,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
           Version = '3.3.2.0'
         end
         object ed_InsertNodePort: TAdvEdit
-          Left = 263
-          Top = 59
-          Width = 172
-          Height = 26
+          Left = 245
+          Top = 55
+          Width = 161
+          Height = 23
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1573,10 +1573,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
       end
     end
     object dongCodeUpdate: TAdvSmoothPanel
-      Left = -275
-      Top = 419
-      Width = 634
-      Height = 757
+      Left = -145
+      Top = 391
+      Width = 592
+      Height = 707
       Cursor = crDefault
       Margins.Left = 4
       Margins.Top = 4
@@ -1609,10 +1609,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
       Version = '1.3.0.3'
       TabOrder = 3
       object lb_NodeUpdate: TAdvSmoothLabel
-        Left = 34
-        Top = 64
-        Width = 187
-        Height = 22
+        Left = 32
+        Top = 60
+        Width = 174
+        Height = 20
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1643,10 +1643,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         Version = '1.6.0.2'
       end
       object btn_UpdateSave: TSpeedButton
-        Left = 468
-        Top = 60
-        Width = 81
-        Height = 23
+        Left = 437
+        Top = 56
+        Width = 75
+        Height = 21
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1654,10 +1654,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         OnClick = btn_UpdateSaveClick
       end
       object lb_NodeTypeUpdate: TAdvSmoothLabel
-        Left = 34
-        Top = 94
-        Width = 187
-        Height = 22
+        Left = 32
+        Top = 88
+        Width = 174
+        Height = 20
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1688,10 +1688,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         Version = '1.6.0.2'
       end
       object ed_UpdateName: TAdvEdit
-        Left = 289
-        Top = 60
-        Width = 172
-        Height = 28
+        Left = 270
+        Top = 56
+        Width = 160
+        Height = 25
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1717,10 +1717,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         Version = '3.3.2.0'
       end
       object ed_UpdateNodeNo: TAdvEdit
-        Left = 103
-        Top = 34
-        Width = 172
-        Height = 28
+        Left = 96
+        Top = 32
+        Width = 161
+        Height = 25
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1746,10 +1746,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         Version = '3.3.2.0'
       end
       object cmb_UpdateNodeType: TAdvComboBox
-        Left = 289
-        Top = 90
-        Width = 172
-        Height = 28
+        Left = 270
+        Top = 84
+        Width = 160
+        Height = 25
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1776,10 +1776,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         OnChange = cmb_UpdateNodeTypeChange
       end
       object gb_UpdateRS232Config: TAdvGroupBox
-        Left = 34
-        Top = 124
-        Width = 517
-        Height = 102
+        Left = 32
+        Top = 116
+        Width = 482
+        Height = 95
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1787,10 +1787,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         Caption = 'RS232 '#49444#51221#54872#44221
         TabOrder = 3
         object lb_rs232PortUpdate: TAdvSmoothLabel
-          Left = 16
-          Top = 34
-          Width = 188
-          Height = 22
+          Left = 15
+          Top = 32
+          Width = 175
+          Height = 20
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1821,10 +1821,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
           Version = '1.6.0.2'
         end
         object cmb_UpdateComPort: TAdvComboBox
-          Left = 253
-          Top = 33
-          Width = 172
-          Height = 28
+          Left = 236
+          Top = 31
+          Width = 161
+          Height = 25
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1851,10 +1851,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         end
       end
       object gb_UpdateTCPIPConfig: TAdvGroupBox
-        Left = 34
-        Top = 259
-        Width = 517
-        Height = 102
+        Left = 32
+        Top = 242
+        Width = 482
+        Height = 95
         Margins.Left = 4
         Margins.Top = 4
         Margins.Right = 4
@@ -1863,10 +1863,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
         TabOrder = 4
         Visible = False
         object lb_NodeIPUpdate: TAdvSmoothLabel
-          Left = 34
-          Top = 29
-          Width = 187
-          Height = 24
+          Left = 32
+          Top = 27
+          Width = 174
+          Height = 22
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1897,10 +1897,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
           Version = '1.6.0.2'
         end
         object lb_NodePortUpdate: TAdvSmoothLabel
-          Left = 34
-          Top = 59
-          Width = 187
-          Height = 24
+          Left = 32
+          Top = 55
+          Width = 174
+          Height = 22
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1931,10 +1931,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
           Version = '1.6.0.2'
         end
         object ed_UpdateNodeIP: TAdvEdit
-          Left = 253
-          Top = 29
-          Width = 172
-          Height = 26
+          Left = 236
+          Top = 27
+          Width = 161
+          Height = 23
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -1960,10 +1960,10 @@ inherited fmNodeAdmin: TfmNodeAdmin
           Version = '3.3.2.0'
         end
         object ed_UpdateNodePort: TAdvEdit
-          Left = 253
-          Top = 59
-          Width = 172
-          Height = 26
+          Left = 236
+          Top = 55
+          Width = 161
+          Height = 23
           Margins.Left = 4
           Margins.Top = 4
           Margins.Right = 4
@@ -2304,7 +2304,7 @@ inherited fmNodeAdmin: TfmNodeAdmin
     PagerCaption.TextColorExtended = clBlue
     PagerCaption.Font.Charset = DEFAULT_CHARSET
     PagerCaption.Font.Color = clWindowText
-    PagerCaption.Font.Height = -17
+    PagerCaption.Font.Height = -13
     PagerCaption.Font.Name = 'Segoe UI'
     PagerCaption.Font.Style = []
     QATAppearance.BorderColor = 13815240

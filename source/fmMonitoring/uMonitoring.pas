@@ -1208,9 +1208,9 @@ procedure TfmMonitoring.RcvAlarmEvent(aNodeNo, aECUID, aDoorNo, aReaderNo,
   aInOut, aTime, aCardMode, aDoorMode, aAlarmCode: string);
 var
   stDisplay : string;
-  stNodeNo : string;
-  stEcuID : string;
-  stDoorNo : string;
+//  stNodeNo : string;
+//  stEcuID : string;
+//  stDoorNo : string;
   stTemp1,stTemp2 : string;
   stDoorName : string;
   stAlarmName : string;
@@ -1230,7 +1230,7 @@ begin
     if RowCount >= 1000 then  rowCount := 999;
 
 
-    GetLocationName(stNodeNo,stECUID,stDoorNo,stTemp1,stTemp2,stDoorName);
+    GetLocationName(aNodeNo,aECUID,aDoorNo,stTemp1,stTemp2,stDoorName);
     GetAlarmCodeInfo(aAlarmCode,stAlarmName,stAlarmEvent,stAlarmSound,stAlarmMessage,stColor);
 
     if stAlarmEvent <> '1' then Exit; //이벤트 발생건이 아니면 빠져 나가자.

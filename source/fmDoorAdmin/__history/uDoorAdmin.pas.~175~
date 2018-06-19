@@ -8,7 +8,8 @@ uses
   AdvOfficeTabSetStylers, AdvSmoothPanel, Vcl.ExtCtrls, AdvSmoothLabel,
   Vcl.StdCtrls, AdvEdit, Vcl.Buttons, Vcl.Grids, AdvObj, BaseGrid, AdvGrid,
   AdvToolBtn,ADODB,ActiveX, uSubForm, CommandArray, AdvCombo, AdvGroupBox,
-  Vcl.Mask, AdvSpin, AdvOfficeButtons, Vcl.Menus, AdvToolBar, AdvToolBarStylers;
+  Vcl.Mask, AdvSpin, AdvOfficeButtons, Vcl.Menus, AdvToolBar, AdvToolBarStylers,
+  AdvAppStyler;
 
 type
   TfmDoorAdmin = class(TfmASubForm)
@@ -66,6 +67,7 @@ type
     PopupMenu1: TPopupMenu;
     pm_update: TMenuItem;
     AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler;
+    AdvFormStyler1: TAdvFormStyler;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -177,25 +179,28 @@ var
   stDupName : string;
   stDeviceID : string;
   stSchedule : string;
+  stMessage : string;
 begin
   inherited;
   stName := ed_InsertName.Text;
   if stName = '' then
   begin
-    showmessage(stringReplace(MSGNOTNAMEERROR,'$NAME','명칭',[rfReplaceAll]));
+    showmessage(stringReplace(dmFormName.GetFormMessage('2','M00015'),'$NAME',lb_DoorUpdate.Caption.Text,[rfReplaceAll]));
     Exit;
   end;
 
   if cmb_InsertNodeNo.itemindex < 0 then
   begin
-    showmessage(stringReplace(MSGNOTNAMEERROR,'$NAME','노드정보',[rfReplaceAll]));
+    showmessage(stringReplace(dmFormName.GetFormMessage('2','M00015'),'$NAME',lb_NodeUpdate.Caption.Text,[rfReplaceAll]));
     Exit;
   end;
   stNodeNo := AddNodeCodeList.Strings[cmb_InsertNodeNo.itemindex];
 
   if DupCheckDoor(stNodeNo,FillZeroNumber(se_InsertDeviceNo.value,2),stDupName) then
   begin
-    showmessage(stDupName + '에서 이미 사용중인 기기입니다.');
+    stMessage := dmFormName.GetFormMessage('2','M00022');
+    stMessage := stringReplace(stMessage,'$NAME ',stDupName,[rfReplaceAll]);
+    showmessage(stMessage);
     Exit;
   end;
 
@@ -266,7 +271,7 @@ begin
     L_bDoorChange := True;
   end else
   begin
-    showmessage(MSGDATABASESAVEFAIL);
+    showmessage(dmFormName.GetFormMessage('2','M00018'));
   end;
   self.FindSubForm('Main').FindCommand('CHANGE').Params.Values['NAME'] := inttostr(FORMDOORADMIN);
   self.FindSubForm('Main').FindCommand('CHANGE').Execute;
@@ -303,13 +308,13 @@ begin
 
   if stName = '' then
   begin
-    showmessage(stringReplace(MSGNOTNAMEERROR,'$NAME','명칭',[rfReplaceAll]));
+    showmessage(stringReplace(dmFormName.GetFormMessage('2','M00015'),'$NAME',lb_DoorUpdate.Caption.Text,[rfReplaceAll]));
     Exit;
   end;
 
   if cmb_UpdateNodeNo.itemIndex < 0 then
   begin
-    showmessage(stringReplace(MSGNOTNAMEERROR,'$NAME','노드정보',[rfReplaceAll]));
+    showmessage(stringReplace(dmFormName.GetFormMessage('2','M00015'),'$NAME',lb_NodeUpdate.Caption.Text,[rfReplaceAll]));
     Exit;
   end;
 
@@ -380,7 +385,7 @@ begin
     L_bDoorChange := True;
   end else
   begin
-    showmessage(MSGDATABASESAVEFAIL);
+    showmessage(dmFormName.GetFormMessage('2','M00018'));
   end;
   self.FindSubForm('Main').FindCommand('CHANGE').Params.Values['NAME'] := inttostr(FORMDOORADMIN);
   self.FindSubForm('Main').FindCommand('CHANGE').Execute;
@@ -460,6 +465,15 @@ begin
   stSql := stSql + ' AND DO_DOORNO = ' + aDoorNo + ' ';
 
   result := dmDataBase.ProcessExecSQL(stSql);
+
+  if CheckTB_NODE_Count(aNodeNo) = 0 then
+  begin
+    stSql := ' Delete from TB_NODE ';
+    stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+    stSql := stSql + ' AND ND_NODENO = ' + aNodeNo;
+
+    result := dmDataBase.ProcessExecSQL(stSql);
+  end;
 
 end;
 
@@ -636,6 +650,7 @@ begin
   btn_Delete.Caption :=  dmFormName.GetFormMessage('4','M00078');
   pm_update.Caption := dmFormName.GetFormMessage('4','M00098');
 
+  chk_InsertSchedule.Caption := dmFormName.GetFormMessage('4','M00107');
   chk_UpdateSchedule.Caption := dmFormName.GetFormMessage('4','M00107');
 
   with sg_doorList do
@@ -697,7 +712,7 @@ var
   stSql : string;
   TempAdoQuery : TADOQuery;
 begin
-  nDeviceNo := 0;
+  nDeviceNo := 1;
   Try
     CoInitialize(nil);
     TempAdoQuery := TADOQuery.Create(nil);
@@ -1132,14 +1147,17 @@ procedure TfmDoorAdmin.btn_DeleteClick(Sender: TObject);
 var
   i : integer;
   bChkState : Boolean;
+  stMessage : string;
 begin
   inherited;
   if L_nCheckCount = 0 then
   begin
-    showmessage(MSGDELETESELECT);
+    showmessage(dmFormName.GetFormMessage('2','M00019'));
     Exit;
   end;
-  if (Application.MessageBox(PChar(inttostr(L_nCheckCount) + MSGDELETECOUNTINFOQUESTION),'정보',MB_OKCANCEL) = IDCANCEL)  then Exit;
+  stMessage := dmFormName.GetFormMessage('2','M00020');
+  stMessage := stringReplace(stMessage,'$Count',inttostr(L_nCheckCount),[rfReplaceAll]);
+  if (Application.MessageBox(PChar(stMessage),'Information',MB_OKCANCEL) = IDCANCEL)  then Exit;
   With sg_DoorList do
   begin
     for i := 1 to RowCount - 1 do
