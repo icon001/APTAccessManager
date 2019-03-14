@@ -26,6 +26,8 @@ type
     function Table006VersionMake: Boolean;
     function Table007VersionMake: Boolean;
     function Table008VersionMake: Boolean;
+    function Table009VersionMake: Boolean;
+    function Table010VersionMake: Boolean;
 
   public
     { Public declarations }
@@ -586,6 +588,24 @@ begin
   dmDBUpdate.UpdateTB_CONFIG_Value('COMMON','TABLE_VER','8');
 end;
 
+function TDataBaseConfig.Table009VersionMake: Boolean;
+begin
+  dmDBCreate.AlterTB_DOOR_Fire_Add ;
+
+  dmDBUpdate.UpdateTB_CONFIG_Value('COMMON','TABLE_VER','9');
+end;
+
+function TDataBaseConfig.Table010VersionMake: Boolean;
+begin
+
+  dmDBCreate.AlterTB_DOOR_CurX_Add ;
+  dmDBCreate.AlterTB_DOOR_CurY_Add ;
+  dmDBCreate.AlterTB_DOOR_TOTHEIGHT_Add ;
+  dmDBCreate.AlterTB_DOOR_TOTWIDTH_Add ;
+
+  dmDBUpdate.UpdateTB_CONFIG_Value('COMMON','TABLE_VER','9');
+end;
+
 procedure TDataBaseConfig.TableVersionCheck;
 var
   nTableVersion : integer;
@@ -599,6 +619,8 @@ begin
   if nTableVersion < 6 then Table006VersionMake;
   if nTableVersion < 7 then Table007VersionMake;
   if nTableVersion < 8 then Table008VersionMake;
+  if nTableVersion < 9 then Table009VersionMake;
+  if nTableVersion < 10 then Table010VersionMake;
 
 end;
 

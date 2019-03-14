@@ -37,6 +37,8 @@ type
     lb_Count: TAdvSmoothLabel;
     AdvFormStyler1: TAdvFormStyler;
     chk_AlarmEventView: TAdvOfficeCheckBox;
+    AdvSmoothLabel2: TAdvSmoothLabel;
+    cmb_Monitoring: TAdvComboBox;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -108,12 +110,14 @@ var
   ini_fun : TiniFile;
 begin
   inherited;
+  G_nMonitoringType := cmb_Monitoring.ItemIndex;
   Try
     ini_fun := TiniFile.Create(G_stExeFolder + '\Config.ini');
     if cmb_ComPort.ItemIndex = 0 then G_nCardRegisterPort := 0
     else
       G_nCardRegisterPort := Integer(ComPortList.Objects[cmb_ComPort.ItemIndex - 1]);
     ini_fun.WriteInteger('FORM','CardRegisterPort',G_nCardRegisterPort);
+    ini_fun.WriteInteger('FORM','Monitoring',G_nMonitoringType);
   Finally
     ini_fun.Free;
   End;
@@ -343,6 +347,8 @@ begin
     if nIndex > -1 then cmb_ComPort.ItemIndex := nIndex;
   end else
     cmb_ComPort.ItemIndex := 0;
+
+  cmb_Monitoring.ItemIndex := G_nMonitoringType;
 
   self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['NAME'] := inttostr(FORMCONFIGSETTING);
   self.FindSubForm('Main').FindCommand('FORMENABLE').Params.Values['VALUE'] := 'TRUE';

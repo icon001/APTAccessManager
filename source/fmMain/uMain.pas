@@ -136,6 +136,7 @@ type
     HoliDayList : TStringList;
 
     procedure LoadAlarmCode;
+    procedure LoadConfig;
     procedure AlarmConfigSetting;
     procedure CardRegistPortOpen;
     procedure RcvCardDataByReader(aData:string);
@@ -207,6 +208,7 @@ uses
   uDeviceComMonitoring,
   uDevicePwAdmin,
   uMonitoring,
+  uFireMonitoring,
 //  uRemoteControl,
   uDataBaseBackup,
   uNetConfig,
@@ -251,7 +253,9 @@ procedure TfmMain.mn_btnMonitoringClick(Sender: TObject);
 begin
   inherited;
   mn_btnMonitoring.Enabled := False;
-  MDIChildShow('TfmMonitoring');
+  if G_nMonitoringType = 0 then MDIChildShow('TfmMonitoring')
+  else if G_nMonitoringType = 1  then  MDIChildShow('TfmFireMonitoring');
+
   mn_btnMonitoring.Enabled := True;
 end;
 
@@ -811,6 +815,11 @@ begin
       fmTemp := MDIForm('TfmMonitoring');
       if fmTemp <> nil then TfmMonitoring(fmTemp).Form_Close;
     end;
+    FORMFIREMONITORING :
+    begin
+      fmTemp := MDIForm('TfmFireMonitoring');
+      if fmTemp <> nil then TfmFireMonitoring(fmTemp).Form_Close;
+    end;
     FORMNODEADMIN :      //노드관리
     begin
       fmTemp := MDIForm('TfmNodeAdmin');
@@ -879,6 +888,11 @@ begin
   begin
     fmTemp := MDIForm('TfmMonitoring');
     if fmTemp <> nil then TfmMonitoring(fmTemp).DeviceReload;
+  end;
+  if G_bFormEnabled[FORMFIREMONITORING] then
+  begin
+    fmTemp := MDIForm('TfmFireMonitoring');
+    if fmTemp <> nil then TfmFireMonitoring(fmTemp).DeviceReload;
   end;
 
 end;
@@ -1128,6 +1142,11 @@ begin
       fmTemp := MDIForm('TfmMonitoring');
       if fmTemp <> nil then TfmMonitoring(fmTemp).Form_Close;
   end;
+  if G_bFormEnabled[FORMFIREMONITORING] then
+  begin
+    fmTemp := MDIForm('TfmFireMonitoring');
+    if fmTemp <> nil then TfmFireMonitoring(fmTemp).Form_Close;
+  end;
 
   CardAutoDownTimer.Enabled := False; //카드다운로드 종료
   DeviceInfoSendTimer.Enabled := False;
@@ -1186,6 +1205,7 @@ begin
   end;
   Logined := False;
   LoadAlarmCode;
+  LoadConfig;
 //showmessage('1-2');
   for i := 0 to HIGH(G_bFormEnabled) do G_bFormEnabled[i] := False;
 
@@ -1242,7 +1262,8 @@ begin
   AdvGlowButton8.Caption := dmFormName.GetFormMessage('1','M00018');
   AdvGlowButton5.Caption := dmFormName.GetFormMessage('1','M00019');
   AdvGlowButton2.Caption := dmFormName.GetFormMessage('1','M00020');
-  mn_btnMonitoring.Caption := dmFormName.GetFormMessage('1','M00021');
+  if G_nMonitoringType = 1 then mn_btnMonitoring.Caption := '화재감시모니터링'
+  else mn_btnMonitoring.Caption := dmFormName.GetFormMessage('1','M00021');
   AdvGlowButton4.Caption := dmFormName.GetFormMessage('1','M00022');
   AdvGlowButton10.Caption := dmFormName.GetFormMessage('1','M00023');
   btn_AlarmReport.Caption := dmFormName.GetFormMessage('1','M00063');
@@ -1409,6 +1430,22 @@ begin
   Finally
     TempList.Free;
     TempLineList.Free;
+  End;
+end;
+
+procedure TfmMain.LoadConfig;
+var
+  ini_fun : TiniFile;
+begin
+  Try
+    ini_fun := TiniFile.Create(G_stExeFolder + '\Config.ini');
+    with ini_fun do
+    begin
+      G_nCardRegisterPort := ReadInteger('FORM','CardRegisterPort',0);
+      G_nMonitoringType := ReadInteger('FORM','Monitoring',0);
+    end;
+  Finally
+    ini_fun.Free;
   End;
 end;
 
@@ -1948,6 +1985,13 @@ begin
       if fmTemp <> nil then TfmMonitoring(fmTemp).RcvAlarmEvent(aNodeNo, aECUID, aDoorNo,
         aReaderNo, aInOut, aTime, aCardMode, aDoorMode, aAlarmCode);
   end;
+  //화재  모니터링에 전송
+  if G_bFormEnabled[FORMFIREMONITORING] then
+  begin
+      fmTemp := MDIForm('TfmFireMonitoring');
+      if fmTemp <> nil then TfmFireMonitoring(fmTemp).RcvAlarmEvent(aNodeNo, aECUID, aDoorNo,
+        aReaderNo, aInOut, aTime, aCardMode, aDoorMode, aAlarmCode);
+  end;
   //여기에서 출입데이터 저장하자.
   dmDBFunction.InsertTB_ALARMEVENT(copy(aTime,1,8), copy(aTime,9,6), aNodeNo, aEcuID,
   aDoorNo, aAlarmCode);
@@ -1972,6 +2016,12 @@ begin
       fmTemp := MDIForm('TfmMonitoring');
       if fmTemp <> nil then TfmMonitoring(fmTemp).RcvCardAccessEvent(aNodeNo, aECUID, aDoorNo,
         aReaderNo, aInOut, aTime, aCardMode, aDoorMode, aChangeState, aAccessResult,aDoorState, aATButton, aCardNo);
+  end;
+  if G_bFormEnabled[FORMFIREMONITORING] then
+  begin
+//    fmTemp := MDIForm('TfmFireMonitoring');
+//    if fmTemp <> nil then TfmFireMonitoring(fmTemp).RcvCardAccessEvent(aNodeNo, aECUID, aDoorNo,
+//      aReaderNo, aInOut, aTime, aCardMode, aDoorMode, aChangeState, aAccessResult,aDoorState, aATButton, aCardNo);
   end;
   //여기에서 출입데이터 저장하자.
   dmDBFunction.InsertTB_ACCESSEVENT(copy(aTime,1,8), copy(aTime,9,6), aNodeNo, aEcuID,

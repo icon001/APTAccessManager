@@ -30,11 +30,12 @@ const
   FormDOORSCHEDULEADMIN = 9;   //스케줄
   FormHOLIDAYADMIN =10;        //특정일
   FORMMONITORING = 11;      //모니터링
-  FORMNODEADMIN = 12;      //노드관리
-  FORMPERMITCODE = 13;     //출입승인코드관리
-  FORMPERSONCARDPERMIT = 14; //개인별카드권한관리
-  FORMREMOTECONTROL = 15; //원격지원서비스
-  FORMALARMREPORT = 16;    //알람보고서
+  FORMFIREMONITORING = 12;  //화재 모니터링
+  FORMNODEADMIN = 13;      //노드관리
+  FORMPERMITCODE = 14;     //출입승인코드관리
+  FORMPERSONCARDPERMIT = 15; //개인별카드권한관리
+  FORMREMOTECONTROL = 16; //원격지원서비스
+  FORMALARMREPORT = 17;    //알람보고서
 
 const
   NODESOCKETDELAYTIME = 60;
@@ -104,6 +105,7 @@ var
   G_nChildFormDefaultHeight : integer = 620 ;
   //등록기 포트번호
   G_nCardRegisterPort : integer = 0;
+  G_nMonitoringType : integer = 0;
 
 //폰트
   G_stFormStyle : string;

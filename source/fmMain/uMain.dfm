@@ -3765,7 +3765,7 @@ inherited fmMain: TfmMain
     Top = 0
     Width = 1008
     Height = 142
-    ActivePage = ApBasicAdmin
+    ActivePage = ApManagerAdmin
     Caption.Caption = ' '#52636#51077#44288#47532#49884#49828#53596
     CaptionButtons = [cbClose, cbMinimize, cbMaximize]
     Hints.MDICloseBtnHint = 'Close'
@@ -3973,6 +3973,7 @@ inherited fmMain: TfmMain
         CompactImageIndex = -1
         ShowCaption = True
         ShowRightHandle = False
+        ShowOptionIndicator = False
         TextAutoOptionMenu = 'Add or Remove Buttons'
         TextOptionMenu = 'Options'
         ToolBarStyler = AdvToolBarOfficeStyler1
@@ -4478,6 +4479,7 @@ inherited fmMain: TfmMain
         CompactImageIndex = -1
         ShowCaption = True
         ShowRightHandle = False
+        ShowOptionIndicator = False
         TextAutoOptionMenu = 'Add or Remove Buttons'
         TextOptionMenu = 'Options'
         ToolBarStyler = AdvToolBarOfficeStyler1
@@ -5133,6 +5135,7 @@ inherited fmMain: TfmMain
         CompactImageIndex = -1
         ShowCaption = True
         ShowRightHandle = False
+        ShowOptionIndicator = False
         TextAutoOptionMenu = 'Add or Remove Buttons'
         TextOptionMenu = 'Options'
         ToolBarStyler = AdvToolBarOfficeStyler1
@@ -5325,6 +5328,7 @@ inherited fmMain: TfmMain
         CompactImageIndex = -1
         ShowCaption = True
         ShowRightHandle = False
+        ShowOptionIndicator = False
         TextAutoOptionMenu = 'Add or Remove Buttons'
         TextOptionMenu = 'Options'
         ToolBarStyler = AdvToolBarOfficeStyler1
@@ -5525,6 +5529,7 @@ inherited fmMain: TfmMain
         CompactImageIndex = -1
         ShowCaption = True
         ShowRightHandle = False
+        ShowOptionIndicator = False
         TextAutoOptionMenu = 'Add or Remove Buttons'
         TextOptionMenu = 'Options'
         ToolBarStyler = AdvToolBarOfficeStyler1
@@ -7370,6 +7375,7 @@ inherited fmMain: TfmMain
         CompactImageIndex = -1
         ShowCaption = True
         ShowRightHandle = False
+        ShowOptionIndicator = False
         TextAutoOptionMenu = 'Add or Remove Buttons'
         TextOptionMenu = 'Options'
         ToolBarStyler = AdvToolBarOfficeStyler1
@@ -8343,6 +8349,7 @@ inherited fmMain: TfmMain
         CompactImageIndex = -1
         ShowCaption = True
         ShowRightHandle = False
+        ShowOptionIndicator = False
         TextAutoOptionMenu = 'Add or Remove Buttons'
         TextOptionMenu = 'Options'
         ToolBarStyler = AdvToolBarOfficeStyler1
@@ -9286,6 +9293,7 @@ inherited fmMain: TfmMain
         CompactImageIndex = -1
         ShowCaption = True
         ShowRightHandle = False
+        ShowOptionIndicator = False
         TextAutoOptionMenu = 'Add or Remove Buttons'
         TextOptionMenu = 'Options'
         ToolBarStyler = AdvToolBarOfficeStyler1
@@ -10004,6 +10012,7 @@ inherited fmMain: TfmMain
         CompactImageIndex = -1
         ShowCaption = True
         ShowRightHandle = False
+        ShowOptionIndicator = False
         TextAutoOptionMenu = 'Add or Remove Buttons'
         TextOptionMenu = 'Options'
         ToolBarStyler = AdvToolBarOfficeStyler1
@@ -10274,7 +10283,7 @@ inherited fmMain: TfmMain
         Progress.ShowBorder = False
         Progress.Stacked = False
         Style = psTime
-        Text = '12:18:09'
+        Text = '13:33:35'
         TimeFormat = 'hh:mm:ss'
         Width = 562
       end>
@@ -10515,7 +10524,7 @@ inherited fmMain: TfmMain
     Left = 92
     Top = 273
     Bitmap = {
-      494C0101020004002C0110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101020004003C0110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000099877D00827165007B63
       54006D544300684F3E0063493700624736006248350063493500634935006349
@@ -10662,7 +10671,7 @@ inherited fmMain: TfmMain
     Left = 24
     Top = 268
     Bitmap = {
-      494C01010E00A3002C0120002000FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
+      494C01010E00A3003C0120002000FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000008000000001002000000000000000
       010000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF

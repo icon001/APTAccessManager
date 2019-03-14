@@ -87,8 +87,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <Manifest_File>..\..\..\[Component]\manifest\app.manifest</Manifest_File>
-        <VerInfo_Build>15</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.15;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>16</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.16;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <Icon_MainIcon>APTAccessManager_Icon2.ico</Icon_MainIcon>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
@@ -186,8 +186,8 @@
             <Form>dmExcelSave</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="fmMonitoring\uMonitoring.pas">
-            <Form>fmMonitoring</Form>
+        <DCCReference Include="fmMonitoring\uFireMonitoring.pas">
+            <Form>fmFireMonitoring</Form>
         </DCCReference>
         <DCCReference Include="fmPWChange\uPwChange.pas">
             <Form>fmPwChange</Form>
@@ -244,6 +244,11 @@
         <DCCReference Include="fmAccessReport\uAccessReport.pas">
             <Form>fmAccessReport</Form>
         </DCCReference>
+        <DCCReference Include="fmMonitoring\uMonitoring.pas">
+            <Form>fmMonitoring</Form>
+        </DCCReference>
+        <DCCReference Include="..\lib\uMapBuilding.pas"/>
+        <DCCReference Include="..\lib\uFireMap.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -2,24 +2,24 @@ object fmDataBaseConfig: TfmDataBaseConfig
   Left = 0
   Top = 0
   Caption = #45936#51060#53552#48288#51060#49828#54872#44221#49444#51221
-  ClientHeight = 300
-  ClientWidth = 426
+  ClientHeight = 321
+  ClientWidth = 456
   Color = clBtnFace
   Font.Charset = HANGEUL_CHARSET
   Font.Color = clWindowText
-  Font.Height = -12
+  Font.Height = -15
   Font.Name = #45208#45588#44256#46357
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
-  PixelsPerInch = 96
-  TextHeight = 14
+  PixelsPerInch = 120
+  TextHeight = 15
   object btn_Save: TW7SpeedButton
-    Left = 48
-    Top = 240
-    Width = 121
-    Height = 45
+    Left = 51
+    Top = 257
+    Width = 130
+    Height = 48
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
@@ -34,17 +34,17 @@ object fmDataBaseConfig: TfmDataBaseConfig
     ArrowType = atDown
     Font.Charset = DEFAULT_CHARSET
     Font.Color = 5978398
-    Font.Height = -9
+    Font.Height = -8
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
     OnClick = btn_SaveClick
   end
   object btn_Close: TW7SpeedButton
-    Left = 240
-    Top = 240
-    Width = 119
-    Height = 45
+    Left = 257
+    Top = 257
+    Width = 128
+    Height = 48
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
@@ -59,7 +59,7 @@ object fmDataBaseConfig: TfmDataBaseConfig
     ArrowType = atDown
     Font.Charset = DEFAULT_CHARSET
     Font.Color = 5978398
-    Font.Height = -9
+    Font.Height = -8
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -68,8 +68,8 @@ object fmDataBaseConfig: TfmDataBaseConfig
   object rg_DBType: TRadioGroup
     Left = 0
     Top = 0
-    Width = 426
-    Height = 41
+    Width = 456
+    Height = 44
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
@@ -88,9 +88,9 @@ object fmDataBaseConfig: TfmDataBaseConfig
   end
   object AdvPanel1: TAdvPanel
     Left = 0
-    Top = 41
-    Width = 426
-    Height = 176
+    Top = 44
+    Width = 456
+    Height = 189
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
@@ -98,7 +98,7 @@ object fmDataBaseConfig: TfmDataBaseConfig
     Align = alTop
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -9
+    Font.Height = -8
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -109,9 +109,10 @@ object fmDataBaseConfig: TfmDataBaseConfig
     Caption.ColorTo = clNone
     Caption.Font.Charset = DEFAULT_CHARSET
     Caption.Font.Color = clWindowText
-    Caption.Font.Height = -9
+    Caption.Font.Height = -8
     Caption.Font.Name = 'Tahoma'
     Caption.Font.Style = []
+    Caption.Height = 21
     StatusBar.Font.Charset = DEFAULT_CHARSET
     StatusBar.Font.Color = clWindowText
     StatusBar.Font.Height = -11
@@ -120,10 +121,10 @@ object fmDataBaseConfig: TfmDataBaseConfig
     Text = ''
     FullHeight = 200
     object Label5: TLabel
-      Left = 19
-      Top = 142
-      Width = 135
-      Height = 17
+      Left = 20
+      Top = 152
+      Width = 145
+      Height = 18
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
@@ -132,16 +133,16 @@ object fmDataBaseConfig: TfmDataBaseConfig
       Caption = #45936#51060#53552#48288#51060#49828' Name'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = #47569#51008' '#44256#46357
       Font.Style = []
       ParentFont = False
     end
     object Label4: TLabel
-      Left = 19
-      Top = 111
-      Width = 135
-      Height = 15
+      Left = 20
+      Top = 119
+      Width = 145
+      Height = 16
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
@@ -150,16 +151,16 @@ object fmDataBaseConfig: TfmDataBaseConfig
       Caption = #49324#50857#51088' '#48708#48128#48264#54840
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = #47569#51008' '#44256#46357
       Font.Style = []
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 19
-      Top = 79
-      Width = 135
-      Height = 18
+      Left = 20
+      Top = 85
+      Width = 145
+      Height = 19
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
@@ -168,16 +169,16 @@ object fmDataBaseConfig: TfmDataBaseConfig
       Caption = #49324#50857#51088' '#44228#51221
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = #47569#51008' '#44256#46357
       Font.Style = []
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 19
-      Top = 51
-      Width = 135
-      Height = 14
+      Left = 20
+      Top = 55
+      Width = 145
+      Height = 15
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
@@ -186,16 +187,16 @@ object fmDataBaseConfig: TfmDataBaseConfig
       Caption = #45936#51060#53552#48288#51060#49828' PORT'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = #47569#51008' '#44256#46357
       Font.Style = []
       ParentFont = False
     end
     object Label1: TLabel
-      Left = 19
-      Top = 21
-      Width = 120
-      Height = 15
+      Left = 20
+      Top = 23
+      Width = 129
+      Height = 16
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
@@ -204,23 +205,23 @@ object fmDataBaseConfig: TfmDataBaseConfig
       Caption = #45936#51060#53552#48288#51060#49828' IP'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = #47569#51008' '#44256#46357
       Font.Style = []
       ParentFont = False
     end
     object edPasswd: TEdit
-      Left = 160
-      Top = 106
-      Width = 251
-      Height = 24
+      Left = 171
+      Top = 114
+      Width = 269
+      Height = 28
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
       Margins.Bottom = 5
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ImeName = 'Microsoft IME 2003'
@@ -230,17 +231,17 @@ object fmDataBaseConfig: TfmDataBaseConfig
       Text = 'sapasswd'
     end
     object edDataBaseName: TEdit
-      Left = 160
-      Top = 135
-      Width = 251
-      Height = 24
+      Left = 171
+      Top = 145
+      Width = 269
+      Height = 28
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
       Margins.Bottom = 5
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ImeName = 'Microsoft IME 2003'
@@ -249,17 +250,17 @@ object fmDataBaseConfig: TfmDataBaseConfig
       Text = 'ZMOS'
     end
     object edUserid: TEdit
-      Left = 160
-      Top = 76
-      Width = 251
-      Height = 24
+      Left = 171
+      Top = 81
+      Width = 269
+      Height = 28
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
       Margins.Bottom = 5
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ImeName = 'Microsoft IME 2003'
@@ -268,17 +269,17 @@ object fmDataBaseConfig: TfmDataBaseConfig
       Text = 'sa'
     end
     object edServerPort: TEdit
-      Left = 160
-      Top = 47
-      Width = 251
-      Height = 24
+      Left = 171
+      Top = 50
+      Width = 269
+      Height = 28
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
       Margins.Bottom = 5
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ImeName = 'Microsoft IME 2003'
@@ -287,17 +288,17 @@ object fmDataBaseConfig: TfmDataBaseConfig
       Text = '1433'
     end
     object edServerIP: TEdit
-      Left = 160
-      Top = 16
-      Width = 251
-      Height = 24
+      Left = 171
+      Top = 17
+      Width = 269
+      Height = 28
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
       Margins.Bottom = 5
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -17
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ImeName = 'Microsoft IME 2003'

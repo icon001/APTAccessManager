@@ -1,0 +1,1 @@
+2012-10-25 15:04:52:500> DBError(Microsoft Jet 데이터베이스 엔진에서 입력 테이블이나 'TB_CURRENTDAEMON' 쿼리를 찾을 수 없습니다. 테이블이나 쿼리가 있는지, 이름을 정확히 입력했는지를 확인하십시오)Update TB_CURRENTDAEMON Set AD_PASSWD = 'MTIzNDU2' where GROUP_CODE = '1234567890' and AD_USERID = 'ADMIN'

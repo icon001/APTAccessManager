@@ -1,0 +1,2 @@
+2018-06-19 10:56:45:720> DBError(인덱스, 기본 키 또는 관계에서 중복된 값을 만들었기 때문에 테이블에 요청된 변경 사항이 적용되지 않았습니다. 필드의 데이터 또는 중복 데이터가 있는 필드를 변경하거나 인덱스를 제거하거나 중복이 가능한 인덱스로 다시 정의하여 다시 시도하십시오)Insert Into TB_FormName ( FM_GUBUN, FM_CODE, FM_NAME1, FM_NAME2, FM_NAME3)  VALUES('1', 'M00063', '알람보고서', '','') 
+2018-06-19 13:08:11:112> DBError(UPDATE 문의 구문 오류입니다)update set PE_PERMITNAME = 'Access' from TB_PERMITCODE where PE_PERMITCODE = '1' and PE_PERMITNAME = 'Accsse' 

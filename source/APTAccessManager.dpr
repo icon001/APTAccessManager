@@ -31,7 +31,7 @@ uses
   uDeviceComMonitoring in 'fmDeviceComMonitoring\uDeviceComMonitoring.pas' {fmDeviceComMonitoring},
   uDBFunction in '..\lib\DataBase\uDBFunction.pas' {dmDBFunction: TDataModule},
   uExcelSave in '..\lib\Excel\uExcelSave.pas' {dmExcelSave: TDataModule},
-  uMonitoring in 'fmMonitoring\uMonitoring.pas' {fmMonitoring},
+  uFireMonitoring in 'fmMonitoring\uFireMonitoring.pas' {fmFireMonitoring},
   uPwChange in 'fmPWChange\uPwChange.pas' {fmPwChange},
   systeminfos in '..\lib\common\systeminfos.pas',
   uDBCreate in '..\lib\DataBase\uDBCreate.pas' {dmDBCreate: TDataModule},
@@ -46,7 +46,10 @@ uses
   uDBFormName in '..\lib\DataBase\uDBFormName.pas' {dmFormName: TDataModule},
   uFormFontUtil in '..\lib\common\uFormFontUtil.pas' {dmFormFontUtil: TDataModule},
   uNetConfig in 'fmNetConfig\uNetConfig.pas' {fmNetConfig},
-  uAccessReport in 'fmAccessReport\uAccessReport.pas' {fmAccessReport};
+  uAccessReport in 'fmAccessReport\uAccessReport.pas' {fmAccessReport},
+  uMonitoring in 'fmMonitoring\uMonitoring.pas' {fmMonitoring},
+  uMapBuilding in '..\lib\uMapBuilding.pas',
+  uFireMap in '..\lib\uFireMap.pas';
 
 {$R *.res}
 {$R manifest.RES}

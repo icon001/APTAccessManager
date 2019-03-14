@@ -68,6 +68,8 @@ type
     pm_update: TMenuItem;
     AdvToolBarOfficeStyler1: TAdvToolBarOfficeStyler;
     AdvFormStyler1: TAdvFormStyler;
+    chk_FireInsert: TAdvOfficeCheckBox;
+    chk_FireUpdate: TAdvOfficeCheckBox;
     procedure menuTabChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -181,6 +183,7 @@ var
   stDeviceID : string;
   stSchedule : string;
   stMessage : string;
+  stFire : string;
 begin
   inherited;
   stName := ed_InsertName.Text;
@@ -216,6 +219,7 @@ begin
     stChildCode := AddAreaCodeList.Strings[cmb_InsertAreaCode.itemIndex];
   end;
 
+
   stSql := ' Insert Into TB_DEVICE ( ';
   stSql := stSql + 'GROUP_CODE,';
   stSql := stSql + 'ND_NODENO,';
@@ -239,12 +243,16 @@ begin
   stSchedule := '0';
   if chk_InsertSchedule.Checked then stSchedule := '1';
 
+  stFire := '0';
+  if chk_FireInsert.Checked then stFire := '1';
+
   stSql := ' Insert Into TB_DOOR ( ';
   stSql := stSql + 'GROUP_CODE,';
   stSql := stSql + 'ND_NODENO,';
   stSql := stSql + 'DE_DEVICEID,';
   stSql := stSql + 'DO_DOORNO,';
   stSql := stSql + 'DO_NAME,';
+  stSql := stSql + 'DO_FIRE,';
   stSql := stSql + 'DO_LOCKTIME,';
   stSql := stSql + 'BC_PARENTCODE,';
   stSql := stSql + 'BC_CHILDCODE, ';
@@ -255,6 +263,7 @@ begin
   stSql := stSql + '''' + FillZeroNumber(se_InsertDeviceNo.value,2) + ''',';
   stSql := stSql + '1,';
   stSql := stSql + '''' + stName + ''',';
+  stSql := stSql + '' + stFire + ',';
   stSql := stSql + '''' + stLockTime + ''',';
   stSql := stSql + '''' + stParentCode + ''',';
   stSql := stSql + '''' + stChildCode + ''', ';
@@ -277,6 +286,7 @@ begin
   self.FindSubForm('Main').FindCommand('CHANGE').Params.Values['NAME'] := inttostr(FORMDOORADMIN);
   self.FindSubForm('Main').FindCommand('CHANGE').Execute;
 
+  chk_FireInsert.Checked := False;
 end;
 
 procedure TfmDoorAdmin.btn_SaveClick(Sender: TObject);
@@ -303,6 +313,7 @@ var
   stParentCode : string;
   stChildCode : string;
   stSchedule : string;
+  stFire : string;
 begin
   inherited;
   stName := ed_UpdateName.Text;
@@ -361,10 +372,14 @@ begin
   stSchedule := '0';
   if chk_UpdateSchedule.Checked then stSchedule := '1';
 
+  stFire :=  '0';
+  if chk_FireUpdate.Checked then stFire :=  '1';
+
   stSql := ' Update TB_DOOR Set ';
   stSql := stSql + 'ND_NODENO = ' + stNodeNo + ',';
   stSql := stSql + 'DE_DEVICEID = ''' + FillZeroNumber(se_UpdateDeviceNo.value,G_nDeviceCodeLength) + ''',';
   stSql := stSql + 'DO_NAME = ''' + stName + ''',';
+  stSql := stSql + 'DO_FIRE = ' + stFire + ',';
   stSql := stSql + 'DO_LOCKTIME = ''' + stLockTime + ''',';
   stSql := stSql + 'BC_PARENTCODE = ''' + stParentCode + ''',';
   stSql := stSql + 'BC_CHILDCODE = ''' + stChildCode + ''', ';
@@ -1035,6 +1050,8 @@ begin
     cmb_UpdateLockTime.itemIndex := nIndex;
     if cells[11,Row] = '1' then chk_UpdateSchedule.Checked := True
     else chk_UpdateSchedule.Checked := False;
+    if cells[12,Row] = '1' then chk_FireUpdate.Checked := True
+    else chk_FireUpdate.Checked := False;
   end;
 
   menuTab.AdvOfficeTabs.Items[0].Caption := dmFormName.GetFormMessage('1','M00040');
@@ -1146,6 +1163,7 @@ begin
           cells[9,nRow] := FindField('BC_CHILDCODE').AsString;
           cells[10,nRow] := FindField('DO_LOCKTIME').AsString;
           cells[11,nRow] := FindField('DO_SCHEDULE').AsString;
+          cells[12,nRow] := FindField('DO_FIRE').AsString;
           if (FindField('ND_NODENO').AsString + FindField('DE_DEVICEID').AsString + FindField('DO_DOORNO').AsString)  = aCurrentCode then
           begin
             SelectRows(nRow,1);

@@ -1,0 +1,454 @@
+unit uMapBuilding;
+
+
+interface
+uses
+  System.Classes,System.SysUtils,Vcl.Controls,Vcl.StdCtrls,Vcl.Graphics,Winapi.Windows,
+  Vcl.ExtCtrls,Vcl.Imaging.GIFImg,Vcl.Menus;
+
+type
+  TAlarmEventState = (aeNothing,aeNormal,aeNormalEvent,aeAlarmEvent);
+  TConnectedState = (csNothing,csDisConnected,csConnected);
+  TDoorManageMode = (dmNothing,dmManager,dmOpen,dmLock);   //운영/개방 모드 /폐쇄
+  TDoorLockEvent = (deNothing,deLongTime,deFire,deOpenErr,deCloseErr); //출입문 에러 이벤트
+  TDoorLockMode = (lsNothing,lsClose,lsOpen);              //잠김/열림 상태
+  TDoorLockState = (dsNothing,dsPMO,dsPMC,dsPOO,dsPOC,dsPLO,dsPLC,dsNMO,dsNMC,dsNOO,dsNOC,dsNLO,dsNLC);        //열림/닫힘 상태
+  TDoorOpenState = (doNothing,doClose,doOpen,doLongTime,doOpenErr,doCloseErr);        //열림/닫힘 상태
+  TDoorPNMode = (pnNothing,pnPositive,pnNegative);   //Positive/Negative 상태
+  TFireState = (fsNothing,fsNormal,fsFire);
+  TNodeConnectedState = (ncNothing,ncDisConnected,ncNodeConnected,ncAllConnected);
+  TWatchMode = (cmNothing,cmArm, cmDisarm,cmPatrol,cmInit,cmTest,cmJaejung);
+
+
+type
+  TDblClick = procedure(Sender:TObject;BuildingCode,BuildingName:string) of object;
+  TMouseInOutEvent = procedure(Sender:TObject;BuildingCode,BuildingName:string) of object;
+
+  TMapBuilding = Class(TComponent)
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+  private
+    MouseDowning : Boolean;
+    DragOrigin : TPoint;
+    procedure ImageDblClick(Sender: TObject);
+    procedure ImageMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure ImageMouseEnter(Sender: TObject);
+    procedure ImageMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure ImageMouseLeave(Sender: TObject);
+    procedure ImageMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+  public
+    BuildingImage : TImage;
+    BuildingNameText: TEdit;
+  private
+    FParent: TWinControl;
+    FHeight: integer;
+    FWidth: integer;
+    FLeft: integer;
+    FTop: integer;
+    FImageFile: string;
+    FAnimate: Boolean;
+    FBuildingName: string;
+    FBuildingCode: string;
+    FOnDblClick: TDblClick;
+    FDblClickOn: Boolean;
+    FNameVisible: Boolean;
+    FCurX: integer;
+    FCurY: integer;
+    FTotW: integer;
+    FTotH: integer;
+    FDragOn: Boolean;
+    FParentImageHeight: integer;
+    FParentImageWidth: integer;
+    FImageArmFile: string;
+    FImageDisArmFile: string;
+    FImageArmEventFile: string;
+    FWatchMode: TWatchMode;
+    FAlarmEvent: TAlarmEventState;
+    FImageNomalEventFile: string;
+    FStretch: Boolean;
+    FImageFireFile: string;
+    FFireOn: Boolean;
+    FFireState: TFireState;
+    FMapVisible: Boolean;
+    FPopupMenu: TPopupMenu;
+    FOnMouseEnter: TMouseInOutEvent;
+    FOnMouseLeave: TMouseInOutEvent;
+    FEnterOnText: Boolean;
+    FNameEditWidth: integer;
+    FNameFontSize: integer;
+    FNameEditHeight: integer;
+    FNameFontColor: TColor;
+    procedure SetParent(const Value: TWinControl);
+    procedure SetHeight(const Value: integer);
+    procedure SetWidth(const Value: integer);
+    procedure SetLeft(const Value: integer);
+    procedure SetTop(const Value: integer);
+    procedure SetImageFile(const Value: string);
+    procedure SetAnimate(const Value: Boolean);
+    procedure SetBuildingName(const Value: string);
+    procedure SetBuildingCode(const Value: string);
+    procedure SetNameVisible(const Value: Boolean);
+    procedure SetWatchMode(const Value: TWatchMode);
+    procedure SetAlarmEvent(const Value: TAlarmEventState);
+    procedure SetStretch(const Value: Boolean);
+    procedure SetFireState(const Value: TFireState);
+    procedure SetMapVisible(const Value: Boolean);
+    procedure SetPopupMenu(const Value: TPopupMenu);
+    procedure SetNameEditHeight(const Value: integer);
+    procedure SetNameEditWidth(const Value: integer);
+    procedure SetNameFontSize(const Value: integer);
+    procedure SetNameFontColor(const Value: TColor);
+  public
+    property AlarmEvent : TAlarmEventState read FAlarmEvent write SetAlarmEvent;
+    property Animate : Boolean read FAnimate write SetAnimate;
+    property BuildingCode :string read FBuildingCode write SetBuildingCode;
+    property BuildingName :string read FBuildingName write SetBuildingName;
+    property CurX: integer read FCurX write FCurX;
+    property CurY: integer read FCurY write FCurY;
+    property TotH: integer read FTotH write FTotH;
+    property TotW: integer read FTotW write FTotW;
+    property DblClickOn : Boolean read FDblClickOn write FDblClickOn;
+    property DragOn : Boolean read FDragOn write FDragOn;
+    property EnterOnText : Boolean read FEnterOnText write FEnterOnText;
+    property FireOn : Boolean read FFireOn write FFireOn;
+    property FireState : TFireState read FFireState write SetFireState;
+    property Height: integer read FHeight write SetHeight;
+    property Left: integer read FLeft write SetLeft;
+    property ImageFile : string read FImageFile write SetImageFile;
+    property ImageArmEventFile : string read FImageArmEventFile write FImageArmEventFile;
+    property ImageArmFile : string read FImageArmFile write FImageArmFile;
+    property ImageDisArmFile : string read FImageDisArmFile write FImageDisArmFile;
+    property ImageFireFile : string read FImageFireFile write FImageFireFile;
+    property ImageNomalEventFile : string read FImageNomalEventFile write FImageNomalEventFile;
+    property MapVisible : Boolean read FMapVisible write SetMapVisible;
+    property NameVisible : Boolean read FNameVisible write SetNameVisible;
+    property Parent: TWinControl read FParent write SetParent;
+    property ParentImageHeight: integer read FParentImageHeight write FParentImageHeight;
+    property ParentImageWidth: integer read FParentImageWidth write FParentImageWidth;
+    property PopupMenu: TPopupMenu read FPopupMenu write SetPopupMenu;
+    property Stretch:Boolean read FStretch write SetStretch;
+    property Top: integer read FTop write SetTop;
+    property WatchMode : TWatchMode read FWatchMode write SetWatchMode;
+    property Width: integer read FWidth write SetWidth;
+    property NameFontSize : integer read FNameFontSize write SetNameFontSize;
+    property NameEditWidth : integer read FNameEditWidth write SetNameEditWidth;
+    property NameEditHeight : integer read FNameEditHeight write SetNameEditHeight;
+    property NameFontColor : TColor read FNameFontColor write SetNameFontColor;
+  public
+    property OnDblClick : TDblClick read FOnDblClick write FOnDblClick;
+    property OnMouseEnter : TMouseInOutEvent read FOnMouseEnter write FOnMouseEnter;
+    property OnMouseLeave : TMouseInOutEvent read FOnMouseLeave write FOnMouseLeave;
+  end;
+implementation
+
+{ TMapBuilding }
+
+constructor TMapBuilding.Create(AOwner: TComponent);
+begin
+  inherited;
+  BuildingImage := TImage.Create(nil);
+  //BuildingImage.Visible := True;
+  BuildingImage.ShowHint := True;
+  BuildingImage.OnDblClick := ImageDblClick;
+  BuildingImage.OnMouseDown := ImageMouseDown;
+  BuildingImage.OnMouseEnter := ImageMouseEnter;
+  BuildingImage.OnMouseMove := ImageMouseMove;
+  BuildingImage.OnMouseLeave := ImageMouseLeave;
+  BuildingImage.OnMouseUp := ImageMouseUp;
+  BuildingNameText:= TEdit.Create(nil);
+  BuildingNameText.Alignment := taLeftJustify;
+  BuildingNameText.AutoSize := False;
+  BuildingNameText.Width := 100;
+  BuildingNameText.Height := 25;
+  BuildingNameText.BevelKind := bkFlat;
+  BuildingNameText.Color := clYellow;
+  BuildingNameText.Visible := False;
+  BuildingNameText.ReadOnly := True;
+  BuildingNameText.Enabled := True;
+  BuildingNameText.Font.Size := 9;
+  BuildingNameText.Font.Style := BuildingNameText.Font.Style + [fsBold];
+  BuildingNameText.Font.Name := '맑은 고딕';
+  NameFontColor := clBlack;
+  //MapVisible := True;
+  EnterOnText := False;
+end;
+
+destructor TMapBuilding.Destroy;
+begin
+  BuildingImage.Free;
+  inherited;
+end;
+
+procedure TMapBuilding.ImageDblClick(Sender: TObject);
+begin
+  if Not DblClickOn then Exit;
+  if Assigned(FOnDblClick) then
+  begin
+    OnDblClick(self,BuildingCode,BuildingName);
+  end;
+end;
+
+procedure TMapBuilding.ImageMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  if Not DragOn then Exit;
+  if (Button = mbLeft) and (MouseDowning = False) then
+  begin
+    //DRAG Point 저장
+    DragOrigin := Point(X,Y);
+    // Mouse Down = True 설정
+    MouseDowning := True;
+  end;
+end;
+
+procedure TMapBuilding.ImageMouseEnter(Sender: TObject);
+begin
+  if EnterOnText then BuildingNameText.Visible := True;
+
+  if Assigned(FOnMouseEnter) then
+  begin
+    OnMouseEnter(self,BuildingCode,BuildingName);
+  end;
+end;
+
+procedure TMapBuilding.ImageMouseLeave(Sender: TObject);
+begin
+  if EnterOnText then BuildingNameText.Visible := False;
+  if Assigned(FOnMouseLeave) then
+  begin
+    OnMouseLeave(self,BuildingCode,BuildingName);
+  end;
+
+end;
+
+procedure TMapBuilding.ImageMouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+  if Not DragOn then Exit;
+  // MOUSE DOWN = TRUE CHECK
+  if (MouseDowning = True) then
+  begin
+    if ((Sender as TImage).Top + (Sender as TImage).Height) >= ParentImageHeight then
+    begin
+      self.Top := ParentImageHeight - (Sender as TImage).Height - 1;
+    end
+    else if ((Sender as TImage).Left + (Sender as TImage).Width) >= ParentImageWidth then
+    begin
+      self.Left := ParentImageWidth - (Sender as TImage).Width - 1;
+    end
+    else
+    begin
+      // IMAGE TOP 위치 설정
+      self.Top := (Sender as TImage).Top + Y - DragOrigin.Y;
+      // IMAGE LEFT 위치 설정
+      self.Left := (Sender as TImage).Left + X - DragOrigin.X;
+    end;
+  end;
+
+end;
+
+procedure TMapBuilding.ImageMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  if Not DragOn then Exit;
+    // MOUSE DOWN = FALSE 설정
+    MouseDowning := False;
+
+end;
+
+procedure TMapBuilding.SetAlarmEvent(const Value: TAlarmEventState);
+begin
+  if FAlarmEvent = Value then Exit;
+  FAlarmEvent := Value;
+  if FireOn then Exit; //화재감시에서는 빠져 나가자.
+  case Value of
+    aeNormalEvent : begin
+      if FileExists(ImageNomalEventFile) then BuildingImage.Picture.LoadFromFile(ImageNomalEventFile)//BuildingImage.Image.LoadFromFile(ImageNomalEventFile)
+      else BuildingImage.Picture := nil;
+    end;
+    aeAlarmEvent : begin
+      if FileExists(ImageArmEventFile) then BuildingImage.Picture.LoadFromFile(ImageArmEventFile)
+      else BuildingImage.Picture := nil;
+    end;
+    else begin
+      case WatchMode of
+        cmArm : begin
+          if FileExists(ImageArmFile) then BuildingImage.Picture.LoadFromFile(ImageArmFile)
+          else BuildingImage.Picture := nil;
+        end;
+        else begin
+          if FileExists(ImageDisArmFile) then BuildingImage.Picture.LoadFromFile(ImageDisArmFile)
+          else BuildingImage.Picture := nil;
+        end;
+      end;
+    end;
+  end;
+end;
+
+procedure TMapBuilding.SetAnimate(const Value: Boolean);
+begin
+  //if FAnimate = Value then Exit;
+  FAnimate := Value;
+  if BuildingImage.Picture.Graphic = nil then Exit;
+
+  TGIFImage( BuildingImage.Picture.Graphic ).Animate := Value;
+  //BuildingImage.Animate := Value;
+end;
+
+procedure TMapBuilding.SetBuildingCode(const Value: string);
+begin
+  FBuildingCode := Value;
+end;
+
+procedure TMapBuilding.SetBuildingName(const Value: string);
+begin
+  if FBuildingName = Value then Exit;
+  FBuildingName := Value;
+  BuildingImage.Hint := Value;
+  BuildingNameText.Text := Value;
+end;
+
+procedure TMapBuilding.SetFireState(const Value: TFireState);
+begin
+  if FFireState = Value then Exit;
+  FFireState := Value;
+  if Not FireOn then Exit; //FireOn 이 아닌 상태에서는 그냥 빠져나가자.
+  case Value of
+    fsFire : begin
+      if FileExists(ImageFireFile) then BuildingImage.Picture.LoadFromFile(ImageFireFile)
+      else BuildingImage.Picture := nil;
+    end;
+    else begin
+      if FileExists(ImageFile) then BuildingImage.Picture.LoadFromFile(ImageFile)
+      else BuildingImage.Picture := nil;
+    end;
+  end;
+end;
+
+procedure TMapBuilding.SetHeight(const Value: integer);
+begin
+  if FHeight = Value then Exit;
+  FHeight := Value;
+  BuildingImage.Height := Value;
+  BuildingNameText.Top := BuildingImage.Top + Value + 2;
+end;
+
+procedure TMapBuilding.SetImageFile(const Value: string);
+begin
+  if FImageFile = Value then Exit;
+  FImageFile := Value;
+  if Not FileExists(Value) then BuildingImage.Picture := nil
+  else
+    BuildingImage.Picture.LoadFromFile(Value);
+end;
+
+procedure TMapBuilding.SetLeft(const Value: integer);
+begin
+  if FLeft = Value then Exit;
+  FLeft := Value;
+  BuildingImage.Left := Value;
+  BuildingNameText.Left := Value - ((BuildingNameText.Width - BuildingImage.Width) div 2)  ;
+end;
+
+procedure TMapBuilding.SetMapVisible(const Value: Boolean);
+begin
+  if FMapVisible = Value then Exit;
+  FMapVisible := Value;
+  BuildingImage.Visible := Value;
+end;
+
+procedure TMapBuilding.SetNameEditHeight(const Value: integer);
+begin
+  FNameEditHeight := Value;
+  BuildingNameText.Height := Value;
+end;
+
+procedure TMapBuilding.SetNameEditWidth(const Value: integer);
+begin
+  FNameEditWidth := Value;
+  BuildingNameText.Width := Value;
+end;
+
+procedure TMapBuilding.SetNameFontColor(const Value: TColor);
+begin
+  FNameFontColor := Value;
+  BuildingNameText.Font.Color := Value;
+end;
+
+procedure TMapBuilding.SetNameFontSize(const Value: integer);
+begin
+  FNameFontSize := Value;
+  BuildingNameText.Font.Size := Value;
+end;
+
+procedure TMapBuilding.SetNameVisible(const Value: Boolean);
+begin
+  if FNameVisible = Value then Exit;
+  FNameVisible := Value;
+  BuildingNameText.Visible := Value;
+end;
+
+procedure TMapBuilding.SetParent(const Value: TWinControl);
+begin
+  if FParent = Value then Exit;
+  FParent := Value;
+  BuildingImage.Parent := Value;
+  BuildingNameText.Parent := Value;
+end;
+
+procedure TMapBuilding.SetPopupMenu(const Value: TPopupMenu);
+begin
+  FPopupMenu := Value;
+  BuildingImage.PopupMenu := Value;
+end;
+
+procedure TMapBuilding.SetStretch(const Value: Boolean);
+begin
+  if FStretch = Value then Exit;
+  FStretch := Value;
+  BuildingImage.Stretch := Value;
+end;
+
+procedure TMapBuilding.SetTop(const Value: integer);
+begin
+  if FTop = Value then Exit;
+  FTop := Value;
+  BuildingImage.Top := Value;
+
+  BuildingNameText.Top := Value + BuildingImage.Height + 5;
+end;
+
+procedure TMapBuilding.SetWatchMode(const Value: TWatchMode);
+begin
+  if FWatchMode = Value then Exit;
+  FWatchMode := Value;
+  if FireOn then Exit; //화재감시에서는 빠져 나가자.
+  if AlarmEvent = aeAlarmEvent then Exit;
+  if AlarmEvent = aeNormalEvent then Exit;
+
+  case Value of
+    cmArm : begin
+      if FileExists(ImageArmFile) then BuildingImage.Picture.LoadFromFile(ImageArmFile)
+      else BuildingImage.Picture := nil;
+    end;
+    else begin
+      if FileExists(ImageDisArmFile) then BuildingImage.Picture.LoadFromFile(ImageDisArmFile)
+      else BuildingImage.Picture := nil;
+    end;
+  end;
+  Animate := FAnimate;
+end;
+
+procedure TMapBuilding.SetWidth(const Value: integer);
+begin
+  if FWidth = Value then Exit;
+  FWidth := Value;
+  BuildingImage.Width := Value;
+  BuildingNameText.Left := BuildingImage.Left - ((BuildingNameText.Width - BuildingImage.Width) div 2)  ;
+end;
+
+end.

@@ -36,6 +36,8 @@ type
     Function UpdateTB_DEVICEPASSWD_DeviceState(aNodeNo,aEcuID,aState:String):Boolean;  //기기교체시 비밀번호 전체 상태 변경
     Function UpdateTB_DEVICEPASSWD_DeviceStateChange(aNodeNo,aEcuID,aOldState,aState:String):Boolean;  //DisConnect시 비밀번호 전송 상태 변경
     Function UpdateTB_DEVICEPASSWD_PasswordState(aNodeNo,aEcuID,aPassword,aOldState,aNewState:String):Boolean;
+    Function UpdateTB_DOOR_Field_IntValue(aNodeNo,aDeviceID,aDoorNo,aFieldName,aValue:string):Boolean;
+    Function UpdateTB_DOOR_Field_StringValue(aNodeNo,aDeviceID,aDoorNo,aFieldName,aValue:string):Boolean;
     Function updateTB_DOOR_AllMasterRcvAck(aRcvAck:string):Boolean;
     Function UpdateTB_DOORCardAsync(aNodeNo,aDeviceID,aDoorNO,aAsync:string):Boolean;   //출입문별 카드권한 동기화
     Function UpdateTB_DOORDeviceAsync(aNodeNo,aDeviceID,aDoorNO,aAsync:string):Boolean; //기기 정보 동기화
@@ -553,6 +555,36 @@ var
 begin
   stSql := ' Update TB_DOOR set DO_MASTERRCV = ''' + aRcvAck + ''' ';
   stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+
+  result := dmDataBase.ProcessExecSQL(stSql);
+
+end;
+
+function TdmDBFunction.UpdateTB_DOOR_Field_IntValue(aNodeNo, aDeviceID, aDoorNo,
+  aFieldName, aValue: string): Boolean;
+var
+  stSql : string;
+begin
+  stSql := ' Update TB_DOOR set ' + aFieldName + ' = ' + aValue + ' ';
+  stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  stSql := stSql + ' AND ND_NODENO = ' + aNodeNo + ' ';
+  stSql := stSql + ' AND DE_DEVICEID = ''' + aDeviceID + ''' ';
+  stSql := stSql + ' AND DO_DOORNO = ' + aDoorNO + ' ';
+
+  result := dmDataBase.ProcessExecSQL(stSql);
+
+end;
+
+function TdmDBFunction.UpdateTB_DOOR_Field_StringValue(aNodeNo, aDeviceID,
+  aDoorNo, aFieldName, aValue: string): Boolean;
+var
+  stSql : string;
+begin
+  stSql := ' Update TB_DOOR set ' + aFieldName + ' = ''' + aValue + ''' ';
+  stSql := stSql + ' Where GROUP_CODE = ''' + G_stGroupCode + ''' ';
+  stSql := stSql + ' AND ND_NODENO = ' + aNodeNo + ' ';
+  stSql := stSql + ' AND DE_DEVICEID = ''' + aDeviceID + ''' ';
+  stSql := stSql + ' AND DO_DOORNO = ' + aDoorNO + ' ';
 
   result := dmDataBase.ProcessExecSQL(stSql);
 
